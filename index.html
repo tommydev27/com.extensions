@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="pwKvYalfLxSFwpDlCsan4yS_mEsUdJvUDrI2wKiIHXk" />
+    <meta property="og:title" content="Tommy Website">
+    <meta property="og:description" content="Create stunning AI-generated images with ease using Tommy APP.">
+    <meta property="og:image" content="https://i.postimg.cc/W4vQVb2g/icon.jpg">
+    <meta property="og:url" content="https://tommydev27.github.io/UnicodeTM/">
+    <meta property="og:type" content="website">
+    <meta property="fb:app_id" content="1245016886587008">
+    <title>Tommy Website App</title>
+    <link rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v5/y2/l/0,cross/nC2XYYUISfm.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://static.xx.fbcdn.net/rsrc.php/v5/y8/l/0,cross/Z39OoPuXzgz.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK1EY26W82"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-FK1EY26W82');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', 'Questrial', sans-serif;
+        }
+        body {
+            background: #000000;
+            color: #fff;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            width: 100%;
+            height: 100vh;
+            overflow: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 0px;
+            overflow: hidden;
+
+        }
+        .unique-controls {
+            position: relative;
+            padding: 15px;
+        }
+        .fas.fa-check-circle {
+            font-size: 20px;
+            color: #1b74e4;
+            margin-left: 5px;
+            border-radius: 50%;
+        }
+        .settings-card {
+            display: none;
+        }
+        h2 {
+            font-size: 15px;
+            color: #fff;
+            gap: 0;
+            margin-top: 10px;
+        }
+        #profil-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 15px;
+        }
+        #profil-header button {
+            font-weight: bold;
+            border: none;
+            width: 100%;
+            padding: 8px;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+        #profil-header button:hover {
+            background-color: #5ec7fb;
+        }
+        #scroll-buttons {
+            display: flex;
+            gap: 0;
+            padding: 10px;
+            width: 100%;
+            justify-content: space-between;
+        }
+        #scroll-buttons button {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            -webkit-tap-highlight-color: transparent;
+        }
+        #scroll-buttons i {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 32px;
+            height: 32px;
+            background-color: #444;
+            border-radius: 50px;
+            font-size: 16px;
+            color: #fff;
+            transition: background-color 0.3s ease;
+        }
+        #profil-tabs {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #ddd;
+        }
+        #profil-tabs div {
+            padding: 10px 15px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #fff;
+        }
+        #profil-tabs div.active {
+            border-bottom: 3px solid #1b74e4;
+            color: #1b74e4;
+        }
+        #profil-content {
+            padding: 15px;
+        }
+        #profil-content > div {
+            display: none;
+        }
+        #profil-content > div.active {
+            display: block;
+        }
+        p {
+            padding: 0;
+            color: #fff;
+            font-weight: 500;
+            margin: 5px 0;
+        }
+        .bold {
+            font-size: 15px;
+            color: #fff;
+            font-weight: 600;
+        }
+        button {
+            border: none;
+            padding: 8px 12px;
+            color: white;
+            font-size: 12px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:active {
+            transform: scale(0.98);
+        }
+
+        footer {
+            padding: 0px 0;
+            margin-top: 0px;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+        }
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+        }
+        .clicked-blink {
+            animation: pulse 0.3s ease;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.90); }
+            100% { transform: scale(1); }
+        }
+        #uniqueSaveBtn {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px auto;
+            display: block;
+        }
+        #image-scroll-container {
+            width: 100%;
+            padding: 5px 8px;
+            overflow-x: auto;
+            border-radius: 15px;
+            display: flex;
+            scroll-behavior: smooth;
+        }
+        #image-wrapper {
+            display: flex;
+            gap: 10px;
+            margin-left: -4px;
+            -webkit-tap-highlight-color: transparent;
+            -webkit-touch-callout: none;
+            user-select: none;
+            outline: none;
+        }
+        .img-container {
+            border-radius: 10px;
+            overflow: hidden;
+            display: flex;
+            cursor: pointer;
+        }
+        .book-badge {
+            display: flex;
+            flex-direction: column;
+            align-items: left;
+            justify-content: center;
+            width: 200px;
+            padding: 20px;
+            border: solid 1px #229cff;
+            border-radius: 15px;
+            height: 140px;
+            color: #ffff;
+            font-size: 14px;
+            text-decoration: none;
+            text-align: left;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        .icon-badge {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 5px;
+            font-size: 40px;
+        }
+        .orange { color: #ffbc41; }
+        .green { color: #25D366; }
+        .blue { color: #1DA1F2; }
+        .pink { color: #E1306C; }
+        .light-blue { color: #4285F4; }
+        .grey { color: #444; }
+        .spotify { color: #1DB954; }
+        .text-wrap {
+            display: inline-block;
+            border-radius: 15px;
+            margin-top: 0px;
+            line-height: 2.9em;
+            font-weight: bold;
+            word-break: break-word;
+            white-space: normal;
+        }
+    </style>
+</head>
+<body>
+  
+<div class="container">
+       <div class="unique-controls">
+    <a class="bold">
+        <b style="font-size:15px;">List-Tools ⚙️</b><tm style="font-size:10px; font-weight:600; display: block; margin:8px 0;color:#fff;">Cara pakai gunakan browser extensions <br>(mode desktop -  developers)</tm>
+</a>
+
+
+  <div id="toolbox-options">
+    <style>
+        .card { 
+            text-align: center; 
+        }
+
+        .card h1 { 
+          color: #fff;
+            font-size: 22px; 
+            font-weight: 800; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            gap: 10px; 
+        }
+
+        .image-row {
+            display: flex;
+            justify-content: center;
+            gap: 5vw;
+            margin: 15px 0;
+        }
+
+        .image-row img {
+            width: 30%;
+            border-radius: 12px;
+            object-fit: cover;
+            border: 1px solid #444;
+        }
+
+        .card p {  font-size: 14px; line-height: 1.5; margin-bottom: 25px; text-align: left; }
+
+        .btn { 
+            background-color: #222; 
+            color:#52baff !important; 
+            padding: 14px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            display: block; 
+            margin: 0 auto 25px auto; 
+            font-size: 15px;
+        }
+
+    </style>
+
+    <div class="ag-wrapper">
+        <div class="card">
+            <h1>
+                Avatar Guard fb 
+                <i class="fab fa-facebook" style="color: #0866ff; background: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 16px;margin-left:22px;"></i>
+            </h1>
+
+            <div class="image-row">
+                <img src="https://i.postimg.cc/bNzhTwRs/Screenshot-20260220-214826.jpg" alt="1">
+                <img src="https://i.postimg.cc/CLNFTqKL/Screenshot-20260220-214844.jpg" alt="2">
+                <img src="https://i.postimg.cc/4x5TLhx1/Screenshot-20260221-132016.jpg" alt="3">
+            </div>
+
+            <p style="color:#fff; font-weight:700; font-size:13px;">Aktifkan penjaga foto profil untuk mencegah orang lain mengambil tangkapan layar atau mengunduh foto profil Anda.</p>
+            
+            <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn" style="font-family: normal;">Download APK ZIP Sekarang</a>
+
+        </div>
+
+    <style>
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Default HP: 2 kolom */
+    gap: 12px;
+      line-height: 1.5;
+  font-weight: 500;
+    width: 100%;
+    max-width: 500px; /* Batas lebar di HP */
+    margin: 0 auto;
+}
+
+
+@media (min-width: 768px) {
+    .menu-grid {
+        max-width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .icon {
+        font-size: 32px;
+    }
+}
+
+        .menu-item {
+            border-radius: 10px;
+            font-weight:500;
+            padding:10px 15px;
+            font-family: 'Montserrat', 'Questrial', sans-serif;
+            background-color:#222;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            border: solid 1px #acc5f5; 
+                        cursor: pointer;
+                        transition: background 0.2s, transform 0.1s;
+                    }
+
+.menu-item:active {
+    -webkit-tap-highlight-color: transparent; 
+    background-color: #007bff; 
+    color: white;
+    transform: scale(0.98);
+}
+.label:active{
+  color:#fff;}
+        .icon {
+            font-size: 18px;
+        }
+
+.label {
+    font-size: 12px;
+    font-weight:700;
+    color:#1ed0ff;
+}
+
+/* Warna saat darkmode aktif di body */
+.darkmode .label {
+    color: red !important;
+}
+        /* Warna spesifik icon agar mirip gambar */
+        .ic-dashboard { color: #1877f2; }
+        .ic-dashb  { color: #8b5531; }
+        .ic-messages { color: red; }
+        .ic-groups { color: #377996; }
+        .ic-friends { color:#2ca175; }
+        .ic-reels { color: #d7a268; }
+        .ic-market { color: #1877f2; }
+        .ic-pages { color: #f7b928; }
+        .ic-saved { color: #9333ea; }
+        .ic-memories { color: #18abff; }
+        .ic-birthday { color: #ff5a5f; }
+        .ic-events { color: #f35e59; }
+        .ic-meta { color: #0064e0; }
+        .ic-home { color: #f3a033; }
+        .ic-ig { color: #e1306c; }
+        
+        .menu-g{
+          display:flex;
+          gap:10px;
+        }
+        
+        .labl{
+          font-weight:700;
+          display: block;
+          font-size:13px;
+          padding-top:20px;
+          margin: 0 auto;
+        }
+        
+        .shield-icon { 
+            width: 60px; 
+            height: 60px; 
+            fill: #1877F2; 
+            margin: 0 auto;
+        }
+      
+        .logo-icon { font-size: 50px;  color:#cdbca0; border-radius: 50px; 
+          
+        }
+        
+        .menu-item1 {
+            border-radius: 18px;
+            padding:20px 0;
+            color:#1ed0ff;
+            font-family: 'Montserrat', 'Questrial', sans-serif;
+            background-color:#222;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+            border: solid 1px #acc5f5; 
+                        cursor: pointer;
+                        transition: background 0.2s, transform 0.1s;
+        }
+              /* Efek saat ditekan */
+              .menu-item1:active {
+                  -webkit-tap-highlight-color: transparent; 
+                  background-color: #007bff;
+                  color: white;
+                  transform: scale(0.98);
+              }
+        
+    </style>
+</head>
+<body>
+    <div class="menu-g">
+        <div class="menu-item1" onclick="handleKlik('avatar')">
+            <div class="shield-icon">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.47 4.14-3.13 7.85-7 9.01v-9.01H5V6.3l7-3.11v8.8z"></path></svg>
+            </div>
+<span class="labl">
+  Avatar Guard
+  <p style="font-size:11px; font-weight:300; text-align:center;">Download ZIP</p>
+</span>
+        </div>
+        
+        <div class="menu-item1" onclick="handleKlik('cookietoken')">
+            <div class="shield-icon"><span class="logo-icon"><i class='fas fa-cookie-bite'></i></span></div>
+            <span class="labl">Cokie Token  <p style="font-size:11px; font-weight:300; text-align:center;">Download ZIP</p></span>
+        </div>
+      </div>
+      <br>
+    <div class="menu-grid" id="menuGrid">
+<tm style="font-size:10px; font-weight:600; display: block; margin:8px 0;color:#fff;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login </tm>
+        <div class="menu-item" onclick="handleKlik('Dasbor profesional')">
+            <i class="far fa-address-card icon ic-dashboard"></i>
+            <span class="label">iD card</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Pesan')">
+            <i class="fas fa-id-card icon ic-messages"></i>
+            <span class="label">Sim Card</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Grup')">
+            <i class="fas fa-keyboard icon ic-groups"></i>
+            <span class="label">Multi Keyboard</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Teman')">
+            <i class="fas fa-at icon ic-friends"></i>
+            <span class="label">Unicode Explorer</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Reels')">
+            <i class="fab fa-atlassian icon ic-reels"></i>
+            <span class="label">Generator Text</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Marketplace')">
+            <i class="fab fa-facebook icon ic-market"></i>
+            <span class="label">Font Name</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Halaman')">
+            <i class="fab fa-fonticons-fi icon ic-pages"></i>
+            <span class="label">Seni Font teks</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Tersimpan')">
+            <i class="fas fa-barcode icon ic-saved"></i>
+            <span class="label">Glitch Text</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Kenangan')">
+            <i class="fas fa-image icon ic-memories"></i>
+            <span class="label">Image Art</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Ulang Tahun')">
+            <i class="fas fa-chalkboard-teacher icon ic-birthday"></i>
+            <span class="label">Generator Gambar</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Acara')">
+            <i class="fa-solid fa-book-open icon ic-events"></i>
+            <span class="label">Blok Dua Catatan</span>
+        </div>
+    </div>
+
+    <script>
+        function handleKlik(namaMenu) {
+            const daftarLink = {
+                "avatar": "https://tommydev27.github.io/tools-data-tm/",
+                "cookietoken": "https://tommydev27.github.io/cookie-token/",
+                "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
+                "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
+                "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
+                "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
+                "Reels": "https://tommydev27.github.io/generatorascii/",
+                "Marketplace": "https://tommydev27.github.io/font-unikrsfb/",
+                "Halaman": "https://tommydev27.github.io/tm-textGz/",
+                "Tersimpan": "https://tommydev27.github.io/glitch-text/",
+                "Kenangan": "https://tommydev27.github.io/Tm-generator-texs/",
+                "Ulang Tahun": "https://tommydev27.github.io/tommy.website3/",
+                "Acara": "https://tommydev27.github.io/Blok-dua-catatan-koreksi-catatan-/",
+                "Verifikasi Meta": "https://tommydev27.github.io/brt-foice/",
+                "Beranda": "https://www.facebook.com/",
+
+                "Instagram Lite": "https://www.instagram.com/"
+            };
+            const urlTujuan = daftarLink[namaMenu];
+            if (urlTujuan) {
+                window.open(urlTujuan, '_blank');
+            } else {
+                alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
+            }
+        }
+    </script>
+<br>
+    <div id="container">
+            <div id="image-scroll-container">
+                <div id="image-wrapper">
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/font-unikrsfb/" class="book-badge">
+                            <b class="icon-badge"><i class="fab fa-facebook blue"></i></b>
+                            <span class="text-wrap">Font Nama fb Unik</span>
+                            <small>Seni teks rangkaian font</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/FakeID/" class="book-badge">
+                            <b class="icon-badge"><i class="fas fa-address-card pink"></i></b>
+                            <span class="text-wrap">Id card pw</span>
+                            <small>Pembuat iD indentity</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/Multi-Keyboartm/" class="book-badge">
+                            <b class="icon-badge"><i class="fas fa-keyboard light-blue"></i></b>
+                            <span class="text-wrap">Keyboard</span>
+                            <small>Share Your Moment</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/UnicodeTM27/" class="book-badge">
+                            <b class="icon-badge"><i class="fab fa-page4 pink"></i></b>
+                            <span class="text-wrap">Unicode Characters</span>
+                            <small>Kumpulan teks symbol</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/Penghutung-karakter/" class="book-badge">
+                            <b class="icon-badge"><i class="fa fa-calculator blue"></i></b>
+                            <span class="text-wrap">Penghitung Karakter</span>
+                            <small>jumlah teks / symbols</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/glitch-text/" class="book-badge">
+                            <b class="icon-badge"><i class="fas fa-barcode spotify"></i></b>
+                            <span class="text-wrap">Glitch teks</span>
+                            <small>efek garis teks</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/tommy.website3/" class="book-badge">
+                            <b class="icon-badge"><i class="fas fa-braille orange"></i></b>
+                            <span class="text-wrap">Image generator</span>
+                            <small>gambar teks ascii</small>
+                        </a>
+                    </div>
+                    <div class="img-container">
+                        <a href="https://tommydev27.github.io/tm-textGz/" class="book-badge">
+                            <b class="icon-badge"><i class="fab fa-amazon spotify"></i></b>
+                            <span class="text-wrap">Font teks nama fb</span>
+                            <small>Rangkaian teks</small>
+                        </a>
+                    </div>
+                </div>
+            </div>
+<br>
+            <h2>Keterangan</h2>
+            <p style=":font-size:12px;">Beberapa fitur mungkin tidak konsisten</p>
+        </div>
+        <br>
+            <img src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" style="width: 100%; height: auto; border-radius: 12px; border: solid 1px #ccc; pointer-events: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #fff; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold; background: #1e4846; margin-top: 12px;">
+                Demo <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
+            </button>
+        </div>
+
+            <h2 style="font-size: 17px; margin-top: 20px; padding: 0px;">INFO</h2>
+            <p style="font-size: 14px;">web ini masih dalam tahap pengembangan</p>
+            <br>
+            <img src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" style="width: 100%; border: solid 1px #ccc; border-radius: 8px; pointer-events: none;">
+        </div>
+    </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function showTab(tab) {
+        const tabs = document.querySelectorAll("#profil-tabs div");
+        const contents = document.querySelectorAll("#profil-content > div");
+        tabs.forEach(t => t.classList.remove("active"));
+        contents.forEach(c => c.classList.remove("active"));
+        document.querySelector(`#tab-${tab}`).classList.add("active");
+        document.querySelector(`#content-${tab}`).classList.add("active");
+    }
+
+    function redirect(url) {
+        window.location.href = url;
+    }
+
+    function nextPage() {
+        alert("Akan dialihkan ke halaman selanjutnya!");
+    }
+
+    document.querySelectorAll("#scroll-buttons button").forEach(button => {
+        button.addEventListener("click", function () {
+            const url = this.getAttribute("onclick").match(/'(.*?)'/)[1];
+            redirect(url);
+        });
+    });
+});
+</script>
+
+<script>
+window.addEventListener("beforeunload", () => { 
+    sessionStorage.setItem("scrollY", window.scrollY); 
+}); 
+
+window.addEventListener("load", () => { 
+    let savedScrollY = sessionStorage.getItem("scrollY"); 
+    if (savedScrollY !== null) { 
+        window.scrollTo(0, parseInt(savedScrollY)); 
+    } 
+}); 
+
+let scrollContainer = document.getElementById("image-scroll-container"); 
+
+window.addEventListener("beforeunload", () => { 
+    sessionStorage.setItem("scrollX", scrollContainer.scrollLeft); 
+}); 
+
+window.addEventListener("load", () => { 
+    let savedScrollX = sessionStorage.getItem("scrollX"); 
+    if (savedScrollX !== null) { 
+        scrollContainer.scrollLeft = parseInt(savedScrollX); 
+    } 
+}); 
+
+let timeout; 
+scrollContainer.addEventListener("touchstart", () => { 
+    clearTimeout(timeout); 
+}); 
+
+scrollContainer.addEventListener("touchend", () => { 
+    timeout = setTimeout(() => { 
+        scrollContainer.scrollLeft += 1; 
+    }, 10000); 
+});
+</script>
+
+<script>
+window.addEventListener("load", function () {
+    const container = document.createElement("div");
+    container.id = "rootFbContainer";
+    
+    const iframe = document.createElement("iframe");
+    iframe.id = "rootFbIframe"; 
+    iframe.src = "https://tommydev27.github.io/root-fb/";
+    iframe.style.width = "100%";
+    iframe.style.height = "245px";
+    iframe.style.border = "none";
+    iframe.style.display = "block";
+    
+    container.appendChild(iframe);
+    const wrapper = document.getElementById("iframeWrapper");
+    if(wrapper) wrapper.appendChild(container);
+});
+</script>
+
+<script>
+document.getElementById("iconuniquecontainer")?.addEventListener("click", function () { 
+    this.classList.toggle("active"); 
+});
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const container = document.getElementById('image-scroll-container');
+    const wrapper = document.getElementById('image-wrapper');
+    let scrollAmount = 0;
+    const step = 191;
+    const delay = 3000;
+    let autoScrollInterval;
+    let resumeTimeout;
+
+    function startAutoScroll() {
+        autoScrollInterval = setInterval(() => {
+            scrollAmount += step;
+            if (scrollAmount >= wrapper.scrollWidth - container.clientWidth) {
+                scrollAmount = 0;
+            }
+            container.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }, delay);
+    }
+
+    function stopAutoScrollTemporarily() {
+        clearInterval(autoScrollInterval);
+        clearTimeout(resumeTimeout);
+        resumeTimeout = setTimeout(() => {
+            scrollAmount = container.scrollLeft;
+            startAutoScroll();
+        }, 3000);
+    }
+
+    container.addEventListener('touchstart', () => stopAutoScrollTemporarily());
+    container.addEventListener('scroll', () => stopAutoScrollTemporarily());
+
+    document.querySelectorAll('.img-container').forEach(container => {
+        container.addEventListener('click', () => {
+            container.classList.add('clicked-blink');
+            setTimeout(() => container.classList.remove('clicked-blink'), 3000);
+        });
+    });
+
+    startAutoScroll();
+});
+</script>
+</body>
+</html>
