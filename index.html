@@ -307,7 +307,7 @@
         .card p {  font-size: 14px; line-height: 1.5; margin-bottom: 25px; text-align: left; }
 
         .btn { 
-            background-color: #222; 
+            background-color: #333; 
             color:#52baff !important; 
             padding: 14px; 
             text-decoration: none; 
@@ -339,79 +339,80 @@
         </div>
 
     <style>
-.menu-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Default HP: 2 kolom */
-    gap: 12px;
-      line-height: 1.5;
-  font-weight: 500;
-    width: 100%;
-    max-width: 500px; /* Batas lebar di HP */
-    margin: 0 auto;
-}
-
-
-@media (min-width: 768px) {
-    .menu-grid {
-        max-width: 100%;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .icon {
-        font-size: 32px;
-    }
-}
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); 
+            gap: 12px;
+            line-height: 1.5;
+            font-weight: 500;
+            width: 100%;
+            max-width: 500px; 
+            margin: 0 auto;
+        }
+        
+        
+        @media (min-width: 768px) {
+            .menu-grid {
+                max-width: 100%;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        
+            .icon {
+                font-size: 32px;
+            }
+        }
 
         .menu-item {
             border-radius: 10px;
             font-weight:500;
             padding:10px 15px;
             font-family: 'Montserrat', 'Questrial', sans-serif;
-            background-color:#222;
+            background-color:#333;
             display: flex;
             flex-direction: column;
             gap: 5px;
             width: 100%;
-            border: solid 1px #acc5f5; 
-                        cursor: pointer;
-                        transition: background 0.2s, transform 0.1s;
-                    }
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
+           }
 
-.menu-item:active {
-    -webkit-tap-highlight-color: transparent; 
-    background-color: #007bff; 
-    color: white;
-    transform: scale(0.98);
-}
-.label:active{
-  color:#fff;}
-        .icon {
-            font-size: 18px;
-        }
+          .menu-item:active {
+              -webkit-tap-highlight-color: transparent; 
+              background-color: #007bff; 
+              color: white;
+              transform: scale(0.98);
+          }
+          .label:active {
+            color:#fff;
+            
+          }
+          
+          .icon {
+              font-size: 18px;
+          }
 
-.label {
-    font-size: 12px;
-    font-weight:700;
-    color:#1ed0ff;
-}
+          .label {
+              font-size: 12px;
+              font-weight:700;
+              color:#1ed0ff;
+          }
 
-/* Warna saat darkmode aktif di body */
-.darkmode .label {
-    color: red !important;
-}
+          .darkmode .label {
+              color: red !important;
+          }
         /* Warna spesifik icon agar mirip gambar */
-        .ic-dashboard { color: #1877f2; }
+        .ic-dashboard { color: red; }
         .ic-dashb  { color: #8b5531; }
         .ic-messages { color: red; }
-        .ic-groups { color: #377996; }
+        .ic-groups { color: #e07229; }
         .ic-friends { color:#2ca175; }
         .ic-reels { color: #d7a268; }
         .ic-market { color: #1877f2; }
         .ic-pages { color: #f7b928; }
         .ic-saved { color: #9333ea; }
-        .ic-memories { color: #18abff; }
-        .ic-birthday { color: #ff5a5f; }
+        .ic-memories { color: #c7c70a; }
+        .ic-birthday { color: #c7c70a; }
         .ic-events { color: #f35e59; }
         .ic-meta { color: #0064e0; }
         .ic-home { color: #f3a033; }
@@ -446,22 +447,21 @@
             padding:20px 0;
             color:#1ed0ff;
             font-family: 'Montserrat', 'Questrial', sans-serif;
-            background-color:#222;
+            background-color:#333;
             display: flex;
             flex-direction: column;
             gap: 5px;
             width: 100%;
-            border: solid 1px #acc5f5; 
-                        cursor: pointer;
-                        transition: background 0.2s, transform 0.1s;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.1s;
         }
-              /* Efek saat ditekan */
-              .menu-item1:active {
-                  -webkit-tap-highlight-color: transparent; 
-                  background-color: #007bff;
-                  color: white;
-                  transform: scale(0.98);
-              }
+
+         .menu-item1:active {
+           -webkit-tap-highlight-color: transparent; 
+            background-color: #007bff;
+            color: white;
+            transform: scale(0.98);
+          }
         
     </style>
 </head>
@@ -503,8 +503,11 @@
     </iframe>
 </div>
 </br>
+<h2>Coba Lainnya</h2>
+<tm style="font-size:15px; font-weight:600; display: block; margin:8px 0;color:yellow;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login </tm>
+<br>
     <div class="menu-grid" id="menuGrid">
-<tm style="font-size:10px; font-weight:600; display: block; margin:8px 0;color:#fff;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login </tm>
+
         <div class="menu-item" onclick="handleKlik('Dasbor profesional')">
             <i class="far fa-address-card icon ic-dashboard"></i>
             <span class="label">iD card</span>
@@ -517,26 +520,46 @@
             <i class="fas fa-keyboard icon ic-groups"></i>
             <span class="label">Multi Keyboard</span>
         </div>
+
+        <div class="menu-item" onclick="handleKlik('Teman1')">
+            <i class="fas fa-ad icon ic-friends"></i>
+            <span class="label">Unicode symbols</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Teman2')">
+            <i class="fab fa-rockrms ic-friends"></i>
+            <span class="label">Penghitung karakter</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Teman3')">
+            <i class="fas fa-play icon ic-friends"></i>
+            <span class="label">Code Run Icon</span>
+        </div>
+
         <div class="menu-item" onclick="handleKlik('Teman')">
             <i class="fas fa-at icon ic-friends"></i>
             <span class="label">Unicode Explorer</span>
         </div>
         <div class="menu-item" onclick="handleKlik('Reels')">
-            <i class="fab fa-atlassian icon ic-reels"></i>
+            <i class="fab fa-atlassian icon ic-friends"></i>
             <span class="label">Generator Text</span>
         </div>
         <div class="menu-item" onclick="handleKlik('Marketplace')">
-            <i class="fab fa-facebook icon ic-market"></i>
+            <i class="fab fa-facebook icon ic-friends"></i>
             <span class="label">Font Name</span>
         </div>
         <div class="menu-item" onclick="handleKlik('Halaman')">
-            <i class="fab fa-fonticons-fi icon ic-pages"></i>
+            <i class="fab fa-fonticons-fi icon ic-friends"></i>
             <span class="label">Seni Font teks</span>
         </div>
         <div class="menu-item" onclick="handleKlik('Tersimpan')">
-            <i class="fas fa-barcode icon ic-saved"></i>
+            <i class="fas fa-barcode icon ic-friends"></i>
             <span class="label">Glitch Text</span>
         </div>
+        <div class="menu-item" onclick="handleKlik('Acara')">
+            <i class="fa-solid fa-book-open icon ic-friends"></i>
+            <span class="label">Blok Dua Catatan</span>
+        </div>
+        
+        
         <div class="menu-item" onclick="handleKlik('Kenangan')">
             <i class="fas fa-image icon ic-memories"></i>
             <span class="label">Image Art</span>
@@ -544,10 +567,6 @@
         <div class="menu-item" onclick="handleKlik('Ulang Tahun')">
             <i class="fas fa-chalkboard-teacher icon ic-birthday"></i>
             <span class="label">Generator Gambar</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Acara')">
-            <i class="fa-solid fa-book-open icon ic-events"></i>
-            <span class="label">Blok Dua Catatan</span>
         </div>
     </div>
 
@@ -560,6 +579,9 @@
                 "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
                 "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
                 "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
+               "Teman1": "https://tommydev27.github.io/unicode-char1/",
+                "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
+                "Teman3": "https://tommydev27.github.io/code-runner/",
                 "Reels": "https://tommydev27.github.io/generatorascii/",
                 "Marketplace": "https://tommydev27.github.io/font-unikrsfb/",
                 "Halaman": "https://tommydev27.github.io/tm-textGz/",
@@ -582,6 +604,7 @@
     </script>
 <br>
     <div id="container">
+<tm style="font-size:15px; font-weight:600; display: block; margin:8px 0;color:yellow; font-family:normal;">Beberapa fitur mungkin tidak konsisten web masih dalam pengembangan</tm>
             <div id="image-scroll-container">
                 <div id="image-wrapper">
                     <div class="img-container">
@@ -643,8 +666,8 @@
                 </div>
             </div>
 <br>
-            <h2>Keterangan</h2>
-            <p style=":font-size:12px;">Beberapa fitur mungkin tidak konsisten</p>
+            <h2>Project development</h2>
+            <p style="font-size:12px; font-family:normal;">situs dikembangkan diakses lewat browser</p>
         </div>
         <br>
             <img src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" style="width: 100%; height: auto; border-radius: 12px; border: solid 1px #ccc; pointer-events: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
@@ -653,8 +676,9 @@
             </button>
         </div>
 
-            <h2 style="font-size: 17px; margin-top: 20px; padding: 0px;">INFO</h2>
-            <p style="font-size: 14px;">web ini masih dalam tahap pengembangan</p>
+            <h2 style="font-size: 17px; margin-top: 20px; padding: 0px;">About</h2>
+            <p style="font-size: 12px; font-family:normal;">Tentang Proyek ini
+Situs ini adalah platform penyedia tools web dan ekstensi browser yang dibangun secara mandiri. Fokus utama menyediakan utilitas fungsional yang ringan, aman, dan efisien untuk membantu tugas teknis pengguna langsung dari browser. Semua tools di sini dikembangkan dengan standar kode yang bersih untuk memastikan performa maksimal.</p>
             <br>
             <img src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" style="width: 100%; border: solid 1px #ccc; border-radius: 8px; pointer-events: none;">
         </div>
