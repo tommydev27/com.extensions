@@ -32,6 +32,7 @@
             padding: 0;
             box-sizing: border-box;
             font-family: 'Montserrat', 'Questrial', sans-serif;
+            -webkit-user-select: none;
         }
         body {
             background: #000000;
@@ -45,7 +46,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            
+            -webkit-user-select: none;
         }
         .container {
             position: absolute;
@@ -54,7 +55,7 @@
             width: 100%;
             padding: 0px;
             overflow: hidden;
-
+          -webkit-user-select: none;
         }
         .unique-controls {
             position: relative;
@@ -287,7 +288,7 @@
             display: flex; 
             align-items: center; 
             justify-content: center; 
-            gap: 10px; 
+            gap: 30px; 
         }
 
         .image-row {
@@ -494,16 +495,17 @@
     </style>
 </head>
 <body>
-    <div class="menu-g">
-        <div class="menu-item1" onclick="handleKlik('avatar')">
-            <div class="shield-icon">
-                <svg viewBox="0 0 24 24"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.47 4.14-3.13 7.85-7 9.01v-9.01H5V6.3l7-3.11v8.8z"></path></svg>
-            </div>
-<span class="labl">
-  Avatar Guard
-  <p style="font-size:11px; font-weight:300; text-align:center;">Download ZIP</p>
-</span>
+<div class="menu-g">
+    <div class="menu-item1" onclick="window.location.href='https://github.com/tommydev27/fb.lite-C-30/releases/download/v1.0/FB_Lite_30_Klon.zip'" style="cursor: pointer;">
+        <div class="shield-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.16.09-.33.14-.5.14s-.34-.05-.5-.14l-7.97-4.43c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.16-.09.33-.14.5-.14s.34.05.5.14l7.97 4.43c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15z"></path></svg>
         </div>
+        <span class="labl" style="user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; pointer-events: none;">
+            FB Lite 30 Klon
+            <p style="font-size:11px; font-weight:300; text-align:center; margin:0;">Download ZIP (53.1 MB)</p>
+        </span>
+    </div>
+
         
         <div class="menu-item1" onclick="handleKlik('cookietoken')">
             <div class="shield-icon"><span class="logo-icon"><i class='fas fa-cookie-bite'></i></span></div>
