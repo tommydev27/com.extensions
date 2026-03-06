@@ -322,6 +322,18 @@
     </style>
 
     <div class="ag-wrapper">
+      <div id="fb-profile" style="text-align: center; border: 1px solid #ccc; padding: 10px; border-radius: 8px;">
+    <p id="fb-name">Memuat nama...</p>
+    <img id="fb-pic" src="" alt="Foto Profil" style="border-radius: 50%; width: 100px; display: none;">
+</div>
+<div style="margin-top: 20px; text-align: left;">
+    <a id="messenger-link" href="#" target="_blank" 
+       style="background-color: #0084FF; color: white; padding: 12px 20px; border-radius: 25px; text-decoration: none; font-weight: bold; display: inline-flex; align-items: left; gap: 10px;">
+       <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2C6.477 2 2 6.145 2 11.258c0 2.908 1.462 5.503 3.746 7.231V22l3.355-1.841c.884.246 1.821.381 2.899.381 5.523 0 10-4.145 10-9.258C22 6.145 17.523 2 12 2zm1.061 12.57-2.715-2.893-5.292 2.893 5.823-6.191 2.715 2.893 5.292-2.893-5.823 6.191z"/></svg>
+       Chat via Messenger
+    </a>
+</div>
+<br>
         <div class="card">
             <h1>
                 Avatar Guard fb 
@@ -854,6 +866,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
     startAutoScroll();
 });
+</script>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '11559397265117877', // Gunakan ID dari profilmu
+      cookie     : true,
+      xfbml      : true,
+      version    : 'v22.0'
+    });
+    
+    // Fungsi untuk mengambil data profil otomatis
+    // Menggunakan Access Token yang kamu miliki
+    const accessToken = 'EAAHPrCe9...'; // Ganti dengan token terbaru
+
+    fetch(`https://graph.facebook.com/v22.0/me?fields=id,name,picture.type(large)&access_token=${accessToken}`)
+      .then(response => response.json())
+      .then(data => {
+        if(data.name) {
+          document.getElementById('fb-name').innerText = "Penjual: " + data.name;
+          document.getElementById('fb-pic').src = data.picture.data.url;
+          document.getElementById('fb-pic').style.display = "inline-block";
+        }
+      })
+      .catch(err => console.error("Gagal memuat profil:", err));
+  };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script>
+    // ID Facebook kamu dari hasil terminal tadi
+    const myFBID = "1559397265117877"; //
+    
+    // Mengarahkan link ke m.me (Messenger)
+    document.getElementById('messenger-link').href = "https://m.me/" + myFBID;
 </script>
 </body>
 </html>
