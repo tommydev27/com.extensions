@@ -402,9 +402,9 @@
         .menu-item {
             border-radius: 10px;
             font-weight:500;
-            padding:10px 15px;
+            padding:20px 15px;
             font-family: 'Montserrat', 'Questrial', sans-serif;
-            background-color:#333;
+            background-color:#222;
             display: flex;
             flex-direction: column;
             gap: 5px;
@@ -425,11 +425,11 @@
           }
           
           .icon {
-              font-size: 18px;
+              font-size: 30px;
           }
 
           .label {
-              font-size: 12px;
+              font-size: 15px;
               font-weight:700;
               color:#1ed0ff;
           }
@@ -442,7 +442,7 @@
         .ic-dashb  { color: #8b5531; }
         .ic-messages { color: red; }
         .ic-groups { color: #e07229; }
-        .ic-friends { color:#2ca175; }
+        .ic-friends { color:#18ce89; }
         .ic-reels { color: #d7a268; }
         .ic-market { color: #1877f2; }
         .ic-pages { color: #f7b928; }
@@ -563,7 +563,7 @@
             <span class="label">Unicode symbols</span>
         </div>
         <div class="menu-item" onclick="handleKlik('Teman2')">
-            <i class="fab fa-rockrms ic-friends"></i>
+            <i class="fab fa-rockrms icon ic-friends"></i>
             <span class="label">Penghitung karakter</span>
         </div>
         <div class="menu-item" onclick="handleKlik('Teman3')">
@@ -641,67 +641,123 @@
     </script>
 <br>
     <div id="container">
-<tm style="font-size:15px; font-weight:600; display: block; margin:8px 0;color:yellow; font-family:normal;">Beberapa fitur mungkin tidak konsisten web masih dalam pengembangan</tm>
-            <div id="image-scroll-container">
-                <div id="image-wrapper">
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/font-unikrsfb/" class="book-badge">
-                            <b class="icon-badge"><i class="fab fa-facebook blue"></i></b>
-                            <span class="text-wrap">Font Nama fb Unik</span>
-                            <small>Seni teks rangkaian font</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/FakeID/" class="book-badge">
-                            <b class="icon-badge"><i class="fas fa-address-card pink"></i></b>
-                            <span class="text-wrap">Id card pw</span>
-                            <small>Pembuat iD indentity</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/Multi-Keyboartm/" class="book-badge">
-                            <b class="icon-badge"><i class="fas fa-keyboard light-blue"></i></b>
-                            <span class="text-wrap">Keyboard</span>
-                            <small>Share Your Moment</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/UnicodeTM27/" class="book-badge">
-                            <b class="icon-badge"><i class="fab fa-page4 pink"></i></b>
-                            <span class="text-wrap">Unicode Characters</span>
-                            <small>Kumpulan teks symbol</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/Penghutung-karakter/" class="book-badge">
-                            <b class="icon-badge"><i class="fa fa-calculator blue"></i></b>
-                            <span class="text-wrap">Penghitung Karakter</span>
-                            <small>jumlah teks / symbols</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/glitch-text/" class="book-badge">
-                            <b class="icon-badge"><i class="fas fa-barcode spotify"></i></b>
-                            <span class="text-wrap">Glitch teks</span>
-                            <small>efek garis teks</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/tommy.website3/" class="book-badge">
-                            <b class="icon-badge"><i class="fas fa-braille orange"></i></b>
-                            <span class="text-wrap">Image generator</span>
-                            <small>gambar teks ascii</small>
-                        </a>
-                    </div>
-                    <div class="img-container">
-                        <a href="https://tommydev27.github.io/tm-textGz/" class="book-badge">
-                            <b class="icon-badge"><i class="fab fa-amazon spotify"></i></b>
-                            <span class="text-wrap">Font teks nama fb</span>
-                            <small>Rangkaian teks</small>
-                        </a>
-                    </div>
-                </div>
-            </div>
+
+
+<style>
+    .logo-container1 {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        width: 100%;
+        padding: 1vw 0;
+        font-size: 7vw;
+        font-weight: bold;
+        display: flex;
+        gap: 2vw;
+        justify-content: left;
+    }
+
+    .logo-icon1 { color: #00CCFF; } 
+    .logo-text { color: #FF0066; }
+
+    .kontainer-scroll {
+        width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 4vw 0;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: row;
+        align-items: stretch; /* Memastikan semua kartu sama tinggi */
+        gap: 4vw;
+        width: max-content;
+        padding: 0 0vw;
+    }
+
+    .card1 {
+        border: 2px solid #3d4465;
+        border-radius: 5vw;
+        padding: 6vw 4vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between; /* Tombol akan selalu di paling bawah */
+        background: transparent;
+        width: 32vw; 
+        flex-shrink: 0;
+    }
+
+    .icon-box {
+        height: 15vw; /* Kunci tinggi area ikon agar sejajar */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FF0066; 
+        text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
+        font-size: 13vw;
+        margin-bottom: 2vw;
+    }
+
+    .unicode {
+        color: #d4e157;
+        font-size: 3vw;
+        margin-bottom: 4vw;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .btn-salin {
+        background-color: #333;
+        color: #fff;
+        border: none;
+        border-radius: 3vw;
+        padding: 3vw 0;
+        width: 100%;
+        font-size: 3.5vw;
+        font-weight: bold;
+        cursor: pointer;
+        display: block;
+    }
+
+    .btn-salin:active { opacity: 0.7; }
+</style>
+
+<div class="logo-container1">
+    <span class="logo-icon1">ICON</span>
+    <span class="logo-text">LOGO</span>
+</div>
+
+<div class="kontainer-scroll">
+    <div class="grid" id="mainGrid"></div>
+</div>
+
+<script>
+    const icons = ['𔓙', '𓃭', '𔒒', '𔑪', '𓄁', '𓄇', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𔑫', '𓊿', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
+    const grid = document.getElementById('mainGrid');
+
+    icons.forEach(symbol => {
+        const codePoint = symbol.codePointAt(0).toString(16).toUpperCase();
+        const autoUnicode = `U+${codePoint.padStart(4, '0')}`;
+        const card = document.createElement('div');
+        card.className = 'card1';
+        card.innerHTML = `
+            <div class="icon-box">${symbol}</div>
+            <div class="unicode">${autoUnicode}</div>
+            <button class="btn-salin" onclick="copyText('${symbol}', this)">Salin</button>
+        `;
+        grid.appendChild(card);
+    });
+
+    function copyText(text, btn) {
+        navigator.clipboard.writeText(text);
+        const originalText = btn.innerText;
+        btn.innerText = 'OK';
+        setTimeout(() => { btn.innerText = originalText; }, 800);
+    }
+</script>
 <br>
             <h2>Project development</h2>
             <p style="font-size:12px; font-family:normal;">situs dikembangkan diakses lewat browser</p>
