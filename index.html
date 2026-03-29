@@ -429,9 +429,9 @@
           }
 
           .label {
-              font-size: 15px;
-              font-weight:700;
-              color:#1ed0ff;
+              font-size: 14px;
+              font-weight:600;
+              color:#fff;
           }
 
           .darkmode .label {
@@ -442,7 +442,7 @@
         .ic-dashb  { color: #8b5531; }
         .ic-messages { color: red; }
         .ic-groups { color: #e07229; }
-        .ic-friends { color:#18ce89; }
+        .ic-friends { color:#1ed0ff; }
         .ic-reels { color: #d7a268; }
         .ic-market { color: #1877f2; }
         .ic-pages { color: #f7b928; }
@@ -541,18 +541,44 @@
 </div>
 </br>
 <h2>Coba Lainnya</h2>
-<tm style="font-size:15px; font-weight:600; display: block; margin:8px 0;color:yellow;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login </tm>
-<br>
+<tm style="font-size:15px; font-weight:500; display: block; margin:8px 0;color:#fff;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login 
+    </tm>
+<div class="menuu" style="padding: 10px 0; display: flex; flex-direction: column; gap: 12px;">
+    
+    <div class="menu-item" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
+        <img src="https://i.postimg.cc/BvNbgH3j/Screenshot-20260329-105239.jpg" 
+             style="width: 120px; height: auto; border-radius: 10px; margin-right: 15px; border: 2px solid #ccc; flex-shrink: 0;" alt="ID Card">
+        
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW INDONESIA</span>
+            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
+        <img src="https://i.postimg.cc/jS4PpWK2/Screenshot-20260329-105356.jpg" 
+             style="width: 120px; height: auto; border-radius: 10px; margin-right: 15px; border: 2px solid #ccc; flex-shrink: 0;" alt="Sim Card">
+        
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">SIM</span>
+            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
+        <img src="https://i.postimg.cc/DydSZtNc/Screenshot-20260329-105121.jpg" 
+             style="width: 120px; height: auto; border-radius: 10px; margin-right: 15px; border: 2px solid #ccc; flex-shrink: 0;" alt="Sim Card">
+        
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW HINDI</span>
+            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
+        </div>
+    </div>
+
+</div>
+        
     <div class="menu-grid" id="menuGrid">
 
-        <div class="menu-item" onclick="handleKlik('Dasbor profesional')">
-            <i class="far fa-address-card icon ic-dashboard"></i>
-            <span class="label">iD card</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Pesan')">
-            <i class="fas fa-id-card icon ic-messages"></i>
-            <span class="label">Sim Card</span>
-        </div>
         <div class="menu-item" onclick="handleKlik('Grup')">
             <i class="fas fa-keyboard icon ic-groups"></i>
             <span class="label">Multi Keyboard</span>
@@ -614,6 +640,7 @@
                 "cookietoken": "https://tommydev27.github.io/cookie-token/",
                 "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
                 "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
+                "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
                 "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
                 "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
                "Teman1": "https://tommydev27.github.io/unicode-char1/",
