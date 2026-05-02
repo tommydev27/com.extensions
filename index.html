@@ -498,7 +498,25 @@
             color: white;
             transform: scale(0.98);
           }
-        
+          
+        .thumb-container {
+            width: 100%;
+            aspect-ratio: 16 / 16;
+            background: #0f172a;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            overflow: hidden;
+            border: 1px solid #b58b3c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thumbnail { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -520,16 +538,19 @@
         </div>
       </div>
       <br>
+
 <div class="image-row1">
     <style>
         .responsive-iframe {
             width: 100%; 
             aspect-ratio: 5 / 5;
-            max-width: 400px;
             height: auto;
+            border-radius: 8px;
+            border: 1px solid #b58b3c;
         }
     </style>
-    
+    <tm style="font-size:15px; font-weight:900; display: block; margin:8px 0;color:#fff;">Tutorial pasang penjaga poto profil
+    </tm>
     <iframe class="responsive-iframe"
         src="https://www.youtube.com/embed/Aj-tyu3qAVk" 
         title="YouTube video player" 
@@ -540,6 +561,16 @@
     </iframe>
 </div>
 </br>
+<tm style="font-size:15px; font-weight:900; display: block; margin:8px 0;color:#fff;">Download vidio tiktok
+    </tm>
+   <div class="thumb-container">
+        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/SKQygMmM/20260502-205124.jpg" alt="Thumbnail">
+    </div>
+            <button id="generate" onclick="location.href='https://tommydev27.github.io/Download-vidio/';" style="color: #fff; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold; background: #1e4846; margin-top: 12px;">
+                Download vidio Klik Disini <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
+            </button>
+
+
 <h2>Coba Lainnya</h2>
 <tm style="font-size:15px; font-weight:500; display: block; margin:8px 0;color:#fff;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login 
     </tm>
@@ -793,7 +824,9 @@
             <p style="font-size:12px; font-family:normal;">situs dikembangkan diakses lewat browser</p>
         </div>
         <br>
-            <img src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" style="width: 100%; height: auto; border-radius: 12px; border: solid 1px #ccc; pointer-events: none; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+   <div class="thumb-container">
+        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" alt="Thumbnail">
+    </div>
             <button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #fff; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold; background: #1e4846; margin-top: 12px;">
                 Demo <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
             </button>
@@ -803,9 +836,10 @@
             <p style="font-size: 12px; font-family:normal;">Tentang Proyek ini
 Situs ini adalah platform penyedia tools web dan ekstensi browser yang dibangun secara mandiri. Fokus utama menyediakan utilitas fungsional yang ringan, aman, dan efisien untuk membantu tugas teknis pengguna langsung dari browser. Semua tools di sini dikembangkan dengan standar kode yang bersih untuk memastikan performa maksimal.</p>
             <br>
-            <img src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" style="width: 100%; border: solid 1px #ccc; border-radius: 8px; pointer-events: none;">
-        </div>
+   <div class="thumb-container">
+        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" alt="Thumbnail">
     </div>
+
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
