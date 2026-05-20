@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK1EY26W82"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -322,11 +322,15 @@
         align-items: flex-start;
         gap: 4vw;
     }
-    .logo-wrapper27 {
-        width: 30vw;
-        height: 30vw;
-        flex-shrink: 0;
-    }
+.logo-wrapper27 {
+    border-radius: 50%;
+    border: solid 1vw #555;
+    width: 32vw;
+    height: 32vw;
+    flex-shrink: 0;
+    /* Tambahkan ini agar border tidak memakan/memotong ruang dalam SVG */
+    box-sizing: border-box; 
+}
     .text-container27 {
         display: flex;
         flex-direction: column;
@@ -343,20 +347,110 @@
         text-shadow: 0 0 15px rgba(0, 132, 255, 0.6);
         margin: 0;
     }
+    
+    .status-bar2 {
+        display: flex;
+        padding: 1vw 0;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        box-sizing: border-box;
+        position: relative;
+        z-index: 9999;
+    }
+
+    .status-dot2 {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #00ff88;
+        box-shadow: 0 0 10px #00ff88;
+        animation: pulse-dot 1.5s ease-in-out infinite;
+        vertical-align: middle;
+    }
+
+    @keyframes pulse-dot {
+        0%, 100% { 
+            opacity: 1; 
+            transform: scale(1);
+        }
+        50% { 
+            opacity: 0.2; 
+            transform: scale(0.9);
+        }
+    }
+
+    .status-text2 {
+        font-size: 10px;
+        color: #00ff88;
+        letter-spacing: 2vw;
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+
+    .status-id2 {
+        font-size: 10px;
+        color: #aaaaaa;
+        letter-spacing: .1em;
+    }
+    
+    .btn-download-red {
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        padding: 14px;
+        border-radius: 30px;
+        font-family: normal;
+        font-weight: 700;
+        font-size: 12px;
+        letter-spacing: .15em;
+        text-transform: uppercase;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(135deg, #333);
+        color: #fff !important;
+        margin-bottom: 25px;
+    }
+
+    .btn-download-red::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -150%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+        transform: skewX(-25deg);
+        animation: slide-glow 3s infinite;
+    }
+
+    /* Jalur pergerakan cahaya */
+    @keyframes slide-glow {
+        0% { left: -150%; }
+        50% { left: 150%; }
+        100% { left: 150%; }
+    }
 </style>
-</head>
-<body>
-    <div class="container">
-        <div class="unique-controls">
+
+<div class="container">
+    <div class="unique-controls">
+          
             <span class="bold">
-                <span style="font-size:15px;"><span style="color:yellow;">TOMMY WEBSITE | </span>List-Tools ⚙️</span>
+                <span style="font-size:15px;"><span style="color:gold;font-family:Orbitron,monospace;letter-spacing:1.03vw;text-transform:uppercase;font-weight:700;">TOMMY WEBSITE | </span>List-Tools ⚙️</span>
             </span>
-            
+        <div class="status-bar2">
+            <div style="display: flex; align-items: center;">
+                <span class="status-text2">SERVER ONLINE</span>
+                <span class="status-dot2"></span>
+            </div>
+            <span class="status-id2">BY TOMMY ID:2799</span>
+        </div>
             <div id="toolbox-options">
                 <div class="ag-wrapper">
                     <div class="card">
-                        <h1>
-                            Avatar Guard fb 
+                        <h1 style="          font-family: Orbitron;color: #bbb;">
+                            AVATAR GUAR FB 
                             <i class="fab fa-facebook" style="color: #0866ff; background: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-left: 10px;"></i>
                             <span class="x9f619 x1n2onr6 x1ja2u2z xdt5ytf x2lah0s x193iq5w x6s0dn4 x78zum5 xl56j7k x1yztbdb" style="text-align: left; display: inline-block; margin-left: 10px; padding-top:5px;">
                                 <canvas class="meta-animated-ring" width="200" height="200" style="width: 25px; height: 25px;"></canvas>
@@ -365,36 +459,75 @@
 
                         <div class="image-row">
                             <div class="container27">
-                                <div class="logo-wrapper27">
-                                    <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-                                        <defs>
-                                            <filter id="glow27" x="-20%" y="-20%" width="140%" height="140%">
-                                                <feGaussianBlur stdDeviation="6" result="blur27" />
-                                                <feComposite in="SourceGraphic" in2="blur27" operator="over" />
-                                            </filter>
-                                        </defs>
-                                        <circle cx="130" cy="130" r="115" stroke="#0084ff" stroke-width="4" fill="none" filter="url(#glow27)" />
-                                        <circle cx="130" cy="130" r="85" stroke="#e4e6eb" stroke-width="5" fill="none" />
-                                        <clipPath id="avatar-clip27">
-                                            <circle cx="130" cy="130" r="82" />
-                                        </clipPath>
-                                        <g clip-path="url(#avatar-clip27)">
-                                            <circle cx="130" cy="105" r="30" stroke="#e4e6eb" stroke-width="5" fill="none" />
-                                            <circle cx="130" cy="220" r="65" stroke="#e4e6eb" stroke-width="5" fill="none" />
-                                        </g>
-                                        <g transform="translate(104, 192) scale(0.2)" stroke="#e4e6eb" stroke-width="16" stroke-linejoin="round" stroke-linecap="round" fill="none">
-                                            <path d="M 130,40 C 180,40 220,30 220,30 C 220,110 210,180 130,225 C 50,180 40,110 40,30 C 40,30 80,40 130,40 Z" />
-                                            <path d="M 130,70 C 165,70 190,62 190,62 C 190,115 182,165 130,200 C 78,165 70,115 70,62 C 70,62 95,70 130,70 Z" fill="#e4e6eb" />
-                                        </g>
-                                    </svg>
+                               <div class="logo-wrapper27">
+
+<svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#e1e4ea"/>
+            <stop offset="60%" stop-color="#ced2db"/>
+            <stop offset="100%" stop-color="#404348"/>
+        </linearGradient>
+
+        <clipPath id="circle-clip">
+            <circle cx="130" cy="130" r="105"/>
+        </clipPath>
+    </defs>
+
+    <!-- Avatar -->
+    <g clip-path="url(#circle-clip)">
+        <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
+
+        <!-- Head -->
+        <circle cx="130" cy="95" r="38" fill="#60646d"/>
+
+        <!-- Body -->
+        <path
+            d="M35 235
+               C35 175 70 145 130 145
+               C190 145 225 175 225 235 Z"
+            fill="#60646d"/>
+    </g>
+
+    <!-- Shield -->
+    <g transform="translate(130 190) scale(0.32)">
+        
+        <!-- Outer outline -->
+        <path
+            d="M0 -58
+               C18 -45 38 -37 58 -35
+               L58 8
+               C58 46 32 76 0 96
+               C-32 76 -58 46 -58 8
+               L-58 -35
+               C-38 -37 -18 -45 0 -58 Z"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+
+        <!-- Inner shield -->
+        <path
+            d="M0 -40
+               C12 -30 25 -24 40 -22
+               L40 6
+               C40 30 22 52 0 66
+               C-22 52 -40 30 -40 6
+               L-40 -22
+               C-25 -24 -12 -30 0 -40 Z"
+            fill="#ffffff"/>
+    </g>
+</svg>
+
+
                                 </div>
                 <div class="text-container27">
                     <h2 class="subtitle27">Facebook profile & page</h2>
                                     
-            <p style="color:#bbb; font-weight:700; font-size:10px;">Aktifkan penjaga foto profil untuk mencegah orang lain mengambil tangkapan layar atau mengunduh foto profil Anda.</p> </span>
-                                    <span style="font-size:12px; font-weight:600; display: block; margin:8px 0; color:#fff; padding-top:0px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
-            <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn" style="font-family: normal; align-items:center;
-            text-align:center;">Download ZIP</a> </div>
+            <p style="color:#bbb; font-weight:700; font-size:10px;">Aktifkan penjaga foto profil untuk mencegah orang lain mengambil tangkapan layar atau mengunduh foto profil Anda.</span>
+                                    <span style="font-size:12px; font-weight:600; display: block; margin:8px 0; color:#eee; padding-top:0px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
+            <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a> </div>
              </div>
         </div>
 <style>
@@ -406,6 +539,7 @@
         position: relative;
         display: flex;
         align-items: center;
+        margin-top:-50px ;
     }
 
     .arc-line15 {
@@ -434,15 +568,15 @@
     .main-circle15 {
         position: absolute;
         left: 2%;
-        width: 35%;
-        padding-bottom: 33%;
+        width: 37%;
+        padding-bottom: 34%;
         height: 0;
-        background: #fff;
+        background: #bbb;
         border-radius: 50%;
         box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         z-index: 3;
-        outline: 5px solid #cc0000;
-        border: 4px solid #fff;
+        outline: 5px solid #666;
+        border: 2vw solid #333;
     }
 
     .main-circle15::before {
@@ -450,7 +584,7 @@
         position: absolute;
         inset: -3vw;
         border-radius: 50%;
-        border: 2vw solid #4f7cff;
+        border: 1vw solid #4f7cff;
         pointer-events: none;
         clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
     }
@@ -565,7 +699,7 @@
         height: 10vw;
         background: #111;
         border-radius: 50%;
-        border: 0.5vw solid #fff;
+        border: 0.5vw solid #52b8ff;
         box-shadow: 0 2px 6px rgba(0,0,0,0.3);
         display: flex;
         justify-content: center;
@@ -578,7 +712,7 @@
 
     .label-box15 {
         background-color: #333;
-        color: #53b4ff;
+        color: ##fff;
         padding: 1vw 1vw 1vw 
         8vw;
         border-radius: 0 8vw 8vw 0;
