@@ -644,6 +644,7 @@
               position: relative;
               overflow: hidden;
               background:linear-gradient(135deg,#202020 0,#404040 60%,#202020 100%);
+              box-shadow: inset 2px 2px 2px #444, inset -2px -2px 2px #4a596e;
               color: #fff !important;
               margin-bottom: 25px;
               -webkit-tap-highlight-color: transparent;
@@ -857,18 +858,15 @@
               overflow: hidden;   
               background: linear-gradient(135deg,#202020 0%,#404040 60%,#202020 100%);
               color: #fff;
-              
+              box-shadow: inset 2px 2px 2px #444, inset -2px -2px 2px #4a596e;
               padding: 1vw 1vw 1vw 10vw;
               border-radius: 0 8vw 8vw 0;
               margin-left: -8vw;
-              
               z-index: 1;
               font-weight: bold;
               font-size: 3vw;
               white-space: nowrap;
               text-transform: uppercase;
-              
-              box-shadow: 2px 3px 5px rgba(0,0,0,0.15);
               width: 40vw;
           }
           
@@ -941,7 +939,8 @@
             .menu-item {
                 border-radius:18px;
                 padding:15px 12px;
-                background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+                background:linear-gradient(135deg,#202020 0%,#222 10%,#111 80%);
+              box-shadow: inset 2px 2px 2px #444, inset -2px -2px 2px #4a596e;
                 display:flex;
                 flex-direction:column;
                 gap:2px;
@@ -949,17 +948,28 @@
                 transition:0.2s ease;
             }
             
-            .menu-item:hover{
-                background:#2d2d2d;
-                transform:translateY(-3px);
+            .menu-item3 {
+                border-radius:18px;
+                padding:15px 12px;
+                background:transparent;
+                display:flex;
+                flex-direction:column;
+                gap:2px;
+                cursor:pointer;
+                transition:0.2s ease;
             }
-
-          .menu-item:active {
-              -webkit-tap-highlight-color: transparent; 
-              background-color:#52b8ff; 
-              color: white;
-              transform: scale(0.98);
-          }
+            
+            .menu-item:hover {
+                background: #2d2d2d;
+                color: white;
+            }
+            
+            .menu-item:active {
+                transform: scale(0.95);              -webkit-tap-highlight-color: transparent; 
+                  background-color:#007bd0; 
+                          color: white;
+                transition: transform 0.1s ease; 
+            }
           
           .label:active {
             color:#fff;
@@ -1053,6 +1063,7 @@
             align-items: center;
             justify-content: space-between;
                 background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+            box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
             width: 32vw; 
             flex-shrink: 0;
         }
@@ -1079,6 +1090,7 @@
     
         .btn-salin {
             background-color: #333;
+box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
             color: #fff;
             border: none;
             border-radius: 3vw;
@@ -1504,26 +1516,7 @@
         <button class="btn-save" onclick="downloadImage()">Simpan Gambar</button>
     </div>
 
-    <tm class="tommydev">Project development</tm>
-                <p style="font-size:12px; font-family:normal; color:#bbb;">situs dikembangkan diakses lewat browser</p>
-              </div>
-           <br>
-     <div class="thumb-container">
-        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" alt="Thumbnail">
-          </div>
-            <button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #fff; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold; background: #1e4846; margin-top: 12px;">
-                Demo <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
-            </button>
-        </div>
 
-        <tm class="tommydev">About</tm>
-         <p style="font-size: 12px; font-family:normal; color:#bbb;">Tentang Proyek ini
-        Situs ini adalah platform penyedia tools web dan ekstensi browser yang dibangun secara mandiri. Fokus utama menyediakan utilitas fungsional yang ringan, aman, dan efisien untuk membantu tugas teknis pengguna langsung dari browser. Semua tools di sini dikembangkan dengan standar kode yang bersih untuk memastikan performa maksimal.</p>
-       <br>
-       <div class="thumb-container">
-        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" alt="Thumbnail">
-      </div>
-    <br>
      <fr style="text-align: center; padding: 0px; background: #f4f4f4; font-size: 12px; text-align:left;">
         <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
         <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
