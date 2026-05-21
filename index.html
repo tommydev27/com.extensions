@@ -707,28 +707,29 @@
                 border-radius: 50%;
                 z-index: 2;
             }
-        
-            .main-circle15 {
-                position: absolute;
-                left: 1%;
-                width: 34%;
-                padding-bottom: 34%;
-                height: 0;
-                background: #bbb;
-                border-radius: 50%;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-                z-index: 3;
-            }
-        
-            .main-circle15::before {
-                content: '';
-                position: absolute;
-                inset: -3vw;
-                border-radius: 50%;
-        
-                pointer-events: none;
-                clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
-            }
+    .main-circle15 {
+        position: absolute;
+        left: 1%;
+        width: 38%;
+        padding-bottom: 34%;
+        height: 0;
+        background: #bbb;
+        border-radius: 50%;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        z-index: 3;
+        outline: 5px solid #666;
+        border: 2vw solid #333;
+    }
+
+    .main-circle15::before {
+        content: '';
+        position: absolute;
+        inset: -3vw;
+        border-radius: 50%;
+        border: 1vw solid #4f7cff;
+        pointer-events: none;
+        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+    }
         
             .circle-content15 {
                 position: absolute;
@@ -791,7 +792,7 @@
             .connector-line15 {
                 position: absolute;
                 height: 0.5vw;
-                background-color: red;
+                background-color: #bbb;
                 z-index: 1;
             }
             .connector-dot15 {
@@ -847,7 +848,7 @@
                 align-items: center;
                 z-index: 6;
                 font-size: 5vw;
-                color: white;
+                color: #e7e7e7;
                 flex-shrink: 0;
             }
         
@@ -923,14 +924,13 @@
             margin: 0 auto;
         }
         
-        
         @media (min-width: 768px) {
             .menu-grid {
                 max-width: 100%;
                 grid-template-columns: repeat(4, 1fr);
-                gap: 10px;
+                gap: 5px;
             }
-        }
+          }
 
             .menu-container{
                 display:grid;
@@ -938,15 +938,13 @@
                 gap:10px;
             }
             
-            .menu-item{
+            .menu-item {
                 border-radius:18px;
-                padding:8px 8px;
-                font-family:'Montserrat','Questrial',sans-serif;
+                padding:15px 12px;
                 background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
                 display:flex;
                 flex-direction:column;
-                gap:4px;
-            
+                gap:2px;
                 cursor:pointer;
                 transition:0.2s ease;
             }
@@ -962,9 +960,9 @@
               color: white;
               transform: scale(0.98);
           }
+          
           .label:active {
             color:#fff;
-            
           }
           
           .icon {
@@ -980,7 +978,7 @@
           .darkmode .label {
               color: red !important;
           }
-        /* Warna spesifik icon agar mirip gambar */
+
         .ic-dashboard { color: red; }
         .ic-dashb  { color: #8b5531; }
         .ic-messages { color: red; }
@@ -1048,14 +1046,13 @@
         }
         
         .card1 {
-            border: 2px solid #52b8ff;
             border-radius: 5vw;
             padding: 6vw 4vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            background: transparent;
+                background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
             width: 32vw; 
             flex-shrink: 0;
         }
@@ -1065,7 +1062,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #FF0066; 
+            color: #51c8ff; 
             text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
             font-size: 13vw;
             margin-bottom: 2vw;
@@ -1116,68 +1113,6 @@
         <div class="ag-wrapper">
             <div class="card">
         </div>
-
-  <div class="wrapper15">
-    <div class="main-circle15">
-            <span class="x9f619 x1n2onr6 x1ja2u2z xdt5ytf x2lah0s x193iq5w x6s0dn4 x78zum5 xl56j7k x1yztbdb" style="text-align: left; display: inline-block; margin-left: -3vw; margin-top:-3vw;">
-                  <canvas class="meta-animated-ring" width="200" height="200" style="width: 40vw; height: 40vw;"></canvas>
-                 </span>
-                 
-        <div class="circle-content15">
-          
-            <div class="main-title15">TOMMY WEB</div>
-            <div class="main-subtitle15">Extensions TOOLS</div>
-        </div>
-    </div>
-
-
-    <div class="menu-list15">
-        
-        <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="menu-item15 item-115">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
-            <div class="label-box15">Avatar Guard</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/cookie-token/" class="menu-item15 item-215">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
-            <div class="label-box15">cookie</div>
-        </a>
-
-        <a href="https://github.com/tommydev27/fb.lite-C-30/releases/download/v1.0/fblite.zip" class="menu-item15 item-315">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-gradient15"><i class="fas fa-clone"></i></div>
-            <div class="label-box15">lite clone</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/FakeID/" class="menu-item15 item-415">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-id-card"></i></div>
-            <div class="label-box15">iD card</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/unicode-char1/" class="menu-item15 item-515">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fab fa-at"></i></div>
-            <div class="label-box15">Unicode Teks</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/Download-vidio/" class="menu-item15 item-615">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
-            <div class="label-box15">Downld v-mp3</div>
-        </a>
-    </div>
-  </div>
-    </div>
-         </br>                          
   <div class="tommydev" style="display:flex; gap:10px;">
       Avatar Guard fb
   
@@ -1262,6 +1197,68 @@
            <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a> </div>
           </div>
        </div>
+  <div class="wrapper15">
+    <div class="main-circle15">
+            <span class="x9f619 x1n2onr6 x1ja2u2z xdt5ytf x2lah0s x193iq5w x6s0dn4 x78zum5 xl56j7k x1yztbdb" style="text-align: left; display: inline-block; margin-left: -3vw; margin-top:-3vw;">
+                  <canvas class="meta-animated-ring" width="200" height="200" style="width: 40vw; height: 40vw;"></canvas>
+                 </span>
+                 
+        <div class="circle-content15">
+          
+            <div class="main-title15">TOMMY WEB</div>
+            <div class="main-subtitle15">Extensions TOOLS</div>
+        </div>
+    </div>
+
+
+    <div class="menu-list15">
+        
+        <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="menu-item15 item-115">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
+            <div class="label-box15">Avatar Guard</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/cookie-token/" class="menu-item15 item-215">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
+            <div class="label-box15">cookie</div>
+        </a>
+
+        <a href="https://github.com/tommydev27/fb.lite-C-30/releases/download/v1.0/fblite.zip" class="menu-item15 item-315">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15 bg-gradient15"><i class="fas fa-clone"></i></div>
+            <div class="label-box15">lite clone</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/FakeID/" class="menu-item15 item-415">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-id-card"></i></div>
+            <div class="label-box15">iD card</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/unicode-char1/" class="menu-item15 item-515">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fab fa-at"></i></div>
+            <div class="label-box15">Unicode Teks</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/Download-vidio/" class="menu-item15 item-615">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
+            <div class="label-box15">Downld v-mp3</div>
+        </a>
+    </div>
+  </div>
+    </div>
+         </br>                          
+
   <tm class="tommydev">Tools list</tm>
     <div class="menu-grid" id="menuGrid">
         <div class="menu-item" onclick="handleKlik('Grup')">
@@ -1318,13 +1315,13 @@
     </div>
 
     <tm class="tommydev">Create id</tm>
-<div class="menu-container">
+    <div class="menu-container">
     <div class="menu-item" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
       <i class="fas fa-id-card"
          style="font-size:30px; margin-right:15px; flex-shrink:0; color:#0297dd;"
          aria-label="ID Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW INDONESIA</span>
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #eee; display: block;">ID CARD PW INDONESIA</span>
             <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
@@ -1335,7 +1332,7 @@
            aria-label="Sim Card"></i>
         
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">SIM</span>
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #eee; display: block;">SIM</span>
             <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
@@ -1346,7 +1343,7 @@
        aria-label="Sim Card"></i>
         
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW HINDI</span>
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #eee; display: block;">ID CARD PW HINDI</span>
             <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
