@@ -19,8 +19,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FK1EY26W82"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -28,1240 +28,9 @@
         gtag('js', new Date());
         gtag('config', 'G-FK1EY26W82');
     </script>
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Montserrat', 'Questrial', sans-serif;
-        -webkit-user-select: none;
-    }
-    body {
-        background: #000000;
-        color: #fff;
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        width: 100%;
-        height: 100vh;
-        overflow: auto;
-        display: flex;
-        justify-content: flex-start;
-        align-items: flex-start;
-        -webkit-user-select: none;
-    }
-    .container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        padding: 0px;
-        overflow: hidden;
-        -webkit-user-select: none;
-    }
-    .unique-controls {
-        position: relative;
-        padding: 15px;
-    }
-    .fas.fa-check-circle {
-        font-size: 20px;
-        color: #1b74e4;
-        margin-left: 5px;
-        border-radius: 50%;
-    }
-    .settings-card {
-        display: none;
-    }
-    h2 {
-        font-size: 15px;
-        color: #fff;
-        gap: 0;
-        margin-top: 10px;
-        text-align: left;
-    }
-    #profil-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 15px;
-    }
-    #profil-header button {
-        font-weight: bold;
-        border: none;
-        width: 100%;
-        padding: 8px;
-        border-radius: 7px;
-        cursor: pointer;
-    }
-    #profil-header button:hover {
-        background-color: #5ec7fb;
-    }
-    #scroll-buttons {
-        display: flex;
-        gap: 0;
-        padding: 10px;
-        width: 100%;
-        justify-content: space-between;
-    }
-    #scroll-buttons button {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        background: none;
-        border: none;
-        cursor: pointer;
-        font-family: Arial, sans-serif;
-        text-align: left;
-        -webkit-tap-highlight-color: transparent;
-    }
-    #scroll-buttons i {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 32px;
-        height: 32px;
-        background-color: #444;
-        border-radius: 50px;
-        font-size: 16px;
-        color: #fff;
-        transition: background-color 0.3s ease;
-    }
-    #profil-tabs {
-        display: flex;
-        justify-content: flex-start;
-        border-bottom: 1px solid #ddd;
-        gap: 15px;
-    }
-    #profil-tabs div {
-        padding: 10px 15px;
-        cursor: pointer;
-        font-weight: bold;
-        color: #fff;
-    }
-    #profil-tabs div.active {
-        border-bottom: 3px solid #1b74e4;
-        color: #1b74e4;
-    }
-    #profil-content {
-        padding: 15px;
-    }
-    #profil-content > div {
-        display: none;
-    }
-    #profil-content > div.active {
-        display: block;
-    }
-    p {
-        padding: 0;
-        color: #fff;
-        font-weight: 500;
-        margin: 5px 0;
-        text-align: left;
-    }
-    .bold {
-        font-size: 15px;
-        color: #fff;
-        font-weight: 600;
-    }
-    button {
-        border: none;
-        padding: 8px 12px;
-        color: white;
-        font-size: 12px;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    button:active {
-        transform: scale(0.98);
-    }
-    footer {
-        padding: 0px 0;
-        margin-top: 0px;
-        text-align: left;
-        font-family: 'Roboto', sans-serif;
-    }
-    .img-container img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        pointer-events: none;
-    }
-    .clicked-blink {
-        animation: pulse 0.3s ease;
-    }
-    @keyframes pulse {
-        0% { transform: scale(1); }
-        50% { transform: scale(0.90); }
-        100% { transform: scale(1); }
-    }
-    #uniqueSaveBtn {
-        padding: 10px 20px;
-        background-color: green;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        margin: 10px 0;
-        display: block;
-    }
-    #image-scroll-container {
-        width: 100%;
-        padding: 5px 8px;
-        overflow-x: auto;
-        border-radius: 15px;
-        display: flex;
-        scroll-behavior: smooth;
-    }
-    #image-wrapper {
-        display: flex;
-        gap: 10px;
-        margin-left: -4px;
-        -webkit-tap-highlight-color: transparent;
-        -webkit-touch-callout: none;
-        user-select: none;
-        outline: none;
-    }
-    .img-container {
-        border-radius: 10px;
-        overflow: hidden;
-        display: flex;
-        cursor: pointer;
-    }
-    .book-badge {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
-        width: 200px;
-        padding: 20px;
-        border: solid 1px #229cff;
-        border-radius: 15px;
-        height: 140px;
-        color: #ffff;
-        font-size: 14px;
-        text-decoration: none;
-        text-align: left;
-        box-sizing: border-box;
-        overflow: hidden;
-    }
-    .icon-badge {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 5px;
-        font-size: 40px;
-    }
-    .orange { color: #ffbc41; }
-    .green { color: #25D366; }
-    .blue { color: #1DA1F2; }
-    .pink { color: #E1306C; }
-    .light-blue { color: #4285F4; }
-    .grey { color: #444; }
-    .spotify { color: #1DB954; }
-    .text-wrap {
-        display: inline-block;
-        border-radius: 15px;
-        margin-top: 0px;
-        line-height: 2.9em;
-        font-weight: bold;
-        word-break: break-word;
-        white-space: normal;
-    }
-    .card { 
-        text-align: left; 
-    }
-    .card h1 { 
-        color: #fff;
-        font-size: 22px; 
-        font-weight: 800; 
-        display: flex; 
-        align-items: center; 
-        justify-content: flex-start; 
-        gap: 15px; 
-    }
-    .image-row {
-        display: flex;
-        justify-content: flex-start;
-        gap: 0vw;
-        margin: 10px 0;
-    }
-    .image-row img {
-        width: 100%;
-        border-radius: 12px;
-        object-fit: cover;
-    }
-    .card p { font-size: 14px; line-height: 1.5; margin-bottom: 25px; text-align: left; }
-    .btn { 
-        background-color: #333; 
-        color:#52baff !important; 
-        padding: 14px; 
-        text-decoration: none; 
-        border-radius: 8px; 
-        font-weight: bold; 
-        display: block; 
-        margin: 0 0 25px 0; 
-        font-size: 15px;
-        text-align: left;
-    }
-    @keyframes meta-move {
-        0% { border-radius: 50%; transform: rotate(0deg) scale(1); }
-        33% { border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%; transform: rotate(120deg) scale(1.05); }
-        66% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(240deg) scale(0.95); }
-        100% { border-radius: 50%; transform: rotate(360deg) scale(1); }
-    }
-    .meta-animated-ring {
-        background: conic-gradient(from 0deg, #4285F4, #9B51E0, #E91E63, #00D4FF, #4285F4);
-        mask: radial-gradient(circle, transparent 48%, black 49%);
-        -webkit-mask: radial-gradient(circle, transparent 48%, black 49%);
-        animation: meta-move 6s linear infinite;
-        display: inline-block;
-    }
-    .container27 {
-        display: flex;
-        align-items: flex-start;
-        gap: 4vw;
-    }
-.logo-wrapper27 {
-    border-radius: 50%;
-    border: solid 1vw #555;
-    width: 32vw;
-    height: 32vw;
-    flex-shrink: 0;
-    /* Tambahkan ini agar border tidak memakan/memotong ruang dalam SVG */
-    box-sizing: border-box; 
-}
-    .text-container27 {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5vw;
-    }
-    .subtitle27 {
-        color: #0084ff;
-        font-size: 3.5vw;
-        padding-top:3vw;
-        font-weight: 900;
-        align-items: left;
-        text-align: left;
-        font-family: 'Georgia', serif;
-        text-shadow: 0 0 15px rgba(0, 132, 255, 0.6);
-        margin: 0;
-    }
     
-    .status-bar2 {
-        display: flex;
-        padding: 1vw 0;
-        align-items: center;
-        justify-content: space-between;
-        width: 100%;
-        box-sizing: border-box;
-        position: relative;
-        z-index: 9999;
-    }
-
-    .status-dot2 {
-        display: inline-block;
-        width: 8px;
-        height: 8px;
-        border-radius: 50%;
-        background: #00ff88;
-        box-shadow: 0 0 10px #00ff88;
-        animation: pulse-dot 1.5s ease-in-out infinite;
-        vertical-align: middle;
-    }
-
-    @keyframes pulse-dot {
-        0%, 100% { 
-            opacity: 1; 
-            transform: scale(1);
-        }
-        50% { 
-            opacity: 0.2; 
-            transform: scale(0.9);
-        }
-    }
-
-    .status-text2 {
-        font-size: 10px;
-        color: #00ff88;
-        letter-spacing: 2vw;
-        text-transform: uppercase;
-        font-weight: bold;
-    }
-
-    .status-id2 {
-        font-size: 10px;
-        color: #aaaaaa;
-        letter-spacing: .1em;
-    }
-    
-    .btn-download-red {
-        display: block;
-        text-decoration: none;
-        text-align: center;
-        padding: 14px;
-        border-radius: 30px;
-        font-family: normal;
-        font-weight: 700;
-        font-size: 12px;
-        letter-spacing: .15em;
-        text-transform: uppercase;
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient(135deg, #333);
-        color: #fff !important;
-        margin-bottom: 25px;
-    }
-
-    .btn-download-red::after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -150%;
-        width: 50%;
-        height: 100%;
-        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transform: skewX(-25deg);
-        animation: slide-glow 3s infinite;
-    }
-
-    /* Jalur pergerakan cahaya */
-    @keyframes slide-glow {
-        0% { left: -150%; }
-        50% { left: 150%; }
-        100% { left: 150%; }
-    }
-</style>
-
-<div class="container">
-    <div class="unique-controls">
-          
-            <span class="bold">
-                <span style="font-size:15px;"><span style="color:gold;font-family:Orbitron,monospace;letter-spacing:1.03vw;text-transform:uppercase;font-weight:700;">TOMMY WEBSITE | </span>List-Tools ⚙️</span>
-            </span>
-        <div class="status-bar2">
-            <div style="display: flex; align-items: center;">
-                <span class="status-text2">SERVER ONLINE</span>
-                <span class="status-dot2"></span>
-            </div>
-            <span class="status-id2">BY TOMMY ID:2799</span>
-        </div>
-            <div id="toolbox-options">
-                <div class="ag-wrapper">
-                    <div class="card">
-                        <h1 style="          font-family: Orbitron;color: #bbb;">
-                            AVATAR GUAR FB 
-                            <i class="fab fa-facebook" style="color: #0866ff; background: white; border-radius: 50%; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 16px; margin-left: 10px;"></i>
-                            <span class="x9f619 x1n2onr6 x1ja2u2z xdt5ytf x2lah0s x193iq5w x6s0dn4 x78zum5 xl56j7k x1yztbdb" style="text-align: left; display: inline-block; margin-left: 10px; padding-top:5px;">
-                                <canvas class="meta-animated-ring" width="200" height="200" style="width: 25px; height: 25px;"></canvas>
-                            </span>
-                        </h1>
-
-                        <div class="image-row">
-                            <div class="container27">
-                               <div class="logo-wrapper27">
-
-<svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-        <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#e1e4ea"/>
-            <stop offset="60%" stop-color="#ced2db"/>
-            <stop offset="100%" stop-color="#404348"/>
-        </linearGradient>
-
-        <clipPath id="circle-clip">
-            <circle cx="130" cy="130" r="105"/>
-        </clipPath>
-    </defs>
-
-    <!-- Avatar -->
-    <g clip-path="url(#circle-clip)">
-        <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
-
-        <!-- Head -->
-        <circle cx="130" cy="95" r="38" fill="#60646d"/>
-
-        <!-- Body -->
-        <path
-            d="M35 235
-               C35 175 70 145 130 145
-               C190 145 225 175 225 235 Z"
-            fill="#60646d"/>
-    </g>
-
-    <!-- Shield -->
-    <g transform="translate(130 190) scale(0.32)">
-        
-        <!-- Outer outline -->
-        <path
-            d="M0 -58
-               C18 -45 38 -37 58 -35
-               L58 8
-               C58 46 32 76 0 96
-               C-32 76 -58 46 -58 8
-               L-58 -35
-               C-38 -37 -18 -45 0 -58 Z"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-
-        <!-- Inner shield -->
-        <path
-            d="M0 -40
-               C12 -30 25 -24 40 -22
-               L40 6
-               C40 30 22 52 0 66
-               C-22 52 -40 30 -40 6
-               L-40 -22
-               C-25 -24 -12 -30 0 -40 Z"
-            fill="#ffffff"/>
-    </g>
-</svg>
-
-
-                                </div>
-                <div class="text-container27">
-                    <h2 class="subtitle27">Facebook profile & page</h2>
-                                    
-            <p style="color:#bbb; font-weight:700; font-size:10px;">Aktifkan penjaga foto profil untuk mencegah orang lain mengambil tangkapan layar atau mengunduh foto profil Anda.</span>
-                                    <span style="font-size:12px; font-weight:600; display: block; margin:8px 0; color:#eee; padding-top:0px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
-            <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a> </div>
-             </div>
-        </div>
-<style>
-    .wrapper15 {
-        width: 100vw;
-        height: 80vw;
-        max-width: 150vw;
-        max-height: 150vw;
-        position: relative;
-        display: flex;
-        align-items: center;
-        margin-top:-50px ;
-    }
-
-    .arc-line15 {
-        position: absolute;
-        left: 30%;
-        top: 0%;
-        width: 40%;
-        height: 100%;
-        border: 2px solid #a0a0a0;
-        border-radius: 0 100% 100% 0 / 0 50% 50% 0;
-        border-left: none;
-        z-index: 1;
-    }
-
-    .dot-marker15 {
-        position: absolute;
-        width: 1.5%;
-        padding-bottom: 1.5%;
-        background-color: #666;
-        border-radius: 50%;
-        z-index: 2;
-    }
-    .dm-115 { top: 5.5%; left: 26.5%; }
-    .dm-215 { bottom: 5.5%; left: 26.5%; }
-
-    .main-circle15 {
-        position: absolute;
-        left: 2%;
-        width: 37%;
-        padding-bottom: 34%;
-        height: 0;
-        background: #bbb;
-        border-radius: 50%;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        z-index: 3;
-        outline: 5px solid #666;
-        border: 2vw solid #333;
-    }
-
-    .main-circle15::before {
-        content: '';
-        position: absolute;
-        inset: -3vw;
-        border-radius: 50%;
-        border: 1vw solid #4f7cff;
-        pointer-events: none;
-        clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
-    }
-
-    .circle-content15 {
-        position: absolute;
-        top: 0; left: 0; right: 0; bottom: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        padding: 2vw;
-    }
-
-    .main-title15 {
-        font-size: 3.5vw;
-        font-weight: 900;
-        color: #222;
-        letter-spacing: 0.5px;
-        border-top: 2px solid #222;
-        border-bottom: 1vw solid #222;
-        padding: 0.5vw 1vw;
-        line-height: 1.1;
-    }
-
-    .main-subtitle15 {
-        font-size: 1.3vw;
-        font-weight: bold;
-        color: #444;
-        text-transform: uppercase;
-        letter-spacing: 0.3vw;
-        margin-top: 1vw;
-    }
-
-    .menu-list15 {
-        position: absolute;
-        right: 0%;
-        width: 80%;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        z-index: 4;
-    }
-
-    .menu-item15 {
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        text-decoration: none;
-        color: inherit;
-        cursor: pointer;
-        -webkit-tap-highlight-color: transparent; 
-    }
-
-    .menu-item15:active {
-        transform: scale(0.97);
-        transition: transform 0.1s ease;
-    }
-
-    .connector-line15 {
-        position: absolute;
-        height: 0.5vw;
-        background-color: #bbb;
-        z-index: 1;
-    }
-    .connector-dot15 {
-        position: absolute;
-        width: 2vw;
-        height: 2vw;
-        background-color: #bbb;
-        border-radius: 50%;
-        z-index: 2;
-    }
-
-    .item-115 { transform: translateX(5%); }
-    .item-215 { transform: translateX(23%); }
-    .item-315 { transform: translateX(31%); }
-    .item-415 { transform: translateX(31%); }
-    .item-515 { transform: translateX(23%); }
-    .item-615 { transform: translateX(5%); }
-
-    .item-115:active { transform: translateX(5%) scale(0.97); }
-    .item-215:active { transform: translateX(23%) scale(0.97); }
-    .item-315:active { transform: translateX(31%) scale(0.97); }
-    .item-415:active { transform: translateX(31%) scale(0.97); }
-    .item-515:active { transform: translateX(23%) scale(0.97); }
-    .item-615:active { transform: translateX(5%) scale(0.97); }
-
-    .item-115 .connector-line15 { width: 9.5vw; left: -7.2vw; transform: rotate(-40deg); top: 8.3vw; }
-    .item-115 .connector-dot15 { left: -7.5vw; top: 11vw; }
-
-    .item-215 .connector-line15 { width: 7.5vw; left: -4.5vw; transform: rotate(-28deg); top: 5.5vw; }
-    .item-215 .connector-dot15 { left: -5vw; top: 6.5vw; }
-
-    .item-315 .connector-line15 { width: 5vw; left: -3vw; top: 4.5vw; }
-    .item-315 .connector-dot15 { left: -4.5vw; top: 3.8vw; }
-
-    .item-415 .connector-line15 { width: 5vw; left: -3vw; top: 4.5vw; }
-    .item-415 .connector-dot15 { left: -4.5vw; top: 3.8vw; }
-
-    .item-515 .connector-line15 { width: 7vw; left: -5.5vw; transform: rotate(25deg); top: 4vw; }
-    .item-515 .connector-dot15 { left: -5.5vw; top: 2vw; }
-
-    .item-615 .connector-line15 { width: 14vw; left: -9vw; transform: rotate(30deg); top: 0vw; }
-    .item-615 .connector-dot15 { left: -9vw; top: -4.3vw; }
-
-    .icon-box15 {
-        width: 10vw;
-        height: 10vw;
-        background: #111;
-        border-radius: 50%;
-        border: 0.5vw solid #52b8ff;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 6;
-        font-size: 5vw;
-        color: white;
-        flex-shrink: 0;
-    }
-
-    .label-box15 {
-        background-color: #333;
-        color: ##fff;
-        padding: 1vw 1vw 1vw 
-        8vw;
-        border-radius: 0 8vw 8vw 0;
-        margin-left: -5vw;
-        z-index: 5;
-        font-weight: bold;
-        font-size: 3vw;
-        white-space: nowrap;
-        text-transform: uppercase;
-        box-shadow: 2px 3px 5px rgba(0,0,0,0.15);
-        width: 40vw;
-    }
-    
-.menu-item15:active .icon-box15 {
-    background: #ff0000 !important;
-    border-color: #ffcccc !important;
-}
-
-.menu-item15:active .label-box15 {
-    background-color: #d60000 !important;
-}
-
-.menu-item15:active .connector-line15,
-.menu-item15:active .connector-dot15 {
-    background-color: #ff0000 !important;
-}
-    
-    
-</style>
-
-<div class="wrapper15">
-    <div class="arc-line15"></div>
-    <div class="dot-marker15 dm-115"></div>
-    <div class="dot-marker15 dm-215"></div>
-
-    <div class="main-circle15">
-        <div class="circle-content15">
-            <div class="main-title15">TOMMY WEB</div>
-            <div class="main-subtitle15">Extensions TOOLS</div>
-        </div>
-    </div>
-
-
-    <div class="menu-list15">
-        
-        <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="menu-item15 item-115">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
-            <div class="label-box15">Avatar Guard</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/Download-vidio/" class="menu-item15 item-215">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
-            <div class="label-box15">Downld v-mp3</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/Multi-Keyboartm/" class="menu-item15 item-315">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-gradient15"><i class="fas fa-keyboard"></i></div>
-            <div class="label-box15">Keyboard</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/FakeID/" class="menu-item15 item-415">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-id-card"></i></div>
-            <div class="label-box15">iD card</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/unicode-char1/" class="menu-item15 item-515">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fab fa-at"></i></div>
-            <div class="label-box15">Unicode Teks</div>
-        </a>
-
-        <a href="https://tommydev27.github.io/code-runner/" class="menu-item15 item-615">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-white-icon15"><i class="fas fa-play"></i></div>
-            <div class="label-box15">code run</div>
-        </a>
-    </div>
-  </div>
-    </div>
-         </br>                          
-
-        
- <fr style="text-align: center; padding: 0px; background: #f4f4f4; font-size: 12px; text-align:left;">
-    <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
-    <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
-    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Contact Admin</a></p>
-</fr>
-<br>
-    <style>
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr); 
-            gap: 12px;
-            line-height: 1.5;
-            font-weight: 500;
-            width: 100%;
-            max-width: 500px; 
-            margin: 0 auto;
-        }
-        
-        
-        @media (min-width: 768px) {
-            .menu-grid {
-                max-width: 100%;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
-            }
-        
-            .icon {
-                font-size: 32px;
-            }
-        }
-
-        .menu-item {
-            border-radius: 10px;
-            font-weight:500;
-            padding:20px 15px;
-            font-family: 'Montserrat', 'Questrial', sans-serif;
-            background-color:#222;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            width: 100%;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-           }
-
-          .menu-item:active {
-              -webkit-tap-highlight-color: transparent; 
-              background-color: #007bff; 
-              color: white;
-              transform: scale(0.98);
-          }
-          .label:active {
-            color:#fff;
-            
-          }
-          
-          .icon {
-              font-size: 30px;
-          }
-
-          .label {
-              font-size: 14px;
-              font-weight:600;
-              color:#fff;
-          }
-
-          .darkmode .label {
-              color: red !important;
-          }
-        /* Warna spesifik icon agar mirip gambar */
-        .ic-dashboard { color: red; }
-        .ic-dashb  { color: #8b5531; }
-        .ic-messages { color: red; }
-        .ic-groups { color: #e07229; }
-        .ic-friends { color:#1ed0ff; }
-        .ic-reels { color: #d7a268; }
-        .ic-market { color: #1877f2; }
-        .ic-pages { color: #f7b928; }
-        .ic-saved { color: #9333ea; }
-        .ic-memories { color: #c7c70a; }
-        .ic-birthday { color: #c7c70a; }
-        .ic-events { color: #f35e59; }
-        .ic-meta { color: #0064e0; }
-        .ic-home { color: #f3a033; }
-        .ic-ig { color: #e1306c; }
-        
-        .menu-g{
-          display:flex;
-          gap:10px;
-        }
-        
-        .labl{
-          font-weight:700;
-          display: block;
-          font-size:13px;
-          padding-top:20px;
-          margin: 0 auto;
-        }
-        
-        .shield-icon { 
-            width: 60px; 
-            height: 60px; 
-            fill: #1877F2; 
-            margin: 0 auto;
-        }
-      
-        .logo-icon { font-size: 50px;  color:#cdbca0; border-radius: 50px; 
-          
-        }
-        
-        .menu-item1 {
-            border-radius: 18px;
-            padding:20px 0;
-            color:#1ed0ff;
-            font-family: 'Montserrat', 'Questrial', sans-serif;
-            background-color:#333;
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            width: 100%;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-        }
-
-         .menu-item1:active {
-           -webkit-tap-highlight-color: transparent; 
-            background-color: #007bff;
-            color: white;
-            transform: scale(0.98);
-          }
-          
-        .thumb-container {
-            width: 100%;
-            aspect-ratio: 16 / 16;
-            background: #0f172a;
-            border-radius: 8px;
-            margin-bottom: 5px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .thumbnail { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block;
-        }
-    </style>
-</head>
-<body>
-<div class="menu-g">
-    <div class="menu-item1" onclick="window.location.href='https://github.com/tommydev27/fb.lite-C-30/releases/download/v1.0/fblite.zip'" style="cursor: pointer;">
-        <div class="shield-icon">
-            <svg viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.97 4.43c-.16.09-.33.14-.5.14s-.34-.05-.5-.14l-7.97-4.43c-.32-.17-.53-.5-.53-.88V7.5c0-.38.21-.71.53-.88l7.97-4.43c.16-.09.33-.14.5-.14s.34.05.5.14l7.97 4.43c.32.17.53.5.53.88v9zM12 4.15L6.04 7.5 12 10.85l5.96-3.35L12 4.15z"></path></svg>
-        </div>
-        <span class="labl" style="user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; pointer-events: none;">
-            FB Lite Clone
-            <p></p><p style="font-size:11px; font-weight:300; text-align:center; margin:0;">Download ZIP</p>
-        </span>
-    </div>
-
-        
-        <div class="menu-item1" onclick="handleKlik('cookietoken')">
-            <div class="shield-icon"><span class="logo-icon"><i class='fas fa-cookie-bite'></i></span></div>
-            <span class="labl">Cokie Token  <p style="font-size:11px; font-weight:300; text-align:center;">Download ZIP</p></span>
-        </div>
-      </div>
-      <br>
-
-
-<tm style="font-size:15px; font-weight:700; display: block; margin:8px 0;color:#bbb;">Coba lainnya</tm>
-<tm style="font-size:15px; font-weight:500; display: block; margin:8px 0;color:#bbb;">bagian 2. Cukup klik gunakan langsung dari antar muka tampa login 
-    </tm>
-<div class="menuu" style="padding: 10px 0; display: flex; flex-direction: column; gap: 12px;">
-    
-    <div class="menu-item" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
-        <img src="https://i.postimg.cc/BvNbgH3j/Screenshot-20260329-105239.jpg" 
-             style="width: 120px; height: auto; border-radius: 10px; margin-right: 15px; border: 2px solid #ccc; flex-shrink: 0;" alt="ID Card">
-        
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW INDONESIA</span>
-            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
-        </div>
-    </div>
-
-    <div class="menu-item" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
-        <img src="https://i.postimg.cc/jS4PpWK2/Screenshot-20260329-105356.jpg" 
-             style="width: 120px; height: auto; border-radius: 10px; margin-right: 15px; border: 2px solid #ccc; flex-shrink: 0;" alt="Sim Card">
-        
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">SIM</span>
-            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
-        </div>
-    </div>
-
-    <div class="menu-item" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
-        <img src="https://i.postimg.cc/DydSZtNc/Screenshot-20260329-105121.jpg" 
-             style="width: 120px; height: auto; border-radius: 10px; margin-right: 15px; border: 2px solid #ccc; flex-shrink: 0;" alt="Sim Card">
-        
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW HINDI</span>
-            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
-        </div>
-    </div>
-
-</div>
-        
-    <div class="menu-grid" id="menuGrid">
-
-        <div class="menu-item" onclick="handleKlik('Grup')">
-            <i class="fas fa-keyboard icon ic-groups"></i>
-            <span class="label">Multi Keyboard</span>
-        </div>
-
-        <div class="menu-item" onclick="handleKlik('Teman1')">
-            <i class="fas fa-ad icon ic-friends"></i>
-            <span class="label">Unicode symbols</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Teman2')">
-            <i class="fab fa-rockrms icon ic-friends"></i>
-            <span class="label">Penghitung Teks</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Teman3')">
-            <i class="fas fa-play icon ic-friends"></i>
-            <span class="label">Code Run Icon</span>
-        </div>
-
-        <div class="menu-item" onclick="handleKlik('Teman')">
-            <i class="fas fa-at icon ic-friends"></i>
-            <span class="label">Unicode Explorer</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Reels')">
-            <i class="fab fa-atlassian icon ic-friends"></i>
-            <span class="label">Generator Text</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Marketplace')">
-            <i class="fab fa-facebook icon ic-friends"></i>
-            <span class="label">Font Name Fb</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Halaman')">
-            <i class="fab fa-fonticons-fi icon ic-friends"></i>
-            <span class="label">Seni Font teks</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Tersimpan')">
-            <i class="fas fa-barcode icon ic-friends"></i>
-            <span class="label">Glitch Text</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Acara')">
-            <i class="fa-solid fa-book-open icon ic-friends"></i>
-            <span class="label">Blok Dua Catatan</span>
-        </div>
-        
-        
-        <div class="menu-item" onclick="handleKlik('Kenangan')">
-            <i class="fas fa-image icon ic-memories"></i>
-            <span class="label">Image Art</span>
-        </div>
-        <div class="menu-item" onclick="handleKlik('Ulang Tahun')">
-            <i class="fas fa-chalkboard-teacher icon ic-birthday"></i>
-            <span class="label">Generator Gambar</span>
-        </div>
-    </div>
-
-    <script>
-        function handleKlik(namaMenu) {
-            const daftarLink = {
-                "avatar": "https://tommydev27.github.io/tools-data-tm/",
-                "cookietoken": "https://tommydev27.github.io/cookie-token/",
-                "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
-                "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
-                "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
-                "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
-                "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
-               "Teman1": "https://tommydev27.github.io/unicode-char1/",
-                "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
-                "Teman3": "https://tommydev27.github.io/code-runner/",
-                "Reels": "https://tommydev27.github.io/generatorascii/",
-                "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
-                "Halaman": "https://tommydev27.github.io/tm-textGz/",
-                "Tersimpan": "https://tommydev27.github.io/glitch-text/",
-                "Kenangan": "https://tommydev27.github.io/Tm-generator-texs/",
-                "Ulang Tahun": "https://tommydev27.github.io/tommy.website3/",
-                "Acara": "https://tommydev27.github.io/Blok-dua-catatan-koreksi-catatan-/",
-                "Verifikasi Meta": "https://tommydev27.github.io/brt-foice/",
-                "Beranda": "https://www.facebook.com/",
-
-                "Instagram Lite": "https://www.instagram.com/"
-            };
-            const urlTujuan = daftarLink[namaMenu];
-            if (urlTujuan) {
-                window.open(urlTujuan, '_blank');
-            } else {
-                alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
-            }
-        }
-    </script>
-<br>
-    <div id="container">
-
-
-<style>
-    .logo-container1 {
-        position: sticky;
-        top: 0;
-        z-index: 1000;
-        width: 100%;
-        padding: 1vw 0;
-        font-size: 7vw;
-        font-weight: bold;
-        display: flex;
-        gap: 2vw;
-        justify-content: left;
-    }
-
-    .logo-icon1 { color: #00CCFF; } 
-    .logo-text { color: #FF0066; }
-
-    .kontainer-scroll {
-        width: 100%;
-        overflow-x: auto;
-        overflow-y: hidden;
-        padding: 4vw 0;
-    }
-
-    .grid {
-        display: flex;
-        flex-direction: row;
-        align-items: stretch; /* Memastikan semua kartu sama tinggi */
-        gap: 4vw;
-        width: max-content;
-        padding: 0 0vw;
-    }
-
-    .card {
-          padding: 1vw 0vw;
-    }
-    
-    .card1 {
-        border: 2px solid #6b85ff;
-        border-radius: 5vw;
-        padding: 6vw 4vw;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between; /* Tombol akan selalu di paling bawah */
-        background: transparent;
-        width: 32vw; 
-        flex-shrink: 0;
-    }
-
-    .icon-box {
-        height: 15vw; /* Kunci tinggi area ikon agar sejajar */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #FF0066; 
-        text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
-        font-size: 13vw;
-        margin-bottom: 2vw;
-    }
-
-    .unicode {
-        color: #d4e157;
-        font-size: 3vw;
-        margin-bottom: 4vw;
-        font-weight: bold;
-        text-transform: uppercase;
-        text-align: center;
-    }
-
-    .btn-salin {
-        background-color: #333;
-        color: #fff;
-        border: none;
-        border-radius: 3vw;
-        padding: 3vw 0;
-        width: 100%;
-        font-size: 3.5vw;
-        font-weight: bold;
-        cursor: pointer;
-        display: block;
-    }
-
-    .btn-salin:active { opacity: 0.7; }
-</style>
-
-<div class="logo-container1">
-    <span class="logo-icon1">ICON</span>
-    <span class="logo-text">LOGO</span>
-</div>
-
-<div class="kontainer-scroll">
-    <div class="grid" id="mainGrid"></div>
-</div>
-
-<script>
-    const icons = ['𔓙', '𓃭', '𔒒', '𔑪', '𓄁', '𓄇', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𔑫', '𓊿', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
-    const grid = document.getElementById('mainGrid');
-
-    icons.forEach(symbol => {
-        const codePoint = symbol.codePointAt(0).toString(16).toUpperCase();
-        const autoUnicode = `U+${codePoint.padStart(4, '0')}`;
-        const card = document.createElement('div');
-        card.className = 'card1';
-        card.innerHTML = `
-            <div class="icon-box">${symbol}</div>
-            <div class="unicode">${autoUnicode}</div>
-            <button class="btn-salin" onclick="copyText('${symbol}', this)">Salin</button>
-        `;
-        grid.appendChild(card);
-    });
-
-    function copyText(text, btn) {
-        navigator.clipboard.writeText(text);
-        const originalText = btn.innerText;
-        btn.innerText = 'OK';
-        setTimeout(() => { btn.innerText = originalText; }, 800);
-    }
-</script>
-<br>
-
-<div class="image-row1">
-    <style>
-        .responsive-iframe {
-            width: 100%; 
-            aspect-ratio: 5 / 5;
-            height: auto;
-            border-radius: 8px;
-        }
-    </style>
-<tm style="font-size:15px; font-weight:700; display: block; margin:8px 0;color:#bbb;">Tutorial pasang penjaga poto profil
-    </tm>
-    <iframe class="responsive-iframe"
-        src="https://www.youtube.com/embed/Aj-tyu3qAVk" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
-</div>
-</br>
-<tm style="font-size:15px; font-weight:700; display: block; margin:8px 0;color:#bbb;">Download vidio / mp3 tiktok
-    </tm>
-   <div class="thumb-container">
-        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/SKQygMmM/20260502-205124.jpg" alt="Thumbnail">
-    </div>
-            <button id="generate" onclick="location.href='https://tommydev27.github.io/Download-vidio/';" style="color: #eee; border: none; border-radius: 8px; font-size:3vw; padding: 8px; cursor: pointer; font-weight: bold; background:#333; margin-top: 12px;">
-                Download vidio Klik Disini <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
-            </button>
-            
-<br>
-  </br>
-  
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lobster&family=Bebas+Neue&family=Caveat&family=Shrikhand&family=Graduate&family=Sigmar&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lobster&family=Bebas+Neue&family=Caveat&family=Shrikhand&family=Graduate&family=Sigmar&display=swap" rel="stylesheet">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Almendra:wght@700&display=swap');
 
@@ -1421,13 +190,13 @@
               transform: scale(1.1);
           }
 
-.controls {
-    margin-top: 2vw;
-    display: flex;
-    gap: 2vw;
-    align-items: center;
-    justify-content: center;
-}
+        .controls {
+            margin-top: 2vw;
+            display: flex;
+            gap: 2vw;
+            align-items: left;
+            justify-content: left;
+        }
 
         button {
             padding: 3vw 11.8vw;
@@ -1440,7 +209,7 @@
         }
 
         .btn-reset { background: #444; color: white; }
-        .btn-save { background: #2563eb; color: white; }
+        .btn-save { background: #52b8ff; color: white; }
         
           button {
               transition: transform 0.1s ease;
@@ -1494,12 +263,1195 @@
               white-space: pre-wrap;
               display: inline-block;
           }
-    </style>
 
-<tm style="font-size:15px; font-weight:700; display: block; margin:8px 0;color:#bbb;"> Buat Story gambar
-    </tm>
-    <div id="download-wrapper">
-        <div id="capture-area">
+          * {
+              margin: 0;
+              padding: 0;
+              box-sizing: border-box;
+              font-family: 'Montserrat', 'Questrial', sans-serif;
+              -webkit-user-select: none;
+          }
+          body {
+              background: #000000;
+              color: #fff;
+              background-size: cover;
+              background-position: center;
+              background-repeat: no-repeat;
+              width: 100%;
+              height: 100vh;
+              overflow: auto;
+              display: flex;
+              justify-content: flex-start;
+              align-items: flex-start;
+              -webkit-user-select: none;
+          }
+          .container {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              padding: 0px;
+              overflow: hidden;
+              -webkit-user-select: none;
+          }
+          .unique-controls {
+              position: relative;
+              padding: 15px;
+          }
+          .fas.fa-check-circle {
+              font-size: 20px;
+              color: #52b8ff;
+              margin-left: 5px;
+              border-radius: 50%;
+          }
+          .settings-card {
+              display: none;
+          }
+          h2 {
+              font-size: 15px;
+              color: #fff;
+              gap: 0;
+              margin-top: 10px;
+              text-align: left;
+          }
+          #profil-header {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 10px 15px;
+          }
+          #profil-header button {
+              font-weight: bold;
+              border: none;
+              width: 100%;
+              padding: 8px;
+              border-radius: 7px;
+              cursor: pointer;
+          }
+          #profil-header button:hover {
+              background-color: #52b8ff;
+          }
+          #scroll-buttons {
+              display: flex;
+              gap: 0;
+              padding: 10px;
+              width: 100%;
+              justify-content: space-between;
+          }
+          #scroll-buttons button {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              background: none;
+              border: none;
+              cursor: pointer;
+              font-family: Arial, sans-serif;
+              text-align: left;
+              -webkit-tap-highlight-color: transparent;
+          }
+          #scroll-buttons i {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: 32px;
+              height: 32px;
+              background-color: #444;
+              border-radius: 50px;
+              font-size: 16px;
+              color: #fff;
+              transition: background-color 0.3s ease;
+          }
+          #profil-tabs {
+              display: flex;
+              justify-content: flex-start;
+              border-bottom: 1px solid #ddd;
+              gap: 15px;
+          }
+          #profil-tabs div {
+              padding: 10px 15px;
+              cursor: pointer;
+              font-weight: bold;
+              color: #fff;
+          }
+          #profil-tabs div.active {
+              border-bottom: 3px solid #52b8ff;
+              color: #52b8ff;
+          }
+          #profil-content {
+              padding: 15px;
+          }
+          #profil-content > div {
+              display: none;
+          }
+          #profil-content > div.active {
+              display: block;
+          }
+          p {
+              padding: 0;
+              color: #fff;
+              font-weight: 500;
+              margin: 5px 0;
+              text-align: left;
+          }
+          .bold {
+              font-size: 15px;
+              color: #fff;
+              font-weight: 600;
+          }
+          button {
+              border: none;
+              padding: 8px 12px;
+              color: white;
+              font-size: 12px;
+              cursor: pointer;
+              border-radius: 5px;
+          }
+          button:active {
+              transform: scale(0.98);
+          }
+          footer {
+              padding: 0px 0;
+              margin-top: 0px;
+              text-align: left;
+              font-family: 'Roboto', sans-serif;
+          }
+          .img-container img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              pointer-events: none;
+          }
+          .clicked-blink {
+              animation: pulse 0.3s ease;
+          }
+          @keyframes pulse {
+              0% { transform: scale(1); }
+              50% { transform: scale(0.90); }
+              100% { transform: scale(1); }
+          }
+          #uniqueSaveBtn {
+              padding: 10px 20px;
+              background-color: green;
+              color: white;
+              font-weight: bold;
+              border: none;
+              border-radius: 5px;
+              cursor: pointer;
+              margin: 10px 0;
+              display: block;
+          }
+          #image-scroll-container {
+              width: 100%;
+              padding: 5px 8px;
+              overflow-x: auto;
+              border-radius: 15px;
+              display: flex;
+              scroll-behavior: smooth;
+          }
+          #image-wrapper {
+              display: flex;
+              gap: 10px;
+              margin-left: -4px;
+              -webkit-tap-highlight-color: transparent;
+              -webkit-touch-callout: none;
+              user-select: none;
+              outline: none;
+          }
+          .img-container {
+              border-radius: 10px;
+              overflow: hidden;
+              display: flex;
+              cursor: pointer;
+          }
+          .book-badge {
+              display: flex;
+              flex-direction: column;
+              align-items: left;
+              justify-content: center;
+              width: 200px;
+              padding: 20px;
+              border: solid 1px #52b8ff;
+              border-radius: 15px;
+              height: 140px;
+              color: #ffff;
+              font-size: 14px;
+              text-decoration: none;
+              text-align: left;
+              box-sizing: border-box;
+              overflow: hidden;
+          }
+          .icon-badge {
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              gap: 5px;
+              font-size: 40px;
+          }
+          .orange { color: #ffbc41; }
+          .green { color: #25D366; }
+          .blue { color: #52b8ff; }
+          .pink { color: #E1306C; }
+          .light-blue { color: #52b8ff; }
+          .grey { color: #444; }
+          .spotify { color: #1DB954; }
+          .text-wrap {
+              display: inline-block;
+              border-radius: 15px;
+              margin-top: 0px;
+              line-height: 2.9em;
+              font-weight: bold;
+              word-break: break-word;
+              white-space: normal;
+          }
+          .card { 
+              text-align: left; 
+          }
+          .card h1 { 
+              color: #fff;
+              font-size: 22px; 
+              font-weight: 800; 
+              display: flex; 
+              align-items: center; 
+              justify-content: flex-start; 
+              gap: 15px; 
+          }
+          .image-row {
+              display: flex;
+              justify-content: flex-start;
+              gap: 0vw;
+              margin: 10px 0;
+          }
+          .image-row img {
+              width: 100%;
+              border-radius: 12px;
+              object-fit: cover;
+          }
+          .card p { font-size: 14px; line-height: 1.5; margin-bottom: 25px; text-align: left; }
+          .btn { 
+              background-color: #333; 
+              color:#52baff !important; 
+              padding: 14px; 
+              text-decoration: none; 
+              border-radius: 8px; 
+              font-weight: bold; 
+              display: block; 
+              margin: 0 0 25px 0; 
+              font-size: 15px;
+              text-align: left;
+          }
+          @keyframes meta-move {
+              0% { border-radius: 50%; transform: rotate(0deg) scale(1); }
+              33% { border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%; transform: rotate(120deg) scale(1.05); }
+              66% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(240deg) scale(0.95); }
+              100% { border-radius: 50%; transform: rotate(360deg) scale(1); }
+          }
+          .meta-animated-ring {
+              background: conic-gradient(from 0deg, #4285F4, #9B51E0, #ff0f0f, #00D4FF, #4285F4);
+              mask: radial-gradient(circle, transparent 10%, black 10%);
+              -webkit-mask: radial-gradient(circle, transparent 65%, black 65%);
+              animation: meta-move 6s linear infinite;
+              display: inline-block;
+          }
+          .container27 {
+              display: flex;
+              align-items: flex-start;
+              gap: 4vw;
+          }
+          .logo-wrapper27 {
+              border-radius: 50%;
+              border: solid 1vw #555;
+              width: 32vw;
+              height: 32vw;
+              flex-shrink: 0;
+              box-sizing: border-box; 
+          }
+          .text-container27 {
+              display: flex;
+              flex-direction: column;
+              gap: 0.5vw;
+          }
+          .subtitle27 {
+              color: #52b8ff;
+              font-size: 4vw;
+              padding-top:0vw;
+              font-weight: 900;
+              align-items: left;
+              text-align: left;
+              font-family: 'Georgia', serif;
+              text-shadow: 0 0 15px rgba(0, 132, 255, 0.6);
+              margin: 0;
+          }
+          
+          .status-bar2 {
+              display: flex;
+              padding: 1vw 0;
+              align-items: center;
+              justify-content: space-between;
+              width: 100%;
+              box-sizing: border-box;
+              position: relative;
+              z-index: 9999;
+          }
+      
+          .status-dot2 {
+              display: inline-block;
+              width: 8px;
+              height: 8px;
+              margin-left: 5px;
+              border-radius: 50%;
+              background: #00ff88;
+              box-shadow: 0 0 10px #00ff88;
+              animation: pulse-dot 1.5s ease-in-out infinite;
+              vertical-align: middle;
+          }
+      
+          @keyframes pulse-dot {
+              0%, 100% { 
+                  opacity: 1; 
+                  transform: scale(1);
+              }
+              50% { 
+                  opacity: 0.2; 
+                  transform: scale(0.9);
+              }
+          }
+      
+          .status-text2 {
+              font-size: 10px;
+              color: #52b8ff;
+              letter-spacing: 1vw;
+              text-transform: uppercase;
+              font-weight: bold;
+          }
+      
+          .status-id2 {
+              font-size: 10px;
+              color: #aaaaaa;
+              letter-spacing: .1em;
+          }
+          
+          .btn-download-red {
+              display: block;
+              text-decoration: none;
+              text-align: center;
+              padding: 10px 8px;
+              border-radius: 30px;
+              font-family: normal;
+              font-weight: 700;
+              font-size: 12px;
+              letter-spacing: .15em;
+              text-transform: uppercase;
+              position: relative;
+              overflow: hidden;
+              background:linear-gradient(135deg,#202020 0,#404040 60%,#202020 100%);
+              color: #fff !important;
+              margin-bottom: 25px;
+              -webkit-tap-highlight-color: transparent;
+              outline:none;
+              user-select:none;
+            }
+            
+            .btn-download-red:hover{
+                background:#e00000;
+                transform:translateY(-2px);
+                box-shadow:0 4px 12px rgba(255,0,0,0.3);
+            }
+            
+            .btn-download-red:active{
+                transform:scale(0.96);
+            }
+            
+            .btn-download-red:focus{
+                outline:none;
+                box-shadow:none;
+            }
+          .btn-download-red::after {
+              content: '';
+              position: absolute;
+              top: 0;
+              left: -150%;
+              width: 50%;
+              height: 100%;
+              background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
+              transform: skewX(-25deg);
+              animation: slide-glow 3s infinite;
+          }
+      
+          /* Jalur pergerakan cahaya */
+          @keyframes slide-glow {
+              0% { left: -150%; }
+              50% { left: 150%; }
+              100% { left: 150%; }
+          }
+
+            .wrapper15 {
+                width: 100vw;
+                height: 80vw;
+                max-width: 150vw;
+                max-height: 150vw;
+                position: relative;
+                display: flex;
+                align-items: center;
+        
+            }
+        
+            .arc-line15 {
+        
+            }
+        
+            .dot-marker15 {
+                position: absolute;
+                width: 1.5%;
+                padding-bottom: 1.5%;
+                background-color: #666;
+                border-radius: 50%;
+                z-index: 2;
+            }
+        
+            .main-circle15 {
+                position: absolute;
+                left: 1%;
+                width: 34%;
+                padding-bottom: 34%;
+                height: 0;
+                background: #bbb;
+                border-radius: 50%;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+                z-index: 3;
+            }
+        
+            .main-circle15::before {
+                content: '';
+                position: absolute;
+                inset: -3vw;
+                border-radius: 50%;
+        
+                pointer-events: none;
+                clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
+            }
+        
+            .circle-content15 {
+                position: absolute;
+                top: 0; left: 0; right: 0; bottom: 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding: 2vw;
+            }
+        
+            .main-title15 {
+                font-size: 3.5vw;
+                font-weight: 900;
+                color: #222;
+                letter-spacing: 0.5px;
+                border-top: 1px solid #555;
+                border-bottom: 1px solid #555;
+                padding: 0.5vw 1vw;
+                line-height: 1.1;
+            }
+        
+            .main-subtitle15 {
+                font-size: 1.3vw;
+                font-weight: bold;
+                color: #444;
+                text-transform: uppercase;
+                letter-spacing: 0.1vw;
+                margin-top: 1vw;
+            }
+        
+            .menu-list15 {
+                position: absolute;
+                right: -5%;
+                width: 80%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                z-index: 4;
+            }
+        
+            .menu-item15 {
+                display: flex;
+                align-items: center;
+                position: relative;
+                width: 100%;
+                text-decoration: none;
+                color: inherit;
+                cursor: pointer;
+                -webkit-tap-highlight-color: transparent; 
+            }
+        
+            .menu-item15:active {
+                transform: scale(0.97);
+                transition: transform 0.1s ease;
+            }
+        
+            .connector-line15 {
+                position: absolute;
+                height: 0.5vw;
+                background-color: red;
+                z-index: 1;
+            }
+            .connector-dot15 {
+                position: absolute;
+                width: 2vw;
+                height: 2vw;
+                background-color: #bbb;
+                border-radius: 50%;
+                z-index: 2;
+            }
+        
+            .item-115 { transform: translateX(5%); }
+            .item-215 { transform: translateX(23%); }
+            .item-315 { transform: translateX(31%); }
+            .item-415 { transform: translateX(31%); }
+            .item-515 { transform: translateX(23%); }
+            .item-615 { transform: translateX(5%); }
+        
+            .item-115:active { transform: translateX(5%) scale(0.97); }
+            .item-215:active { transform: translateX(23%) scale(0.97); }
+            .item-315:active { transform: translateX(31%) scale(0.97); }
+            .item-415:active { transform: translateX(31%) scale(0.97); }
+            .item-515:active { transform: translateX(23%) scale(0.97); }
+            .item-615:active { transform: translateX(5%) scale(0.97); }
+        
+            .item-115 .connector-line15 { width: 9.5vw; left: -7.2vw; transform: rotate(-40deg); top: 8.3vw; }
+            .item-115 .connector-dot15 { left: -7.5vw; top: 11vw; }
+        
+            .item-215 .connector-line15 { width: 7.5vw; left: -4.5vw; transform: rotate(-28deg); top: 5.5vw; }
+            .item-215 .connector-dot15 { left: -5vw; top: 6.5vw; }
+        
+            .item-315 .connector-line15 { width: 5vw; left: -3vw; top: 4.5vw; }
+            .item-315 .connector-dot15 { left: -4.5vw; top: 3.8vw; }
+        
+            .item-415 .connector-line15 { width: 5vw; left: -3vw; top: 4.5vw; }
+            .item-415 .connector-dot15 { left: -4.5vw; top: 3.8vw; }
+        
+            .item-515 .connector-line15 { width: 7vw; left: -5.5vw; transform: rotate(25deg); top: 4vw; }
+            .item-515 .connector-dot15 { left: -5.5vw; top: 2vw; }
+        
+            .item-615 .connector-line15 { width: 14vw; left: -9vw; transform: rotate(30deg); top: 0vw; }
+            .item-615 .connector-dot15 { left: -9vw; top: -4.3vw; }
+        
+            .icon-box15 {
+                width: 10vw;
+                height: 10vw;
+                background: #111;
+                border-radius: 50%;
+                border: 0.5vw solid #52b8ff;
+                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 6;
+                font-size: 5vw;
+                color: white;
+                flex-shrink: 0;
+            }
+        
+          .label-box15{
+              position: relative; 
+              overflow: hidden;   
+              background: linear-gradient(135deg,#202020 0%,#404040 60%,#202020 100%);
+              color: #fff;
+              
+              padding: 1vw 1vw 1vw 10vw;
+              border-radius: 0 8vw 8vw 0;
+              margin-left: -8vw;
+              
+              z-index: 1;
+              font-weight: bold;
+              font-size: 3vw;
+              white-space: nowrap;
+              text-transform: uppercase;
+              
+              box-shadow: 2px 3px 5px rgba(0,0,0,0.15);
+              width: 40vw;
+          }
+          
+          .label-box15::after{
+              content:'';
+              position:absolute;
+              top:0;
+              left:-150%;
+              width:60%;
+              height:100%;
+              
+              background: linear-gradient(
+                  to right,
+                  transparent,
+                  rgba(255,255,255,0.35),
+                  transparent
+              );
+          
+              transform: skewX(-25deg);
+              animation: slide-glow 6s infinite;
+              z-index: 0;
+              pointer-events:none;
+          }
+          
+          @keyframes slide-glow{
+              0% { left:-150%; }
+              50% { left:150%; }
+              100% { left:150%; }
+          }
+            
+        .menu-item15:active .icon-box15 {
+            background: #ff0000 !important;
+            border-color: #ffcccc !important;
+        }
+        
+        .menu-item15:active .label-box15 {
+            background-color: #d60000 !important;
+        }
+        
+        .menu-item15:active .connector-line15,
+        .menu-item15:active .connector-dot15 {
+            background-color: #ff0000 !important;
+        }
+            
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 5px;
+            line-height: 1.5;
+            font-weight: ;
+            width: 100%;
+            max-width: 500px; 
+            margin: 0 auto;
+        }
+        
+        
+        @media (min-width: 768px) {
+            .menu-grid {
+                max-width: 100%;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 10px;
+            }
+        }
+
+            .menu-container{
+                display:grid;
+                grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+                gap:10px;
+            }
+            
+            .menu-item{
+                border-radius:18px;
+                padding:8px 8px;
+                font-family:'Montserrat','Questrial',sans-serif;
+                background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+                display:flex;
+                flex-direction:column;
+                gap:4px;
+            
+                cursor:pointer;
+                transition:0.2s ease;
+            }
+            
+            .menu-item:hover{
+                background:#2d2d2d;
+                transform:translateY(-3px);
+            }
+
+          .menu-item:active {
+              -webkit-tap-highlight-color: transparent; 
+              background-color:#52b8ff; 
+              color: white;
+              transform: scale(0.98);
+          }
+          .label:active {
+            color:#fff;
+            
+          }
+          
+          .icon {
+              font-size: 20px;
+          }
+
+          .label {
+              font-size: 10px;
+              font-weight:600;
+              color:#bbb;
+          }
+
+          .darkmode .label {
+              color: red !important;
+          }
+        /* Warna spesifik icon agar mirip gambar */
+        .ic-dashboard { color: red; }
+        .ic-dashb  { color: #8b5531; }
+        .ic-messages { color: red; }
+        .ic-groups { color: #e07229; }
+        .ic-friends { color:#52b8ff; }
+        .ic-reels { color: #d7a268; }
+        .ic-market { color: #52b8ff; }
+        .ic-pages { color: #f7b928; }
+        .ic-saved { color: #9333ea; }
+        .ic-memories { color: #c7c70a; }
+        .ic-birthday { color: #c7c70a; }
+        .ic-events { color: #f35e59; }
+        .ic-meta { color: #52b8ff; }
+        .ic-home { color: #f3a033; }
+        .ic-ig { color: #e1306c; }
+        
+        .thumb-container {
+            width: 100%;
+            aspect-ratio: 16 / 16;
+            background: #0f172a;
+            border-radius: 8px;
+            margin-bottom: 5px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .thumbnail { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            display: block;
+        }
+        
+        .logo-container1 {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            width: 100%;
+            font-size: 4vw;
+            font-weight: bold;
+            display: flex;
+            gap: 2vw;
+            justify-content: left;
+        }
+    
+        .kontainer-scroll {
+            width: 100%;
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding: 1vw 0;
+        }
+    
+        .grid {
+            display: flex;
+            flex-direction: row;
+            align-items: stretch; /* Memastikan semua kartu sama tinggi */
+            gap: 4vw;
+            width: max-content;
+            padding: 0 0vw;
+        }
+    
+        .card {
+              padding: 1vw 0vw;
+        }
+        
+        .card1 {
+            border: 2px solid #52b8ff;
+            border-radius: 5vw;
+            padding: 6vw 4vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            background: transparent;
+            width: 32vw; 
+            flex-shrink: 0;
+        }
+    
+        .icon-box {
+            height: 15vw; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FF0066; 
+            text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
+            font-size: 13vw;
+            margin-bottom: 2vw;
+        }
+    
+        .unicode {
+            color: #d4e157;
+            font-size: 3vw;
+            margin-bottom: 4vw;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    
+        .btn-salin {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 3vw;
+            padding: 3vw 0;
+            width: 100%;
+            font-size: 3.5vw;
+            font-weight: bold;
+            cursor: pointer;
+            display: block;
+        }
+        .btn-salin:active { opacity: 0.7; }
+        
+        .tommydev { font-size:15px; font-weight:500; display: block; margin:8px 0;color:#52b8ff;font-family:Orbitron; 
+        }
+  </style>
+
+<body>
+  <div class="container">
+    <div class="unique-controls">
+          
+            <span class="bold">
+                <span style="font-size:15px;"><span style="color:gold;font-family:Orbitron,monospace;letter-spacing:1.03vw;text-transform:uppercase;font-weight:700;">TOMMY WEBSITE | </span>TOOLS ⚙️</span>
+            </span>
+        <div class="status-bar2">
+            <div style="display: flex; align-items: center;">
+                <span class="status-text2">SERVER ONLINE</span>
+                <span class="status-dot2"></span>
+            </div>
+            <span class="status-id2">BY TOMMY ID:2799</span>
+        </div>
+       <div id="toolbox-options">
+        <div class="ag-wrapper">
+            <div class="card">
+        </div>
+
+  <div class="wrapper15">
+    <div class="main-circle15">
+            <span class="x9f619 x1n2onr6 x1ja2u2z xdt5ytf x2lah0s x193iq5w x6s0dn4 x78zum5 xl56j7k x1yztbdb" style="text-align: left; display: inline-block; margin-left: -3vw; margin-top:-3vw;">
+                  <canvas class="meta-animated-ring" width="200" height="200" style="width: 40vw; height: 40vw;"></canvas>
+                 </span>
+                 
+        <div class="circle-content15">
+          
+            <div class="main-title15">TOMMY WEB</div>
+            <div class="main-subtitle15">Extensions TOOLS</div>
+        </div>
+    </div>
+
+
+    <div class="menu-list15">
+        
+        <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="menu-item15 item-115">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
+            <div class="label-box15">Avatar Guard</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/cookie-token/" class="menu-item15 item-215">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
+            <div class="label-box15">cookie</div>
+        </a>
+
+        <a href="https://github.com/tommydev27/fb.lite-C-30/releases/download/v1.0/fblite.zip" class="menu-item15 item-315">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15 bg-gradient15"><i class="fas fa-clone"></i></div>
+            <div class="label-box15">lite clone</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/FakeID/" class="menu-item15 item-415">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-id-card"></i></div>
+            <div class="label-box15">iD card</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/unicode-char1/" class="menu-item15 item-515">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fab fa-at"></i></div>
+            <div class="label-box15">Unicode Teks</div>
+        </a>
+
+        <a href="https://tommydev27.github.io/Download-vidio/" class="menu-item15 item-615">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
+            <div class="label-box15">Downld v-mp3</div>
+        </a>
+    </div>
+  </div>
+    </div>
+         </br>                          
+  <div class="tommydev" style="display:flex; gap:10px;">
+      Avatar Guard fb
+  
+      <i class="fab fa-facebook"
+         style="color:#0866ff;
+                background:white;
+                letter-spacing: 0px;
+                border-radius:50%;
+                width:18px;
+                height:18px;
+                display:flex;
+                margin-top:0px;
+                align-items:center;
+                justify-content:center;
+                font-size:16px;">
+            </i>
+        
+        </div>
+
+    </h1>
+   <div class="image-row">
+       <div class="container27">
+         <div class="logo-wrapper27">
+
+    <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#e1e4ea"/>
+                <stop offset="60%" stop-color="#ced2db"/>
+                <stop offset="100%" stop-color="#404348"/>
+            </linearGradient>
+    
+            <clipPath id="circle-clip">
+                <circle cx="130" cy="130" r="105"/>
+            </clipPath>
+        </defs>
+
+    <g clip-path="url(#circle-clip)">
+        <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
+
+        <circle cx="130" cy="95" r="38" fill="#60646d"/>
+
+        <path
+            d="M35 235
+               C35 175 70 145 130 145
+               C190 145 225 175 225 235 Z"
+            fill="#60646d"/>
+      </g>
+
+    <g transform="translate(130 190) scale(0.32)">
+        
+        <path
+            d="M0 -58
+               C18 -45 38 -37 58 -35
+               L58 8
+               C58 46 32 76 0 96
+               C-32 76 -58 46 -58 8
+               L-58 -35
+               C-38 -37 -18 -45 0 -58 Z"
+            fill="none"
+            stroke="#ffffff"
+            stroke-width="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"/>
+
+        <path
+            d="M0 -40
+               C12 -30 25 -24 40 -22
+               L40 6
+               C40 30 22 52 0 66
+               C-22 52 -40 30 -40 6
+               L-40 -22
+               C-25 -24 -12 -30 0 -40 Z"
+            fill="#ffffff"/>
+          </g>
+      </svg>
+
+     </div>
+       <div class="text-container27">
+          <h2 class="subtitle27">Facebook profile & page</h2>
+           <span style="font-size:11px; font-weight:600; display: block; margin:3px 0; color:#eee; padding-top:0px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
+           <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a> </div>
+          </div>
+       </div>
+  <tm class="tommydev">Tools list</tm>
+    <div class="menu-grid" id="menuGrid">
+        <div class="menu-item" onclick="handleKlik('Grup')">
+            <i class="fas fa-keyboard icon ic-groups"></i>
+            <span class="label">Multi Keyboard</span>
+        </div>
+
+        <div class="menu-item" onclick="handleKlik('Teman1')">
+            <i class="fas fa-ad icon ic-friends"></i>
+            <span class="label">Unicode symbols</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Teman2')">
+            <i class="fab fa-rockrms icon ic-friends"></i>
+            <span class="label">Penghitung Teks</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Teman3')">
+            <i class="fas fa-play icon ic-friends"></i>
+            <span class="label">Code Run Icon</span>
+        </div>
+
+        <div class="menu-item" onclick="handleKlik('Teman')">
+            <i class="fas fa-at icon ic-friends"></i>
+            <span class="label">Unicode Explorer</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Reels')">
+            <i class="fab fa-atlassian icon ic-friends"></i>
+            <span class="label">Generator Text</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Marketplace')">
+            <i class="fab fa-facebook icon ic-friends"></i>
+            <span class="label">Font Name Fb</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Halaman')">
+            <i class="fab fa-fonticons-fi icon ic-friends"></i>
+            <span class="label">Seni Font teks</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Tersimpan')">
+            <i class="fas fa-barcode icon ic-friends"></i>
+            <span class="label">Glitch Text</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Acara')">
+            <i class="fa-solid fa-book-open icon ic-friends"></i>
+            <span class="label">Blok Dua Catatan</span>
+        </div>
+        
+        <div class="menu-item" onclick="handleKlik('Kenangan')">
+            <i class="fas fa-image icon ic-memories"></i>
+            <span class="label">Image Art</span>
+        </div>
+        <div class="menu-item" onclick="handleKlik('Ulang Tahun')">
+            <i class="fas fa-chalkboard-teacher icon ic-birthday"></i>
+            <span class="label">Generator IMG</span>
+        </div>
+    </div>
+
+    <tm class="tommydev">Create id</tm>
+<div class="menu-container">
+    <div class="menu-item" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
+      <i class="fas fa-id-card"
+         style="font-size:30px; margin-right:15px; flex-shrink:0; color:#0297dd;"
+         aria-label="ID Card"></i>
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW INDONESIA</span>
+            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
+        <i class="fas fa-id-card"
+           style="font-size:30px; margin-right:15px; flex-shrink:0; color:#d30101;"
+           aria-label="Sim Card"></i>
+        
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">SIM</span>
+            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
+        </div>
+    </div>
+
+    <div class="menu-item" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; padding: 10px; align-items: center; border-radius: 15px;">
+        <i class="fas fa-id-card"
+       style="font-size:30px; margin-right:15px; flex-shrink:0; color:#03a987;"
+       aria-label="Sim Card"></i>
+        
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <span class="label" style="font-weight: bold; font-size: 16px; color: #1ed0ff; display: block;">ID CARD PW HINDI</span>
+            <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
+        </div>
+    </div>
+  </div>
+
+    <div class="logo-container1">
+          <tm class="tommydev">Icon Logo </tm>
+    </div>
+    
+    <div class="kontainer-scroll">
+        <div class="grid" id="mainGrid"></div>
+    </div>
+
+    <script>
+        function handleKlik(namaMenu) {
+            const daftarLink = {
+                "avatar": "https://tommydev27.github.io/tools-data-tm/",
+                "cookietoken": "https://tommydev27.github.io/cookie-token/",
+                "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
+                "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
+                "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
+                "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
+                "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
+               "Teman1": "https://tommydev27.github.io/unicode-char1/",
+                "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
+                "Teman3": "https://tommydev27.github.io/code-runner/",
+                "Reels": "https://tommydev27.github.io/generatorascii/",
+                "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
+                "Halaman": "https://tommydev27.github.io/tm-textGz/",
+                "Tersimpan": "https://tommydev27.github.io/glitch-text/",
+                "Kenangan": "https://tommydev27.github.io/Tm-generator-texs/",
+                "Ulang Tahun": "https://tommydev27.github.io/tommy.website3/",
+                "Acara": "https://tommydev27.github.io/Blok-dua-catatan-koreksi-catatan-/",
+                "Verifikasi Meta": "https://tommydev27.github.io/brt-foice/",
+                "Beranda": "https://www.facebook.com/",
+
+                "Instagram Lite": "https://www.instagram.com/"
+            };
+            const urlTujuan = daftarLink[namaMenu];
+            if (urlTujuan) {
+                window.open(urlTujuan, '_blank');
+            } else {
+                alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
+            }
+        }
+    </script>
+  <script>
+    const icons = ['𔓙', '𓃭', '𔒒', '𔑪', '𓄁', '𓄇', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𔑫', '𓊿', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
+    const grid = document.getElementById('mainGrid');
+
+    icons.forEach(symbol => {
+        const codePoint = symbol.codePointAt(0).toString(16).toUpperCase();
+        const autoUnicode = `U+${codePoint.padStart(4, '0')}`;
+        const card = document.createElement('div');
+        card.className = 'card1';
+        card.innerHTML = `
+            <div class="icon-box">${symbol}</div>
+            <div class="unicode">${autoUnicode}</div>
+            <button class="btn-salin" onclick="copyText('${symbol}', this)">Salin</button>
+        `;
+        grid.appendChild(card);
+    });
+
+    function copyText(text, btn) {
+        navigator.clipboard.writeText(text);
+        const originalText = btn.innerText;
+        btn.innerText = 'OK';
+        setTimeout(() => { btn.innerText = originalText; }, 800);
+    }
+</script>
+
+        <style>
+            .responsive-iframe {
+                width: 100%; 
+                aspect-ratio: 5 / 5;
+                height: auto;
+                border-radius: 8px;
+            }
+        </style>
+    <div id="container">
+      <div class="image-row1">
+        <tm class="tommydev">Tutorial pasang penjaga poto profil
+            </tm>
+          <iframe class="responsive-iframe"
+              src="https://www.youtube.com/embed/Aj-tyu3qAVk" 
+              title="YouTube video player" 
+              frameborder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin" 
+              allowfullscreen>
+          </iframe>
+      </div>
+      <tm class="tommydev">Download vidio / mp3 tiktok
+          </tm>
+         <div class="thumb-container">
+              <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/SKQygMmM/20260502-205124.jpg" alt="Thumbnail">
+          </div>
+            <button id="generate" onclick="location.href='https://tommydev27.github.io/Download-vidio/';" style="color: #eee; border: none; border-radius: 8px; font-size:3vw; padding: 8px; cursor: pointer; font-weight: bold; background:#333; margin-top: 12px;">
+                Download vidio Klik Disini <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
+            </button>
+
+       <tm class="tommydev"> Buat Story gambar
+            </tm>
+            <div id="download-wrapper">
+                <div id="capture-area">
             <div class="profile-section">
                 <label for="file-input" class="avatar-container">
                     <img id="profile-pic" src="https://i.postimg.cc/XJ4ZRQqY/Screenshot-20260504-125634-jpg-(1).png" class="avatar-img" alt="avatar">
@@ -1512,35 +1464,33 @@
                 </div>
             </div>
 
-<div class="quote-container">
-    <div class="quote-title" contenteditable="true" id="title-input">JUDUL QUOTE</div>
-    
-    <div class="quote-text" contenteditable="true" id="quote-input" style="font-size:7vw;">EDIT POTO PROFIL JUDUL ISI TEKS & BAGIAN TEKS KECIL KLIK BAGIAN INI</div>
-    
-    <div class="watermark">tommy-app.com  🐞</div>
-          </div>
+    <div class="quote-container">
+        <div class="quote-title" contenteditable="true" id="title-input">JUDUL QUOTE</div>
+        
+        <div class="quote-text" contenteditable="true" id="quote-input" style="font-size:7vw;">EDIT POTO PROFIL JUDUL ISI TEKS & BAGIAN TEKS KECIL KLIK BAGIAN INI</div>
+        
+        <div class="watermark">tommy-app.com  🐞</div>
+              </div>
+            </div>
         </div>
-    </div>
-
-<div class="style-controls">
-    <select id="font-select" onchange="changeFontStyle()">
-        <option value="'Almendra', serif">Gaya Almendra</option>
-        <option value="'UnifrakturMaguntia', cursive">Gaya Gothic</option>
-        <option value="'Arial', sans-serif">Gaya Clean (Arial)</option>
-        <option value="'Monospace'">Gaya Kode</option>
-        
-        <!-- Tambahan dari Gambar -->
-        <option value="'Shrikhand', display">Gaya Shrikhand</option>
-        <option value="'Graduate', serif">Gaya Graduate</option>
-        <option value="'Sigmar', display">Gaya Sigmar</option>
-        
-        <!-- Tambahan Pilihan -->
-        <option value="'Playfair Display', serif">Gaya Elegan</option>
-        <option value="'Lobster', cursive">Gaya Artistik</option>
-        <option value="'Bebas Neue', sans-serif">Gaya Tegas</option>
-        <option value="'Caveat', cursive">Gaya Tulis Tangan</option>
-        <option value="'Georgia', serif">Gaya Klasik</option>
-    </select>
+    
+    <div class="style-controls">
+        <select id="font-select" onchange="changeFontStyle()">
+            <option value="'Almendra', serif">Gaya Almendra</option>
+            <option value="'UnifrakturMaguntia', cursive">Gaya Gothic</option>
+            <option value="'Arial', sans-serif">Gaya Clean (Arial)</option>
+            <option value="'Monospace'">Gaya Kode</option>
+            
+            <option value="'Shrikhand', display">Gaya Shrikhand</option>
+            <option value="'Graduate', serif">Gaya Graduate</option>
+            <option value="'Sigmar', display">Gaya Sigmar</option>
+            
+            <option value="'Playfair Display', serif">Gaya Elegan</option>
+            <option value="'Lobster', cursive">Gaya Artistik</option>
+            <option value="'Bebas Neue', sans-serif">Gaya Tegas</option>
+            <option value="'Caveat', cursive">Gaya Tulis Tangan</option>
+            <option value="'Georgia', serif">Gaya Klasik</option>
+        </select>
 
         <select id="size-select" onchange="changeFontSize()">
             <option value="5vw">Kecil</option>
@@ -1557,8 +1507,32 @@
         <button class="btn-save" onclick="downloadImage()">Simpan Gambar</button>
     </div>
 
+    <tm class="tommydev">Project development</tm>
+                <p style="font-size:12px; font-family:normal; color:#bbb;">situs dikembangkan diakses lewat browser</p>
+              </div>
+           <br>
+     <div class="thumb-container">
+        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" alt="Thumbnail">
+          </div>
+            <button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #fff; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold; background: #1e4846; margin-top: 12px;">
+                Demo <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
+            </button>
+        </div>
+
+        <tm class="tommydev">About</tm>
+         <p style="font-size: 12px; font-family:normal; color:#bbb;">Tentang Proyek ini
+        Situs ini adalah platform penyedia tools web dan ekstensi browser yang dibangun secara mandiri. Fokus utama menyediakan utilitas fungsional yang ringan, aman, dan efisien untuk membantu tugas teknis pengguna langsung dari browser. Semua tools di sini dikembangkan dengan standar kode yang bersih untuk memastikan performa maksimal.</p>
+       <br>
+       <div class="thumb-container">
+        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" alt="Thumbnail">
+      </div>
+    <br>
+     <fr style="text-align: center; padding: 0px; background: #f4f4f4; font-size: 12px; text-align:left;">
+        <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
+        <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
+        <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Contact Admin</a></p>
+    </fr>
 <script>
-// Fungsi Ganti Foto
 function loadPhoto(event) {
     const reader = new FileReader();
     reader.onload = function() {
@@ -1579,20 +1553,16 @@ function changeFontSize() {
 }
 
 function resetPage() {
-    // Reset Isi
     const quote = document.getElementById('quote-input');
     quote.innerText = "Jangan dengerin omongan orang yang gak ngasih kita makan.";
     quote.style.fontFamily = "'Almendra', serif";
     quote.style.fontSize = "7vw";
 
-    // Reset Judul Baru
     const title = document.getElementById('title-input');
     title.innerText = "JUDUL QUOTE";
-    
-    // ... sisa kode reset lainnya ...
-}
+  }
 
-function downloadImage() {
+  function downloadImage() {
     const area = document.getElementById('download-wrapper');
     const titleInput = document.getElementById('title-input');
     const quoteInput = document.getElementById('quote-input');
@@ -1606,7 +1576,6 @@ function downloadImage() {
                 const clonedTitle = clonedDoc.getElementById('title-input');
                 const clonedQuote = clonedDoc.getElementById('quote-input');
                 
-                // Pastikan spasi terjaga di kedua elemen saat disimpan
                 clonedTitle.innerText = titleInput.innerText;
                 clonedTitle.style.whiteSpace = "pre-wrap";
                 
@@ -1622,29 +1591,6 @@ function downloadImage() {
     });
 }
 </script>
-
-
-
-<tm style="font-size:15px; font-weight:700; display: block; margin:8px 0;color:#bbb;">Project development</tm>
-            <p style="font-size:12px; font-family:normal; color:#bbb;">situs dikembangkan diakses lewat browser</p>
-        </div>
-        <br>
-   <div class="thumb-container">
-        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/BQ2wW4dt/3IeW1x2.png" alt="Thumbnail">
-    </div>
-            <button id="generate" onclick="location.href='https://tommydev27.github.io/tommy.website-demo/';" style="color: #fff; border: none; border-radius: 8px; font-size: 15px; padding: 8px; cursor: pointer; font-weight: bold; background: #1e4846; margin-top: 12px;">
-                Demo <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
-            </button>
-        </div>
-
-<tm style="font-size:15px; font-weight:700; display: block; margin:8px 0;color:#bbb;">About</tm>
-            <p style="font-size: 12px; font-family:normal; color:#bbb;">Tentang Proyek ini
-Situs ini adalah platform penyedia tools web dan ekstensi browser yang dibangun secara mandiri. Fokus utama menyediakan utilitas fungsional yang ringan, aman, dan efisien untuk membantu tugas teknis pengguna langsung dari browser. Semua tools di sini dikembangkan dengan standar kode yang bersih untuk memastikan performa maksimal.</p>
-            <br>
-   <div class="thumb-container">
-        <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/7Z6xNq8p/3zsxf-St-md.png" alt="Thumbnail">
-    </div>
-
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
