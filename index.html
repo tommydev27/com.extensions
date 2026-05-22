@@ -1355,61 +1355,63 @@ if (urlTujuan) {
 </script>
   <tm class="tommydev">Tools list</tm>
 <div class="menu-grid" id="menuGrid">
-    <div class="menu-item" onclick="handleKlik('Grup')">
+    <!-- Nama fungsi diubah menjadi handleLinkBaru -->
+    <div class="menu-item" onclick="handleLinkBaru('Grup')">
         <i class="fas fa-keyboard icon ic-groups"></i>
         <span class="label">Multi Keyboard</span>
     </div>
 
-    <div class="menu-item" onclick="handleKlik('Teman1')">
+    <div class="menu-item" onclick="handleLinkBaru('Teman1')">
         <i class="fas fa-ad icon ic-friends"></i>
         <span class="label">Code symbols</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Teman2')">
+    <div class="menu-item" onclick="handleLinkBaru('Teman2')">
         <i class="fab fa-behance icon ic-friends"></i>
         <span class="label">Jumlah Teks</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Teman3')">
+    <div class="menu-item" onclick="handleLinkBaru('Teman3')">
         <i class="fas fa-play icon ic-friends"></i>
         <span class="label">Code Run Icon</span>
     </div>
 
-    <div class="menu-item" onclick="handleKlik('Teman')">
+    <div class="menu-item" onclick="handleLinkBaru('Teman')">
         <i class="fas fa-at icon ic-friends"></i>
         <span class="label">Unicode Explor</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Reels')">
+    <div class="menu-item" onclick="handleLinkBaru('Reels')">
         <i class="fab fa-atlassian icon ic-friends"></i>
         <span class="label">Generator Text</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Marketplace')">
+    <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
         <i class="fab fa-facebook icon ic-friends"></i>
         <span class="label">Font Name Fb</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Halaman')">
+    <div class="menu-item" onclick="handleLinkBaru('Halaman')">
         <i class="fab fa-fonticons-fi icon ic-friends"></i>
         <span class="label">Seni Font teks</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Tersimpan')">
+    <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
         <i class="fas fa-barcode icon ic-friends"></i>
         <span class="label">Glitch Text</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Acara')">
+    <div class="menu-item" onclick="handleLinkBaru('Acara')">
         <i class="fa-solid fa-book-open icon ic-friends"></i>
         <span class="label">Blok 2 Catatan</span>
     </div>
     
-    <div class="menu-item" onclick="handleKlik('Kenangan')">
+    <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
         <i class="fas fa-image icon ic-memories"></i>
         <span class="label">Image Art</span>
     </div>
-    <div class="menu-item" onclick="handleKlik('Ulang Tahun')">
+    <div class="menu-item" onclick="handleLinkBaru('Ulang Tahun')">
         <i class="fas fa-chalkboard-teacher icon ic-birthday"></i>
         <span class="label">Generator IMG</span>
     </div>
 </div>
 
 <script>
-function handleKlik(namaMenu) {
+// Nama fungsi diganti agar tidak menimpa fungsi handleKlik milik iframe
+function handleLinkBaru(namaMenu) {
     const daftarLink = {
         "avatar": "https://tommydev27.github.io/tools-data-tm/",
         "cookietoken": "https://tommydev27.github.io/cookie-token/",
@@ -1438,7 +1440,6 @@ function handleKlik(namaMenu) {
     }
 }
 </script>
-
     <div class="logo-container1">
           <tm class="tommydev">Icon Logo </tm>
     </div>
@@ -1763,35 +1764,6 @@ document.addEventListener('DOMContentLoaded', () => {
     startAutoScroll();
 });
 </script>
-    <script>
-        function handleKlik(namaMenu) {
-            const daftarLink = {
-                "avatar": "https://tommydev27.github.io/tools-data-tm/",
-                "cookietoken": "https://tommydev27.github.io/cookie-token/",
-                "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
-                "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
-               "Teman1": "https://tommydev27.github.io/unicode-char1/",
-                "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
-                "Teman3": "https://tommydev27.github.io/code-runner/",
-                "Reels": "https://tommydev27.github.io/generatorascii/",
-                "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
-                "Halaman": "https://tommydev27.github.io/tm-textGz/",
-                "Tersimpan": "https://tommydev27.github.io/glitch-text/",
-                "Kenangan": "https://tommydev27.github.io/Tm-generator-texs/",
-                "Ulang Tahun": "https://tommydev27.github.io/tommy.website3/",
-                "Acara": "https://tommydev27.github.io/Blok-dua-catatan-koreksi-catatan-/",
-                "Verifikasi Meta": "https://tommydev27.github.io/brt-foice/",
-                "Beranda": "https://www.facebook.com/",
 
-                "Instagram Lite": "https://www.instagram.com/"
-            };
-            const urlTujuan = daftarLink[namaMenu];
-            if (urlTujuan) {
-                window.open(urlTujuan, '_blank');
-            } else {
-                alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
-            }
-        }
-    </script>
 </body>
 </html>
