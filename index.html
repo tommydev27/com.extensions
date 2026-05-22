@@ -918,12 +918,11 @@
             line-height: 1.5;
             font-weight: ;
             width: 100%;
-            max-width: 500px; 
             margin: 0 auto;
-               border-top: 2px solid #333;    
-                border-bottom: 2px solid #333;
-                padding: 15px 0px;
-                border-radius: 20px;
+            border-top: 2px solid #333;    
+            border-bottom: 2px solid #333;
+            padding: 15px 0px;
+            border-radius: 20px;
         }
         
         @media (min-width: 768px) {
@@ -952,13 +951,12 @@
                 transition:0.2s ease;
             }
             .menu-item3:hover {
-                background: #2d2d2d;
                 color: white;
             }
                         
             .menu-item3:active {
                 transform: scale(0.95);
-                background-color: #007bd0; 
+                background-color: #007bd099; 
                 color: white;
                 transition: transform 0.1s ease; 
                 -webkit-tap-highlight-color: transparent; 
@@ -1134,7 +1132,7 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
     <div class="unique-controls">
           
             <span class="bold">
-                <span style="font-size:15px;"><span style="color:gold;font-family:Orbitron,monospace;letter-spacing:1.03vw;text-transform:uppercase;font-weight:700;">TOMMY WEBSITE | </span>Tools-List ⚙️</span>
+                <span style="font-size:15px;"><span style="color:gold;font-family:Orbitron,monospace;letter-spacing:1.03vw;text-transform:uppercase;font-weight:700;">TOMMY WEBSITE | </span>Tools ⚙️</span>
             </span>
         <div class="status-bar2">
             <div style="display: flex; align-items: center;">
@@ -1287,41 +1285,91 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
     </div>
   </div>
     </div>
-         </br>                          
+     </br>                          
     <tm class="tommydev">Create id</tm>
-    <div class="menu-container">
-    <div class="menu-item3" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px;">
-      <i class="fas fa-id-card"
-         style="font-size:40px; margin-right:15px; flex-shrink:0; color:#0297dd;"
-         aria-label="ID Card"></i>
+
+  <div class="menu-container">
+  <div id="wrapper-frame" style="display: none; margin: 0px; width: 330px; height: 390px; border-radius: 25px; overflow: hidden; position: relative;">
+    <iframe id="konten-frame" src="" style="width: 333.33%; height: 333.33%; border: none; transform: scale(0.3); transform-origin: top left; position: absolute; top: 0; left: 0;"></iframe>
+
+  </div>
+    <div class="menu-item3" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
+      <i class="fas fa-id-card" style="font-size:40px; margin-right:15px; flex-shrink:0; color:#0297dd;" aria-label="ID Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
             <span class="label" style=" font-size: 16px; color: #eee; display: block;">ID card</span>
             <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
 
-    <div class="menu-item3" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px;">
-        <i class="fas fa-id-card"
-           style="font-size:40px; margin-right:15px; flex-shrink:0; color:#d30101;"
-           aria-label="Sim Card"></i>
-        
+    <div class="menu-item3" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
+        <i class="fas fa-id-card" style="font-size:40px; margin-right:15px; flex-shrink:0; color:#d30101;" aria-label="Sim Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
             <span class="label" style="font-size: 16px; color: #eee; display: block;">Sim ID</span>
             <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
 
-    <div class="menu-item3" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px;">
-        <i class="fas fa-id-card"
-       style="font-size:40px; margin-right:15px; flex-shrink:0; color:#03a987;"
-       aria-label="Sim Card"></i>
-        
+    <div class="menu-item3" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
+        <i class="fas fa-id-card" style="font-size:40px; margin-right:15px; flex-shrink:0; color:#03a987;" aria-label="Sim Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
             <span class="label" style="font-size: 16px; color: #eee; display: block;">ID card pw Hindi</span>
             <span style="font-size: 13px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
-  </div>
+</div>
+
+<script>
+    function handleKlik(namaMenu) {
+        const daftarLink = {
+            "avatar": "https://tommydev27.github.io/tools-data-tm/",
+            "cookietoken": "https://tommydev27.github.io/cookie-token/",
+            "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
+            "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
+            "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
+            "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
+            "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
+            "Teman1": "https://tommydev27.github.io/unicode-char1/",
+            "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
+            "Teman3": "https://tommydev27.github.io/code-runner/",
+            "Reels": "https://tommydev27.github.io/generatorascii/",
+            "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
+            "Halaman": "https://tommydev27.github.io/tm-textGz/",
+            "Tersimpan": "https://tommydev27.github.io/glitch-text/",
+            "Kenangan": "https://tommydev27.github.io/Tm-generator-texs/",
+            "Ulang Tahun": "https://tommydev27.github.io/tommy.website3/",
+            "Acara": "https://tommydev27.github.io/Blok-dua-catatan-koreksi-catatan-/",
+            "Verifikasi Meta": "https://tommydev27.github.io/brt-foice/",
+            "Beranda": "https://www.facebook.com/",
+            "Instagram Lite": "https://www.instagram.com/"
+        };
+        
+const urlTujuan = daftarLink[namaMenu];
+if (urlTujuan) {
+    const wrapper = document.getElementById('wrapper-frame');
+    let iframe = document.getElementById('konten-frame');
+    
+    if (wrapper.style.display === 'block' && iframe && iframe.getAttribute('data-url') === urlTujuan) {
+        wrapper.style.display = 'none';
+        if (iframe) iframe.remove();
+    } else {
+        if (iframe) iframe.remove();
+        
+        iframe = document.createElement('iframe');
+        iframe.id = 'konten-frame';
+        iframe.style.width = '100%';
+        iframe.style.height = '100%';
+        iframe.style.border = 'none';
+        iframe.setAttribute('data-url', urlTujuan);
+        iframe.src = urlTujuan;
+        
+        wrapper.appendChild(iframe);
+        wrapper.style.display = 'block';
+    }
+} else {
+    alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
+}
+}
+</script>
   <tm class="tommydev">Tools list</tm>
     <div class="menu-grid" id="menuGrid">
         <div class="menu-item" onclick="handleKlik('Grup')">
@@ -1385,39 +1433,7 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
         <div class="grid" id="mainGrid"></div>
     </div>
 
-    <script>
-        function handleKlik(namaMenu) {
-            const daftarLink = {
-                "avatar": "https://tommydev27.github.io/tools-data-tm/",
-                "cookietoken": "https://tommydev27.github.io/cookie-token/",
-                "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
-                "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
-                "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
-                "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
-                "Teman": "https://tommydev27.github.io/unicode-explorerTM/",
-               "Teman1": "https://tommydev27.github.io/unicode-char1/",
-                "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
-                "Teman3": "https://tommydev27.github.io/code-runner/",
-                "Reels": "https://tommydev27.github.io/generatorascii/",
-                "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
-                "Halaman": "https://tommydev27.github.io/tm-textGz/",
-                "Tersimpan": "https://tommydev27.github.io/glitch-text/",
-                "Kenangan": "https://tommydev27.github.io/Tm-generator-texs/",
-                "Ulang Tahun": "https://tommydev27.github.io/tommy.website3/",
-                "Acara": "https://tommydev27.github.io/Blok-dua-catatan-koreksi-catatan-/",
-                "Verifikasi Meta": "https://tommydev27.github.io/brt-foice/",
-                "Beranda": "https://www.facebook.com/",
 
-                "Instagram Lite": "https://www.instagram.com/"
-            };
-            const urlTujuan = daftarLink[namaMenu];
-            if (urlTujuan) {
-                window.open(urlTujuan, '_blank');
-            } else {
-                alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
-            }
-        }
-    </script>
   <script>
     const icons = ['𔓙', '𓃭', '𔒒', '𔑪', '𓄁', '𓄇', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𔑫', '𓊿', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
     const grid = document.getElementById('mainGrid');
