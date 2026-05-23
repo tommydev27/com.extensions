@@ -35,7 +35,7 @@
         @import url('https://fonts.googleapis.com/css2?family=UnifrakturMaguntia&family=Almendra:wght@700&display=swap');
 
         #download-wrapper {
-            background-color: white; 
+            background-color: #222; 
             border-radius:10px;
             padding: 3vw;
             display: block; 
@@ -272,7 +272,7 @@
               -webkit-user-select: none;
           }
           body {
-              background: #000000;
+             background: #181818;
               color: #fff;
               background-size: cover;
               background-position: center;
@@ -618,8 +618,8 @@
       
           .status-text2 {
               font-size: 10px;
-              color: #52b8ff;
-              letter-spacing: 1vw;
+              color: #75ff52;
+              letter-spacing: 2vw;
               text-transform: uppercase;
               font-weight: bold;
           }
@@ -630,35 +630,42 @@
               letter-spacing: .1em;
           }
           
-          .btn-download-red {
-              display: block;
-              text-decoration: none;
-              text-align: center;
-              padding: 14px 8px;
-              border-radius: 30px;
-              font-family: normal;
-              font-weight: 500;
-              font-size: 11px;
-              letter-spacing: .15em;
-              text-transform: uppercase;
-              position: relative;
-              overflow: hidden;
-              background:#333;
-              color: #fff !important;
-              margin-bottom: 25px;
-              -webkit-tap-highlight-color: transparent;
-              outline:none;
-              user-select:none;
-            }
+              .btn-download-red {
+                  flex: 1;
+                  display: block;
+                  text-decoration: none;
+                  text-align: center;
+                  padding: 10px 4px;
+                  border-radius: 30px;
+                  font-family: normal;
+                  font-weight: 900;
+                  font-size: 10px;
+                  letter-spacing: 0.055em;
+                  text-transform: uppercase;
+                  position: relative;
+                  overflow: hidden;
+                  background: #333;
+                  color: #d6d5d5 !important;
+                  -webkit-tap-highlight-color: transparent;
+                  outline: none;
+                  user-select: none;
+                }
+                
+                .button-group {
+                  display: flex;
+                  gap: 5px;
+                  margin-bottom: 25px;
+                  width: 100%;
+                }
             
             .btn-download-red:hover{
                 background:#e00000;
-                transform:translateY(-2px);
+                transform:translateY(0px);
                 box-shadow:0 4px 12px rgba(255,0,0,0.3);
             }
             
             .btn-download-red:active{
-                transform:scale(0.96);
+                transform:scale(0.90);
             }
             
             .btn-download-red:focus{
@@ -685,14 +692,13 @@
           }
 
             .wrapper15 {
-                width: 100vw;
+                width: 100%;
                 height: 80vw;
                 max-width: 150vw;
                 max-height: 150vw;
                 position: relative;
                 display: flex;
                 align-items: center;
-        
             }
         
             .arc-line15 {
@@ -709,7 +715,7 @@
             }
     .main-circle15 {
         position: absolute;
-        left: 1%;
+        left: 2%;
         width: 38%;
         padding-bottom: 34%;
         height: 0;
@@ -717,8 +723,8 @@
         border-radius: 50%;
         box-shadow: 0 4px 15px rgba(0,0,0,0.15);
         z-index: 3;
-        outline: 5px solid #666;
-        border: 2vw solid #333;
+        outline: 5px solid #333;
+        border: 2vw solid #555;
     }
 
     .main-circle15::before {
@@ -726,7 +732,7 @@
         position: absolute;
         inset: -3vw;
         border-radius: 50%;
-        border: 1vw solid #4f7cff;
+        border: 3vw solid #0086c4;
         pointer-events: none;
         clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
     }
@@ -744,7 +750,7 @@
             }
         
             .main-title15 {
-                font-size: 3.5vw;
+                font-size: 3.4vw;
                 font-weight: 900;
                 color: #222;
                 letter-spacing: 0.5px;
@@ -766,7 +772,7 @@
             .menu-list15 {
                 position: absolute;
                 right: -5%;
-                width: 80%;
+                width: 74%;
                 height: 100%;
                 display: flex;
                 flex-direction: column;
@@ -840,16 +846,16 @@
             .icon-box15 {
                 width: 10vw;
                 height: 10vw;
-                background: #111;
+                background: #181818;
                 border-radius: 50%;
-                border: 0.5vw solid #52b8ff;
+                border: 0.4vw solid #777;
                 box-shadow: 0 2px 6px rgba(0,0,0,0.3);
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 z-index: 6;
                 font-size: 5vw;
-                color: #e7e7e7;
+                color: #008dc0;
                 flex-shrink: 0;
             }
         
@@ -857,7 +863,7 @@
               position: relative; 
               overflow: hidden;   
               background: linear-gradient(135deg,#202020 0%,#404040 60%,#202020 100%);
-              color: #fff;
+              color: #d6d5d5;
               box-shadow: inset 2px 2px 2px #444, inset -2px -2px 2px #4a596e;
               padding: 2vw 0vw 2vw 10vw;
               border-radius: 0 8vw 8vw 0;
@@ -1123,7 +1129,7 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
         }
         .btn-salin:active { opacity: 0.7; }
         
-        .tommydev { font-size:15px; font-weight:800; display: block; margin:8px 0;color:#52b8ff;font-family:normal; 
+        .tommydev { font-size:15px; font-weight:800; display: block; margin:8px 0;color:#bbb;font-family:Orbitron; 
         }
   </style>
 
@@ -1163,7 +1169,30 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
             </i>
         
         </div>
+<style>
+  .responsive-iframe {
+    width: 100%; 
+    aspect-ratio: 5 / 5;
+    height: auto;
+    border-radius: 8px;
+  }
+  #container-tutorial {
+    display: none;
+  }
+</style>
 
+<div id="container">
+  <div class="image-row1" id="container-tutorial">
+    <tm class="tommydev">Tutorial pasang penjaga poto profil</tm>
+    <iframe class="responsive-iframe"
+      src="https://www.youtube.com/embed/Aj-tyu3qAVk" 
+      title="YouTube video player" 
+      frameborder="0" 
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+      referrerpolicy="strict-origin-when-cross-origin" 
+      allowfullscreen>
+    </iframe>
+  </div>
     </h1>
    <div class="image-row">
        <div class="container27">
@@ -1223,12 +1252,39 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
       </svg>
 
      </div>
-       <div class="text-container27">
-          <h2 class="subtitle27">Facebook profile & page</h2>
-           <span style="font-size:10px; font-weight:400; display: block; margin:3px 0; color:#eee; padding-bottom:10px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
-           <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a> </div>
+<div class="text-container27">
+  <h2 class="subtitle27">Facebook profile & page</h2>
+  <span style="font-size:10px; font-weight:400; display: block; margin:3px 0; color:#eee; padding-bottom:10px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
+  
+  <div class="button-group">
+    <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a>
+    <a id="btn-tutorial" class="btn-download-red">Tutorial</a>
+  </div>
+</div>
+
+<script>
+  document.getElementById('btn-tutorial').addEventListener('click', function() {
+    var tutorialDiv = document.getElementById('container-tutorial');
+    if (tutorialDiv.style.display === 'none' || tutorialDiv.style.display === '') {
+      tutorialDiv.style.display = 'block';
+    } else {
+      tutorialDiv.style.display = 'none';
+    }
+  });
+</script>
           </div>
        </div>
+<div class="content-container15">
+    <div id="defaultView15" style="display: block;"></div>
+    <div id="iframeView15" style="display: none;">
+        <iframe 
+            name="target-frame15" 
+            id="target-frame15" 
+            src="about:blank" 
+            style="width: 100%; height: 52vh; border: none;">
+        </iframe>
+    </div>
+</div>
   <div class="wrapper15">
     <div class="main-circle15">
                  
@@ -1269,34 +1325,72 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
             <div class="label-box15">iD card</div>
         </a>
 
-        <a href="https://tommydev27.github.io/music-player/" class="menu-item15 item-515">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-music"></i></div>
-            <div class="label-box15">Music Player</div>
-        </a>
+<a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
+    <div class="connector-dot15"></div>
+    <div class="connector-line15"></div>
+    <div class="icon-box15"><i class="fas fa-music"></i></div>
+    <div class="label-box15">Music Player</div>
+</a>
 
-        <a href="https://tommydev27.github.io/Download-vidio/" class="menu-item15 item-615">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
-            <div class="label-box15">Downld v-mp3</div>
-        </a>
+<a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/downloader-tik/')">
+    <div class="connector-dot15"></div>
+    <div class="connector-line15"></div>
+    <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
+    <div class="label-box15">Downld v-mp3</div>
+</a>
     </div>
   </div>
     </div>
+<script>
+var currentActiveUrl15 = '';
+
+function toggleIframe15(url) {
+    var defaultView = document.getElementById('defaultView15');
+    var iframeView = document.getElementById('iframeView15');
+    var frameWindow = window.frames['target-frame15'];
+    
+    if (iframeView.style.display === 'block' && currentActiveUrl15 === url) {
+        frameWindow.location.replace('about:blank');
+        currentActiveUrl15 = '';
+        iframeView.style.display = 'none';
+        defaultView.style.display = 'block';
+    } else {
+        defaultView.style.display = 'none';
+        iframeView.style.display = 'block';
+        if (currentActiveUrl15 !== url) {
+            frameWindow.location.replace(url);
+            currentActiveUrl15 = url;
+        }
+    }
+}
+
+window.addEventListener('pagehide', function() {
+    var defaultView = document.getElementById('defaultView15');
+    var iframeView = document.getElementById('iframeView15');
+    var frameWindow = window.frames['target-frame15'];
+    
+    if (frameWindow) {
+        frameWindow.location.replace('about:blank');
+    }
+    currentActiveUrl15 = '';
+    if (iframeView) iframeView.style.display = 'none';
+    if (defaultView) defaultView.style.display = 'block';
+});
+</script>
+
+
      </br>                          
     <tm class="tommydev">Create id</tm>
 
   <div class="menu-container">
-  <div id="wrapper-frame" style="display: none; margin: 0px; width: 330px; height: 390px; border-radius: 25px; overflow: hidden; position: relative;">
-    <iframe id="konten-frame" src="" style="width: 333.33%; height: 333.33%; border: none; transform: scale(0.3); transform-origin: top left; position: absolute; top: 0; left: 0;"></iframe>
+  <div id="wrapper-frame" style="display: none; margin: 0px; width: 330px; height: 395px; border-radius: 0px; overflow: hidden; position: relative;">
+    <iframe id="konten-frame" src="" style=""></iframe>
 
   </div>
     <div class="menu-item3" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
       <i class="fas fa-id-card" style="font-size:32px; margin-right:15px; flex-shrink:0; color:#0297dd;" aria-label="ID Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style=" font-size: 14px; color: #eee; display: block;">ID card</span>
+            <span class="label" style=" font-size: 14px; color: #d6d5d5; display: block;">ID card</span>
             <span style="font-size: 10px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
@@ -1304,7 +1398,7 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
     <div class="menu-item3" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
         <i class="fas fa-id-card" style="font-size:32px; margin-right:15px; flex-shrink:0; color:#d30101;" aria-label="Sim Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-size: 14px; color: #eee; display: block;">Sim ID</span>
+            <span class="label" style="font-size: 14px; color: #d6d5d5; display: block;">Sim ID</span>
             <span style="font-size: 10px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
@@ -1312,7 +1406,7 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
     <div class="menu-item3" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
         <i class="fas fa-id-card" style="font-size:32px; margin-right:15px; flex-shrink:0; color:#03a987;" aria-label="Sim Card"></i>
         <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-size: 14px; color: #eee; display: block;">ID card pw Hindi</span>
+            <span class="label" style="font-size: 14px; color: #d6d5d5; display: block;">ID card pw Hindi</span>
             <span style="font-size: 10px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
         </div>
     </div>
@@ -1474,27 +1568,7 @@ function handleLinkBaru(namaMenu) {
     }
 </script>
 
-        <style>
-            .responsive-iframe {
-                width: 100%; 
-                aspect-ratio: 5 / 5;
-                height: auto;
-                border-radius: 8px;
-            }
-        </style>
-    <div id="container">
-      <div class="image-row1">
-        <tm class="tommydev">Tutorial pasang penjaga poto profil
-            </tm>
-          <iframe class="responsive-iframe"
-              src="https://www.youtube.com/embed/Aj-tyu3qAVk" 
-              title="YouTube video player" 
-              frameborder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-              referrerpolicy="strict-origin-when-cross-origin" 
-              allowfullscreen>
-          </iframe>
-      </div>
+
       <tm class="tommydev">Download vidio / mp3 tiktok
           </tm>
          <div class="thumb-container">
