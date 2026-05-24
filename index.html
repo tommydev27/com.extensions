@@ -568,17 +568,15 @@
           .text-container27 {
               display: flex;
               flex-direction: column;
-              gap: 0.5vw;
+              gap: 0vw;
           }
           .subtitle27 {
               color: #52b8ff;
               font-size: 4vw;
-              padding-top:0vw;
-              font-weight: 900;
+              font-weight: 700;
               align-items: left;
               text-align: left;
-              font-family: 'Georgia', serif;
-              text-shadow: 0 0 15px rgba(0, 132, 255, 0.6);
+              font-family:normal;
               margin: 0;
           }
           
@@ -1131,6 +1129,97 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
         
         .tommydev { font-size:15px; font-weight:800; display: block; margin:8px 0;color:#bbb;font-family:Orbitron; 
         }
+        
+#iframeView15 {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+/* Aktif saat dibuka */
+#iframeView15.buka {
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+/* Aktif saat ditutup */
+#iframeView15.tutup {
+    animation: slideUp 0.4s ease-in forwards;
+}
+
+@keyframes slideDown {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 52vh; opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { max-height: 52vh; opacity: 1; }
+    to { max-height: 0; opacity: 0; }
+}
+
+#target-frame15 {
+    width: 100%;
+    height: 52vh;
+    border: none;
+    display: block;
+}
+
+#container-tutorial {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    /* Hilangkan display: none bawaan jika ada di inline style, atur lewat CSS ini */
+}
+
+/* Aktif saat dibuka */
+#container-tutorial.buka {
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+/* Aktif saat ditutup */
+#container-tutorial.tutup {
+    animation: slideUp 0.4s ease-in forwards;
+}
+
+#wrapper-frame {
+    /* Gunakan ukuran asli Anda sebagai batas maksimal */
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+/* Saat dibuka, paksa ukurannya pas ke tinggi asli */
+#wrapper-frame.buka {
+    max-height: 395px !important;
+    opacity: 1 !important;
+}
+
+/* Saat ditutup, kembalikan ke nol */
+#wrapper-frame.tutup {
+    max-height: 0 !important;
+    opacity: 0 !important;
+}
+
+/* Pastikan iframe di dalamnya langsung mengisi penuh kotak 395px tersebut */
+#konten-frame {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    border: none;
+}
+
+  .responsive-iframe {
+    width: 100%; 
+    aspect-ratio: 5 / 5;
+    height: auto;
+    border-radius: 8px;
+  }
+  #container-tutorial {
+    display: none;
+  }
+</style>
   </style>
 
 <body>
@@ -1151,35 +1240,6 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
         <div class="ag-wrapper">
             <div class="card">
         </div>
-  <div class="tommydev" style="display:flex; gap:10px; font-size:25px;">
-      Avatar Guard fb
-  
-      <i class="fab fa-facebook"
-         style="color:#347bef;
-                background:white;
-                letter-spacing: 0px;
-                border-radius:50%;
-                width:24px;
-                height:24px;
-                display:flex;
-                margin-top:1px;
-                align-items:center;
-                justify-content:center;
-                font-size:22px;">
-            </i>
-        
-        </div>
-<style>
-  .responsive-iframe {
-    width: 100%; 
-    aspect-ratio: 5 / 5;
-    height: auto;
-    border-radius: 8px;
-  }
-  #container-tutorial {
-    display: none;
-  }
-</style>
 
 <div id="container">
   <div class="image-row1" id="container-tutorial">
@@ -1251,27 +1311,68 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
           </g>
       </svg>
 
-     </div>
+ </div>
 <div class="text-container27">
-  <h2 class="subtitle27">Facebook profile & page</h2>
-  <span style="font-size:10px; font-weight:400; display: block; margin:3px 0; color:#eee; padding-bottom:10px;">Cara pakai gunakan browser extensions (mode desktop - developers)</span>
+    <div class="tommydev" style="display:flex; gap:10px; font-size:17px;">
+      Avatar Guard fb
+  
+      <i class="fab fa-facebook"
+         style="color:#347bef;
+                background:white;
+                letter-spacing: 0px;
+                border-radius:50%;
+                width:20px;
+                height:20px;
+                display:flex;
+                margin-top:1px;
+                align-items:center;
+                justify-content:center;
+                font-size:17px;">
+            </i>
+        
+        </div>
+  <b class="subtitle27">Facebook profile & page</b>
+  <span style="font-size:10px; font-weight:400; display: block; margin:3px 0; color:#eee; padding-bottom:5px;">Gunakan browser extensions (desktop)</span>
   
   <div class="button-group">
     <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a>
-    <a id="btn-tutorial" class="btn-download-red">Tutorial</a>
+    <a id="btn-tutorial" class="btn-download-red" style="background:hsl(0,69.9%,37.4%);">Tutorial</a>
   </div>
 </div>
 
 <script>
   document.getElementById('btn-tutorial').addEventListener('click', function() {
     var tutorialDiv = document.getElementById('container-tutorial');
-    if (tutorialDiv.style.display === 'none' || tutorialDiv.style.display === '') {
-      tutorialDiv.style.display = 'block';
+    
+    // Cek apakah saat ini sedang terbuka (memiliki display block)
+    if (tutorialDiv.style.display === 'block') {
+      // PROSES TUTUP PERLAHAN
+      tutorialDiv.classList.remove('buka');
+      tutorialDiv.classList.add('tutup');
+      
+      setTimeout(function() {
+        tutorialDiv.style.display = 'none';
+      }, 400);
+      
     } else {
-      tutorialDiv.style.display = 'none';
+
+      tutorialDiv.classList.remove('tutup');
+      tutorialDiv.classList.add('buka');
+      tutorialDiv.style.display = 'block';
+      
+      tutorialDiv.onanimationend = function(e) {
+        if (e.animationName === 'slideDown') {
+          tutorialDiv.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+          });
+          tutorialDiv.onanimationend = null; 
+        }
+      };
     }
   });
 </script>
+
           </div>
        </div>
 <div class="content-container15">
@@ -1303,7 +1404,7 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
             <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
             <div class="label-box15">Avatar Guard</div>
         </a>
-
+        
         <a href="https://tommydev27.github.io/cookie-token/" class="menu-item15 item-215">
             <div class="connector-dot15"></div>
             <div class="connector-line15"></div>
@@ -1325,22 +1426,23 @@ box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
             <div class="label-box15">iD card</div>
         </a>
 
-<a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
-    <div class="connector-dot15"></div>
-    <div class="connector-line15"></div>
-    <div class="icon-box15"><i class="fas fa-music"></i></div>
-    <div class="label-box15">Music Player</div>
-</a>
-
-<a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/downloader-tik/')">
-    <div class="connector-dot15"></div>
-    <div class="connector-line15"></div>
-    <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
-    <div class="label-box15">Downld v-mp3</div>
-</a>
+        <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-music"></i></div>
+            <div class="label-box15">Music Player</div>
+        </a>
+        
+        <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/downloader-tik/')">
+            <div class="connector-dot15"></div>
+            <div class="connector-line15"></div>
+            <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
+            <div class="label-box15">Downld v-mp3</div>
+        </a>
     </div>
   </div>
-    </div>
+</div>
+
 <script>
 var currentActiveUrl15 = '';
 
@@ -1350,13 +1452,36 @@ function toggleIframe15(url) {
     var frameWindow = window.frames['target-frame15'];
     
     if (iframeView.style.display === 'block' && currentActiveUrl15 === url) {
-        frameWindow.location.replace('about:blank');
-        currentActiveUrl15 = '';
-        iframeView.style.display = 'none';
-        defaultView.style.display = 'block';
+
+        iframeView.classList.remove('buka');
+        iframeView.classList.add('tutup');
+        
+        setTimeout(function() {
+            frameWindow.location.replace('about:blank');
+            currentActiveUrl15 = '';
+            iframeView.style.display = 'none';
+            if (defaultView) defaultView.style.display = 'block';
+        }, 400);
+        
     } else {
-        defaultView.style.display = 'none';
+
+        if (defaultView) defaultView.style.display = 'none';
+        
+        iframeView.classList.remove('tutup');
+        iframeView.classList.add('buka');
         iframeView.style.display = 'block';
+        
+        iframeView.onanimationend = function(e) {
+            if (e.animationName === 'slideDown') {
+                iframeView.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+
+                iframeView.onanimationend = null; 
+            }
+        };
+        
         if (currentActiveUrl15 !== url) {
             frameWindow.location.replace(url);
             currentActiveUrl15 = url;
@@ -1373,11 +1498,13 @@ window.addEventListener('pagehide', function() {
         frameWindow.location.replace('about:blank');
     }
     currentActiveUrl15 = '';
-    if (iframeView) iframeView.style.display = 'none';
+    if (iframeView) {
+        iframeView.style.display = 'none';
+        iframeView.classList.remove('buka', 'tutup');
+    }
     if (defaultView) defaultView.style.display = 'block';
 });
 </script>
-
 
      </br>                          
     <tm class="tommydev">Create id</tm>
@@ -1413,43 +1540,64 @@ window.addEventListener('pagehide', function() {
 </div>
 
 <script>
-    function handleKlik(namaMenu) {
-        const daftarLink = {
-            "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
-            "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
-            "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/"
-                };
+function handleKlik(namaMenu) {
+    const daftarLink = {
+        "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
+        "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
+        "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/"
+    };
         
-const urlTujuan = daftarLink[namaMenu];
-if (urlTujuan) {
-    const wrapper = document.getElementById('wrapper-frame');
-    let iframe = document.getElementById('konten-frame');
-    
-    if (wrapper.style.display === 'block' && iframe && iframe.getAttribute('data-url') === urlTujuan) {
-        wrapper.style.display = 'none';
-        if (iframe) iframe.remove();
+    const urlTujuan = daftarLink[namaMenu];
+    if (urlTujuan) {
+        const wrapper = document.getElementById('wrapper-frame');
+        let iframe = document.getElementById('konten-frame');
+        
+        var isOpen = wrapper.classList.contains('buka');
+        
+        if (isOpen && iframe && iframe.getAttribute('data-url') === urlTujuan) {
+          
+            wrapper.classList.remove('buka');
+            wrapper.classList.add('tutup');
+            
+            setTimeout(function() {
+                wrapper.style.display = 'none';
+                if (iframe) iframe.remove();
+            }, 400);
+            
+        } else {
+
+            if (iframe) iframe.remove(); 
+            iframe = document.createElement('iframe');
+            iframe.id = 'konten-frame';
+            iframe.style.width = '100%';
+            iframe.style.height = '100%';
+            iframe.style.border = 'none';
+            iframe.setAttribute('data-url', urlTujuan);
+            iframe.src = urlTujuan;
+            
+            wrapper.appendChild(iframe);
+            
+            wrapper.style.display = 'block';
+            
+            setTimeout(function() {
+                wrapper.classList.remove('tutup');
+                wrapper.classList.add('buka');
+            }, 10);
+            
+            setTimeout(function() {
+                wrapper.scrollIntoView({ 
+                    behavior: 'smooth', 
+                    block: 'start' 
+                });
+            }, 410);
+        }
     } else {
-        if (iframe) iframe.remove();
-        
-        iframe = document.createElement('iframe');
-        iframe.id = 'konten-frame';
-        iframe.style.width = '100%';
-        iframe.style.height = '100%';
-        iframe.style.border = 'none';
-        iframe.setAttribute('data-url', urlTujuan);
-        iframe.src = urlTujuan;
-        
-        wrapper.appendChild(iframe);
-        wrapper.style.display = 'block';
+        alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
     }
-} else {
-    alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
-}
 }
 </script>
-  <tm class="tommydev">Tools list</tm>
+<tm class="tommydev">Tools list</tm>
 <div class="menu-grid" id="menuGrid">
-    <!-- Nama fungsi diubah menjadi handleLinkBaru -->
     <div class="menu-item" onclick="handleLinkBaru('Grup')">
         <i class="fas fa-keyboard icon ic-groups"></i>
         <span class="label">Multi Keyboard</span>
@@ -1503,8 +1651,70 @@ if (urlTujuan) {
     </div>
 </div>
 
+<tm class="tommydev"> Buat Story gambar </tm>
+<div id="download-wrapper">
+    <div id="capture-area">
+        <div class="profile-section">
+            <label for="file-input" class="avatar-container">
+                <img id="profile-pic" src="https://i.postimg.cc/XJ4ZRQqY/Screenshot-20260504-125634-jpg-(1).png" class="avatar-img" alt="avatar">
+            </label>
+            <input type="file" id="file-input" accept="image/*" onchange="loadPhoto(event)">
+            
+            <div class="user-info">
+                <h2 class="username" contenteditable="true">Tommy<a style="margin-top:-3vw; font-size:3vw;">𝁇S27</a> <img src="https://img.icons8.com/color/80/verified-badge.png" class="verified-badge"></h2>
+                <p class="handle" contenteditable="true" style="font-size:2.1vw;">@stories_tom.com</p>
+            </div>
+        </div>
+
+        <div class="quote-container">
+            <div class="quote-title" contenteditable="true" id="title-input">JUDUL QUOTE</div>
+            
+            <div class="quote-text" contenteditable="true" id="quote-input" style="font-size:7vw;">EDIT POTO PROFIL JUDUL ISI TEKS & BAGIAN TEKS KECIL KLIK BAGIAN INI</div>
+            
+            <div class="watermark">tommy-app.com  🐞</div>
+        </div>
+    </div>
+</div>
+
+<div class="style-controls">
+    <select id="font-select" onchange="changeFontStyle()">
+        <option value="'Almendra', serif">Gaya Almendra</option>
+        <option value="'UnifrakturMaguntia', cursive">Gaya Gothic</option>
+        <option value="'Arial', sans-serif">Gaya Clean (Arial)</option>
+        <option value="'Monospace'">Gaya Kode</option>
+        
+        <option value="'Shrikhand', display">Gaya Shrikhand</option>
+        <option value="'Graduate', serif">Gaya Graduate</option>
+        <option value="'Sigmar', display">Gaya Sigmar</option>
+        
+        <option value="'Playfair Display', serif">Gaya Elegan</option>
+        <option value="'Lobster', cursive">Gaya Artistik</option>
+        <option value="'Bebas Neue', sans-serif">Gaya Tegas</option>
+        <option value="'Caveat', cursive">Gaya Tulis Tangan</option>
+        <option value="'Georgia', serif">Gaya Klasik</option>
+    </select>
+
+    <select id="size-select" onchange="changeFontSize()">
+        <option value="5vw">Kecil</option>
+        <option value="7vw" selected>Normal</option>
+        <option value="8vw">Besar</option>
+        <option value="9vw">Extra Besar</option>
+    </select>
+    
+    <label for="file-input" class="file-input-label">Ganti Foto Profil</label>
+</div>
+
+<div class="controls">
+    <button class="btn-reset" onclick="resetPage()">Reset Teks</button>
+    <button class="btn-save" onclick="downloadImage()">Simpan Gambar</button>
+</div>
+
+<fr style="text-align: center; padding: 0px; background: #f4f4f4; font-size: 12px; text-align:left;">
+    <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
+    <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
+    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Contact Admin</a></p>
+</fr>
 <script>
-// Nama fungsi diganti agar tidak menimpa fungsi handleKlik milik iframe
 function handleLinkBaru(namaMenu) {
     const daftarLink = {
         "avatar": "https://tommydev27.github.io/tools-data-tm/",
@@ -1569,80 +1779,8 @@ function handleLinkBaru(namaMenu) {
 </script>
 
 
-      <tm class="tommydev">Download vidio / mp3 tiktok
-          </tm>
-         <div class="thumb-container">
-              <img id="videoThumb" class="thumbnail" src="https://i.postimg.cc/SKQygMmM/20260502-205124.jpg" alt="Thumbnail">
-          </div>
-            <button id="generate" onclick="location.href='https://tommydev27.github.io/Download-vidio/';" style="color: #eee; border: none; border-radius: 8px; font-size:3vw; padding: 8px; cursor: pointer; font-weight: bold; background:#333; margin-top: 12px;">
-                Download vidio Klik Disini <i style="margin-left: 5px; font-size: 15px; color: #35ebfff9;" class="fas fa-exclamation-circle"></i>
-            </button>
-
-       <tm class="tommydev"> Buat Story gambar
-            </tm>
-            <div id="download-wrapper">
-                <div id="capture-area">
-            <div class="profile-section">
-                <label for="file-input" class="avatar-container">
-                    <img id="profile-pic" src="https://i.postimg.cc/XJ4ZRQqY/Screenshot-20260504-125634-jpg-(1).png" class="avatar-img" alt="avatar">
-                </label>
-                <input type="file" id="file-input" accept="image/*" onchange="loadPhoto(event)">
-                
-                <div class="user-info">
-                    <h2 class="username" contenteditable="true">Tommy<a style="margin-top:-3vw; font-size:3vw;">𝁇S27</a> <img src="https://img.icons8.com/color/80/verified-badge.png" class="verified-badge"></h2>
-                    <p class="handle" contenteditable="true" style="font-size:2.1vw;">@stories_tom.com</p>
-                </div>
-            </div>
-
-    <div class="quote-container">
-        <div class="quote-title" contenteditable="true" id="title-input">JUDUL QUOTE</div>
-        
-        <div class="quote-text" contenteditable="true" id="quote-input" style="font-size:7vw;">EDIT POTO PROFIL JUDUL ISI TEKS & BAGIAN TEKS KECIL KLIK BAGIAN INI</div>
-        
-        <div class="watermark">tommy-app.com  🐞</div>
-              </div>
-            </div>
-        </div>
-    
-    <div class="style-controls">
-        <select id="font-select" onchange="changeFontStyle()">
-            <option value="'Almendra', serif">Gaya Almendra</option>
-            <option value="'UnifrakturMaguntia', cursive">Gaya Gothic</option>
-            <option value="'Arial', sans-serif">Gaya Clean (Arial)</option>
-            <option value="'Monospace'">Gaya Kode</option>
-            
-            <option value="'Shrikhand', display">Gaya Shrikhand</option>
-            <option value="'Graduate', serif">Gaya Graduate</option>
-            <option value="'Sigmar', display">Gaya Sigmar</option>
-            
-            <option value="'Playfair Display', serif">Gaya Elegan</option>
-            <option value="'Lobster', cursive">Gaya Artistik</option>
-            <option value="'Bebas Neue', sans-serif">Gaya Tegas</option>
-            <option value="'Caveat', cursive">Gaya Tulis Tangan</option>
-            <option value="'Georgia', serif">Gaya Klasik</option>
-        </select>
-
-        <select id="size-select" onchange="changeFontSize()">
-            <option value="5vw">Kecil</option>
-            <option value="7vw" selected>Normal</option>
-            <option value="8vw">Besar</option>
-            <option value="9vw">Extra Besar</option>
-        </select>
-        
-        <label for="file-input" class="file-input-label">Ganti Foto Profil</label>
-    </div>
-
-    <div class="controls">
-        <button class="btn-reset" onclick="resetPage()">Reset Teks</button>
-        <button class="btn-save" onclick="downloadImage()">Simpan Gambar</button>
-    </div>
 
 
-     <fr style="text-align: center; padding: 0px; background: #f4f4f4; font-size: 12px; text-align:left;">
-        <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
-        <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
-        <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Contact Admin</a></p>
-    </fr>
 <script>
 function loadPhoto(event) {
     const reader = new FileReader();
