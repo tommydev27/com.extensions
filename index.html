@@ -30,324 +30,460 @@
     </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lobster&family=Bebas+Neue&family=Caveat&family=Shrikhand&family=Graduate&family=Sigmar&display=swap" rel="stylesheet">
+  <head>
+<style>
 
-    <style>
+  * {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+  }
 
-          * {
-              margin: 0;
-              padding: 0;
-              box-sizing: border-box;
-              font-family: 'Montserrat', 'Questrial', sans-serif;
-              -webkit-user-select: none;
-          }
-          body {
-             background: #181818;
-              color: #fff;
-              background-size: cover;
-              background-position: center;
-              background-repeat: no-repeat;
-              width: 100%;
-              height: 100vh;
-              overflow: auto;
-              display: flex;
-              justify-content: flex-start;
-              align-items: flex-start;
-              -webkit-user-select: none;
-          }
-          .container {
-              position: absolute;
-              top: 0;
-              left: 0;
-              width: 100%;
-              padding: 0px;
-              overflow: hidden;
-              -webkit-user-select: none;
-          }
-          .unique-controls {
-              position: relative;
-              padding: 15px;
-          }
-          .fas.fa-check-circle {
-              font-size: 20px;
-              color: #52b8ff;
-              margin-left: 5px;
-              border-radius: 50%;
-          }
-          .settings-card {
-              display: none;
-          }
-          h2 {
-              font-size: 15px;
-              color: #fff;
-              gap: 0;
-              margin-top: 10px;
-              text-align: left;
-          }
-          #profil-header {
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-              padding: 10px 15px;
-          }
-          #profil-header button {
-              font-weight: bold;
-              border: none;
-              width: 100%;
-              padding: 8px;
-              border-radius: 7px;
-              cursor: pointer;
-          }
-          #profil-header button:hover {
-              background-color: #52b8ff;
-          }
-          #scroll-buttons {
-              display: flex;
-              gap: 0;
-              padding: 10px;
-              width: 100%;
-              justify-content: space-between;
-          }
-          #scroll-buttons button {
-              display: flex;
-              flex-direction: column;
-              align-items: flex-start;
-              background: none;
-              border: none;
-              cursor: pointer;
-              font-family: Arial, sans-serif;
-              text-align: left;
-              -webkit-tap-highlight-color: transparent;
-          }
-          #scroll-buttons i {
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 32px;
-              height: 32px;
-              background-color: #444;
-              border-radius: 50px;
-              font-size: 16px;
-              color: #fff;
-              transition: background-color 0.3s ease;
-          }
-          #profil-tabs {
-              display: flex;
-              justify-content: flex-start;
-              border-bottom: 1px solid #ddd;
-              gap: 15px;
-          }
-          #profil-tabs div {
-              padding: 10px 15px;
-              cursor: pointer;
-              font-weight: bold;
-              color: #fff;
-          }
-          #profil-tabs div.active {
-              border-bottom: 3px solid #52b8ff;
-              color: #52b8ff;
-          }
-          #profil-content {
-              padding: 15px;
-          }
-          #profil-content > div {
-              display: none;
-          }
-          #profil-content > div.active {
-              display: block;
-          }
-          p {
-              padding: 0;
-              color: #fff;
-              font-weight: 500;
-              margin: 5px 0;
-              text-align: left;
-          }
-          .bold {
-              font-size: 15px;
-              color: #fff;
-              font-weight: 600;
-          }
-          button {
-              border: none;
-              padding: 8px 12px;
-              color: white;
-              font-size: 12px;
-              cursor: pointer;
-              border-radius: 5px;
-          }
-          button:active {
-              transform: scale(0.98);
-          }
-          footer {
-              padding: 0px 0;
-              margin-top: 0px;
-              text-align: left;
-              font-family: 'Roboto', sans-serif;
-          }
-          .img-container img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              pointer-events: none;
-          }
-          .clicked-blink {
-              animation: pulse 0.3s ease;
-          }
-          @keyframes pulse {
-              0% { transform: scale(1); }
-              50% { transform: scale(0.90); }
-              100% { transform: scale(1); }
-          }
-          #uniqueSaveBtn {
-              padding: 10px 20px;
-              background-color: green;
-              color: white;
-              font-weight: bold;
-              border: none;
-              border-radius: 5px;
-              cursor: pointer;
-              margin: 10px 0;
-              display: block;
-          }
-          #image-scroll-container {
-              width: 100%;
-              padding: 5px 8px;
-              overflow-x: auto;
-              border-radius: 15px;
-              display: flex;
-              scroll-behavior: smooth;
-          }
-          #image-wrapper {
-              display: flex;
-              gap: 10px;
-              margin-left: -4px;
-              -webkit-tap-highlight-color: transparent;
-              -webkit-touch-callout: none;
-              user-select: none;
-              outline: none;
-          }
-          .img-container {
-              border-radius: 10px;
-              overflow: hidden;
-              display: flex;
-              cursor: pointer;
-          }
-          .book-badge {
-              display: flex;
-              flex-direction: column;
-              align-items: left;
-              justify-content: center;
-              width: 200px;
-              padding: 20px;
-              border: solid 1px #52b8ff;
-              border-radius: 15px;
-              height: 140px;
-              color: #ffff;
-              font-size: 14px;
-              text-decoration: none;
-              text-align: left;
-              box-sizing: border-box;
-              overflow: hidden;
-          }
-          .icon-badge {
-              display: flex;
-              flex-direction: column;
-              justify-content: center;
-              gap: 5px;
-              font-size: 40px;
-          }
-          .orange { color: #ffbc41; }
-          .green { color: #25D366; }
-          .blue { color: #52b8ff; }
-          .pink { color: #E1306C; }
-          .light-blue { color: #52b8ff; }
-          .grey { color: #444; }
-          .spotify { color: #1DB954; }
-          .text-wrap {
-              display: inline-block;
-              border-radius: 15px;
-              margin-top: 0px;
-              line-height: 2.9em;
-              font-weight: bold;
-              word-break: break-word;
-              white-space: normal;
-          }
-          .card { 
-              text-align: left; 
-          }
-          .card h1 { 
-              color: #fff;
-              font-size: 22px; 
-              font-weight: 800; 
-              display: flex; 
-              align-items: center; 
-              justify-content: flex-start; 
-              gap: 15px; 
-          }
-          .image-row {
-              display: flex;
-              justify-content: flex-start;
-              gap: 0vw;
-              margin: 10px 0;
-          }
-          .image-row img {
-              width: 100%;
-              border-radius: 12px;
-              object-fit: cover;
-          }
-          .card p { font-size: 14px; line-height: 1.5; margin-bottom: 25px; text-align: left; }
-          .btn { 
-              background-color: #333; 
-              color:#52baff !important; 
-              padding: 14px; 
-              text-decoration: none; 
-              border-radius: 8px; 
-              font-weight: bold; 
-              display: block; 
-              margin: 0 0 25px 0; 
-              font-size: 15px;
-              text-align: left;
-          }
-          @keyframes meta-move {
-              0% { border-radius: 50%; transform: rotate(0deg) scale(1); }
-              33% { border-radius: 40% 60% 70% 30% / 50% 60% 40% 50%; transform: rotate(120deg) scale(1.05); }
-              66% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; transform: rotate(240deg) scale(0.95); }
-              100% { border-radius: 50%; transform: rotate(360deg) scale(1); }
-          }
-          .meta-animated-ring {
-              background: conic-gradient(from 0deg, #4285F4, #9B51E0, #ff0f0f, #00D4FF, #4285F4);
-              mask: radial-gradient(circle, transparent 10%, black 10%);
-              -webkit-mask: radial-gradient(circle, transparent 65%, black 65%);
-              animation: meta-move 6s linear infinite;
-              display: inline-block;
-          }
-          .container27 {
-              display: flex;
-              align-items: flex-start;
-              gap: 4vw;
-          }
-          .logo-wrapper27 {
-              border-radius: 50%;
-              border: solid 1vw #555;
-              width: 32vw;
-              height: 32vw;
-              flex-shrink: 0;
-              box-sizing: border-box; 
-          }
-          .text-container27 {
-              display: flex;
-              flex-direction: column;
-              gap: 0vw;
-          }
-          .subtitle27 {
-              color: #52b8ff;
-              font-size: 4vw;
-              font-weight: 700;
-              align-items: left;
-              text-align: left;
-              font-family:normal;
-              margin: 0;
-          }
+   body {
+     background: rgb(36,34,30);
+      -webkit-user-select: none;
+      font-family:sans-serif;
+      color: #dafbfd;
+   }
+
+  .container {
+    padding:15px;
+   justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+   .card-container{
+     width:100%;
+     display:grid;
+     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:10px;
+    }
+    
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+/* CSS asli Anda */
+.menu-item3 {
+  left: 0;
+  margin-left: 0;
+  margin-right: 0;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  min-height: 70px;
+  background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+  border-radius: 18px;
+  cursor: pointer;
+  overflow: visible;
+}
+
+  .card-header {
+    height: 30px;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    display: flex;
+    align-items: center;
+    padding-left: 110px;
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .card-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding-left: 110px;
+    padding-right: 15px;
+  }
+
+  .card-desc {
+    font-size: 12px;
+    color: #d9d9d9;
+    line-height: 1.4;
+  }
+
+  .icon-circle {
+    position: absolute;
+    left: 15px;
+    top: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .icon-inner {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon-inner i {
+    color:rgb(106,205,255);
+    font-size: 24px;
+  }
+
+  .bg-orange { background: linear-gradient(to bottom, #262d38, #4a596e); }
+  .inner-orange { background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+
+  .bg-yellow { background: linear-gradient(to bottom, #262d38, #4a596e); }
+  .inner-yellow { background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+
+  .bg-green { background: linear-gradient(to bottom, #262d38, #4a596e); }
+  .inner-green { background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+</style>
+
+  
+<style>
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+  }
+
+  .menu-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    border-radius: 12px;
+    padding: 12px;
+    height: 70px;
+
+
+    cursor: pointer;
+    overflow: hidden;
+    padding-right: 32px;
+  }
+
+  .menu-item .icon {
+    font-size: 25px;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .menu-item .label {
+    font-size: 12px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .menu-item::after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 24px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 8px;
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+  }
+
+  .menu-item:nth-child(1) .icon { color: #f59e0b; }
+  .menu-item:nth-child(1)::after { content: "1"; background: #f59e0b; }
+
+  .menu-item:nth-child(2) .icon { color: #f97316; }
+  .menu-item:nth-child(2)::after { content: "2"; background: #f97316; }
+
+  .menu-item:nth-child(3) .icon { color: #845ef7; }
+  .menu-item:nth-child(3)::after { content: "3"; background: #845ef7; }
+
+  .menu-item:nth-child(4) .icon { color: #10b981; }
+  .menu-item:nth-child(4)::after { content: "4"; background: #10b981; }
+
+  .menu-item:nth-child(5) .icon { color: #06b6d4; }
+  .menu-item:nth-child(5)::after { content: "5"; background: #06b6d4; }
+
+  .menu-item:nth-child(6) .icon { color: #3b82f6; }
+  .menu-item:nth-child(6)::after { content: "6"; background: #3b82f6; }
+
+  .menu-item:nth-child(7) .icon { color: #64748b; }
+  .menu-item:nth-child(7)::after { content: "7"; background: #64748b; }
+
+  .menu-item:nth-child(8) .icon { color: #7c3aed; }
+  .menu-item:nth-child(8)::after { content: "8"; background: #7c3aed; }
+
+  .menu-item:nth-child(9) .icon { color: #ec4899; }
+  .menu-item:nth-child(9)::after { content: "9"; background: #ec4899; }
+
+  .menu-item:nth-child(10) .icon { color: #ef4444; }
+  .menu-item:nth-child(10)::after { content: "10"; background: #ef4444; }
+
+  .menu-item:nth-child(11) .icon { color: #0891b2; }
+  .menu-item:nth-child(11)::after { content: "11"; background: #0891b2; }
+
+  .menu-item:nth-child(12) .icon { color: #16a34a; }
+  .menu-item:nth-child(12)::after { content: "12"; background: #16a34a; }
+  
+.menu-item15, .menu-item3, .menu-item {
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.menu-item15:hover, .menu-item3:hover, .menu-item:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
+}
+
+.menu-item15:active, .menu-item3:active, .menu-item:active {
+  transform: scale(0.92);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; 
+}
+
+.menu-item15, .menu-item3, .menu-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-item15::before, .menu-item3::before, .menu-item::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(0);
+  border-radius: inherit;
+  opacity: 0;
+  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.menu-item15:active::before, .menu-item3:active::before, .menu-item:active::before {
+  transform: translate(-50%, -50%) scale(1.2);
+  opacity: 1;
+  transition: 0s;
+}
+
+.tommydev { font-size:20px; font-weight:800; display: block; margin:20px 0;
+        }
+</style>
+
+
+<style>
+  .content-container15 {
+    width: 100%;
+  }
+
+  .wrapper15 {
+    position: relative;
+    width: 100%;
+    max-width: 330;
+    height: 240px; 
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .wrapper15::before {
+    content: '';
+    position: absolute;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    border: 12px solid transparent;
+    background: linear-gradient(#333, #444) padding-box,
+                conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
+    z-index: 0;
+  }
+
+  .main-circle15 {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    background: #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+  }
+
+  .main-circle15::before {
+    content: '';
+    position: absolute;
+    width: 116px;
+    height: 116px;
+    border: 2px solid #727272;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  .circle-content15 {
+    text-align: center;
+    padding: 2px;
+  }
+
+  .main-title15 {
+    font-size: 9px;
+    font-weight: 700;
+    color: #334155;
+    letter-spacing: 0.5px;
+  }
+
+  .main-subtitle15 {
+    font-size: 6px;
+    color: #64748b;
+    margin-top: 2px;
+    text-transform: uppercase;
+  }
+
+  .menu-list15 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .menu-item15 {
+    position: absolute; 
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 105px; 
+    height: 34px; 
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  }
+
+  .icon-box15 {
+    width: 28px;
+    height: 28px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 11px;
+    margin: 3px;
+    flex-shrink: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 5; 
+  }
+
+  .label-box15 {
+    font-weight: 600;
+    font-size: 9px;
+    color: #19b6ffff;
+    background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    text-transform: capitalize;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .item-115, .item-215, .item-315 {
+    flex-direction: row-reverse;
+    text-align: right; 
+  }
+  .item-115 { top: 40px; left: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .item-215 { top: 103px; left: -7px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .item-315 { bottom: 40px; left: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+
+  .item-415, .item-515, .item-615 {
+    flex-direction: row;
+    text-align: left;
+  }
+  .item-415 { top: 40px; right: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .item-515 { top: 103px; right: -7px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .item-615 { bottom: 40px; right: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+
+  .connector-line15 {
+    position: absolute;
+    height: 1px;
+    z-index: 1; 
+  }
+
+  .item-115 .icon-box15 { color: #0e6383; }
+  .item-115 .connector-line15 { background: #0e6383; width: 30px; right: -25px; top: 35px; transform: rotate(50deg); }
+
+  .item-215 .icon-box15 { color: #00acc1; }
+  .item-215 .connector-line15 { background: #00acc1; width: 50px; right: -48px; top: 16px; transform: none; }
+
+  .item-315 .icon-box15 { color: #00bfa5; }
+  .item-315 .connector-line15 { background: #00bfa5; width: 30px; right: -25px; top: -5px; transform: rotate(-50deg); }
+
+  .item-415 .icon-box15 { color: #ffb300; }
+  .item-415 .connector-line15 { background: #ffb300; width: 30px; left: -25px; top: 35px; transform: rotate(-50deg); }
+
+  .item-515 .icon-box15 { color: #fb8c00; }
+  .item-515 .connector-line15 { background: #fb8c00; width: 50px; left: -48px; top: 16px; transform: none; }
+
+  .item-615 .icon-box15 { color: #f43f5e; }
+  .item-615 .connector-line15 { background: #f43f5e; width: 30px; left: -25px; top: -5px; transform: rotate(50deg); }
+  
+.bold {
+  font-family:Orbitron,monospace;letter-spacing:1px;text-transform:uppercase;
+     font-size: 20px;
+     font-weight: 900;
+  }
           
           .status-bar2 {
               display: flex;
@@ -366,8 +502,8 @@
               height: 8px;
               margin-left: 5px;
               border-radius: 50%;
-              background: #00ff88;
-              box-shadow: 0 0 10px #00ff88;
+              background: rgb(0,201,27);
+              box-shadow: 0 0 3px #00ff88;
               animation: pulse-dot 1.5s ease-in-out infinite;
               vertical-align: middle;
           }
@@ -385,7 +521,7 @@
       
           .status-text2 {
               font-size: 10px;
-              color: #75ff52;
+              color:rgb(255,104,104);
               letter-spacing: 2vw;
               text-transform: uppercase;
               font-weight: bold;
@@ -393,451 +529,175 @@
       
           .status-id2 {
               font-size: 10px;
-              color: #aaaaaa;
               letter-spacing: .1em;
           }
-          
-              .btn-download-red {
-                  flex: 1;
-                  display: block;
-                  text-decoration: none;
-                  text-align: center;
-                  padding: 10px 4px;
-                  border-radius: 30px;
-                  font-family: normal;
-                  font-weight: 900;
-                  font-size: 10px;
-                  letter-spacing: 0.055em;
-                  text-transform: uppercase;
-                  position: relative;
-                  overflow: hidden;
-                  background: #333;
-                  color: #d6d5d5 !important;
-                  -webkit-tap-highlight-color: transparent;
-                  outline: none;
-                  user-select: none;
-                }
-                
-                .button-group {
-                  display: flex;
-                  gap: 5px;
-                  margin-bottom: 25px;
-                  width: 100%;
-                }
-            
-            .btn-download-red:hover{
-                background:#e00000;
-                transform:translateY(0px);
-                box-shadow:0 4px 12px rgba(255,0,0,0.3);
-            }
-            
-            .btn-download-red:active{
-                transform:scale(0.90);
-            }
-            
-            .btn-download-red:focus{
-                outline:none;
-                box-shadow:none;
-            }
-          .btn-download-red::after {
-              content: '';
-              position: absolute;
-              top: 0;
-              left: -150%;
-              width: 50%;
-              height: 100%;
-              background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.4), transparent);
-              transform: skewX(-25deg);
-              animation: slide-glow 3s infinite;
-          }
+
       
-          /* Jalur pergerakan cahaya */
-          @keyframes slide-glow {
-              0% { left: -150%; }
-              50% { left: 150%; }
-              100% { left: 150%; }
-          }
+      #container-tutorial {
+          display: none;
+      }
+      
+.container27 {
+    align-items: center;
+    border-radius: 12px;
+    font-family: sans-serif;
+    gap: 15px;
+    margin-bottom:3vw;
+  }
+  
+  
+      .logo-wrapper27 {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          margin-top: 1vw;
+          margin-bottom: 4vw;
+      }
 
-            .wrapper15 {
-                width: 100%;
-                height: 80vw;
-                max-width: 150vw;
-                max-height: 150vw;
-                position: relative;
-                display: flex;
-                align-items: center;
-            }
-        
-            .arc-line15 {
-        
-            }
-        
-            .dot-marker15 {
-                position: absolute;
-                width: 1.5%;
-                padding-bottom: 1.5%;
-                background-color: #666;
-                border-radius: 50%;
-                z-index: 2;
-            }
-            .main-circle15 {
-                position: absolute;
-                left: 2%;
-                width: 38%;
-                padding-bottom: 34%;
-                height: 0;
-                background: #bbb;
-                border-radius: 50%;
-                box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-                z-index: 3;
-                outline: 5px solid #333;
-                border: 2vw solid #555;
-            }
-        
-            .main-circle15::before {
-                content: '';
-                position: absolute;
-                inset: -3vw;
-                border-radius: 50%;
-                border: 3vw solid #0086c4;
-                pointer-events: none;
-                clip-path: polygon(50% 0%, 100% 0%, 100% 100%, 50% 100%);
-            }
-        
-            .circle-content15 {
-                position: absolute;
-                top: 0; left: 0; right: 0; bottom: 0;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                padding: 2vw;
-                
-            }
-        
-            .main-title15 {
-                font-size: 3.4vw;
-                font-weight: 900;
-                color: #222;
-                letter-spacing: 0.5px;
-                border-top: 1px solid #555;
-                border-bottom: 1px solid #555;
-                padding: 0.5vw 1vw;
-                line-height: 1.1;
-            }
-        
-            .main-subtitle15 {
-                font-size: 1.3vw;
-                font-weight: bold;
-                color: #444;
-                text-transform: uppercase;
-                letter-spacing: 0.1vw;
-                margin-top: 1vw;
-            }
-        
-            .menu-list15 {
-                position: absolute;
-                right: -5%;
-                width: 74%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                z-index: 4;
-            }
-        
-            .menu-item15 {
-                display: flex;
-                align-items: center;
-                position: relative;
-                width: 100%;
-                text-decoration: none;
-                color: inherit;
-                cursor: pointer;
-                -webkit-tap-highlight-color: transparent; 
-            }
-        
-            .menu-item15:active {
-                transform: scale(0.97);
-                transition: transform 0.1s ease;
-            }
-        
-            .connector-line15 {
-                position: absolute;
-                height: 0.5vw;
-                background-color: #bbb;
-                z-index: 1;
-            }
-            .connector-dot15 {
-                position: absolute;
-                width: 2vw;
-                height: 2vw;
-                background-color: #bbb;
-                border-radius: 50%;
-                z-index: 2;
-            }
-        
-            .item-115 { transform: translateX(15%); }
-            .item-215 { transform: translateX(25%); }
-            .item-315 { transform: translateX(30%); }
-            .item-415 { transform: translateX(30%); }
-            .item-515 { transform: translateX(25%); }
-            .item-615 { transform: translateX(15%); }
-        
-            .item-115:active { transform: translateX(5%) scale(0.97); }
-            .item-215:active { transform: translateX(23%) scale(0.97); }
-            .item-315:active { transform: translateX(31%) scale(0.97); }
-            .item-415:active { transform: translateX(31%) scale(0.97); }
-            .item-515:active { transform: translateX(23%) scale(0.97); }
-            .item-615:active { transform: translateX(5%) scale(0.97); }
-        
-            .item-115 .connector-line15 { width: 9.5vw; left: -7.2vw; transform: rotate(-40deg); top: 8.3vw; }
-            .item-115 .connector-dot15 { left: -7.5vw; top: 11vw; }
-        
-            .item-215 .connector-line15 { width: 7.5vw; left: -4.5vw; transform: rotate(-28deg); top: 5.5vw; }
-            .item-215 .connector-dot15 { left: -5vw; top: 6.5vw; }
-        
-            .item-315 .connector-line15 { width: 5vw; left: -3vw; top: 4.5vw; }
-            .item-315 .connector-dot15 { left: -4.5vw; top: 3.8vw; }
-        
-            .item-415 .connector-line15 { width: 5vw; left: -3vw; top: 4.5vw; }
-            .item-415 .connector-dot15 { left: -4.5vw; top: 3.8vw; }
-        
-            .item-515 .connector-line15 { width: 7vw; left: -5.5vw; transform: rotate(25deg); top: 4vw; }
-            .item-515 .connector-dot15 { left: -5.5vw; top: 2vw; }
-        
-            .item-615 .connector-line15 { width: 14vw; left: -9vw; transform: rotate(30deg); top: 0vw; }
-            .item-615 .connector-dot15 { left: -9vw; top: -4.3vw; }
-        
-            .icon-box15 {
-                width: 10vw;
-                height: 10vw;
-                background: #181818;
-                border-radius: 50%;
-                border: 0.4vw solid #777;
-                box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                z-index: 6;
-                font-size: 5vw;
-                color: #009ed7;
-                flex-shrink: 0;
-            }
-        
-          .label-box15{
-              position: relative; 
-              overflow: hidden;   
-              background: linear-gradient(135deg,#202020 0%,#404040 60%,#202020 100%);
-              color: #d6d5d5;
-              padding: 2vw 0vw 2vw 10vw;
-              border-radius: 0 8vw 8vw 0;
-              margin-left: -8vw;
-              z-index: 1;
-              font-weight: bold;
-              font-size: 3vw;
-              white-space: nowrap;
-              text-transform: uppercase;
-              width: 40vw;
-          }
-          
-          .label-box15::after{
-              content:'';
-              position:absolute;
-              top:0;
-              left:-150%;
-              width:60%;
-              height:100%;
-              
-              background: linear-gradient(
-                  to right,
-                  transparent,
-                  rgba(255,255,255,0.35),
-                  transparent
-              );
-          
-              transform: skewX(-25deg);
-              animation: slide-glow 6s infinite;
-              z-index: 0;
-              pointer-events:none;
-          }
-          
-          @keyframes slide-glow{
-              0% { left:-150%; }
-              50% { left:150%; }
-              100% { left:150%; }
-          }
-            
-        .menu-item15:active .icon-box15 {
-            background: #ff0000 !important;
-            border-color: #ffcccc !important;
-        }
-        
-        .menu-item15:active .label-box15 {
-            background-color: #d60000 !important;
-        }
-        
-        .menu-item15:active .connector-line15,
-        .menu-item15:active .connector-dot15 {
-            background-color: #ff0000 !important;
-        }
-            
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 5px;
-            line-height: 1.5;
-            font-weight: ;
-            width: 100%;
-            margin: 0 auto;
-            border-top: 2px solid #333;    
-            border-bottom: 2px solid #333;
-            padding: 15px 0px;
-            border-radius: 20px;
-        }
-        
-        @media (min-width: 768px) {
-            .menu-grid {
-                max-width: 100%;
-                grid-template-columns: repeat(4, 1fr);
-                gap: 5px;
-            }
-          }
-
-            .menu-container{
-                display:grid;
-                grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-                gap:10px;
-            }
-            
-            .menu-item {
-                border-radius:18px;
-                padding:15px 12px;
-                background:linear-gradient(135deg,#202020 0%,#222 10%,#111 80%);
-
-                display:flex;
-                flex-direction:column;
-                gap:2px;
-                cursor:pointer;
-                transition:0.2s ease;
-            }
-            .menu-item3:hover {
-                color: white;
-            }
-                        
-            .menu-item3:active {
-                transform: scale(0.95);
-                background-color: #007bd099; 
-                color: white;
-                transition: transform 0.1s ease; 
-                -webkit-tap-highlight-color: transparent; 
-            }
-            .menu-item3 {
-                border-radius:22px;
-                background:transparent;
-                display:flex;
-                flex-direction:column;
-                gap:2px;
-                cursor:pointer;
-                transition:0.2s ease;
-                padding: 5px 15px;
-            }
-            
-            .menu-container {
-               border-top: 2px solid #333;    
-                border-bottom: 2px solid #333;
-                padding: 8px 0px;
-                border-radius: 20px;
-            }
-            
-            .menu-item:hover {
-                background: #2d2d2d;
-                color: white;
-            }
-            
-            .menu-item:active {
-                transform: scale(0.95);              -webkit-tap-highlight-color: transparent; 
-                  background-color:#007bd0; 
-                          color: white;
-                transition: transform 0.1s ease; 
-            }
-          
-          .label:active {
-            color:#fff;
-          }
-          
-          .icon {
-              font-size: 20px;
-          }
-
-          .label {
-              font-size: 10px;
-              font-weight:600;
-              color:#bbb;
-          }
-
-          .darkmode .label {
-              color: red !important;
-          }
-
-        .ic-dashboard { color: red; }
-        .ic-dashb  { color: #8b5531; }
-        .ic-messages { color: red; }
-        .ic-groups { color: #e07229; }
-        .ic-friends { color:#52b8ff; }
-        .ic-reels { color: #d7a268; }
-        .ic-market { color: #52b8ff; }
-        .ic-pages { color: #f7b928; }
-        .ic-saved { color: #9333ea; }
-        .ic-memories { color: #c7c70a; }
-        .ic-birthday { color: #c7c70a; }
-        .ic-events { color: #f35e59; }
-        .ic-meta { color: #52b8ff; }
-        .ic-home { color: #f3a033; }
-        .ic-ig { color: #e1306c; }
-        
-        .thumb-container {
-            width: 100%;
-            aspect-ratio: 16 / 16;
-            background: #0f172a;
-            border-radius: 8px;
-            margin-bottom: 5px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .thumbnail { 
-            width: 100%; 
-            height: 100%; 
-            object-fit: cover; 
-            display: block;
-        }
-        
-        .logo-container1 {
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            width: 100%;
-            font-size: 4vw;
-            font-weight: bold;
-            display: flex;
-            gap: 2vw;
-            justify-content: left;
-        }
+      .logo-wrapper27 svg {
+          width: 65%; 
+    border: 3px solid #999;
+    border-radius: 50%;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
     
-        .kontainer-scroll {
+          max-width: 260px;
+          height: auto;
+      }
+  
+  .text-wrapper27 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+
+#iframeView15 {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#iframeView15.buka {
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+#iframeView15.tutup {
+    animation: slideUp 0.4s ease-in forwards;
+}
+
+#iframeView15.iframe-stories.buka {
+    animation: slideDownStories 0.4s ease-out forwards;
+}
+
+#iframeView15.iframe-stories.tutup {
+    animation: slideUpStories 0.4s ease-in forwards;
+}
+
+#iframeView15.iframe-stories #target-frame15 {
+    height: 60vh !important;
+}
+
+@keyframes slideDown {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 50vh; opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { max-height: 50vh; opacity: 1; }
+    to { max-height: 0; opacity: 0; }
+}
+
+@keyframes slideDownStories {
+    from { max-height: 0; opacity: 0; }
+    to { max-height: 60vh; opacity: 1; }
+}
+
+@keyframes slideUpStories {
+    from { max-height: 60vh; opacity: 1; }
+    to { max-height: 0; opacity: 0; }
+}
+
+#target-frame15 {
+    width: 100%;
+    height: 49vh;
+    border-radius:3vw;
+    border: none;
+    display: block;
+}
+
+#container-tutorial {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#container-tutorial.buka {
+    animation: slideDown 0.4s ease-out forwards;
+}
+
+#container-tutorial.tutup {
+    animation: slideUp 0.4s ease-in forwards;
+}
+
+#wrapper-frame {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+#wrapper-frame.buka {
+    max-height: 395px !important;
+    opacity: 1 !important;
+}
+
+#wrapper-frame.tutup {
+    max-height: 0 !important;
+    opacity: 0 !important;
+}
+
+#konten-frame {
+    width: 100% !important;
+    height: 100% !important;
+    display: block;
+    border: none;
+}
+
+.responsive-iframe {
+    width: 100%; 
+    aspect-ratio: 5 / 5;
+    height: auto;
+    border-radius: 8px;
+}
+
+#container-tutorial {
+    display: none;
+}
+
+.iframe-stories {
+    height: 60vh;
+    border-radius:3vw;
+}
+
+.iframe-stories iframe, 
+.iframe-stories [name="target-frame15"] {
+    height: 100% !important;
+}
+
+
+        .kontainer-scroll27 {
             width: 100%;
             overflow-x: auto;
             overflow-y: hidden;
             padding: 1vw 0;
         }
     
-        .grid {
+        .grid27 {
             display: flex;
             flex-direction: row;
-            align-items: stretch; /* Memastikan semua kartu sama tinggi */
+            align-items: stretch; 
             gap: 4vw;
             width: max-content;
             padding: 0 0vw;
@@ -848,27 +708,27 @@
         }
         
         .card1 {
-            border-radius: 5vw;
-            padding: 6vw 4vw;
+            border-radius: 20px;
+            padding:20px;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
                 background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
             box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
-            width: 32vw; 
+            width: 100px; 
             flex-shrink: 0;
         }
     
         .icon-box {
-            height: 15vw; 
+            height: 20px; 
             display: flex;
             align-items: center;
             justify-content: center;
             color: #51c8ff; 
             text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
-            font-size: 13vw;
-            margin-bottom: 2vw;
+            font-size: 35px;
+            margin-bottom: 25px;
         }
     
         .unicode {
@@ -883,157 +743,40 @@
         .btn-salin {
             background-color: #333;
             box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
-            color: #fff;
+            color: #19b6ff;
             border: none;
             border-radius: 3vw;
             padding: 3vw 0;
             width: 100%;
-            font-size: 3.5vw;
+            font-size: 12px;
             font-weight: bold;
             cursor: pointer;
             display: block;
         }
-        .btn-salin:active { opacity: 0.7; }
-        
-        .tommydev { font-size:15px; font-weight:800; display: block; margin:8px 0;color:#bbb;font-family:Orbitron; 
-        }
-        
-#iframeView15 {
-          width: 100%;
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-      }
-      
-      /* Aktif saat dibuka (Default / Menu Lain) */
-      #iframeView15.buka {
-          animation: slideDown 0.4s ease-out forwards;
-      }
-      
-      #iframeView15.tutup {
-          animation: slideUp 0.4s ease-in forwards;
-      }
-      
-      /* ======================================================== */
-      /* BARU: ANIMASI KHUSUS STORIES (BERBEDA DENGAN MENU LAIN) */
-      /* ======================================================== */
-      #iframeView15.iframe-stories.buka {
-          animation: slideDownStories 0.4s ease-out forwards;
-      }
-
-      #iframeView15.iframe-stories.tutup {
-          animation: slideUpStories 0.4s ease-in forwards;
-      }
-
-      #iframeView15.iframe-stories #target-frame15 {
-          height: 65vh !important; /* Memaksa iframe di dalam Stories jadi 65vh */
-      }
-      /* ======================================================== */
-
-      @keyframes slideDown {
-          from { max-height: 0; opacity: 0; }
-          to { max-height: 52vh; opacity: 1; }
-      }
-      
-      @keyframes slideUp {
-          from { max-height: 52vh; opacity: 1; }
-          to { max-height: 0; opacity: 0; }
-      }
-
-      /* Animasi keyframes khusus tinggi Stories */
-      @keyframes slideDownStories {
-          from { max-height: 0; opacity: 0; }
-          to { max-height: 65vh; opacity: 1; }
-      }
-      
-      @keyframes slideUpStories {
-          from { max-height: 65vh; opacity: 1; }
-          to { max-height: 0; opacity: 0; }
-      }
-      
-      #target-frame15 {
-          width: 100%;
-          height: 52vh; /* Tinggi dasar untuk menu lain */
-          border: none;
-          display: block;
-      }
-      
-      #container-tutorial {
-          width: 100%;
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-      }
-      
-      #container-tutorial.buka {
-          animation: slideDown 0.4s ease-out forwards;
-      }
-      
-      #container-tutorial.tutup {
-          animation: slideUp 0.4s ease-in forwards;
-      }
-      
-      #wrapper-frame {
-          max-height: 0;
-          opacity: 0;
-          overflow: hidden;
-          transition: max-height 0.4s ease, opacity 0.4s ease;
-      }
-      
-      #wrapper-frame.buka {
-          max-height: 395px !important;
-          opacity: 1 !important;
-      }
-
-      #wrapper-frame.tutup {
-          max-height: 0 !important;
-          opacity: 0 !important;
-      }
-      
-      #konten-frame {
-          width: 100% !important;
-          height: 100% !important;
-          display: block;
-          border: none;
-      }
-      
-      .responsive-iframe {
-          width: 100%; 
-          aspect-ratio: 5 / 5;
-          height: auto;
-          border-radius: 8px;
-      }
-      
-      #container-tutorial {
-          display: none;
-      }
-/* Style khusus paksa untuk Stories */
-.iframe-stories {
-    height: 85vh !important;
+        .btn-salin {
+    -webkit-tap-highlight-color: transparent;
+    transition: transform 0.1s ease, opacity 0.1s ease;
 }
-.iframe-stories iframe, 
-.iframe-stories [name="target-frame15"] {
-    height: 100% !important;
-}
-      </style>
 
-  <body>
-  <div class="container">
-    <div class="unique-controls">
-          
+.btn-salin:active {
+    transform: scale(0.95);
+    opacity: 0.7;
+}
+
+</style>
+
+<body>
+<div class="container">
+  
             <span class="bold">
-                <span style="font-size:15px;"><span style="color:gold;font-family:Orbitron,monospace;letter-spacing:1.03vw;text-transform:uppercase;font-weight:700;">TOMMY WEBSITE | </span>Tools ⚙️</span>
+                <span style="color:rgb(0,169,215);">TOMMY WEB <b>| Tools ⚙</b>️</span>
             </span>
         <div class="status-bar2">
             <div style="display: flex; align-items: center;">
-                <span class="status-text2">SERVER ONLINE</span>
+                <span class="status-text2">Server Onlyne</span>
                 <span class="status-dot2"></span>
             </div>
             <span class="status-id2">BY TOMMY DEV2799</span>
-        </div>
-       <div id="toolbox-options">
-        <div class="ag-wrapper">
-            <div class="card">
         </div>
 
       <div id="container">
@@ -1049,70 +792,14 @@
           </iframe>
         </div>
     </h1>
-   <div class="image-row">
-       <div class="container27">
-         <div class="logo-wrapper27">
-
-    <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stop-color="#e1e4ea"/>
-                <stop offset="60%" stop-color="#ced2db"/>
-                <stop offset="100%" stop-color="#404348"/>
-            </linearGradient>
     
-            <clipPath id="circle-clip">
-                <circle cx="130" cy="130" r="105"/>
-            </clipPath>
-        </defs>
-
-    <g clip-path="url(#circle-clip)">
-        <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
-
-        <circle cx="130" cy="95" r="38" fill="#60646d"/>
-
-        <path
-            d="M35 235
-               C35 175 70 145 130 145
-               C190 145 225 175 225 235 Z"
-            fill="#60646d"/>
-      </g>
-
-    <g transform="translate(130 190) scale(0.32)">
-        
-        <path
-            d="M0 -58
-               C18 -45 38 -37 58 -35
-               L58 8
-               C58 46 32 76 0 96
-               C-32 76 -58 46 -58 8
-               L-58 -35
-               C-38 -37 -18 -45 0 -58 Z"
-            fill="none"
-            stroke="#ffffff"
-            stroke-width="10"
-            stroke-linecap="round"
-            stroke-linejoin="round"/>
-
-        <path
-            d="M0 -40
-               C12 -30 25 -24 40 -22
-               L40 6
-               C40 30 22 52 0 66
-               C-22 52 -40 30 -40 6
-               L-40 -22
-               C-25 -24 -12 -30 0 -40 Z"
-            fill="#ffffff"/>
-          </g>
-      </svg>
-
- </div>
+    
 <div class="text-container27">
-    <div class="tommydev" style="display:flex; gap:10px; font-size:17px;">
+    <div class="tommydev" style="display:flex; gap:10px; ">
       Avatar Guard fb
   
       <i class="fab fa-facebook"
-         style="color:#347bef;
+         style="color:#0891b2;
                 background:white;
                 letter-spacing: 0px;
                 border-radius:50%;
@@ -1126,117 +813,242 @@
             </i>
         
         </div>
+   <div class="image-row">
+       <div class="container27">
+              <div class="logo-wrapper27">
+                <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                      <stop offset="0%" stop-color="#e1e4ea"/>
+                      <stop offset="60%" stop-color="#ced2db"/>
+                      <stop offset="100%" stop-color="#404348"/>
+                    </linearGradient>
+                    <clipPath id="circle-clip">
+                      <circle cx="130" cy="130" r="105"/>
+                    </clipPath>
+                  </defs>
+                  <g clip-path="url(#circle-clip)">
+                    <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
+                    <circle cx="130" cy="95" r="38" fill="#60646d"/>
+                    <path d="M35 235 C35 175 70 145 130 145 C190 145 225 175 225 235 Z" fill="#60646d"/>
+                  </g>
+                  <g transform="translate(130 190) scale(0.32)">
+                    <path d="M0 -58 C18 -45 38 -37 58 -35 L58 8 C58 46 32 76 0 96 C-32 76 -58 46 -58 8 L-58 -35 C-38 -37 -18 -45 0 -58 Z" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M0 -40 C12 -30 25 -24 40 -22 L40 6 C40 30 22 52 0 66 C-22 52 -40 30 -40 6 L-40 -22 C-25 -24 -12 -30 0 -40 Z" fill="#ffffff"/>
+                  </g>
+                </svg>
+              </div>
+
   <b class="subtitle27">Facebook profile & page</b>
-  <span style="font-size:10px; font-weight:400; display: block; margin:3px 0; color:#eee; padding-bottom:5px;">Gunakan browser extensions (desktop)</span>
-  
-  <div class="button-group">
-    <a href="https://github.com/tommydev27/tools-data-tm/archive/refs/heads/main.zip" class="btn-download-red">Download ZIP</a>
-    <a id="btn-tutorial" class="btn-download-red" style="background:hsl(0,69.9%,37.4%);">Tutorial</a>
-  </div>
-</div>
-          </div>
-       </div>
-<script>
-  document.getElementById('btn-tutorial').addEventListener('click', function() {
-    var tutorialDiv = document.getElementById('container-tutorial');
-    
-    if (tutorialDiv.style.display === 'block') {
-
-      tutorialDiv.classList.remove('buka');
-      tutorialDiv.classList.add('tutup');
-      
-      setTimeout(function() {
-        tutorialDiv.style.display = 'none';
-      }, 400);
-      
-    } else {
-
-      tutorialDiv.classList.remove('tutup');
-      tutorialDiv.classList.add('buka');
-      tutorialDiv.style.display = 'block';
-      
-      tutorialDiv.onanimationend = function(e) {
-        if (e.animationName === 'slideDown') {
-          tutorialDiv.scrollIntoView({ 
-            behavior: 'smooth', 
-            block: 'start' 
-          });
-          tutorialDiv.onanimationend = null; 
-        }
-      };
-    }
-  });
-</script>
-
-<div class="content-container15">
+  <span style="font-size:12px; font-weight:400; display: block; ">Gunakan browser extensions (desktop)
+         <br> <b>Cara Pasang:</b><br>
+              1. Download & Ekstrak file ZIP.<br>
+                  2. Buka Browser Kiwi/Lemur, buka menu Extensions.<br>
+                  3. Aktifkan Mode Developer.<br>
+                  4. Klik "Load unpacked" dan pilih folder hasil ekstrak.
+                 </span>
+              </div>
+              
+  <div class="content-container15">
     <div id="defaultView15" style="display: block;"></div>
     <div id="iframeView15" style="display: none;">
-        <iframe 
-            name="target-frame15" 
-            id="target-frame15" 
-            src="about:blank" 
-            style="width: 100%; height: 52vh; border: none;">
-        </iframe>
+      <iframe name="target-frame15" id="target-frame15" src="about:blank" ></iframe>
     </div>
-</div>
+
+  </div>
+
   <div class="wrapper15">
     <div class="main-circle15">
-                 
-        <div class="circle-content15">
-          
-            <div class="main-title15">TOMMY WEB</div>
-            <div class="main-subtitle15">Extensions TOOLS</div>
-        </div>
+      <div class="circle-content15">
+        <div class="main-title15">TOMMY WEB</div>
+        <div class="main-subtitle15">Extensions</div>
+      </div>
     </div>
 
     <div class="menu-list15">
-        
-        <a href="" class="menu-item15 item-115">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
-            <div class="label-box15">Avatar Guard</div>
-        </a>
-        
-        <a href="" class="menu-item15 item-215">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
-            <div class="label-box15">cookie</div>
-        </a>
-
-        <a href="" class="menu-item15 item-315">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-gradient15"><i class="fas fa-clone"></i></div>
-            <div class="label-box15">lite clone</div>
-        </a>
-
-<!-- Ditambahkan parameter '65vh' khusus untuk Stories -->
-<a href="javascript:void(0);" class="menu-item15 item-415" onclick="toggleIframe15('https://tommydev27.github.io/Storyes-27/', 'stories')">
-    <div class="connector-dot15"></div>
-    <div class="connector-line15"></div>
-    <div class="icon-box15"><i class="fas fa-book"></i></div>
-    <div class="label-box15">Stories</div>
+<a href="javascript:void(0);" class="menu-item15 item-115" onclick="toggleIframe15('https://www.youtube.com/embed/Aj-tyu3qAVk', 'avatar')">
+  <div class="connector-line15"></div>
+  <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
+  <div class="label-box15">Avatar Tutorial </div>
 </a>
 
-        <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15"><i class="fas fa-music"></i></div>
-            <div class="label-box15">Music Player</div>
-        </a>
-        
-        <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/downloader-tik/')">
-            <div class="connector-dot15"></div>
-            <div class="connector-line15"></div>
-            <div class="icon-box15 bg-white-icon15"><i class="fab fa-tiktok"></i></div>
-            <div class="label-box15">Downld v-mp3</div>
-        </a>
+<a href="javascript:void(0);" class="menu-item15 item-215" onclick="toggleIframe15('https://tommydev27.github.io/tmavatar/', 'cookie')">
+  <div class="connector-line15"></div>
+  <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
+  <div class="label-box15">Download zip </div>
+</a>
+
+<a href="javascript:void(0);" class="menu-item15 item-315" onclick="toggleIframe15('https://tommydev27.github.io/cookie-token/', 'clone')">
+  <div class="connector-line15"></div>
+  <div class="icon-box15"><i class="fas fa-clone"></i></div>
+  <div class="label-box15">Cookie Token</div>
+</a>
+
+      <a href="javascript:void(0);" class="menu-item15 item-415" onclick="toggleIframe15('https://tommydev27.github.io/Storyes-27/', 'stories')">
+        <div class="connector-line15"></div>
+        <div class="icon-box15"><i class="fas fa-book"></i></div>
+        <div class="label-box15">Stories</div>
+      </a>
+
+      <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
+        <div class="connector-line15"></div>
+        <div class="icon-box15"><i class="fas fa-music"></i></div>
+        <div class="label-box15">Music Player</div>
+      </a>
+      
+      <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/downloader-tik/')">
+        <div class="connector-line15"></div>
+        <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
+        <div class="label-box15">Downld v-mp3</div>
+      </a>
     </div>
   </div>
+  
+   <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400;font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p> </tm>
+    <div class="kontainer-scroll27">
+        <div class="grid27" id="mainGrid"></div>
+    </div>
+    
+<div class="logo-container1">
+    
+<div class="kontainer-scroll">
+    <div class="grid" id="mainGrid">
+
+<tm class="tommydev">Generator Teks</tm>
+<div class="menu-grid" id="menuGrid">
+    <div class="menu-item" onclick="handleLinkBaru('Grup')">
+        <i class="fas fa-keyboard icon"></i>
+        <span class="label">Multi Keyboard</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Teman1')">
+        <i class="fas fa-ad icon"></i>
+        <span class="label">Code symbols</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Teman2')">
+        <i class="fab fa-behance icon"></i>
+        <span class="label">Jumlah Teks</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Teman3')">
+        <i class="fas fa-play icon"></i>
+        <span class="label">Code Run Icon</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Teman')">
+        <i class="fas fa-at icon"></i>
+        <span class="label">Unicode Explor</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Reels')">
+        <i class="fab fa-atlassian icon"></i>
+        <span class="label">Generator Text</span>
+    </div>
+    </div>
+    
+    
+<tm class="tommydev">ID card editor<p style="font-weight:400;font-size:12px;">Generator pembuat id tanda pengenal identitas banding </p> </tm>
+<div class="card-container">
+  <div id="wrapper-frame" style="display: none;  height: 395px; border-radius: 2vw; max-width:345px; width:100%;margin:auto;">
+
+    <iframe id="konten-frame" src="" style=""></iframe>
+
+  </div>
+  
+<div class="menu-container">
+
+  <div class="menu-item3" onclick="handleKlik('Dasbor profesional')">
+    <div class="icon-circle">
+      <div class="icon-inner inner-orange">
+        <i class="fas fa-id-card" aria-label="ID Card"></i>
+      </div>
+    </div>
+    <div class="card-header bg-orange">
+      <span class="card-title">ID card</span>
+    </div>
+    <div class="card-body">
+      <span class="card-desc">Kartu identitas buat klik di sini</span>
+    </div>
+  </div>
+
+  <div class="menu-item3" onclick="handleKlik('Pesan')">
+    <div class="icon-circle">
+      <div class="icon-inner inner-yellow">
+        <i class="fas fa-id-card" aria-label="Sim Card"></i>
+      </div>
+    </div>
+    <div class="card-header bg-yellow">
+      <span class="card-title">Sim ID</span>
+    </div>
+    <div class="card-body">
+      <span class="card-desc">kartu sim Buat klik di sini</span>
+    </div>
+  </div>
+
+  <div class="menu-item3" onclick="handleKlik('Pesan2')">
+    <div class="icon-circle">
+      <div class="icon-inner inner-green">
+        <i class="fas fa-id-card" aria-label="Sim Card"></i>
+      </div>
+    </div>
+    <div class="card-header bg-green">
+      <span class="card-title">ID card pw Hindi</span>
+    </div>
+    <div class="card-body">
+      <span class="card-desc">kartu identitas hindi buat klik di sini</span>
+    </div>
+  </div>
+
+</div>
 </div>
 
+<div class="logo-container1">
+    
+<div class="kontainer-scroll">
+    <div class="grid" id="mainGrid">
+
+<tm class="tommydev">Lainnya
+<p style="font-weight:400;font-size:12px;">Cek juga alat lainnya ...</p> </tm>
+<div class="menu-grid" id="menuGrid">
+
+    <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
+        <i class="fab fa-facebook icon"></i>
+        <span class="label">Font Name Fb</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Halaman')">
+        <i class="fab fa-fonticons-fi icon"></i>
+        <span class="label">Seni Font teks</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
+        <i class="fas fa-barcode icon"></i>
+        <span class="label">Glitch Text</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Acara')">
+        <i class="fa-solid fa-book-open icon"></i>
+        <span class="label">Blok 2 Catatan</span>
+    </div>
+    
+    <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
+        <i class="fas fa-image icon"></i>
+        <span class="label">Image Art</span>
+    </div>
+
+    <div class="menu-item" onclick="handleLinkBaru('Ulang Birthday')">
+        <i class="fas fa-chalkboard-teacher icon"></i>
+        <span class="label">Generator IMG</span>
+    </div>
+</div>
+<div>
+<footer style="text-align: center; font-size: 12px; text-align:left; padding: 5vw 0; margin-top:5vw;">
+    <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
+    <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
+    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Tommy Website</a></p>
+</footer>
+</div>
 <script>
 var currentActiveUrl15 = '';
 
@@ -1307,39 +1119,6 @@ window.addEventListener('pagehide', function() {
 });
 </script>
 
-     </br>                          
-    <tm class="tommydev">Create id</tm>
-
-  <div class="menu-container">
-  <div id="wrapper-frame" style="display: none; margin: 0px; width: 330px; height: 395px; border-radius: 0px; overflow: hidden; position: relative;">
-    <iframe id="konten-frame" src="" style=""></iframe>
-
-  </div>
-    <div class="menu-item3" onclick="handleKlik('Dasbor profesional')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
-      <i class="fas fa-id-card" style="font-size:32px; margin-right:15px; flex-shrink:0; color:#0297dd;" aria-label="ID Card"></i>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style=" font-size: 14px; color: #d6d5d5; display: block;">ID card</span>
-            <span style="font-size: 10px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
-        </div>
-    </div>
-
-    <div class="menu-item3" onclick="handleKlik('Pesan')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
-        <i class="fas fa-id-card" style="font-size:32px; margin-right:15px; flex-shrink:0; color:#d30101;" aria-label="Sim Card"></i>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-size: 14px; color: #d6d5d5; display: block;">Sim ID</span>
-            <span style="font-size: 10px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
-        </div>
-    </div>
-
-    <div class="menu-item3" onclick="handleKlik('Pesan2')" style="display: flex; flex-direction: row; align-items: center; border-radius: 15px; cursor: pointer;">
-        <i class="fas fa-id-card" style="font-size:32px; margin-right:15px; flex-shrink:0; color:#03a987;" aria-label="Sim Card"></i>
-        <div style="display: flex; flex-direction: column; justify-content: center;">
-            <span class="label" style="font-size: 14px; color: #d6d5d5; display: block;">ID card pw Hindi</span>
-            <span style="font-size: 10px; color: #ccc; margin-top: 4px;">Buat klik di sini</span>
-        </div>
-    </div>
-</div>
-
 <script>
 function handleKlik(namaMenu) {
     const daftarLink = {
@@ -1397,77 +1176,6 @@ function handleKlik(namaMenu) {
     }
 }
 </script>
-
-    <div class="logo-container1">
-          <tm class="tommydev">Icon Logo </tm>
-    </div>
-    
-    <div class="kontainer-scroll">
-        <div class="grid" id="mainGrid"></div>
-    </div>
-
-<tm class="tommydev">Tools list</tm>
-<div class="menu-grid" id="menuGrid">
-    <div class="menu-item" onclick="handleLinkBaru('Grup')">
-        <i class="fas fa-keyboard icon ic-groups"></i>
-        <span class="label">Multi Keyboard</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Teman1')">
-        <i class="fas fa-ad icon ic-friends"></i>
-        <span class="label">Code symbols</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Teman2')">
-        <i class="fab fa-behance icon ic-friends"></i>
-        <span class="label">Jumlah Teks</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Teman3')">
-        <i class="fas fa-play icon ic-friends"></i>
-        <span class="label">Code Run Icon</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Teman')">
-        <i class="fas fa-at icon ic-friends"></i>
-        <span class="label">Unicode Explor</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Reels')">
-        <i class="fab fa-atlassian icon ic-friends"></i>
-        <span class="label">Generator Text</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
-        <i class="fab fa-facebook icon ic-friends"></i>
-        <span class="label">Font Name Fb</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Halaman')">
-        <i class="fab fa-fonticons-fi icon ic-friends"></i>
-        <span class="label">Seni Font teks</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
-        <i class="fas fa-barcode icon ic-friends"></i>
-        <span class="label">Glitch Text</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Acara')">
-        <i class="fa-solid fa-book-open icon ic-friends"></i>
-        <span class="label">Blok 2 Catatan</span>
-    </div>
-    
-    <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
-        <i class="fas fa-image icon ic-memories"></i>
-        <span class="label">Image Art</span>
-    </div>
-    <div class="menu-item" onclick="handleLinkBaru('Ulang Tahun')">
-        <i class="fas fa-chalkboard-teacher icon ic-birthday"></i>
-        <span class="label">Generator IMG</span>
-    </div>
-</div>
-
-
-
-<fr style="text-align: center; padding: 0px; background: #f4f4f4; font-size: 12px; text-align:left;">
-    <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
-    <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
-    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Contact Admin</a></p>
-</fr>
 <script>
 function handleLinkBaru(namaMenu) {
     const daftarLink = {
@@ -1498,9 +1206,8 @@ function handleLinkBaru(namaMenu) {
     }
 }
 </script>
-
   <script>
-    const icons = ['𔓙', '𓃭', '𔒒', '𔑪', '𓄁', '𓄇', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𔑫', '𓊿', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
+    const icons = ['𔓙', '𓃭', '𔑪', '𓄁', '𓄇', '𔑫', '𓊿', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔒒', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
     const grid = document.getElementById('mainGrid');
 
     icons.forEach(symbol => {
@@ -1522,146 +1229,6 @@ function handleLinkBaru(namaMenu) {
         btn.innerText = 'OK';
         setTimeout(() => { btn.innerText = originalText; }, 800);
     }
-</script>
-
-
-
-
-
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-    function showTab(tab) {
-        const tabs = document.querySelectorAll("#profil-tabs div");
-        const contents = document.querySelectorAll("#profil-content > div");
-        tabs.forEach(t => t.classList.remove("active"));
-        contents.forEach(c => c.classList.remove("active"));
-        document.querySelector(`#tab-${tab}`).classList.add("active");
-        document.querySelector(`#content-${tab}`).classList.add("active");
-    }
-
-    function redirect(url) {
-        window.location.href = url;
-    }
-
-    function nextPage() {
-        alert("Akan dialihkan ke halaman selanjutnya!");
-    }
-
-    document.querySelectorAll("#scroll-buttons button").forEach(button => {
-        button.addEventListener("click", function () {
-            const url = this.getAttribute("onclick").match(/'(.*?)'/)[1];
-            redirect(url);
-        });
-    });
-});
-</script>
-
-<script>
-window.addEventListener("beforeunload", () => { 
-    sessionStorage.setItem("scrollY", window.scrollY); 
-}); 
-
-window.addEventListener("load", () => { 
-    let savedScrollY = sessionStorage.getItem("scrollY"); 
-    if (savedScrollY !== null) { 
-        window.scrollTo(0, parseInt(savedScrollY)); 
-    } 
-}); 
-
-let scrollContainer = document.getElementById("image-scroll-container"); 
-
-window.addEventListener("beforeunload", () => { 
-    sessionStorage.setItem("scrollX", scrollContainer.scrollLeft); 
-}); 
-
-window.addEventListener("load", () => { 
-    let savedScrollX = sessionStorage.getItem("scrollX"); 
-    if (savedScrollX !== null) { 
-        scrollContainer.scrollLeft = parseInt(savedScrollX); 
-    } 
-}); 
-
-let timeout; 
-scrollContainer.addEventListener("touchstart", () => { 
-    clearTimeout(timeout); 
-}); 
-
-scrollContainer.addEventListener("touchend", () => { 
-    timeout = setTimeout(() => { 
-        scrollContainer.scrollLeft += 1; 
-    }, 10000); 
-});
-</script>
-
-<script>
-window.addEventListener("load", function () {
-    const container = document.createElement("div");
-    container.id = "rootFbContainer";
-    
-    const iframe = document.createElement("iframe");
-    iframe.id = "rootFbIframe"; 
-    iframe.src = "https://tommydev27.github.io/root-fb/";
-    iframe.style.width = "100%";
-    iframe.style.height = "245px";
-    iframe.style.border = "none";
-    iframe.style.display = "block";
-    
-    container.appendChild(iframe);
-    const wrapper = document.getElementById("iframeWrapper");
-    if(wrapper) wrapper.appendChild(container);
-});
-</script>
-
-<script>
-document.getElementById("iconuniquecontainer")?.addEventListener("click", function () { 
-    this.classList.toggle("active"); 
-});
-</script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const container = document.getElementById('image-scroll-container');
-    const wrapper = document.getElementById('image-wrapper');
-    let scrollAmount = 0;
-    const step = 191;
-    const delay = 3000;
-    let autoScrollInterval;
-    let resumeTimeout;
-
-    function startAutoScroll() {
-        autoScrollInterval = setInterval(() => {
-            scrollAmount += step;
-            if (scrollAmount >= wrapper.scrollWidth - container.clientWidth) {
-                scrollAmount = 0;
-            }
-            container.scrollTo({
-                left: scrollAmount,
-                behavior: 'smooth'
-            });
-        }, delay);
-    }
-
-    function stopAutoScrollTemporarily() {
-        clearInterval(autoScrollInterval);
-        clearTimeout(resumeTimeout);
-        resumeTimeout = setTimeout(() => {
-            scrollAmount = container.scrollLeft;
-            startAutoScroll();
-        }, 3000);
-    }
-
-    container.addEventListener('touchstart', () => stopAutoScrollTemporarily());
-    container.addEventListener('scroll', () => stopAutoScrollTemporarily());
-
-    document.querySelectorAll('.img-container').forEach(container => {
-        container.addEventListener('click', () => {
-            container.classList.add('clicked-blink');
-            setTimeout(() => container.classList.remove('clicked-blink'), 3000);
-        });
-    });
-
-    startAutoScroll();
-});
 </script>
 
 </body>
