@@ -40,10 +40,10 @@
   }
 
    body {
-     background: rgb(36,34,30);
+     background: rgb(242, 242, 242);
       -webkit-user-select: none;
       font-family:sans-serif;
-      color: #dafbfd;
+      color:#1d5b5c;
    }
 
   .container {
@@ -86,11 +86,16 @@
   width: 100%;
   height: 100%;
   min-height: 70px;
-  background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+  background: #ffffff;
   border-radius: 18px;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
   cursor: pointer;
   overflow: visible;
+}
+
+body.dark-mode .menu-item3 {
+background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
 }
 
   .card-header {
@@ -103,9 +108,9 @@
   }
 
   .card-title {
-    font-size: 14px;
+    font-size: 15px;
     font-weight: bold;
-    color: #fff;
+    color: #ffffff;
   }
 
   .card-body {
@@ -118,7 +123,6 @@
 
   .card-desc {
     font-size: 12px;
-    color: #d9d9d9;
     line-height: 1.4;
   }
 
@@ -129,13 +133,19 @@
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    background: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
     z-index: 2;
   }
+  
+  body.dark-mode .icon-circle {
+   background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+  }
+  
 
   .icon-inner {
     width: 40px;
@@ -147,21 +157,18 @@
   }
 
   .icon-inner i {
-    color:rgb(106,205,255);
+    color: #ffffff;
     font-size: 24px;
   }
 
-  .bg-orange { background: linear-gradient(to bottom, #262d38, #4a596e); }
-  .inner-orange { background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .bg-orange { background: linear-gradient(to bottom, #e68a3d, #c97327); }
+  .inner-orange { background: #d67c2a; }
 
-  .bg-yellow { background: linear-gradient(to bottom, #262d38, #4a596e); }
-  .inner-yellow { background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .bg-yellow { background: linear-gradient(to bottom, #b5a432, #968722); }
+  .inner-yellow { background: #a39326; }
 
-  .bg-green { background: linear-gradient(to bottom, #262d38, #4a596e); }
-  .inner-green { background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .bg-green { background: linear-gradient(to bottom, #6fa152, #56823c); }
+  .inner-green { background: #619145; }
 </style>
 
   
@@ -178,17 +185,21 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    background: #ffffff;
     border-radius: 12px;
     padding: 12px;
     height: 70px;
-
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
 
     cursor: pointer;
     overflow: hidden;
     padding-right: 32px;
   }
+  
+body.dark-mode .menu-item { 
+    background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+}
 
   .menu-item .icon {
     font-size: 25px;
@@ -198,7 +209,6 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 
   .menu-item .label {
     font-size: 12px;
-    color: #fff;
     font-weight: 600;
     line-height: 1.3;
     display: -webkit-box;
@@ -332,12 +342,16 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
     width: 170px;
     height: 170px;
     border-radius: 50%;
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
     border: 12px solid transparent;
-    background: linear-gradient(#333, #444) padding-box,
+    background: linear-gradient(#f5f7fa, #f5f7fa) padding-box,
                 conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
     z-index: 0;
   }
+
+body.dark-mode .wrapper15::before {
+    background: linear-gradient(#333, #444) padding-box,
+                conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
+}
 
   .main-circle15 {
     position: absolute;
@@ -393,7 +407,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
     display: flex;
     align-items: center;
     width: 100%;
-    max-width: 105px; 
+    max-width: 107px; 
     height: 34px; 
     text-decoration: none;
     color: white;
@@ -409,7 +423,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 11px;
+    font-size: 16px;
     margin: 3px;
     flex-shrink: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -419,47 +433,48 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 
   .label-box15 {
     font-weight: 600;
-    font-size: 9px;
-    color: #19b6ffff;
-    background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+    font-size: 10px;
+    text-align: center;
     text-transform: capitalize;
     white-space: nowrap;
+    padding: 0px;
     overflow: hidden;
     text-overflow: ellipsis;
     width: 100%;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
   }
 
   .item-115, .item-215, .item-315 {
     flex-direction: row-reverse;
     text-align: right; 
   }
-  .item-115 { top: 40px; left: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
-  .item-215 { top: 103px; left: -7px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
-  .item-315 { bottom: 40px; left: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .item-115 { top: 40px; left: 18px; background: #81262f; }
+  .item-215 { top: 103px; left: -7px; background: #00acc1; }
+  .item-315 { bottom: 40px; left: 18px; background: #00bfa5; }
 
   .item-415, .item-515, .item-615 {
     flex-direction: row;
     text-align: left;
   }
-  .item-415 { top: 40px; right: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
-  .item-515 { top: 103px; right: -7px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
-  .item-615 { bottom: 40px; right: 18px; background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e; }
+  .item-415 { top: 40px; right: 18px; background: #ffb300; }
+  .item-515 { top: 103px; right: -7px; background: #fb8c00; }
+  .item-615 { bottom: 40px; right: 18px; background: #f43f5e; }
 
   .connector-line15 {
     position: absolute;
     height: 1px;
     z-index: 1; 
   }
+
+/* Gabungkan semua properti warna untuk dark mode */
+body.dark-mode .item-115, 
+body.dark-mode .item-215, 
+body.dark-mode .item-315, 
+body.dark-mode .item-415, 
+body.dark-mode .item-515, 
+body.dark-mode .item-615 {
+    background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
+    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+}
 
   .item-115 .icon-box15 { color: #0e6383; }
   .item-115 .connector-line15 { background: #0e6383; width: 30px; right: -25px; top: 35px; transform: rotate(50deg); }
@@ -555,8 +570,8 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
       }
 
       .logo-wrapper27 svg {
-          width: 65%; 
-    border: 3px solid #999;
+          width: 40%; 
+    border: 3px solid #09b4cd;
     border-radius: 50%;
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
     
@@ -595,32 +610,32 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 }
 
 #iframeView15.iframe-stories #target-frame15 {
-    height: 60vh !important;
+    height: 65vh !important;
 }
 
 @keyframes slideDown {
     from { max-height: 0; opacity: 0; }
-    to { max-height: 50vh; opacity: 1; }
+    to { max-height: 56vh; opacity: 1; }
 }
 
 @keyframes slideUp {
-    from { max-height: 50vh; opacity: 1; }
+    from { max-height: 56vh; opacity: 1; }
     to { max-height: 0; opacity: 0; }
 }
 
 @keyframes slideDownStories {
     from { max-height: 0; opacity: 0; }
-    to { max-height: 60vh; opacity: 1; }
+    to { max-height: 65vh; opacity: 1; }
 }
 
 @keyframes slideUpStories {
-    from { max-height: 60vh; opacity: 1; }
+    from { max-height: 65vh; opacity: 1; }
     to { max-height: 0; opacity: 0; }
 }
 
 #target-frame15 {
     width: 100%;
-    height: 49vh;
+    height: 52vh;
     border-radius:3vw;
     border: none;
     display: block;
@@ -677,7 +692,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 }
 
 .iframe-stories {
-    height: 60vh;
+    height: 64vh;
     border-radius:3vw;
 }
 
@@ -686,22 +701,24 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
     height: 100% !important;
 }
 
-
         .kontainer-scroll27 {
             width: 100%;
             overflow-x: auto;
             overflow-y: hidden;
-            padding: 1vw 0;
+            border-radius: 25px;
+            background: #f1e8e8;
         }
-    
+body.dark-mode .kontainer-scroll27
+{background: #111;}
+
         .grid27 {
             display: flex;
             flex-direction: row;
             align-items: stretch; 
-            gap: 4vw;
+            gap: 8px;
             width: max-content;
-            padding: 0 0vw;
-        }
+            padding: 5px;
+          }
     
         .card {
               padding: 1vw 0vw;
@@ -714,9 +731,9 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-                background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-            box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
-            width: 100px; 
+                background:#fff;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
+            width: 1.7%; 
             flex-shrink: 0;
         }
     
@@ -725,7 +742,6 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: #51c8ff; 
             text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
             font-size: 35px;
             margin-bottom: 25px;
@@ -733,20 +749,20 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
     
         .unicode {
             color: #d4e157;
-            font-size: 3vw;
-            margin-bottom: 4vw;
+            font-size: 10px;
+            margin-bottom: 10px;
             font-weight: bold;
             text-transform: uppercase;
             text-align: center;
         }
     
         .btn-salin {
-            background-color: #333;
-            box-shadow: inset 6px 6px 4px #444, inset -6px -6px 5px #4a596e;
+            background-color: #fff;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
             color: #19b6ff;
             border: none;
             border-radius: 3vw;
-            padding: 3vw 0;
+            padding: 8px 0;
             width: 100%;
             font-size: 12px;
             font-weight: bold;
@@ -754,45 +770,76 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
             display: block;
         }
         .btn-salin {
-    -webkit-tap-highlight-color: transparent;
-    transition: transform 0.1s ease, opacity 0.1s ease;
+        -webkit-tap-highlight-color: transparent;
+        transition: transform 0.1s ease, opacity 0.1s ease;
+    }
+
+  body.dark-mode .btn-salin {
+    background: #333;
+  }
+
+        .btn-salin:active {
+            transform: scale(0.95);
+            opacity: 0.7;
+        }
+        
+
+body {
+  background-color: #fff;
+  color: #000;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
-.btn-salin:active {
-    transform: scale(0.95);
-    opacity: 0.7;
+body.dark-mode {
+  background-color: #181818;
+  color: #00e2f0;
 }
 
+body.dark-mode #kontainer-utama {
+  background: #111 !important;
+}
+
+body.dark-mode .card1 {
+  background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%) !important;
+  box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e !important;
+}
+  .header-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 0px; }
+  .theme-btn { background: none; border: none; cursor: pointer; font-size: 18px; color: #00e2f0; transition: transform 0.1s ease; background:#555; border-radius:30px; padding:2px;}
+  .theme-btn:active { transform: scale(0.7); }
+  
+.theme-btn {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
 </style>
 
 <body>
 <div class="container">
   
-            <span class="bold">
-                <span style="color:rgb(0,169,215);">TOMMY WEB <b>| Tools ⚙</b>️</span>
-            </span>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<div class="header-wrapper">
+  <span class="bold" style="color:rgb(0,169,215);">TOMMY WEB <b>| Tools ⚙️</b></span>
+
+  <button class="theme-btn" id="toggleBtn">
+    <i class="fas fa-moon"></i>
+  </button>
+</div>
+
+<script>
+const toggleBtn = document.getElementById('toggleBtn');
+
+toggleBtn.addEventListener('click', function() {
+  document.body.classList.toggle('dark-mode');
+});
+</script>
         <div class="status-bar2">
             <div style="display: flex; align-items: center;">
-                <span class="status-text2">Server Onlyne</span>
+                <span class="status-text2">SERVER ONLINE</span>
                 <span class="status-dot2"></span>
             </div>
             <span class="status-id2">BY TOMMY DEV2799</span>
         </div>
-
-      <div id="container">
-        <div class="image-row1" id="container-tutorial">
-          <tm class="tommydev">Tutorial pasang penjaga poto profil</tm>
-          <iframe class="responsive-iframe"
-            src="https://www.youtube.com/embed/Aj-tyu3qAVk" 
-            title="YouTube video player" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin" 
-            allowfullscreen>
-          </iframe>
-        </div>
-    </h1>
-    
     
 <div class="text-container27">
     <div class="tommydev" style="display:flex; gap:10px; ">
@@ -840,8 +887,8 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
               </div>
 
   <b class="subtitle27">Facebook profile & page</b>
-  <span style="font-size:12px; font-weight:400; display: block; ">Gunakan browser extensions (desktop)
-         <br> <b>Cara Pasang:</b><br>
+  <span style="font-size:12px; font-weight:400; display: block; ">
+         <b>Cara Pasang:</b><br>
               1. Download & Ekstrak file ZIP.<br>
                   2. Buka Browser Kiwi/Lemur, buka menu Extensions.<br>
                   3. Aktifkan Mode Developer.<br>
@@ -851,7 +898,9 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
               
   <div class="content-container15">
     <div id="defaultView15" style="display: block;"></div>
+
     <div id="iframeView15" style="display: none;">
+     <tm class="tommydev" style="font-size:10px; padding: 0px; margin:4px;">TOMMY WEB PROJECT ID2788</tm>
       <iframe name="target-frame15" id="target-frame15" src="about:blank" ></iframe>
     </div>
 
@@ -869,19 +918,19 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 <a href="javascript:void(0);" class="menu-item15 item-115" onclick="toggleIframe15('https://www.youtube.com/embed/Aj-tyu3qAVk', 'avatar')">
   <div class="connector-line15"></div>
   <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
-  <div class="label-box15">Avatar Tutorial </div>
+  <div class="label-box15">Tutorial </div>
 </a>
 
 <a href="javascript:void(0);" class="menu-item15 item-215" onclick="toggleIframe15('https://tommydev27.github.io/tmavatar/', 'cookie')">
   <div class="connector-line15"></div>
   <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
-  <div class="label-box15">Download zip </div>
+  <div class="label-box15">Dowd Zip </div>
 </a>
 
 <a href="javascript:void(0);" class="menu-item15 item-315" onclick="toggleIframe15('https://tommydev27.github.io/cookie-token/', 'clone')">
   <div class="connector-line15"></div>
   <div class="icon-box15"><i class="fas fa-clone"></i></div>
-  <div class="label-box15">Cookie Token</div>
+  <div class="label-box15">Token</div>
 </a>
 
       <a href="javascript:void(0);" class="menu-item15 item-415" onclick="toggleIframe15('https://tommydev27.github.io/Storyes-27/', 'stories')">
@@ -893,18 +942,18 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
       <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
         <div class="connector-line15"></div>
         <div class="icon-box15"><i class="fas fa-music"></i></div>
-        <div class="label-box15">Music Player</div>
+        <div class="label-box15">Music </div>
       </a>
       
-      <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/downloader-tik/')">
+      <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/download-tiktok-background/')">
         <div class="connector-line15"></div>
         <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
-        <div class="label-box15">Downld v-mp3</div>
+        <div class="label-box15">Dowd v-M</div>
       </a>
     </div>
   </div>
   
-   <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400;font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p> </tm>
+     <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400;font-size:12px;">Unicode text icon dan logo</p></tm>
     <div class="kontainer-scroll27">
         <div class="grid27" id="mainGrid"></div>
     </div>
@@ -914,7 +963,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 <div class="kontainer-scroll">
     <div class="grid" id="mainGrid">
 
-<tm class="tommydev">Generator Teks</tm>
+<tm class="tommydev">Generator Teks<p style="font-weight:400;font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p> </tm>
 <div class="menu-grid" id="menuGrid">
     <div class="menu-item" onclick="handleLinkBaru('Grup')">
         <i class="fas fa-keyboard icon"></i>
@@ -947,8 +996,8 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
     </div>
     </div>
     
-    
 <tm class="tommydev">ID card editor<p style="font-weight:400;font-size:12px;">Generator pembuat id tanda pengenal identitas banding </p> </tm>
+  
 <div class="card-container">
   <div id="wrapper-frame" style="display: none;  height: 395px; border-radius: 2vw; max-width:345px; width:100%;margin:auto;">
 
@@ -956,6 +1005,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 
   </div>
   
+
 <div class="menu-container">
 
   <div class="menu-item3" onclick="handleKlik('Dasbor profesional')">
@@ -1008,8 +1058,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 <div class="kontainer-scroll">
     <div class="grid" id="mainGrid">
 
-<tm class="tommydev">Lainnya
-<p style="font-weight:400;font-size:12px;">Cek juga alat lainnya ...</p> </tm>
+<tm class="tommydev">Tools list</tm>
 <div class="menu-grid" id="menuGrid">
 
     <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
@@ -1046,7 +1095,7 @@ background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
 <footer style="text-align: center; font-size: 12px; text-align:left; padding: 5vw 0; margin-top:5vw;">
     <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
     <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
-    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:yellow;">Tommy Website</a></p>
+    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:#0199d1;">Tommy Website</a></p>
 </footer>
 </div>
 <script>
