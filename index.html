@@ -81,6 +81,12 @@ background: #181818;
   gap: 12px;
 }
 
+@media (min-width: 768px) {
+  .menu-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
 body.dark-mode .menu-grid { background:#181818; }
 
 /* Card & Menu Item Styles */
@@ -729,20 +735,27 @@ function drawCandlestick() {
   outline: none;
   width:100%;
 }
+body.dark-mode #menuGrid13 {
+  background: #111;
+}
 
-/* Desktop: 3 kolom (aktif saat layar > 768px) */
 @media (min-width: 768px) {
   #menuGrid13 {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
-  /* Kartu */
+@media (min-width: 768px) {
+  .menu-item {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
   .menu-item13 {
     background: #fff;
     border-radius: 10px;
     border: 1px solid #ddd;
-    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3); 
     position: relative;
     height: 200px;
     overflow: hidden;
@@ -751,7 +764,11 @@ function drawCandlestick() {
     cursor: pointer;
   }
 
-  /* Header Miring (Warna) */
+body.dark-mode .menu-item13 {
+  background: #333;
+  border: 1px solid #111;
+}
+
   .menu-item13::before {
   -webkit-user-select: none;
     content: "";
@@ -791,37 +808,38 @@ function drawCandlestick() {
     right: -25px;
     width: 100px;
     height: 75px;
-    background: repeating-linear-gradient(-48deg, transparent, transparent 10px, rgb(255,255,255) 4px, rgba(255,255,255) 18px);
+    background: repeating-linear-gradient(-48deg, transparent, transparent 7px, rgb(255,255,255) 4px, rgba(255,255,255) 12px);
     z-index: 2;
   }
 
   /* Konten Bawah */
   .content-wrapper13 {
-    margin-top: 80px;
-    padding: 10px 15px;
+    margin-top: 70px;
+    padding: 10px;
     display: flex;
     align-items: center;
     gap: 15px;
     z-index: 2;
   }
-  .icon13 { font-size: 30px; }
+  .icon13 { font-size: 30px; color:#8e8880;}
+  
   .label13 { font-size: 14px; font-weight: bold; }
 
   /* Footer */
   .footer-strip13 {
     margin-top: auto;
-    height: 20px;
-   left: 10px;
-    width: 50px;
-    background: repeating-linear-gradient(-48deg, transparent, transparent 4px, rgb(254,35,35) 4px, rgb(254,35,35) 8px);
-    z-index: 2;
+    height: 300px;
+    font-size: 10px;
+    width: 100%;
+    padding: 10px;
+    border-radius:0 0 50px 0;
   }
 </style>
 
 <div class="logo-container13">
   <div class="kontainer-scroll13">
     <div class="grid13" id="mainGrid">
-      <tm class="tommydev13">Generator Teks
+      <tm class="tommydev">Generator Teks
         <p style="font-weight:400; font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p>
       </tm>
       <div class="menu-grid13" id="menuGrid13">
@@ -829,37 +847,25 @@ function drawCandlestick() {
         <div class="menu-item13" onclick="handleLinkBaru('Grup')">
           <div class="number13">01</div>
           <div class="content-wrapper13"><i class="fas fa-keyboard icon13"></i><span class="label13">Multi Keyboard</span></div>
-          <div class="footer-strip13"></div>
+          <div class="footer-strip13">Buat kreativitas karakter teks lengkap dan unik </div>
         </div>
 
         <div class="menu-item13" onclick="handleLinkBaru('Teman1')">
           <div class="number13">02</div>
           <div class="content-wrapper13"><i class="fas fa-ad icon13"></i><span class="label13">Code symbols</span></div>
-          <div class="footer-strip13"></div>
+          <div class="footer-strip13">Kumpulan symbols teks dan berbagai karakter lainnya</div>
         </div>
 
         <div class="menu-item13" onclick="handleLinkBaru('Teman2')">
           <div class="number13">03</div>
-          <div class="content-wrapper13"><i class="fab fa-behance icon13"></i><span class="label13">Jumlah Teks</span></div>
-          <div class="footer-strip13"></div>
+          <div class="content-wrapper13"><i class="fab fa-behance icon13"></i><span class="label13">Penghitung karakter</span></div>
+          <div class="footer-strip13">Menghitung jumlah karakter membuang duplikat script dan pengganda teks</div>
         </div>
 
         <div class="menu-item13" onclick="handleLinkBaru('Teman3')">
           <div class="number13">04</div>
-          <div class="content-wrapper13"><i class="fas fa-play icon13"></i><span class="label13">Code Run Icon</span></div>
-          <div class="footer-strip13"></div>
-        </div>
-
-        <div class="menu-item13" onclick="handleLinkBaru('Teman')">
-          <div class="number13">05</div>
-          <div class="content-wrapper13"><i class="fas fa-at icon13"></i><span class="label13">Unicode Explor</span></div>
-          <div class="footer-strip13"></div>
-        </div>
-
-        <div class="menu-item13" onclick="handleLinkBaru('Reels')">
-          <div class="number13">06</div>
-          <div class="content-wrapper13"><i class="fab fa-atlassian icon13"></i><span class="label13">Generator Text</span></div>
-          <div class="footer-strip13"></div>
+          <div class="content-wrapper13"><i class="fas fa-play icon13"></i><span class="label13">Code Runner Unicode</span></div>
+          <div class="footer-strip13">Cari kumpulan karakter dengan unicode kode contoh ( 0xdb88b) dan kode lainnya</div>
         </div>
 
       </div>
@@ -917,6 +923,12 @@ function drawCandlestick() {
 
             <tm class="tommydev">Tools list</tm>
             <div class="menu-grid" id="menuGrid">
+        <div class="menu-item" onclick="handleLinkBaru('Teman')">
+          <i class="fas fa-at icon"></i><span class="label">Unicode Explor</span></div>
+          
+        <div class="menu-item" onclick="handleLinkBaru('Reels')">
+          <i class="fab fa-atlassian icon"></i><span class="label">Generator Text</span></div>
+
               <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
                 <i class="fab fa-facebook icon"></i>
                 <span class="label">Font Name Fb</span>
