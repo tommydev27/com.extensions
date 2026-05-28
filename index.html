@@ -32,55 +32,68 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Lobster&family=Bebas+Neue&family=Caveat&family=Shrikhand&family=Graduate&family=Sigmar&display=swap" rel="stylesheet">
   <head>
 <style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  * {
-    margin: 0;
-    padding:0;
-    box-sizing: border-box;
-  }
+body {
+  background: rgb(242, 242, 242);
+  -webkit-user-select: none;
+  font-family: sans-serif;
+  color: #1d5b5c;
+}
 
-   body {
-     background: rgb(242, 242, 242);
-      -webkit-user-select: none;
-      font-family:sans-serif;
-      color:#1d5b5c;
-   }
+/* Container & Grid Styles */
+.container {
+  padding: 15px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
 
-  .container {
-    padding:15px;
-   justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-
-  .card-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); 
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-   .card-container{
-     width:100%;
-     display:grid;
-     grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-    gap:10px;
-    }
-    
+.card-container {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
 
 .menu-container {
   display: flex;
   flex-direction: column;
   gap: 15px;
   width: 100%;
+  border-radius: 25px; background: #f1e8e8;
+  padding: 5px;
 }
 
-/* CSS asli Anda */
-.menu-item3 {
-  left: 0;
-  margin-left: 0;
-  margin-right: 0;
+body.dark-mode .menu-container {
+background: #181818;
+}
+
+.menu-grid {
+  border-radius: 15px; background: #f1e8e8;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 12px;
+}
+
+body.dark-mode .menu-grid { background:#181818; }
+
+/* Card & Menu Item Styles */
+.menu-item3, .menu-item, .menu-item15 {
   position: relative;
+  overflow: hidden;
+  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+.menu-item3 {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -88,211 +101,42 @@
   min-height: 70px;
   background: #ffffff;
   border-radius: 18px;
-      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
   cursor: pointer;
   overflow: visible;
 }
 
-body.dark-mode .menu-item3 {
-background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+.menu-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  height: 70px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  padding-right: 32px;
 }
 
-  .card-header {
-    height: 30px;
-    border-top-left-radius: 18px;
-    border-top-right-radius: 18px;
-    display: flex;
-    align-items: center;
-    padding-left: 110px;
-  }
-
-  .card-title {
-    font-size: 15px;
-    font-weight: bold;
-    color: #ffffff;
-  }
-
-  .card-body {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    padding-left: 110px;
-    padding-right: 15px;
-  }
-
-  .card-desc {
-    font-size: 12px;
-    line-height: 1.4;
-  }
-
-  .icon-circle {
-    position: absolute;
-    left: 15px;
-    top: 10px;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
-    z-index: 2;
-  }
-  
-  body.dark-mode .icon-circle {
-   background:linear-gradient(135deg,#202020 0%,#404040 10%,#202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
-  }
-  
-
-  .icon-inner {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .icon-inner i {
-    color: #ffffff;
-    font-size: 24px;
-  }
-
-  .bg-orange { background: linear-gradient(to bottom, #e68a3d, #c97327); }
-  .inner-orange { background: #d67c2a; }
-
-  .bg-yellow { background: linear-gradient(to bottom, #b5a432, #968722); }
-  .inner-yellow { background: #a39326; }
-
-  .bg-green { background: linear-gradient(to bottom, #6fa152, #56823c); }
-  .inner-green { background: #619145; }
-</style>
-
-  
-<style>
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
-    gap: 12px;
-  }
-
-  .menu-item {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 12px;
-    height: 70px;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-
-    cursor: pointer;
-    overflow: hidden;
-    padding-right: 32px;
-  }
-  
-body.dark-mode .menu-item { 
-    background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+body.dark-mode .menu-item3,
+body.dark-mode .menu-item {
+  background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
+  box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
 }
 
-  .menu-item .icon {
-    font-size: 25px;
-    margin-bottom: 8px;
-    display: block;
-  }
-
-  .menu-item .label {
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.3;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-  }
-
-  .menu-item::after {
-    position: absolute;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    width: 24px;
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    padding-top: 8px;
-    color: #ffffff;
-    font-size: 10px;
-    font-weight: bold;
-    border-top-right-radius: 12px;
-    border-bottom-right-radius: 12px;
-  }
-
-  .menu-item:nth-child(1) .icon { color: #f59e0b; }
-  .menu-item:nth-child(1)::after { content: "1"; background: #f59e0b; }
-
-  .menu-item:nth-child(2) .icon { color: #f97316; }
-  .menu-item:nth-child(2)::after { content: "2"; background: #f97316; }
-
-  .menu-item:nth-child(3) .icon { color: #845ef7; }
-  .menu-item:nth-child(3)::after { content: "3"; background: #845ef7; }
-
-  .menu-item:nth-child(4) .icon { color: #10b981; }
-  .menu-item:nth-child(4)::after { content: "4"; background: #10b981; }
-
-  .menu-item:nth-child(5) .icon { color: #06b6d4; }
-  .menu-item:nth-child(5)::after { content: "5"; background: #06b6d4; }
-
-  .menu-item:nth-child(6) .icon { color: #3b82f6; }
-  .menu-item:nth-child(6)::after { content: "6"; background: #3b82f6; }
-
-  .menu-item:nth-child(7) .icon { color: #64748b; }
-  .menu-item:nth-child(7)::after { content: "7"; background: #64748b; }
-
-  .menu-item:nth-child(8) .icon { color: #7c3aed; }
-  .menu-item:nth-child(8)::after { content: "8"; background: #7c3aed; }
-
-  .menu-item:nth-child(9) .icon { color: #ec4899; }
-  .menu-item:nth-child(9)::after { content: "9"; background: #ec4899; }
-
-  .menu-item:nth-child(10) .icon { color: #ef4444; }
-  .menu-item:nth-child(10)::after { content: "10"; background: #ef4444; }
-
-  .menu-item:nth-child(11) .icon { color: #0891b2; }
-  .menu-item:nth-child(11)::after { content: "11"; background: #0891b2; }
-
-  .menu-item:nth-child(12) .icon { color: #16a34a; }
-  .menu-item:nth-child(12)::after { content: "12"; background: #16a34a; }
-  
-.menu-item15, .menu-item3, .menu-item {
-  transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.2s ease;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  user-select: none;
-}
-
-.menu-item15:hover, .menu-item3:hover, .menu-item:hover {
+.menu-item3:hover, .menu-item:hover, .menu-item15:hover {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
 }
 
-.menu-item15:active, .menu-item3:active, .menu-item:active {
+.menu-item3:active, .menu-item:active, .menu-item15:active {
   transform: scale(0.92);
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
 }
 
-.menu-item15, .menu-item3, .menu-item {
-  position: relative;
-  overflow: hidden;
-}
-
-.menu-item15::before, .menu-item3::before, .menu-item::before {
+/* Interaction Effects */
+.menu-item3::before, .menu-item::before, .menu-item15::before {
   content: '';
   position: absolute;
   top: 50%;
@@ -308,794 +152,459 @@ body.dark-mode .menu-item {
   z-index: 1;
 }
 
-.menu-item15:active::before, .menu-item3:active::before, .menu-item:active::before {
+.menu-item3:active::before, .menu-item:active::before, .menu-item15:active::before {
   transform: translate(-50%, -50%) scale(1.2);
   opacity: 1;
   transition: 0s;
 }
 
-.tommydev { font-size:20px; font-weight:800; display: block; margin:20px 0;
-        }
-</style>
+/* Card Elements */
+.card-header { height: 30px; border-top-left-radius: 18px; border-top-right-radius: 18px; display: flex; align-items: center; padding-left: 110px; }
+.card-title { font-size: 15px; font-weight: bold; color: #ffffff; }
+.card-body { flex: 1; display: flex; align-items: center; padding-left: 110px; padding-right: 15px; }
+.card-desc { font-size: 12px; line-height: 1.4; }
 
+.icon-circle {
+  position: absolute;
+  left: 15px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
 
-<style>
-  .content-container15 {
-    width: 100%;
-  }
+body.dark-mode .icon-circle {
+  background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
+  box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+}
 
-  .wrapper15 {
-    position: relative;
-    width: 100%;
-    max-width: 330;
-    height: 240px; 
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
+.icon-inner { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
+.icon-inner i { color: #ffffff; font-size: 24px; }
 
-  .wrapper15::before {
-    content: '';
-    position: absolute;
-    width: 170px;
-    height: 170px;
-    border-radius: 50%;
-    border: 12px solid transparent;
-    background: linear-gradient(#f5f7fa, #f5f7fa) padding-box,
-                conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
-    z-index: 0;
-  }
+/* Colors */
+.bg-orange { background: linear-gradient(to bottom, #e68a3d, #c97327); }
+.inner-orange { background: #d67c2a; }
+.bg-yellow { background: linear-gradient(to bottom, #b5a432, #968722); }
+.inner-yellow { background: #a39326; }
+.bg-green { background: linear-gradient(to bottom, #6fa152, #56823c); }
+.inner-green { background: #619145; }
 
+/* Menu Specifics */
+.menu-item .icon { font-size: 25px; margin-bottom: 8px; display: block; }
+.menu-item .label { font-size: 12px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+
+.menu-item::after {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 24px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 8px;
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: bold;
+  border-top-right-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+
+.menu-item:nth-child(1) .icon { color: #f59e0b; } .menu-item:nth-child(1)::after { content: "1"; background: #f59e0b; }
+.menu-item:nth-child(2) .icon { color: #f97316; } .menu-item:nth-child(2)::after { content: "2"; background: #f97316; }
+.menu-item:nth-child(3) .icon { color: #845ef7; } .menu-item:nth-child(3)::after { content: "3"; background: #845ef7; }
+.menu-item:nth-child(4) .icon { color: #10b981; } .menu-item:nth-child(4)::after { content: "4"; background: #10b981; }
+.menu-item:nth-child(5) .icon { color: #06b6d4; } .menu-item:nth-child(5)::after { content: "5"; background: #06b6d4; }
+.menu-item:nth-child(6) .icon { color: #3b82f6; } .menu-item:nth-child(6)::after { content: "6"; background: #3b82f6; }
+.menu-item:nth-child(7) .icon { color: #64748b; } .menu-item:nth-child(7)::after { content: "7"; background: #64748b; }
+.menu-item:nth-child(8) .icon { color: #7c3aed; } .menu-item:nth-child(8)::after { content: "8"; background: #7c3aed; }
+.menu-item:nth-child(9) .icon { color: #ec4899; } .menu-item:nth-child(9)::after { content: "9"; background: #ec4899; }
+.menu-item:nth-child(10) .icon { color: #ef4444; } .menu-item:nth-child(10)::after { content: "10"; background: #ef4444; }
+.menu-item:nth-child(11) .icon { color: #0891b2; } .menu-item:nth-child(11)::after { content: "11"; background: #0891b2; }
+.menu-item:nth-child(12) .icon { color: #16a34a; } .menu-item:nth-child(12)::after { content: "12"; background: #16a34a; }
+
+/* Wrapper 15 */
+.content-container15 { width: 100%; }
+.wrapper15 { position: relative; width: 100%; max-width: 330px; height: 240px; display: flex; margin: 0 auto; justify-content: center; align-items: center; align-content: center; }
+.wrapper15::before {
+  content: '';
+  position: absolute;
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 12px solid transparent;
+  background: linear-gradient(#f5f7fa, #f5f7fa) padding-box,
+              conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
+  z-index: 0;
+}
 body.dark-mode .wrapper15::before {
-    background: linear-gradient(#333, #444) padding-box,
-                conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
+  background: linear-gradient(#333, #444) padding-box,
+              conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
 }
 
-  .main-circle15 {
-    position: absolute;
-    width: 90px;
-    height: 90px;
-    background: #ffffff;
-    border-radius: 50%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 10;
-  }
+.main-circle15 { position: absolute; width: 90px; height: 90px; background: #ffffff; border-radius: 50%; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); display: flex; justify-content: center; align-items: center; z-index: 10; }
+.main-circle15::before { content: ''; position: absolute; width: 116px; height: 116px; border: 2px solid #727272; border-radius: 50%; z-index: -1; }
+.circle-content15 { text-align: center; padding: 2px; }
+.main-title15 { font-size: 9px; font-weight: 700; color: #334155; letter-spacing: 0.5px; }
+.main-subtitle15 { font-size: 6px; color: #64748b; margin-top: 2px; text-transform: uppercase; }
 
-  .main-circle15::before {
-    content: '';
-    position: absolute;
-    width: 116px;
-    height: 116px;
-    border: 2px solid #727272;
-    border-radius: 50%;
-    z-index: -1;
-  }
+.menu-list15 { width: 100%; height: 100%; position: relative; }
+.menu-item15 { position: absolute; overflow: visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: white; border-radius: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
+.icon-box15 { width: 28px; height: 28px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 16px; margin: 3px; flex-shrink: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative; z-index: 5; }
+.label-box15 { font-weight: 600; font-size: 10px; text-align: center; text-transform: capitalize; white-space: nowrap; padding: 0px; overflow: hidden; text-overflow: ellipsis; width: 100%; }
 
-  .circle-content15 {
-    text-align: center;
-    padding: 2px;
-  }
+.item-115, .item-215, .item-315 { flex-direction: row-reverse; text-align: right; }
+.item-115 { top: 40px; left: 18px; background: #81262f; }
+.item-215 { top: 103px; left: -7px; background: #00acc1; }
+.item-315 { bottom: 40px; left: 18px; background: #00bfa5; }
+.item-415, .item-515, .item-615 { flex-direction: row; text-align: left; }
+.item-415 { top: 40px; right: 18px; background: #ffb300; }
+.item-515 { top: 103px; right: -7px; background: #fb8c00; }
+.item-615 { bottom: 40px; right: 18px; background: #f43f5e; }
 
-  .main-title15 {
-    font-size: 9px;
-    font-weight: 700;
-    color: #334155;
-    letter-spacing: 0.5px;
-  }
-
-  .main-subtitle15 {
-    font-size: 6px;
-    color: #64748b;
-    margin-top: 2px;
-    text-transform: uppercase;
-  }
-
-  .menu-list15 {
-    width: 100%;
-    height: 100%;
-    position: relative;
-  }
-
-  .menu-item15 {
-    position: absolute; 
-    overflow: visible;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    max-width: 107px; 
-    height: 34px; 
-    text-decoration: none;
-    color: white;
-    border-radius: 20px;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
-  }
-
-  .icon-box15 {
-    width: 28px;
-    height: 28px;
-    background: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 16px;
-    margin: 3px;
-    flex-shrink: 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: relative;
-    z-index: 5; 
-  }
-
-  .label-box15 {
-    font-weight: 600;
-    font-size: 10px;
-    text-align: center;
-    text-transform: capitalize;
-    white-space: nowrap;
-    padding: 0px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    width: 100%;
-  }
-
-  .item-115, .item-215, .item-315 {
-    flex-direction: row-reverse;
-    text-align: right; 
-  }
-  .item-115 { top: 40px; left: 18px; background: #81262f; }
-  .item-215 { top: 103px; left: -7px; background: #00acc1; }
-  .item-315 { bottom: 40px; left: 18px; background: #00bfa5; }
-
-  .item-415, .item-515, .item-615 {
-    flex-direction: row;
-    text-align: left;
-  }
-  .item-415 { top: 40px; right: 18px; background: #ffb300; }
-  .item-515 { top: 103px; right: -7px; background: #fb8c00; }
-  .item-615 { bottom: 40px; right: 18px; background: #f43f5e; }
-
-  .connector-line15 {
-    position: absolute;
-    height: 1px;
-    z-index: 1; 
-  }
-
-/* Gabungkan semua properti warna untuk dark mode */
-body.dark-mode .item-115, 
-body.dark-mode .item-215, 
-body.dark-mode .item-315, 
-body.dark-mode .item-415, 
-body.dark-mode .item-515, 
-body.dark-mode .item-615 {
-    background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
-    box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
+body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, body.dark-mode .item-415, body.dark-mode .item-515, body.dark-mode .item-615 {
+  background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
+  box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
 }
 
-  .item-115 .icon-box15 { color: #0e6383; }
-  .item-115 .connector-line15 { background: #0e6383; width: 30px; right: -25px; top: 35px; transform: rotate(50deg); }
+.connector-line15 { position: absolute; height: 1px; z-index: 1; }
+.item-115 .icon-box15 { color: #0e6383; } .item-115 .connector-line15 { background: #0e6383; width: 30px; right: -25px; top: 35px; transform: rotate(50deg); }
+.item-215 .icon-box15 { color: #00acc1; } .item-215 .connector-line15 { background: #00acc1; width: 50px; right: -48px; top: 16px; transform: none; }
+.item-315 .icon-box15 { color: #00bfa5; } .item-315 .connector-line15 { background: #00bfa5; width: 30px; right: -25px; top: -5px; transform: rotate(-50deg); }
+.item-415 .icon-box15 { color: #ffb300; } .item-415 .connector-line15 { background: #ffb300; width: 30px; left: -25px; top: 35px; transform: rotate(-50deg); }
+.item-515 .icon-box15 { color: #fb8c00; } .item-515 .connector-line15 { background: #fb8c00; width: 50px; left: -48px; top: 16px; transform: none; }
+.item-615 .icon-box15 { color: #f43f5e; } .item-615 .connector-line15 { background: #f43f5e; width: 30px; left: -25px; top: -5px; transform: rotate(50deg); }
 
-  .item-215 .icon-box15 { color: #00acc1; }
-  .item-215 .connector-line15 { background: #00acc1; width: 50px; right: -48px; top: 16px; transform: none; }
+.bold { font-family: Orbitron, monospace; letter-spacing: 1px; text-transform: uppercase; font-size: 20px; font-weight: 900; }
+.tommydev { font-size: 20px; font-weight: 800; display: block; margin: 20px 0; }
+.status-bar2 { display: flex; padding: 1vw 0; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; position: relative; z-index: 9999; }
 
-  .item-315 .icon-box15 { color: #00bfa5; }
-  .item-315 .connector-line15 { background: #00bfa5; width: 30px; right: -25px; top: -5px; transform: rotate(-50deg); }
-
-  .item-415 .icon-box15 { color: #ffb300; }
-  .item-415 .connector-line15 { background: #ffb300; width: 30px; left: -25px; top: 35px; transform: rotate(-50deg); }
-
-  .item-515 .icon-box15 { color: #fb8c00; }
-  .item-515 .connector-line15 { background: #fb8c00; width: 50px; left: -48px; top: 16px; transform: none; }
-
-  .item-615 .icon-box15 { color: #f43f5e; }
-  .item-615 .connector-line15 { background: #f43f5e; width: 30px; left: -25px; top: -5px; transform: rotate(50deg); }
-  
-.bold {
-  font-family:Orbitron,monospace;letter-spacing:1px;text-transform:uppercase;
-     font-size: 20px;
-     font-weight: 900;
-  }
-          
-          .status-bar2 {
-              display: flex;
-              padding: 1vw 0;
-              align-items: center;
-              justify-content: space-between;
-              width: 100%;
-              box-sizing: border-box;
-              position: relative;
-              z-index: 9999;
-          }
-      
-          .status-dot2 {
-              display: inline-block;
-              width: 8px;
-              height: 8px;
-              margin-left: 5px;
-              border-radius: 50%;
-              background: rgb(0,201,27);
-              box-shadow: 0 0 3px #00ff88;
-              animation: pulse-dot 1.5s ease-in-out infinite;
-              vertical-align: middle;
-          }
-      
-          @keyframes pulse-dot {
-              0%, 100% { 
-                  opacity: 1; 
-                  transform: scale(1);
-              }
-              50% { 
-                  opacity: 0.2; 
-                  transform: scale(0.9);
-              }
-          }
-      
-          .status-text2 {
-              font-size: 10px;
-              letter-spacing: 2vw;
-              text-transform: uppercase;
-              font-weight: bold;
-          }
-      
-          .status-id2 {
-              font-size: 10px;
-              letter-spacing: .1em;
-          }
-
-      
-      #container-tutorial {
-          display: none;
-      }
-      
-.container27 {
-    align-items: center;
-    border-radius: 12px;
-    font-family: sans-serif;
-    gap: 15px;
-    margin-bottom:3vw;
-  }
-  
-  
-      .logo-wrapper27 {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          margin-top: 1vw;
-          margin-bottom: 4vw;
-      }
-
-      .logo-wrapper27 svg {
-          width: 40%; 
-    border: 3px solid #09b4cd;
-    border-radius: 50%;
-    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
-    
-          max-width: 260px;
-          height: auto;
-      }
-  
-  .text-wrapper27 {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-
-#iframeView15 {
-    width: 100%;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
+.status-dot2 {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 5px;
+  border-radius: 50%;
+  background: rgb(0, 201, 27);
+  box-shadow: 0 0 3px #00ff88;
+  animation: pulse-dot 1.5s ease-in-out infinite;
+  vertical-align: middle;
 }
 
-#iframeView15.buka {
-    animation: slideDown 0.4s ease-out forwards;
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.2; transform: scale(0.9); }
 }
 
-#iframeView15.tutup {
-    animation: slideUp 0.4s ease-in forwards;
-}
+.status-text2 { font-size: 10px; letter-spacing: 2vw; text-transform: uppercase; font-weight: bold; }
+.status-id2 { font-size: 10px; letter-spacing: .1em; }
+.status-bar2 { display: flex; padding: 1vw 0; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; position: relative; z-index: 9999; }
 
-#iframeView15.iframe-stories.buka {
-    animation: slideDownStories 0.4s ease-out forwards;
-}
+/* Container & Layout */
+.container27 { align-items: center; border-radius: 12px; font-family: sans-serif; gap: 15px; margin-bottom: 3vw; }
+#container-tutorial { display: none; width: 100%; max-height: 0; opacity: 0; overflow: hidden; }
+#container-tutorial.buka { animation: slideDown 0.4s ease-out forwards; }
+#container-tutorial.tutup { animation: slideUp 0.4s ease-in forwards; }
 
-#iframeView15.iframe-stories.tutup {
-    animation: slideUpStories 0.4s ease-in forwards;
-}
+.logo-wrapper27 { width: 100%; display: flex; justify-content: center; margin-top: 1vw; margin-bottom: 4vw; }
+.logo-wrapper27 svg { width: 40%; border: 3px solid #09b4cd; border-radius: 50%; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); max-width: 260px; height: auto; }
+.text-wrapper27 { display: flex; flex-direction: column; justify-content: center; }
 
-#iframeView15.iframe-stories #target-frame15 {
-    height: 65vh !important;
-}
+/* Iframe & Animation */
+#iframeView15 { width: 100%; max-height: 0; opacity: 0; overflow: hidden; }
+#iframeView15.buka { animation: slideDown 0.4s ease-out forwards; }
+#iframeView15.tutup { animation: slideUp 0.4s ease-in forwards; }
+#iframeView15.iframe-stories.buka { animation: slideDownStories 0.4s ease-out forwards; }
+#iframeView15.iframe-stories.tutup { animation: slideUpStories 0.4s ease-in forwards; }
+#iframeView15.iframe-stories #target-frame15 { height: 65vh !important; }
 
-@keyframes slideDown {
-    from { max-height: 0; opacity: 0; }
-    to { max-height: 56vh; opacity: 1; }
-}
+@keyframes slideDown { from { max-height: 0; opacity: 0; } to { max-height: 56vh; opacity: 1; } }
+@keyframes slideUp { from { max-height: 56vh; opacity: 1; } to { max-height: 0; opacity: 0; } }
+@keyframes slideDownStories { from { max-height: 0; opacity: 0; } to { max-height: 65vh; opacity: 1; } }
+@keyframes slideUpStories { from { max-height: 65vh; opacity: 1; } to { max-height: 0; opacity: 0; } }
 
-@keyframes slideUp {
-    from { max-height: 56vh; opacity: 1; }
-    to { max-height: 0; opacity: 0; }
-}
+#target-frame15 { width: 100%; height: 52vh; border-radius: 3vw; border: none; display: block; }
+#wrapper-frame { max-height: 0; opacity: 0; overflow: hidden; transition: max-height 0.4s ease, opacity 0.4s ease; }
+#wrapper-frame.buka { max-height: 395px !important; opacity: 1 !important; }
+#wrapper-frame.tutup { max-height: 0 !important; opacity: 0 !important; }
+#konten-frame { width: 100% !important; height: 100% !important; display: block; border: none; }
+.responsive-iframe { width: 100%; aspect-ratio: 5 / 5; height: auto; border-radius: 8px; }
+.iframe-stories { height: 64vh; border-radius: 3vw; }
+.iframe-stories iframe, .iframe-stories [name="target-frame15"] { height: 100% !important; }
 
-@keyframes slideDownStories {
-    from { max-height: 0; opacity: 0; }
-    to { max-height: 65vh; opacity: 1; }
-}
+/* Scrollable Container */
+.kontainer-scroll27 { width: 100%; overflow-x: auto; overflow-y: hidden; border-radius: 25px; background: #f1e8e8; }
+body.dark-mode .kontainer-scroll27 { background: #111; }
+.grid27 { display: flex; flex-direction: row; align-items: stretch; gap: 8px; width: max-content; padding: 5px; }
 
-@keyframes slideUpStories {
-    from { max-height: 65vh; opacity: 1; }
-    to { max-height: 0; opacity: 0; }
-}
+/* Cards */
+.card { padding: 1vw 0vw; }
+.card1 { border-radius: 20px; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background: #fff; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); width: 1.7%; flex-shrink: 0; }
+.icon-box { height: 20px; display: flex; align-items: center; justify-content: center; text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5); font-size: 35px; margin-bottom: 25px; }
+.unicode { color: #d4e157; font-size: 10px; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; text-align: center; }
 
-#target-frame15 {
-    width: 100%;
-    height: 52vh;
-    border-radius:3vw;
-    border: none;
-    display: block;
-}
+/* Buttons & Theme */
+.btn-salin { background-color: #fff; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); color: #19b6ff; border: none; border-radius: 3vw; padding: 8px 0; width: 100%; font-size: 12px; font-weight: bold; cursor: pointer; display: block; -webkit-tap-highlight-color: transparent; transition: transform 0.1s ease, opacity 0.1s ease; }
+body.dark-mode .btn-salin { background: #333; }
+.btn-salin:active { transform: scale(0.95); opacity: 0.7; }
 
-#container-tutorial {
-    width: 100%;
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-}
+body { background-color: #fff; color: #000; transition: background 0.3s ease, color 0.3s ease; }
+body.dark-mode { background-color: #181818; color: #00e2f0; }
+body.dark-mode #kontainer-utama { background: #111 !important; }
+body.dark-mode .card1 { background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%) !important; box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e !important; }
 
-#container-tutorial.buka {
-    animation: slideDown 0.4s ease-out forwards;
-}
-
-#container-tutorial.tutup {
-    animation: slideUp 0.4s ease-in forwards;
-}
-
-#wrapper-frame {
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, opacity 0.4s ease;
-}
-
-#wrapper-frame.buka {
-    max-height: 395px !important;
-    opacity: 1 !important;
-}
-
-#wrapper-frame.tutup {
-    max-height: 0 !important;
-    opacity: 0 !important;
-}
-
-#konten-frame {
-    width: 100% !important;
-    height: 100% !important;
-    display: block;
-    border: none;
-}
-
-.responsive-iframe {
-    width: 100%; 
-    aspect-ratio: 5 / 5;
-    height: auto;
-    border-radius: 8px;
-}
-
-#container-tutorial {
-    display: none;
-}
-
-.iframe-stories {
-    height: 64vh;
-    border-radius:3vw;
-}
-
-.iframe-stories iframe, 
-.iframe-stories [name="target-frame15"] {
-    height: 100% !important;
-}
-
-        .kontainer-scroll27 {
-            width: 100%;
-            overflow-x: auto;
-            overflow-y: hidden;
-            border-radius: 25px;
-            background: #f1e8e8;
-        }
-body.dark-mode .kontainer-scroll27
-{background: #111;}
-
-        .grid27 {
-            display: flex;
-            flex-direction: row;
-            align-items: stretch; 
-            gap: 8px;
-            width: max-content;
-            padding: 5px;
-          }
-    
-        .card {
-              padding: 1vw 0vw;
-        }
-        
-        .card1 {
-            border-radius: 20px;
-            padding:20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-                background:#fff;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
-            width: 1.7%; 
-            flex-shrink: 0;
-        }
-    
-        .icon-box {
-            height: 20px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5);
-            font-size: 35px;
-            margin-bottom: 25px;
-        }
-    
-        .unicode {
-            color: #d4e157;
-            font-size: 10px;
-            margin-bottom: 10px;
-            font-weight: bold;
-            text-transform: uppercase;
-            text-align: center;
-        }
-    
-        .btn-salin {
-            background-color: #fff;
-            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); 
-            color: #19b6ff;
-            border: none;
-            border-radius: 3vw;
-            padding: 8px 0;
-            width: 100%;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            display: block;
-        }
-        .btn-salin {
-        -webkit-tap-highlight-color: transparent;
-        transition: transform 0.1s ease, opacity 0.1s ease;
-    }
-
-  body.dark-mode .btn-salin {
-    background: #333;
-  }
-
-        .btn-salin:active {
-            transform: scale(0.95);
-            opacity: 0.7;
-        }
-        
-
-body {
-  background-color: #fff;
-  color: #000;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-body.dark-mode {
-  background-color: #181818;
-  color: #00e2f0;
-}
-
-body.dark-mode #kontainer-utama {
-  background: #111 !important;
-}
-
-body.dark-mode .card1 {
-  background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%) !important;
-  box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e !important;
-}
-  .header-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 0px; }
-  .theme-btn { background: none; border: none; cursor: pointer; font-size: 22px; color:#b4b400; transition: transform 0.1s ease; }
-  .theme-btn:active { transform: scale(0.7); }
-  
-.theme-btn {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
-}
+.header-wrapper { display: flex; justify-content: space-between; align-items: center; padding: 0px; }
+.theme-btn { background: none; border: none; cursor: pointer; font-size: 22px; color: #b4b400; transition: transform 0.1s ease; -webkit-tap-highlight-color: transparent; outline: none; }
+.theme-btn:active { transform: scale(0.7); }
 </style>
 
 <body>
 <div class="container">
-  
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<div class="header-wrapper">
-  <span class="bold" >TOMMY WEB <b>| Tools ⚙️</b></span>
+  <div class="header-wrapper">
+    <span class="bold">TOMMY WEB <b>| Tools ⚙️</b></span>
+    <button class="theme-btn" id="toggleBtn">
+      <i class="fas fa-moon"></i>
+    </button>
+  </div>
 
-  <button class="theme-btn" id="toggleBtn">
-    <i class="fas fa-moon"></i>
-  </button>
-</div>
+  <script>
+    const toggleBtn = document.getElementById('toggleBtn');
+    toggleBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 
-<script>
-const toggleBtn = document.getElementById('toggleBtn');
+  <div class="status-bar2">
+    <div style="display: flex; align-items: center;">
+      <span class="status-text2">SERVER ONLINE</span>
+      <span class="status-dot2"></span>
+    </div>
+    <span class="status-id2">BY TOMMY DEV2799</span>
+  </div>
 
-toggleBtn.addEventListener('click', function() {
-  document.body.classList.toggle('dark-mode');
-});
-</script>
-        <div class="status-bar2">
-            <div style="display: flex; align-items: center;">
-                <span class="status-text2">SERVER ONLINE</span>
-                <span class="status-dot2"></span>
-            </div>
-            <span class="status-id2">BY TOMMY DEV2799</span>
-        </div>
-    
-<div class="text-container27">
-    <div class="tommydev" style="display:flex; gap:10px; ">
+  <div class="text-container27">
+    <div class="tommydev" style="display: flex; gap: 10px;">
       Avatar Guard fb
-  
-      <i class="fab fa-facebook"
-         style="color:#0891b2;
-                background:white;
-                letter-spacing: 0px;
-                border-radius:50%;
-                width:20px;
-                height:20px;
-                display:flex;
-                margin-top:1px;
-                align-items:center;
-                justify-content:center;
-                font-size:17px;">
-            </i>
-        
+      <i class="fab fa-facebook" style="color:#0891b2; background:white; letter-spacing:0px; border-radius:50%; width:20px; height:20px; display:flex; margin-top:1px; align-items:center; justify-content:center; font-size:17px;"></i>
+    </div>
+
+    <div class="image-row">
+      <div class="container27">
+        <div class="logo-wrapper27">
+          <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#e1e4ea"/>
+                <stop offset="60%" stop-color="#ced2db"/>
+                <stop offset="100%" stop-color="#404348"/>
+              </linearGradient>
+              <clipPath id="circle-clip">
+                <circle cx="130" cy="130" r="105"/>
+              </clipPath>
+            </defs>
+            <g clip-path="url(#circle-clip)">
+              <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
+              <circle cx="130" cy="95" r="38" fill="#60646d"/>
+              <path d="M35 235 C35 175 70 145 130 145 C190 145 225 175 225 235 Z" fill="#60646d"/>
+            </g>
+            <g transform="translate(130 190) scale(0.32)">
+              <path d="M0 -58 C18 -45 38 -37 58 -35 L58 8 C58 46 32 76 0 96 C-32 76 -58 46 -58 8 L-58 -35 C-38 -37 -18 -45 0 -58 Z" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M0 -40 C12 -30 25 -24 40 -22 L40 6 C40 30 22 52 0 66 C-22 52 -40 30 -40 6 L-40 -22 C-25 -24 -12 -30 0 -40 Z" fill="#ffffff"/>
+            </g>
+          </svg>
         </div>
-   <div class="image-row">
-       <div class="container27">
-              <div class="logo-wrapper27">
-                <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stop-color="#e1e4ea"/>
-                      <stop offset="60%" stop-color="#ced2db"/>
-                      <stop offset="100%" stop-color="#404348"/>
-                    </linearGradient>
-                    <clipPath id="circle-clip">
-                      <circle cx="130" cy="130" r="105"/>
-                    </clipPath>
-                  </defs>
-                  <g clip-path="url(#circle-clip)">
-                    <circle cx="130" cy="130" r="105" fill="url(#bgGradient)"/>
-                    <circle cx="130" cy="95" r="38" fill="#60646d"/>
-                    <path d="M35 235 C35 175 70 145 130 145 C190 145 225 175 225 235 Z" fill="#60646d"/>
-                  </g>
-                  <g transform="translate(130 190) scale(0.32)">
-                    <path d="M0 -58 C18 -45 38 -37 58 -35 L58 8 C58 46 32 76 0 96 C-32 76 -58 46 -58 8 L-58 -35 C-38 -37 -18 -45 0 -58 Z" fill="none" stroke="#ffffff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M0 -40 C12 -30 25 -24 40 -22 L40 6 C40 30 22 52 0 66 C-22 52 -40 30 -40 6 L-40 -22 C-25 -24 -12 -30 0 -40 Z" fill="#ffffff"/>
-                  </g>
-                </svg>
-              </div>
 
-  <b class="subtitle27">Facebook profile & page</b>
-  <span style="font-size:12px; font-weight:400; display: block; ">
-         <b>Cara Pasang:</b><br>
-              1. Download & Ekstrak file ZIP.<br>
-                  2. Buka Browser Kiwi/Lemur, buka menu Extensions.<br>
-                  3. Aktifkan Mode Developer.<br>
-                  4. Klik "Load unpacked" dan pilih folder hasil ekstrak.
-                 </span>
-              </div>
-              
-  <div class="content-container15">
-    <div id="defaultView15" style="display: block;"></div>
-
-    <div id="iframeView15" style="display: none;">
-     <tm class="tommydev" style="font-size:10px; padding: 0px; margin:4px;">TOMMY WEB PROJECT ID2788</tm>
-      <iframe name="target-frame15" id="target-frame15" src="about:blank" ></iframe>
-    </div>
-
-  </div>
-
-  <div class="wrapper15">
-    <div class="main-circle15">
-      <div class="circle-content15">
-        <div class="main-title15">TOMMY WEB</div>
-        <div class="main-subtitle15">Extensions</div>
+        <b class="subtitle27">Facebook profile & page</b>
+        <span style="font-size:12px; font-weight:400; display: block;">
+          <b>Cara Pasang:</b><br>
+          1. Download & Ekstrak file ZIP.<br>
+          2. Buka Browser Kiwi/Lemur, buka menu Extensions.<br>
+          3. Aktifkan Mode Developer.<br>
+          4. Klik "Load unpacked" dan pilih folder hasil ekstrak.
+        </span>
       </div>
-    </div>
 
-    <div class="menu-list15">
-<a href="javascript:void(0);" class="menu-item15 item-115" onclick="toggleIframe15('https://www.youtube.com/embed/Aj-tyu3qAVk', 'avatar')">
-  <div class="connector-line15"></div>
-  <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
-  <div class="label-box15">Tutorial </div>
-</a>
+      <div class="content-container15">
+        <div id="defaultView15" style="display: block;"></div>
+        <div id="iframeView15" style="display: none;">
+          <tm class="tommydev" style="font-size:10px; padding:0px; margin:4px;">TOMMY WEB PROJECT ID2788</tm>
+          <iframe name="target-frame15" id="target-frame15" src="about:blank"></iframe>
+        </div>
+      </div>
 
-<a href="javascript:void(0);" class="menu-item15 item-215" onclick="toggleIframe15('https://tommydev27.github.io/tmavatar/', 'cookie')">
-  <div class="connector-line15"></div>
-  <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
-  <div class="label-box15">Dowd Zip </div>
-</a>
+      <div class="wrapper15">
+        <div class="main-circle15">
+          <div class="circle-content15">
+            <div class="main-title15">TOMMY WEB</div>
+            <div class="main-subtitle15">Extensions</div>
+          </div>
+        </div>
 
-<a href="javascript:void(0);" class="menu-item15 item-315" onclick="toggleIframe15('https://tommydev27.github.io/cookie-token/', 'clone')">
-  <div class="connector-line15"></div>
-  <div class="icon-box15"><i class="fas fa-clone"></i></div>
-  <div class="label-box15">Token</div>
-</a>
+        <div class="menu-list15">
+          <a href="javascript:void(0);" class="menu-item15 item-115" onclick="toggleIframe15('https://www.youtube.com/embed/Aj-tyu3qAVk', 'avatar')">
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-shield-alt"></i></div>
+            <div class="label-box15">Tutorial</div>
+          </a>
+          <a href="javascript:void(0);" class="menu-item15 item-215" onclick="toggleIframe15('https://tommydev27.github.io/tmavatar/', 'cookie')">
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
+            <div class="label-box15">Dowd Zip</div>
+          </a>
+          <a href="javascript:void(0);" class="menu-item15 item-315" onclick="toggleIframe15('https://tommydev27.github.io/cookie-token/', 'clone')">
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-clone"></i></div>
+            <div class="label-box15">Token</div>
+          </a>
+          <a href="javascript:void(0);" class="menu-item15 item-415" onclick="toggleIframe15('https://tommydev27.github.io/Storyes-27/', 'stories')">
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-book"></i></div>
+            <div class="label-box15">Stories</div>
+          </a>
+          <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fas fa-music"></i></div>
+            <div class="label-box15">Music</div>
+          </a>
+          <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/download-tiktok-background/')">
+            <div class="connector-line15"></div>
+            <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
+            <div class="label-box15">Dowd v-M</div>
+          </a>
+        </div>
+      </div>
 
-      <a href="javascript:void(0);" class="menu-item15 item-415" onclick="toggleIframe15('https://tommydev27.github.io/Storyes-27/', 'stories')">
-        <div class="connector-line15"></div>
-        <div class="icon-box15"><i class="fas fa-book"></i></div>
-        <div class="label-box15">Stories</div>
-      </a>
-
-      <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/my-music3/')">
-        <div class="connector-line15"></div>
-        <div class="icon-box15"><i class="fas fa-music"></i></div>
-        <div class="label-box15">Music </div>
-      </a>
-      
-      <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/download-tiktok-background/')">
-        <div class="connector-line15"></div>
-        <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
-        <div class="label-box15">Dowd v-M</div>
-      </a>
-    </div>
-  </div>
-  
-     <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400;font-size:12px;">Unicode text icon dan logo</p></tm>
-    <div class="kontainer-scroll27">
+      <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400; font-size:12px;">Unicode text icon dan logo</p></tm>
+      <div class="kontainer-scroll27">
         <div class="grid27" id="mainGrid"></div>
-    </div>
-    
-<div class="logo-container1">
-    
-<div class="kontainer-scroll">
-    <div class="grid" id="mainGrid">
+      </div>
 
-<tm class="tommydev">Generator Teks<p style="font-weight:400;font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p> </tm>
-<div class="menu-grid" id="menuGrid">
-    <div class="menu-item" onclick="handleLinkBaru('Grup')">
-        <i class="fas fa-keyboard icon"></i>
-        <span class="label">Multi Keyboard</span>
-    </div>
+      <div class="logo-container1">
+        <div class="kontainer-scroll">
+          <div class="grid" id="mainGrid">
+            <tm class="tommydev">Generator Teks<p style="font-weight:400; font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p></tm>
+            <div class="menu-grid" id="menuGrid">
+              <div class="menu-item" onclick="handleLinkBaru('Grup')">
+                <i class="fas fa-keyboard icon"></i>
+                <span class="label">Multi Keyboard</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman1')">
+                <i class="fas fa-ad icon"></i>
+                <span class="label">Code symbols</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman2')">
+                <i class="fab fa-behance icon"></i>
+                <span class="label">Jumlah Teks</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman3')">
+                <i class="fas fa-play icon"></i>
+                <span class="label">Code Run Icon</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman')">
+                <i class="fas fa-at icon"></i>
+                <span class="label">Unicode Explor</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Reels')">
+                <i class="fab fa-atlassian icon"></i>
+                <span class="label">Generator Text</span>
+              </div>
+            </div>
 
-    <div class="menu-item" onclick="handleLinkBaru('Teman1')">
-        <i class="fas fa-ad icon"></i>
-        <span class="label">Code symbols</span>
-    </div>
+            <tm class="tommydev">ID card editor<p style="font-weight:400; font-size:12px;">Generator pembuat id tanda pengenal identitas banding</p></tm>
+            <div class="card-container">
+              <div id="wrapper-frame" style="display:none; height:395px; border-radius:2vw; max-width:345px; width:100%; margin:auto;">
+                <iframe id="konten-frame" src=""></iframe>
+              </div>
 
-    <div class="menu-item" onclick="handleLinkBaru('Teman2')">
-        <i class="fab fa-behance icon"></i>
-        <span class="label">Jumlah Teks</span>
-    </div>
+              <div class="menu-container">
+                <div class="menu-item3" onclick="handleKlik('Dasbor profesional')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-orange">
+                      <i class="fas fa-id-card" aria-label="ID Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-orange">
+                    <span class="card-title">ID card</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">Kartu identitas buat klik di sini</span>
+                  </div>
+                </div>
+                <div class="menu-item3" onclick="handleKlik('Pesan')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-yellow">
+                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-yellow">
+                    <span class="card-title">Sim ID</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">kartu sim Buat klik di sini</span>
+                  </div>
+                </div>
+                <div class="menu-item3" onclick="handleKlik('Pesan2')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-green">
+                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-green">
+                    <span class="card-title">ID card pw Hindi</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">kartu identitas hindi buat klik di sini</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-    <div class="menu-item" onclick="handleLinkBaru('Teman3')">
-        <i class="fas fa-play icon"></i>
-        <span class="label">Code Run Icon</span>
-    </div>
+            <tm class="tommydev">Tools list</tm>
+            <div class="menu-grid" id="menuGrid">
+              <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
+                <i class="fab fa-facebook icon"></i>
+                <span class="label">Font Name Fb</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Halaman')">
+                <i class="fab fa-fonticons-fi icon"></i>
+                <span class="label">Seni Font teks</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
+                <i class="fas fa-barcode icon"></i>
+                <span class="label">Glitch Text</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Acara')">
+                <i class="fa-solid fa-book-open icon"></i>
+                <span class="label">Blok 2 Catatan</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
+                <i class="fas fa-image icon"></i>
+                <span class="label">Image Art</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Ulang Birthday')">
+                <i class="fas fa-chalkboard-teacher icon"></i>
+                <span class="label">Generator IMG</span>
+              </div>
+            </div>
 
-    <div class="menu-item" onclick="handleLinkBaru('Teman')">
-        <i class="fas fa-at icon"></i>
-        <span class="label">Unicode Explor</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Reels')">
-        <i class="fab fa-atlassian icon"></i>
-        <span class="label">Generator Text</span>
-    </div>
-    </div>
-    
-<tm class="tommydev">ID card editor<p style="font-weight:400;font-size:12px;">Generator pembuat id tanda pengenal identitas banding </p> </tm>
-  
-<div class="card-container">
-  <div id="wrapper-frame" style="display: none;  height: 395px; border-radius: 2vw; max-width:345px; width:100%;margin:auto;">
-
-    <iframe id="konten-frame" src="" style=""></iframe>
-
-  </div>
-  
-
-<div class="menu-container">
-
-  <div class="menu-item3" onclick="handleKlik('Dasbor profesional')">
-    <div class="icon-circle">
-      <div class="icon-inner inner-orange">
-        <i class="fas fa-id-card" aria-label="ID Card"></i>
+            <footer style="text-align:left; font-size:12px; padding:5vw 0; margin-top:5vw;">
+              <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
+              <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
+              <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:#0199d1;">Tommy Website</a></p>
+            </footer>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card-header bg-orange">
-      <span class="card-title">ID card</span>
-    </div>
-    <div class="card-body">
-      <span class="card-desc">Kartu identitas buat klik di sini</span>
-    </div>
   </div>
-
-  <div class="menu-item3" onclick="handleKlik('Pesan')">
-    <div class="icon-circle">
-      <div class="icon-inner inner-yellow">
-        <i class="fas fa-id-card" aria-label="Sim Card"></i>
-      </div>
-    </div>
-    <div class="card-header bg-yellow">
-      <span class="card-title">Sim ID</span>
-    </div>
-    <div class="card-body">
-      <span class="card-desc">kartu sim Buat klik di sini</span>
-    </div>
-  </div>
-
-  <div class="menu-item3" onclick="handleKlik('Pesan2')">
-    <div class="icon-circle">
-      <div class="icon-inner inner-green">
-        <i class="fas fa-id-card" aria-label="Sim Card"></i>
-      </div>
-    </div>
-    <div class="card-header bg-green">
-      <span class="card-title">ID card pw Hindi</span>
-    </div>
-    <div class="card-body">
-      <span class="card-desc">kartu identitas hindi buat klik di sini</span>
-    </div>
-  </div>
-
-</div>
-</div>
-
-<div class="logo-container1">
-    
-<div class="kontainer-scroll">
-    <div class="grid" id="mainGrid">
-
-<tm class="tommydev">Tools list</tm>
-<div class="menu-grid" id="menuGrid">
-
-    <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
-        <i class="fab fa-facebook icon"></i>
-        <span class="label">Font Name Fb</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Halaman')">
-        <i class="fab fa-fonticons-fi icon"></i>
-        <span class="label">Seni Font teks</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
-        <i class="fas fa-barcode icon"></i>
-        <span class="label">Glitch Text</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Acara')">
-        <i class="fa-solid fa-book-open icon"></i>
-        <span class="label">Blok 2 Catatan</span>
-    </div>
-    
-    <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
-        <i class="fas fa-image icon"></i>
-        <span class="label">Image Art</span>
-    </div>
-
-    <div class="menu-item" onclick="handleLinkBaru('Ulang Birthday')">
-        <i class="fas fa-chalkboard-teacher icon"></i>
-        <span class="label">Generator IMG</span>
-    </div>
-</div>
-<div>
-<footer style="text-align: center; font-size: 12px; text-align:left; padding: 5vw 0; margin-top:5vw;">
-    <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
-    <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
-    <p><strong>Support:</strong> <a href="https://m.me/Gds27090?source=qr" style="color:#0199d1;">Tommy Website</a></p>
-</footer>
 </div>
 <script>
 var currentActiveUrl15 = '';
@@ -1114,15 +623,12 @@ function toggleIframe15(url, tipeMenu) {
             currentActiveUrl15 = '';
             iframeView.style.display = 'none';
             if (defaultView) defaultView.style.display = 'block';
-            
-            // Bersihkan class stories saat ditutup
             iframeView.classList.remove('iframe-stories');
         }, 400);
         
     } else {
         if (defaultView) defaultView.style.display = 'none';
         
-        // JIKA yang diklik adalah Stories, pasang class khusus. JIKA YANG LAIN, hapus class-nya.
         if (tipeMenu === 'stories') {
             iframeView.classList.add('iframe-stories');
         } else {
@@ -1134,11 +640,8 @@ function toggleIframe15(url, tipeMenu) {
         iframeView.style.display = 'block';
         
         iframeView.onanimationend = function(e) {
-            if (e.animationName === 'slideDown') {
-                iframeView.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
+            if (e.animationName === 'slideDown' || e.animationName === 'slideDownStories') {
+                iframeView.scrollIntoView({ behavior: 'smooth', block: 'start' });
                 iframeView.onanimationend = null; 
             }
         };
@@ -1155,9 +658,7 @@ window.addEventListener('pagehide', function() {
     var iframeView = document.getElementById('iframeView15');
     var frameWindow = window.frames['target-frame15'];
     
-    if (frameWindow) {
-        frameWindow.location.replace('about:blank');
-    }
+    if (frameWindow) frameWindow.location.replace('about:blank');
     currentActiveUrl15 = '';
     if (iframeView) {
         iframeView.style.display = 'none';
@@ -1165,9 +666,7 @@ window.addEventListener('pagehide', function() {
     }
     if (defaultView) defaultView.style.display = 'block';
 });
-</script>
 
-<script>
 function handleKlik(namaMenu) {
     const daftarLink = {
         "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
@@ -1179,52 +678,36 @@ function handleKlik(namaMenu) {
     if (urlTujuan) {
         const wrapper = document.getElementById('wrapper-frame');
         let iframe = document.getElementById('konten-frame');
-        
         var isOpen = wrapper.classList.contains('buka');
         
         if (isOpen && iframe && iframe.getAttribute('data-url') === urlTujuan) {
-          
             wrapper.classList.remove('buka');
             wrapper.classList.add('tutup');
-            
             setTimeout(function() {
                 wrapper.style.display = 'none';
                 if (iframe) iframe.remove();
             }, 400);
-            
         } else {
-
             if (iframe) iframe.remove(); 
             iframe = document.createElement('iframe');
             iframe.id = 'konten-frame';
-            iframe.style.width = '100%';
-            iframe.style.height = '100%';
-            iframe.style.border = 'none';
             iframe.setAttribute('data-url', urlTujuan);
             iframe.src = urlTujuan;
-            
             wrapper.appendChild(iframe);
-            
             wrapper.style.display = 'block';
-            
             setTimeout(function() {
                 wrapper.classList.remove('tutup');
                 wrapper.classList.add('buka');
             }, 10);
-            
             setTimeout(function() {
-                wrapper.scrollIntoView({ 
-                    behavior: 'smooth', 
-                    block: 'start' 
-                });
+                wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }, 410);
         }
     } else {
         alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
     }
 }
-</script>
-<script>
+
 function handleLinkBaru(namaMenu) {
     const daftarLink = {
         "avatar": "https://tommydev27.github.io/tools-data-tm/",
@@ -1253,30 +736,29 @@ function handleLinkBaru(namaMenu) {
         alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
     }
 }
-</script>
-  <script>
-    const icons = ['𔓙', '𓃭', '𔑪', '𓄁', '𓄇', '𔑫', '𓊿', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔒒', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
-    const grid = document.getElementById('mainGrid');
 
-    icons.forEach(symbol => {
-        const codePoint = symbol.codePointAt(0).toString(16).toUpperCase();
-        const autoUnicode = `U+${codePoint.padStart(4, '0')}`;
-        const card = document.createElement('div');
-        card.className = 'card1';
-        card.innerHTML = `
-            <div class="icon-box">${symbol}</div>
-            <div class="unicode">${autoUnicode}</div>
-            <button class="btn-salin" onclick="copyText('${symbol}', this)">Salin</button>
-        `;
-        grid.appendChild(card);
-    });
+const icons = ['𔓙', '𓃭', '𔑪', '𓄁', '𓄇', '𔑫', '𓊿', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔒒', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
+const grid = document.getElementById('mainGrid');
 
-    function copyText(text, btn) {
-        navigator.clipboard.writeText(text);
-        const originalText = btn.innerText;
-        btn.innerText = 'OK';
-        setTimeout(() => { btn.innerText = originalText; }, 800);
-    }
+icons.forEach(symbol => {
+    const codePoint = symbol.codePointAt(0).toString(16).toUpperCase();
+    const autoUnicode = `U+${codePoint.padStart(4, '0')}`;
+    const card = document.createElement('div');
+    card.className = 'card1';
+    card.innerHTML = `
+        <div class="icon-box">${symbol}</div>
+        <div class="unicode">${autoUnicode}</div>
+        <button class="btn-salin" onclick="copyText('${symbol}', this)">Salin</button>
+    `;
+    grid.appendChild(card);
+});
+
+function copyText(text, btn) {
+    navigator.clipboard.writeText(text);
+    const originalText = btn.innerText;
+    btn.innerText = 'OK';
+    setTimeout(() => { btn.innerText = originalText; }, 800);
+}
 </script>
 
 </body>
