@@ -125,14 +125,12 @@ body.dark-mode .menu-item {
   box-shadow: inset 6px 6px 12px #262d38, inset -6px -6px 12px #4a596e;
 }
 
-.menu-item3:hover, .menu-item:hover, .menu-item15:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15) !important;
-}
 
-.menu-item3:active, .menu-item:active, .menu-item15:active {
+
+.menu-item3:active, .menu-item13:active, .menu-item:active, .menu-item15:active {
   transform: scale(0.92);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1) !important;
+  
 }
 
 /* Interaction Effects */
@@ -152,11 +150,6 @@ body.dark-mode .menu-item {
   z-index: 1;
 }
 
-.menu-item3:active::before, .menu-item:active::before, .menu-item15:active::before {
-  transform: translate(-50%, -50%) scale(1.2);
-  opacity: 1;
-  transition: 0s;
-}
 
 /* Card Elements */
 .card-header { height: 30px; border-top-left-radius: 18px; border-top-right-radius: 18px; display: flex; align-items: center; padding-left: 110px; }
@@ -390,6 +383,242 @@ body.dark-mode .card1 { background: linear-gradient(135deg, #202020 0%, #404040 
     <span class="status-id2">BY TOMMY DEV2799</span>
   </div>
 
+    <style>
+        .header2 {
+            padding: 10px;
+            background: rgb(221,230,233);
+            border-radius: 10px;
+        }
+        body.dark-mode .header2 { background: hsl(0,0%,0%); }
+        
+        .date {
+            font-size: 1.1em;
+            color: #555;
+        }
+        body.dark-mode  { color: #ddd;}
+        
+        .rate-display {
+          font-family: 'Futura', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            margin-top: 15px;
+            letter-spacing: -1px;
+        }
+        body.dark-mode  .rate-display{ color:#0095fd;}
+        
+        .rate-display span {
+            font-size: 18px;
+            color: #d96e00;
+        }
+        body.dark-mode .rate-display span { color: gold;}
+        
+        canvas { 
+            width: 100%; 
+            height: 50vw; 
+            display: block;
+        }
+
+        .date {
+            font-family: monospace;
+            font-size: 14px;
+            font-weight:900;
+            color: #555;
+            margin-bottom: 6px;
+        }
+          body.dark-mode .date { color: #2baeff;}
+        
+    </style>
+</head>
+    <body>
+        <div class="header2">
+            <div class="date" id="datetime">Kamis 28 Mei 2026</div>
+
+        <canvas id="chart" width="600" height="260"></canvas>
+            <div class="rate-display">
+                1 MYR = <span id="rate">4.483,67</span> IDR
+            </div>
+        </div>
+
+    <script>
+        let history = [];
+        let lastClose = 4483.67;
+
+        // Generate data candlestick awal
+        function generateInitialData() {
+            history = [];
+            let price = 4480;
+            for (let i = 0; i < 60; i++) {
+                const open = price;
+                const close = open + (Math.random() * 8 - 4);
+                const high = Math.max(open, close) + Math.random() * 6;
+                const low = Math.min(open, close) - Math.random() * 6;
+                history.push({ open, high, low, close });
+                price = close;
+            }
+        }
+
+        const canvas = document.getElementById('chart');
+        const ctx = canvas.getContext('2d');
+
+function updateDateTime() {
+    const now = new Date();
+
+    const options = {
+        weekday: 'long',
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    };
+
+    const parts = new Intl.DateTimeFormat('id-ID', options).formatToParts(now);
+
+    let day = "";
+    let date = "";
+    let month = "";
+    let year = "";
+
+    parts.forEach(p => {
+        if (p.type === "weekday") day = p.value;
+        if (p.type === "day") date = p.value;
+        if (p.type === "month") month = p.value;
+        if (p.type === "year") year = p.value;
+    });
+
+    const dateStr = `${day} ${date} ${month} ${year}`;
+
+    const timeStr = now.toLocaleTimeString('id-ID', {
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+    });
+
+    document.getElementById('datetime').innerText =
+        dateStr + " | " + timeStr;
+}
+
+        async function updateRate() {
+            try {
+                const response = await fetch('https://api.exchangerate-api.com/v4/latest/MYR');
+                const data = await response.json();
+                let newRate = parseFloat(data.rates.IDR.toFixed(2));
+
+                // Update tampilan
+                document.getElementById('rate').innerText = newRate.toLocaleString('id-ID', {
+                    minimumFractionDigits: 2
+                });
+
+                // Tambah candlestick baru
+                const last = history[history.length - 1];
+                const open = last.close;
+                const close = newRate;
+                const high = Math.max(open, close) + Math.random() * 3;
+                const low = Math.min(open, close) - Math.random() * 3;
+
+                history.push({ open, high, low, close });
+                if (history.length > 60) history.shift();
+
+                lastClose = newRate;
+            } catch (e) {
+                console.error("Gagal mengambil data kurs");
+            }
+        }
+
+function drawCandlestick() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    const minPrice = Math.min(...history.map(d => d.low)) - 8;
+    const maxPrice = Math.max(...history.map(d => d.high)) + 8;
+    const priceRange = maxPrice - minPrice;
+
+    ctx.strokeStyle = 'rgba(17,17,254,0.7)';
+    ctx.lineWidth = 1;
+    ctx.font = '11px Arial';
+    ctx.textAlign = 'right';
+
+    for (let i = 0; i <= 6; i++) {
+        const y = (canvas.height / 6) * i;
+        const price = maxPrice - (priceRange / 6) * i;
+
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(canvas.width, y);
+        ctx.stroke();
+
+        ctx.fillStyle = '#00470a';
+        ctx.fillRect(0, y - 9, 55, 18);
+
+        ctx.fillStyle = '#ffffff';
+        ctx.textAlign = 'center';
+        ctx.fillText(price.toLocaleString('id-ID', {minimumFractionDigits: 0}), 27.5, y + 4);
+        }
+
+
+            // Garis vertikal grid
+            for (let i = 1; i < 8; i++) {
+                const x = (canvas.width / 8) * i;
+                ctx.beginPath();
+                ctx.moveTo(x, 0);
+                ctx.lineTo(x, canvas.height);
+                ctx.stroke();
+            }
+
+            // === CANDLESTICK ===
+            const candleWidth = (canvas.width / history.length) * 0.65;
+            const spacing = (canvas.width / history.length) * 0.35;
+
+            history.forEach((candle, i) => {
+                const x = 55 + i * (candleWidth + spacing);   // geser ke kanan karena ada label
+
+                const yHigh = canvas.height - ((candle.high - minPrice) / priceRange * canvas.height);
+                const yLow  = canvas.height - ((candle.low  - minPrice) / priceRange * canvas.height);
+                const yOpen = canvas.height - ((candle.open - minPrice) / priceRange * canvas.height);
+                const yClose = canvas.height - ((candle.close - minPrice) / priceRange * canvas.height);
+
+                const isGreen = candle.close >= candle.open;
+                ctx.fillStyle = isGreen ? '#2282c5' : '#ef4444';
+                ctx.strokeStyle = isGreen ? '#22c55e' : '#ef4444';
+
+                // Wick
+                ctx.lineWidth = 1.8;
+                ctx.beginPath();
+                ctx.moveTo(x + candleWidth/2, yHigh);
+                ctx.lineTo(x + candleWidth/2, yLow);
+                ctx.stroke();
+
+                // Body
+                const bodyTop = Math.min(yOpen, yClose);
+                const bodyHeight = Math.abs(yOpen - yClose) || 2;
+                ctx.fillRect(x, bodyTop, candleWidth, bodyHeight);
+            });
+        }
+
+        // Animasi real-time
+        function animate() {
+            // Sedikit noise agar terlihat hidup
+            if (history.length > 0) {
+                const last = history[history.length - 1];
+                last.close += (Math.random() * 0.4 - 0.2);
+                last.high = Math.max(last.high, last.close);
+                last.low = Math.min(last.low, last.close);
+            }
+            drawCandlestick();
+        }
+
+        // Inisialisasi
+        generateInitialData();
+        updateDateTime();
+        updateRate();
+
+        setInterval(updateDateTime, 1000);
+        setInterval(updateRate, 12000);        // Update kurs setiap 12 detik
+        setInterval(animate, 300);             // Animasi smooth
+
+        // Draw awal
+        setTimeout(() => {
+            drawCandlestick();
+        }, 500);
+    </script>
+
   <div class="text-container27">
     <div class="tommydev" style="display: flex; gap: 10px;">
       Avatar Guard fb
@@ -486,38 +715,157 @@ body.dark-mode .card1 { background: linear-gradient(135deg, #202020 0%, #404040 
       <div class="kontainer-scroll27">
         <div class="grid27" id="mainGrid"></div>
       </div>
+<style>
+  /* Container Utama */
+#menuGrid13 {
+  display: grid;
+  /* Mobile: 2 kolom */
+  grid-template-columns: repeat(2, 1fr);
+  padding: 5px;
+  background: rgb(239, 238, 238);
+  border-radius: 15px;
+  gap: 10px;
+-webkit-tap-highlight-color: transparent;
+  outline: none;
+  width:100%;
+}
 
-      <div class="logo-container1">
-        <div class="kontainer-scroll">
-          <div class="grid" id="mainGrid">
-            <tm class="tommydev">Generator Teks<p style="font-weight:400; font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p></tm>
-            <div class="menu-grid" id="menuGrid">
-              <div class="menu-item" onclick="handleLinkBaru('Grup')">
-                <i class="fas fa-keyboard icon"></i>
-                <span class="label">Multi Keyboard</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman1')">
-                <i class="fas fa-ad icon"></i>
-                <span class="label">Code symbols</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman2')">
-                <i class="fab fa-behance icon"></i>
-                <span class="label">Jumlah Teks</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman3')">
-                <i class="fas fa-play icon"></i>
-                <span class="label">Code Run Icon</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman')">
-                <i class="fas fa-at icon"></i>
-                <span class="label">Unicode Explor</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Reels')">
-                <i class="fab fa-atlassian icon"></i>
-                <span class="label">Generator Text</span>
-              </div>
-            </div>
+/* Desktop: 3 kolom (aktif saat layar > 768px) */
+@media (min-width: 768px) {
+  #menuGrid13 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
+  /* Kartu */
+  .menu-item13 {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 8px 5px rgba(0, 0, 0, 0.3); 
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+
+  /* Header Miring (Warna) */
+  .menu-item13::before {
+  -webkit-user-select: none;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: #ccc;
+    z-index: 1;
+  }
+
+  /* Warna Header per Item */
+  .menu-item13:nth-child(1)::before { background: #f06292; }
+  .menu-item13:nth-child(2)::before { background: #5c6bc0; }
+  .menu-item13:nth-child(3)::before { background: #4caf50; }
+  .menu-item13:nth-child(4)::before { background: #7e57c2; }
+  .menu-item13:nth-child(5)::before { background: #ff7043; }
+  .menu-item13:nth-child(6)::before { background: #26c6da; }
+
+  /* Angka */
+  .number13 {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    color: #fff;
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 2;
+  }
+
+  /* Dekorasi Garis (Stripes) */
+  .menu-item13::after {
+    content: "";
+    position: absolute;
+    top: -70px;
+    right: -25px;
+    width: 100px;
+    height: 75px;
+    background: repeating-linear-gradient(-48deg, transparent, transparent 10px, rgb(255,255,255) 4px, rgba(255,255,255) 18px);
+    z-index: 2;
+  }
+
+  /* Konten Bawah */
+  .content-wrapper13 {
+    margin-top: 80px;
+    padding: 10px 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    z-index: 2;
+  }
+  .icon13 { font-size: 30px; }
+  .label13 { font-size: 14px; font-weight: bold; }
+
+  /* Footer */
+  .footer-strip13 {
+    margin-top: auto;
+    height: 20px;
+   left: 10px;
+    width: 50px;
+    background: repeating-linear-gradient(-48deg, transparent, transparent 4px, rgb(254,35,35) 4px, rgb(254,35,35) 8px);
+    z-index: 2;
+  }
+</style>
+
+<div class="logo-container13">
+  <div class="kontainer-scroll13">
+    <div class="grid13" id="mainGrid">
+      <tm class="tommydev13">Generator Teks
+        <p style="font-weight:400; font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p>
+      </tm>
+      <div class="menu-grid13" id="menuGrid13">
+        
+        <div class="menu-item13" onclick="handleLinkBaru('Grup')">
+          <div class="number13">01</div>
+          <div class="content-wrapper13"><i class="fas fa-keyboard icon13"></i><span class="label13">Multi Keyboard</span></div>
+          <div class="footer-strip13"></div>
+        </div>
+
+        <div class="menu-item13" onclick="handleLinkBaru('Teman1')">
+          <div class="number13">02</div>
+          <div class="content-wrapper13"><i class="fas fa-ad icon13"></i><span class="label13">Code symbols</span></div>
+          <div class="footer-strip13"></div>
+        </div>
+
+        <div class="menu-item13" onclick="handleLinkBaru('Teman2')">
+          <div class="number13">03</div>
+          <div class="content-wrapper13"><i class="fab fa-behance icon13"></i><span class="label13">Jumlah Teks</span></div>
+          <div class="footer-strip13"></div>
+        </div>
+
+        <div class="menu-item13" onclick="handleLinkBaru('Teman3')">
+          <div class="number13">04</div>
+          <div class="content-wrapper13"><i class="fas fa-play icon13"></i><span class="label13">Code Run Icon</span></div>
+          <div class="footer-strip13"></div>
+        </div>
+
+        <div class="menu-item13" onclick="handleLinkBaru('Teman')">
+          <div class="number13">05</div>
+          <div class="content-wrapper13"><i class="fas fa-at icon13"></i><span class="label13">Unicode Explor</span></div>
+          <div class="footer-strip13"></div>
+        </div>
+
+        <div class="menu-item13" onclick="handleLinkBaru('Reels')">
+          <div class="number13">06</div>
+          <div class="content-wrapper13"><i class="fab fa-atlassian icon13"></i><span class="label13">Generator Text</span></div>
+          <div class="footer-strip13"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
             <tm class="tommydev">ID card editor<p style="font-weight:400; font-size:12px;">Generator pembuat id tanda pengenal identitas banding</p></tm>
             <div class="card-container">
               <div id="wrapper-frame" style="display:none; height:395px; border-radius:2vw; max-width:345px; width:100%; margin:auto;">
