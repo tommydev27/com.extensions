@@ -180,12 +180,14 @@ body.dark-mode .icon-circle {
 .icon-inner { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
 .icon-inner i { color: #ffffff; font-size: 24px; }
 
-.bg-orange { background: linear-gradient(to bottom, #e68a3d, #c97327); }
-.inner-orange { background: #d67c2a; }
-.bg-yellow { background: linear-gradient(to bottom, #b5a432, #968722); }
-.inner-yellow { background: #a39326; }
+.bg-orange { background: linear-gradient(to bottom, #388796, #14b3d2); }
+.inner-orange { background: #388796; }
+.bg-yellow { background: linear-gradient(to bottom, #b53232, #e82525); }
+.inner-yellow { background: #da0a0a; }
 .bg-green { background: linear-gradient(to bottom, #6fa152, #56823c); }
 .inner-green { background: #619145; }
+.bg-green2 { background: linear-gradient(to bottom, #2b523a, #3c654c); }
+.inner-green2 { background: #2b523a; }
 
 .menu-item .icon { font-size: 25px; margin-bottom: 8px; display: block; }
 .menu-item .label { font-size: 12px; font-weight: 600; line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -480,7 +482,7 @@ body.dark-mode #sideMenu a{
   <a style="color:#008bdd;font-size:20px;"><b>Keterangan:</b></a>
 
   <a style="font-weight:500;">
-    Tools adalah kumpulan alat sederhana. Sebagian tersedia dalam bentuk file ZIP untuk diunduh, dan sebagian lainnya dapat langsung digunakan melalui antarmuka website tanpa perlu mengunduh apa pun.
+    Tools adalah kumpulan alat sederhana. Tersedia dalam bentuk file ZIP untuk diunduh, dan sebagian lainnya dapat langsung digunakan melalui antarmuka website tanpa perlu mengunduh apa pun.
   </a>
 
   <a><b>Tools yang tersedia</b></a>
@@ -1179,28 +1181,28 @@ body.dark-mode .menu-item13 {
       </tm>
       <div class="menu-grid13" id="menuGrid13">
         
-        <div class="menu-item13" onclick="handleLinkBaru('Grup')">
+        <div class="menu-item13" onclick="handleLinkBaru('Teman')">
           <div class="number13">01</div>
-          <div class="content-wrapper13"><i class="fas fa-keyboard icon13"></i><span class="label13">Multi Keyboard</span></div>
-          <div class="footer-strip13">Buat kreativitas karakter teks lengkap dan unik </div>
+          <div class="content-wrapper13"><i class="fas fa-play icon13"></i><span class="label13">MUSIC PLAYER</span></div>
+          <div class="footer-strip13">Buka file musik dari perangkat dan atur equalizer </div>
         </div>
 
-        <div class="menu-item13" onclick="handleLinkBaru('Teman1')">
+        <div class="menu-item13" onclick="handleLinkBaru('Teman01')">
           <div class="number13">02</div>
-          <div class="content-wrapper13"><i class="fas fa-ad icon13"></i><span class="label13">Code symbols</span></div>
-          <div class="footer-strip13">Kumpulan symbols teks dan berbagai karakter lainnya</div>
+          <div class="content-wrapper13"><i class="fas fa-chalkboard-teacher icon13"></i><span class="label13">PROFILE </span></div>
+          <div class="footer-strip13">Project</div>
         </div>
 
-        <div class="menu-item13" onclick="handleLinkBaru('Teman2')">
+        <div class="menu-item13" onclick="handleLinkBaru('Teman02')">
           <div class="number13">03</div>
-          <div class="content-wrapper13"><i class="fab fa-behance icon13"></i><span class="label13">Penghitung karakter</span></div>
-          <div class="footer-strip13">Menghitung jumlah karakter membuang duplikat script dan pengganda teks</div>
+          <div class="content-wrapper13"><i class="fas fa-home icon13"></i><span class="label13">MENU</span></div>
+          <div class="footer-strip13">Project</div>
         </div>
 
-        <div class="menu-item13" onclick="handleLinkBaru('Teman3')">
+        <div class="menu-item13" onclick="handleLinkBaru('Teman03')">
           <div class="number13">04</div>
-          <div class="content-wrapper13"><i class="fas fa-play icon13"></i><span class="label13">Code Runner Unicode</span></div>
-          <div class="footer-strip13">Cari kumpulan karakter dengan unicode kode contoh ( 0xdb88b) dan kode lainnya</div>
+          <div class="content-wrapper13"><i class="fas fa-code icon13"></i><span class="label13">CODE</span></div>
+          <div class="footer-strip13">Project</div>
         </div>
 
       </div>
@@ -1221,7 +1223,7 @@ body.dark-mode .menu-item13 {
                     </div>
                   </div>
                   <div class="card-header bg-orange">
-                    <span class="card-title">ID card</span>
+                    <span class="card-title">ID CARD</span>
                   </div>
                   <div class="card-body">
                     <span class="card-desc">Kartu identitas buat klik di sini</span>
@@ -1234,7 +1236,7 @@ body.dark-mode .menu-item13 {
                     </div>
                   </div>
                   <div class="card-header bg-yellow">
-                    <span class="card-title">Sim ID</span>
+                    <span class="card-title">SIM</span>
                   </div>
                   <div class="card-body">
                     <span class="card-desc">kartu sim Buat klik di sini</span>
@@ -1247,10 +1249,24 @@ body.dark-mode .menu-item13 {
                     </div>
                   </div>
                   <div class="card-header bg-green">
-                    <span class="card-title">ID card pw Hindi</span>
+                    <span class="card-title">ID CARD PW HINDI</span>
                   </div>
                   <div class="card-body">
                     <span class="card-desc">kartu identitas hindi buat klik di sini</span>
+                  </div>
+                </div>
+                
+                <div class="menu-item3" onclick="handleKlik('Pesan211')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-green2">
+                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-green2">
+                    <span class="card-title">PASPRT</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">kartu identitas pasp buat klik di sini</span>
                   </div>
                 </div>
               </div>
@@ -1258,8 +1274,8 @@ body.dark-mode .menu-item13 {
 
             <tm class="tommydev">Tools list</tm>
             <div class="menu-grid" id="menuGrid">
-        <div class="menu-item" onclick="handleLinkBaru('Teman')">
-          <i class="fas fa-at icon"></i><span class="label">Pasport</span></div>
+        <div class="menu-item" onclick="handleLinkBaru('Grup')">
+          <i class="fas fa-keyboard icon"></i><span class="label">Multi keyboard</span></div>
           
         <div class="menu-item" onclick="handleLinkBaru('Reels')">
           <i class="fab fa-atlassian icon"></i><span class="label">Generator Text</span></div>
@@ -1280,6 +1296,26 @@ body.dark-mode .menu-item13 {
                 <i class="fa-solid fa-book-open icon"></i>
                 <span class="label">Blok 2 Catatan</span>
               </div>
+              
+              <div class="menu-item" onclick="handleLinkBaru('Teman333')">
+                <i class="fa-solid fa-book-open icon"></i>
+                <span class="label">Unicode Charakter</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman3')">
+                <i class="fa-solid fa-book-open icon"></i>
+                <span class="label">Code Runner</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman2')">
+                <i class="fa-solid fa-book-open icon"></i>
+                <span class="label">Penghitung karakter</span>
+              </div>
+              <div class="menu-item" onclick="handleLinkBaru('Teman1')">
+                <i class="fa-solid fa-book-open icon"></i>
+                <span class="label">Code Symbols</span>
+              </div>
+              
+              
+              
               <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
                 <i class="fas fa-image icon"></i>
                 <span class="label">Image Art</span>
@@ -1366,7 +1402,8 @@ function handleKlik(namaMenu) {
     const daftarLink = {
         "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
         "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
-        "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/"
+        "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
+        "Pesan211": "https://tommydev27.github.io/Pasport/"
     };
         
     const urlTujuan = daftarLink[namaMenu];
@@ -1408,9 +1445,15 @@ function handleLinkBaru(namaMenu) {
         "avatar": "https://tommydev27.github.io/tools-data-tm/",
         "cookietoken": "https://tommydev27.github.io/cookie-token/",
         "Grup": "https://tommydev27.github.io/Multi-Keyboartm/",
-        "Teman": "https://tommydev27.github.io/Pasport/",
+        "Teman": "https://tommydev27.github.io/music-player/",
         "Teman1": "https://tommydev27.github.io/unicode-char1/",
         "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
+        "Teman333": "https://tommydev27.github.io/unicode-explorerTM/",
+        
+        "Teman01": "https://tommydev27.github.io/my-profile/",
+        "Teman02": "https://tommydev27.github.io/Project/",
+        "Teman03": "https://tommydev27.github.io/code.project/",
+        
         "Teman3": "https://tommydev27.github.io/code-runner/",
         "Reels": "https://tommydev27.github.io/generatorascii/",
         "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
