@@ -451,6 +451,78 @@ body.dark-mode #sideMenu a{
   opacity:1;
   visibility:visible;
 }
+
+.date-time {
+  font-size: 14px;
+  margin-top: 10px;
+  font-weight: bold;
+  color: #016164;
+  padding: 2px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body.dark-mode .date-time {
+  color: #41ff3c;
+}
+
+.bold1 {
+  font-weight: bold;
+  font-family: normal;
+}
+
+.profile-description {
+  font-size: 10px;
+  color: gray;
+  margin-top: 0;
+}
+
+.nav-buttons {
+  flex-direction: row;
+  justify-content: center;
+  padding: 0;
+  margin-top: 0;
+}
+
+.nav-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  margin-top: 8px;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  font-weight: bold;
+  background: #35782f;
+  border-radius: 6px;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.nav-container {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.nav-button i {
+  font-size: 14px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.nav-button span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #fff;
+  padding: 6px 5px;
+  cursor: pointer;
+  background: none;
+  border-radius: 50px;
+  border: none;
+}
+
 </style>
 
 <body>
@@ -568,6 +640,15 @@ body.dark-mode #sideMenu a{
 </svg>
 
     </div>
+          <div class="stats"><div style="display: flex; align-items: center; font-size: 15px; padding-top: 5px; font-weight: bold; margin-top: -10px;">
+      <span style="color: #ffcb39;">★ ★ ★ ★<a style="color: #d5d3d0;"> ★ </a></span>
+      <div style="width: 200px; height: 6px; background-color: #6099ff; margin-left: 5px; border-radius: 50px;">
+        
+      </div>
+     </div>
+          <span id="followers-count" class="bold1">95% </span> <span class="gray">Merekomendasikan (640 Ulusan)</span><p class="profile-description">Tommy  Official | Website APP V0.1.0
+    </div>
+    <div class="unique-controls"><img src="https://iili.io/2D09qqx.png?nocache=123" style="width: 100%; border: none; margin-top: 15px; border-radius: 8px; pointer-events: none; margin-bottom: 0px; "></img>
   <div class="text-container27">
     <div class="tommydev" style="display: flex; gap: 10px;">
       Avatar Guard fb
@@ -817,6 +898,7 @@ function goToLink277(url){
 
 </script>
       <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400; font-size:12px;">Unicode text icon dan logo</p></tm>
+      
       <div class="kontainer-scroll27">
         <div class="grid27" id="mainGrid"></div>
       </div>
@@ -1175,6 +1257,21 @@ body.dark-mode .menu-item13 {
 
 <div class="logo-container13">
   <div class="kontainer-scroll13">
+    <div class="unique-controls">
+    <h2 style="font-size: 17px; margin-top: 25px; padding: 0px; ">Ciptakan Gambar</h2><p style="font-size: 12px;margin-bottom:15px;">Kreativitas gambar dengan prompt pastikan jelas lebih terbaca</p><img src="https://iili.io/3JxkJDv.png?nocache=123" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none;"><div class="nav-buttons"><div class="tab-container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<button type="button" class="nav-button" onclick="toggleTab(this, 'https://tommydev27.github.io/Img-creator/')">
+    <span>Image Creator <i class="fab fa-modx"></i></span>
+</button>
+
+<script>
+    function toggleTab(element, url) {
+        console.log("Tombol diklik, mengarahkan ke: " + url);
+        window.location.href = url; // Atau gunakan window.open(url, '_blank');
+    }
+</script>
+      
     <div class="grid13" id="mainGrid">
       <tm class="tommydev">Generator Teks
         <p style="font-weight:400; font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p>
@@ -1512,6 +1609,8 @@ overlay.addEventListener("click", () => {
   sideMenu.classList.remove("active");
   overlay.classList.remove("active");
 });
+
+document.addEventListener("DOMContentLoaded", function () { function showTab(tab) { const tabs = document.querySelectorAll("#profil-tabs div"); const contents = document.querySelectorAll("#profil-content > div"); tabs.forEach(t => t.classList.remove("active")); contents.forEach(c => c.classList.remove("active")); document.querySelector(`#tab-${tab}`).classList.add("active"); document.querySelector(`#content-${tab}`).classList.add("active"); } function redirect(url) { window.location.href = url; } function nextPage() { alert("Akan dialihkan ke halaman selanjutnya!"); } 
 </script>
 </body>
 </html>
