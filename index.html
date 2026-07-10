@@ -248,18 +248,24 @@ body.dark-mode .wrapper15::before {
 .main-subtitle15 { font-size: 6px; color: #64748b; margin-top: 2px; text-transform: uppercase; }
 
 .menu-list15 { width: 100%; height: 100%; position: relative; }
-.menu-item15 { position: absolute; overflow: visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: white; border-radius: 20px; box-shadow: 0 3px 8px rgba(0,0,0,0.15); }
-.icon-box15 { width: 28px; height: 28px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 16px; margin: 3px; flex-shrink: 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); position: relative; z-index: 5; }
-.label-box15 { font-weight: 600; font-size: 10px; text-align: center; text-transform: capitalize; white-space: nowrap; padding: 0px; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+.menu-item15 { font-family: sans-serif;
+    
+    position: absolute; overflow: 
+    visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: #00575e; 
+  border-radius: 20px; background: linear-gradient(135deg, #ffffffe6 0%, #fff 10%, #f4e3e3 80%);
+  box-shadow: inset 6px 6px 12px #dadada, inset -6px -6px 12px #6d757f; }
+
+.icon-box15 { width: 28px; height: 28px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 12px; margin: 3px; flex-shrink: 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); position: relative; z-index: 5; }
+.label-box15 { font-weight: 900; font-size: 14px; text-align: center; text-transform: capitalize; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
 
 .item-115, .item-215, .item-315 { flex-direction: row-reverse; text-align: right; }
-.item-115 { top: 40px; left: 18px; background: #81262f; }
-.item-215 { top: 103px; left: -7px; background: #00acc1; }
-.item-315 { bottom: 40px; left: 18px; background: #00bfa5; }
+.item-115 { top: 40px; left: 18px; }
+.item-215 { top: 103px; left: -7px; }
+.item-315 { bottom: 40px; left: 18px; }
 .item-415, .item-515, .item-615 { flex-direction: row; text-align: left; }
-.item-415 { top: 40px; right: 18px; background: #ffb300; }
-.item-515 { top: 103px; right: -7px; background: #fb8c00; }
-.item-615 { bottom: 40px; right: 18px; background: #f43f5e; }
+.item-415 { top: 40px; right: 18px; }
+.item-515 { top: 103px; right: -7px; }
+.item-615 { bottom: 40px; right: 18px; }
 
 body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, body.dark-mode .item-415, body.dark-mode .item-515, body.dark-mode .item-615 {
   background: linear-gradient(135deg, #202020 0%, #404040 10%, #202020 80%);
@@ -275,7 +281,7 @@ body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, bo
 .item-615 .icon-box15 { color: #f43f5e; } .item-615 .connector-line15 { background: #f43f5e; width: 30px; left: -25px; top: -5px; transform: rotate(50deg); }
 
 .bold { font-family: Orbitron, monospace; letter-spacing: 0px; text-transform: uppercase; font-size: 18px; font-weight: 900; }
-.tommydev { font-size: 20px; font-weight: 800; display: block; margin: 20px 0; }
+.tommydev { font-size: 15px; font-weight: 700; display: block; margin:18px 0px;}
 .status-bar2 { display: flex; padding: 1vw 0; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; position: relative; z-index: 9999; }
 
 .status-dot2 {
@@ -634,40 +640,36 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
         
       </div>
      </div>
-          <span id="followers-count" class="bold1">95% </span> <span class="gray">Merekomendasikan (640 Ulusan)</span><p class="profile-description">Tommy  Official | Website APP V0.1.0
+          <span id="followers-count" class="bold1">95% </span> <span class="gray">Merekomendasikan</span><p class="profile-description">Tommy  Official | Website APP V0.1.0
     </div>
-    <div class="unique-controls"><img src="https://iili.io/2D09qqx.png?nocache=123" style="width: 100%; border: none; margin-top: 15px; border-radius: 8px; pointer-events: none; margin-bottom: 0px; "></img>
-    <div class="logo-container13">
-  <div class="kontainer-scroll13">
-    <div class="unique-controls">
-    <h2 style="font-size: 17px; margin-top: 25px; padding: 0px; ">Ciptakan Gambar</h2><p style="font-size: 12px;margin-bottom:15px;">Kreativitas gambar dengan prompt pastikan jelas lebih terbaca</p><img src="https://iili.io/3JxkJDv.png?nocache=123" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none;"><div class="nav-buttons"><div class="tab-container">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<button type="button" class="nav-button" onclick="toggleTab(this, 'https://tommydev27.github.io/Img-creator/')">
-    <span>Image Creator <i class="fab fa-modx"></i></span>
-</button>
+<div class="text-container27">
+  <!-- Flex-direction column membuat elemen tersusun ke bawah -->
+  <div class="tommydev" style="display: flex; flex-direction: column; gap: 10px;">
+    
+    <!-- Bagian atas: Icon dan Text -->
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <div class="shield-icon" style="width: 14.5px; height: 14.5px; fill: #1877F2;">
+        <svg viewBox="0 0 21 29"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.47 4.14-3.13 7.85-7 9.01v-9.01H5V6.3l7-3.11v8.8z"></path></svg>
+      </div>
+      <span>Avatar Guard</span>
 
-<script>
-    function toggleTab(element, url) {
-        console.log("Tombol diklik, mengarahkan ke: " + url);
-        window.location.href = url; // Atau gunakan window.open(url, '_blank');
-    }
-</script>
-  <div class="text-container27">
-    <div class="tommydev" style="display: flex; gap: 10px;">
-      Avatar Guard fb
-      <i class="fas fa-user-shield" style="color:#4bacff; background:; letter-spacing:0px; border-radius:50%; width:20px; height:20px; display:flex; margin-top:1px; align-items:center; justify-content:center; font-size:17px;"></i>
+    <div style="display: flex; align-items: center; gap: 10px;">
+      <i class="fab fa-facebook" style="color:#1877F2; font-size:15px;"></i>
+      <p style="margin: 0;">Change name</p>
     </div>
-        <b class="subtitle27">Facebook profile & page</b>
-        <span style="font-size:12px; font-weight:400; display: block;">
+
+  </div>
+</div>
+    <img src="https://i.postimg.cc/0yPGHZPY/Beauty-Plus-IMAGE-ENHANCER-1783640321819.jpg" style="width: 100%; border: none;  border-radius: 8px; pointer-events: none; margin-top: -10px; margin-bottom: 5px;
+    box-shadow: 2px 2px 10px rgba(82,82,82,0.3); "></img>
+    </div>
+        <span style="font-size:13px; font-weight:400; display: block;">
           <b>Cara Pasang:</b><br>
-          1. Download & Ekstrak file ZIP.<br>
-          2. Buka Browser Kiwi/Lemur, buka menu Extensions.<br>
-          3. Aktifkan Mode Developer.<br>
-          4. Klik "Load unpacked" dan pilih folder hasil ekstrak.
+          Download & Ekstrak file ZIP, buka browser Kiwi/Lemur.<br> Pilih menu extensions aktifkan mode developer.<br>Selanjutnya klik load unpacked dan pilih folder hasil ekstrak Atau simak (tutorial) pilih fitur klik tombol bawah.
         </span>
       </div>
-
+        <b class="subtitle27">Tutorial & tools lainnya</b>
       <div class="content-container15">
         <div id="defaultView15" style="display: block;"></div>
         <div id="iframeView15" style="display: none;">
@@ -693,7 +695,7 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
           <a href="javascript:void(0);" class="menu-item15 item-215" onclick="toggleIframe15('https://tommydev27.github.io/tmavatar/', 'cookie')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fas fa-user-shield"></i></div>
-            <div class="label-box15">Download ZIP</div>
+            <div class="label-box15">Ext ZIP</div>
           </a>
           <a href="javascript:void(0);" class="menu-item15 item-315" onclick="toggleIframe15('https://tommydev27.github.io/cookie-token/', 'clone')">
             <div class="connector-line15"></div>
@@ -713,22 +715,22 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
           <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/download-tiktok-background/')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
-            <div class="label-box15">Download V</div>
+            <div class="label-box15">Vidio</div>
           </a>
         </div>
       </div>
+      
 <style>
-
 .row277{
     position:relative;
-    height:138px;
+    height:88px;
 }
 
 /* GARIS */
 .path277{
     position:absolute;
     width:50%;
-    height:140px;
+    height:90px;
     border:2px solid #0aaed1;
 }
 
@@ -752,18 +754,17 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
     user-select:none;
 
     position:absolute;
-    width:100px;
-    height:100px;
+    width:70px;
+    height:70px;
     background:white;
     border-radius:50%;
-    box-shadow:0 10px 20px rgba(0,0,0,0.2);
-    top:20px;
+    box-shadow:0 5px 10px rgba(0,0,0,0.2);
+    top:10px;
     display:flex;
     align-items:center;
     justify-content:center;
-    font-size:50px;
+    font-size:30px;
     z-index:5;
-
     cursor:pointer;
     transition:0.5s;
 }
@@ -789,43 +790,33 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
 }
 
 .left277 .circle277{
-    left:20px;
+    left:10px;
 }
 
 .right277 .circle277{
-    right:20px;
+    right:10px;
 }
 
 /* TEXT */
 .text277{
     position:absolute;
     width:150px;
-    top:25px;
+    top:15px;
 }
 
 .left277 .text277{
-    right:40px;
+    right:50px;
     text-align:left;
 }
 
 .right277 .text277{
-    left:40px;
+    left:50px;
     text-align:left;
 }
 
 h1277{
-    font-size:20px;
-    font-weight:900;
-}
-
-span277{
-    color:orange;
-}
-
-h3277{
-    color:#666;
     font-size:15px;
-    margin-bottom:0px;
+    font-weight:900;
 }
 
 p277{
@@ -843,13 +834,11 @@ p277{
     <!-- OPTION A -->
     <div class="row277 left277">
         <div class="path277"></div>
-
         <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/glitch-text/')"><i class="fas fa-bolt" style="color:#c687e7;"></i></div>
 
         <div class="text277">
-            <h1277>OPTION <span277>A</span277></h1277>
-            <h3277>GLICTCH TEXT</h3277>
-            <p277>Klik icon untuk menuju Glitch teks pembuatan teks bergaris bujur bertingkat.</p277>
+            <h1277>GLICTCH TEXT</h1277>
+            <p277>Glitch teks pembuatan teks bergaris bujur bertingkat.</p277>
         </div>
     </div>
 
@@ -860,8 +849,7 @@ p277{
         <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/Font-Unikers-fB2/')"><i class="fas fa-font" style="color:#52ddf1;"></i></div>
 
         <div class="text277">
-            <h1277>OPTION <span277>B</span277></h1277>
-            <h3277>RANGKAIAN TEKS</h3277>
+            <h1277>RANGKAIAN TEKS</h1277>
             <p277>Klik icon untuk menuju Halaman Copy paste</p277>
         </div>
     </div>
@@ -873,8 +861,7 @@ p277{
         <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/tm-textGz/')"><i class="fas fa-file-signature" style="color:#73a2e5;"></i></div>
 
         <div class="text277">
-            <h1277>OPTION <span277>C</span277></h1277>
-            <h3277>GENERATOR TEKS</h3>
+            <h1277>GENERATOR TEKS <h1277></h3>
             <p277>Klik icon untuk menuju Halaman</p277>
         </div>
     </div>
@@ -886,8 +873,7 @@ p277{
         <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/generatorascii/')"><i class="fas fa-stream" style="color:#d9588e;"></i></div>
 
         <div class="text277">
-            <h1277>OPTION <span277>D</span277></h1277>
-            <h3277>VARIABEL TEKS</h3277>
+            <h1277>VARIABEL TEKS</h1277>
             <p277>Klik icon untuk menuju Halaman.</p277>
         </div>
     </div>
@@ -905,243 +891,22 @@ function goToLink277(url){
       <div class="kontainer-scroll27">
         <div class="grid27" id="mainGrid"></div>
       </div>
-      <tm class="tommydev">IDR
-      </tm>
-    <style>
-        .header2 {
-            padding: 10px;
-            background: rgb(221,230,233);
-            border-radius: 10px;
-        }
-        body.dark-mode .header2 { background: hsl(0,0%,0%); }
-        
-        .date {
-            font-size: 1.1em;
-            color: #555;
-        }
-        body.dark-mode  { color: #ddd;}
-        
-        .rate-display {
-          font-family: 'Futura', Tahoma, Geneva, Verdana, sans-serif;
-            font-size: 18px;
-            font-weight: bold;
-            margin-top: 15px;
-            letter-spacing: -1px;
-        }
-        body.dark-mode  .rate-display{ color:#0095fd;}
-        
-        .rate-display span {
-            font-size: 18px;
-            color: #d96e00;
-        }
-        body.dark-mode .rate-display span { color: gold;}
-        
-        canvas { 
-            width: 100%; 
-            height: 50vw; 
-            display: block;
-        }
+    <div class="logo-container13">
+  <div class="kontainer-scroll13">
+    <div class="unique-controls">
+    <h2 style="font-size: 17px; margin-top: 25px; padding: 0px; ">Ciptakan Gambar</h2><p style="font-size: 12px;margin-bottom:15px;">Kreativitas gambar dengan prompt pastikan jelas lebih terbaca</p><img src="https://iili.io/3JxkJDv.png?nocache=123" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none;"><div class="nav-buttons"><div class="tab-container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-        .date {
-            font-family: monospace;
-            font-size: 14px;
-            font-weight:900;
-            color: #555;
-            margin-bottom: 6px;
-        }
-          body.dark-mode .date { color: #2baeff;}
-        
-    </style>
-</head>
-    <body>
-        <div class="header2">
-            <div class="date" id="datetime">Kamis 28 Mei 2026</div>
+<button type="button" class="nav-button" onclick="toggleTab(this, 'https://tommydev27.github.io/Img-creator/')">
+    <span>Image Creator <i class="fab fa-modx"></i></span>
+</button>
 
-        <canvas id="chart" width="600" height="260"></canvas>
-            <div class="rate-display">
-                1 MYR = <span id="rate">4.483,67</span> IDR
-            </div>
-        </div>
-
-    <script>
-        let history = [];
-        let lastClose = 4483.67;
-
-        // Generate data candlestick awal
-        function generateInitialData() {
-            history = [];
-            let price = 4480;
-            for (let i = 0; i < 60; i++) {
-                const open = price;
-                const close = open + (Math.random() * 8 - 4);
-                const high = Math.max(open, close) + Math.random() * 6;
-                const low = Math.min(open, close) - Math.random() * 6;
-                history.push({ open, high, low, close });
-                price = close;
-            }
-        }
-
-        const canvas = document.getElementById('chart');
-        const ctx = canvas.getContext('2d');
-
-function updateDateTime() {
-    const now = new Date();
-
-    const options = {
-        weekday: 'long',
-        day: 'numeric',
-        month: 'long',
-        year: 'numeric'
-    };
-
-    const parts = new Intl.DateTimeFormat('id-ID', options).formatToParts(now);
-
-    let day = "";
-    let date = "";
-    let month = "";
-    let year = "";
-
-    parts.forEach(p => {
-        if (p.type === "weekday") day = p.value;
-        if (p.type === "day") date = p.value;
-        if (p.type === "month") month = p.value;
-        if (p.type === "year") year = p.value;
-    });
-
-    const dateStr = `${day} ${date} ${month} ${year}`;
-
-    const timeStr = now.toLocaleTimeString('id-ID', {
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit'
-    });
-
-    document.getElementById('datetime').innerText =
-        dateStr + " | " + timeStr;
-}
-
-        async function updateRate() {
-            try {
-                const response = await fetch('https://api.exchangerate-api.com/v4/latest/MYR');
-                const data = await response.json();
-                let newRate = parseFloat(data.rates.IDR.toFixed(2));
-
-                // Update tampilan
-                document.getElementById('rate').innerText = newRate.toLocaleString('id-ID', {
-                    minimumFractionDigits: 2
-                });
-
-                // Tambah candlestick baru
-                const last = history[history.length - 1];
-                const open = last.close;
-                const close = newRate;
-                const high = Math.max(open, close) + Math.random() * 3;
-                const low = Math.min(open, close) - Math.random() * 3;
-
-                history.push({ open, high, low, close });
-                if (history.length > 60) history.shift();
-
-                lastClose = newRate;
-            } catch (e) {
-                console.error("Gagal mengambil data kurs");
-            }
-        }
-
-function drawCandlestick() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-    const minPrice = Math.min(...history.map(d => d.low)) - 8;
-    const maxPrice = Math.max(...history.map(d => d.high)) + 8;
-    const priceRange = maxPrice - minPrice;
-
-    ctx.strokeStyle = 'rgba(17,17,254,0.7)';
-    ctx.lineWidth = 1;
-    ctx.font = '11px Arial';
-    ctx.textAlign = 'right';
-
-    for (let i = 0; i <= 6; i++) {
-        const y = (canvas.height / 6) * i;
-        const price = maxPrice - (priceRange / 6) * i;
-
-        ctx.beginPath();
-        ctx.moveTo(0, y);
-        ctx.lineTo(canvas.width, y);
-        ctx.stroke();
-
-        ctx.fillStyle = '#00470a';
-        ctx.fillRect(0, y - 9, 55, 18);
-
-        ctx.fillStyle = '#ffffff';
-        ctx.textAlign = 'center';
-        ctx.fillText(price.toLocaleString('id-ID', {minimumFractionDigits: 0}), 27.5, y + 4);
-        }
-
-
-            // Garis vertikal grid
-            for (let i = 1; i < 8; i++) {
-                const x = (canvas.width / 8) * i;
-                ctx.beginPath();
-                ctx.moveTo(x, 0);
-                ctx.lineTo(x, canvas.height);
-                ctx.stroke();
-            }
-
-            // === CANDLESTICK ===
-            const candleWidth = (canvas.width / history.length) * 0.65;
-            const spacing = (canvas.width / history.length) * 0.35;
-
-            history.forEach((candle, i) => {
-                const x = 55 + i * (candleWidth + spacing);   // geser ke kanan karena ada label
-
-                const yHigh = canvas.height - ((candle.high - minPrice) / priceRange * canvas.height);
-                const yLow  = canvas.height - ((candle.low  - minPrice) / priceRange * canvas.height);
-                const yOpen = canvas.height - ((candle.open - minPrice) / priceRange * canvas.height);
-                const yClose = canvas.height - ((candle.close - minPrice) / priceRange * canvas.height);
-
-                const isGreen = candle.close >= candle.open;
-                ctx.fillStyle = isGreen ? '#2282c5' : '#ef4444';
-                ctx.strokeStyle = isGreen ? '#22c55e' : '#ef4444';
-
-                // Wick
-                ctx.lineWidth = 1.8;
-                ctx.beginPath();
-                ctx.moveTo(x + candleWidth/2, yHigh);
-                ctx.lineTo(x + candleWidth/2, yLow);
-                ctx.stroke();
-
-                // Body
-                const bodyTop = Math.min(yOpen, yClose);
-                const bodyHeight = Math.abs(yOpen - yClose) || 2;
-                ctx.fillRect(x, bodyTop, candleWidth, bodyHeight);
-            });
-        }
-
-        // Animasi real-time
-        function animate() {
-            // Sedikit noise agar terlihat hidup
-            if (history.length > 0) {
-                const last = history[history.length - 1];
-                last.close += (Math.random() * 0.4 - 0.2);
-                last.high = Math.max(last.high, last.close);
-                last.low = Math.min(last.low, last.close);
-            }
-            drawCandlestick();
-        }
-
-        // Inisialisasi
-        generateInitialData();
-        updateDateTime();
-        updateRate();
-
-        setInterval(updateDateTime, 1000);
-        setInterval(updateRate, 12000);        // Update kurs setiap 12 detik
-        setInterval(animate, 300);             // Animasi smooth
-
-        // Draw awal
-        setTimeout(() => {
-            drawCandlestick();
-        }, 500);
-    </script>
+<script>
+    function toggleTab(element, url) {
+        console.log("Tombol diklik, mengarahkan ke: " + url);
+        window.location.href = url; // Atau gunakan window.open(url, '_blank');
+    }
+</script>
 
 <style>
   /* Container Utama */
@@ -1190,6 +955,7 @@ body.dark-mode .menu-item13 {
   background: #333;
   border: 1px solid #111;
 }
+body.dark-mode .menu-item15 { color:#30ebff;}
 
   .menu-item13::before {
   -webkit-user-select: none;
