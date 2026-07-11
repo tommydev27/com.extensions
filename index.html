@@ -152,7 +152,7 @@ body.dark-mode .menu-item {
   z-index: 1;
 }
 
-.card-header { height: 30px; border-top-left-radius: 18px; border-top-right-radius: 18px; display: flex; align-items: center; padding-left: 110px; }
+.card-header { height: 30px; border-top-left-radius: 18px; border-top-right-radius: 18px; display: flex; align-items: center; padding-left: 100px; }
 .card-title { font-size: 15px; font-weight: bold; color: #ffffff; }
 .card-body { flex: 1; display: flex; align-items: center; padding-left: 110px; padding-right: 15px; }
 .card-desc { font-size: 12px; line-height: 1.4; }
@@ -248,15 +248,16 @@ body.dark-mode .wrapper15::before {
 .main-subtitle15 { font-size: 6px; color: #64748b; margin-top: 2px; text-transform: uppercase; }
 
 .menu-list15 { width: 100%; height: 100%; position: relative; }
-.menu-item15 { font-family: sans-serif;
-    
+
+.menu-item15 {
+    font-family:sans-serif;
     position: absolute; overflow: 
-    visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: #00575e; 
-  border-radius: 20px; background: linear-gradient(135deg, #ffffffe6 0%, #fff 10%, #f4e3e3 80%);
+    visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: #000; 
+  border-radius: 20px; 
   box-shadow: inset 6px 6px 12px #dadada, inset -6px -6px 12px #6d757f; }
 
 .icon-box15 { width: 28px; height: 28px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 12px; margin: 3px; flex-shrink: 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); position: relative; z-index: 5; }
-.label-box15 { font-weight: 900; font-size: 14px; text-align: center; text-transform: capitalize; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 100%; }
+.label-box15 { font-weight: 900; font-size: 9px; letter-spacing: 0.7px;   transform: scaleY(1.5); border-radius:5px; padding:2px 5px; text-align: center; text-transform: capitalize; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 55%; }
 
 .item-115, .item-215, .item-315 { flex-direction: row-reverse; text-align: right; }
 .item-115 { top: 40px; left: 18px; }
@@ -310,10 +311,6 @@ body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, bo
 #container-tutorial { display: none; width: 100%; max-height: 0; opacity: 0; overflow: hidden; }
 #container-tutorial.buka { animation: slideDown 0.4s ease-out forwards; }
 #container-tutorial.tutup { animation: slideUp 0.4s ease-in forwards; }
-
-.logo-wrapper27 { width: 100%; display: flex; justify-content: center; margin-top: 1vw; margin-bottom: 4vw; }
-.logo-wrapper27 svg { width: 60%; border: 2px solid #09b4cd; border-radius: 50%; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); max-width: 260px; height: auto; }
-.text-wrapper27 { display: flex; flex-direction: column; justify-content: center; }
 
 #iframeView15 { width: 100%; max-height: 0; opacity: 0; overflow: hidden; }
 #iframeView15.buka { animation: slideDown 0.4s ease-out forwards; }
@@ -594,47 +591,288 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
     <span class="status-id2">MULTI TOOLS </span>
   </div>
 
- <div class="image-row">
+
     <div class="container27">
-      <div class="logo-wrapper27">
 
-<svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <clipPath id="circle-clip277">
-      <circle cx="130" cy="130" r="120"/>
-    </clipPath>
+
+<!-- BUNGKUS DENGAN CLASS INI -->
+<div class="nexus-scope">
+    <style>
+        /* Variabel Warna */
+        .nexus-scope {
+
+            --bg-deep: #0a1424;
+            --ink: #333;
+            --ink-dim: #333;
+            --cyan: #00b3d5;
+            --cyan-soft: #4f8dfd;
+            --violet: #8a6bff;
+        }
+
+        /* Reset hanya berlaku di dalam .nexus-scope */
+        .nexus-scope, .nexus-scope * { box-sizing: border-box; margin: 0; padding: 0; }
+        
+        .nexus-scope { 
+            height: 200px; 
+            color: var(--ink); 
+            font-family: 'Rajdhani', sans-serif; 
+            overflow: hidden; 
+            position: relative; 
+        }
+
+        /* BOOT / LOADER SCREEN */
+        .nexus-scope #boot {
+            position: absolute; inset: 0; z-index: 100;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            transition: opacity .9s ease, filter .9s ease;
+        }
+        
+        .nexus-scope #boot.hide { opacity: 0; filter: blur(6px); pointer-events: none; }
+        
+        .nexus-scope #boot::before { 
+            content: ""; position: absolute; inset: 0; 
+            border-radius: 10px;
+            mix-blend-mode: overlay; pointer-events: none; 
+        }
+
+        /* ORBIT LOGO */
+        .nexus-scope .boot-inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 34px; margin-top: 0px; }
+        .nexus-scope .orbit-wrap { position: relative; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; }
+        .nexus-scope .orbit-ring { position: absolute; inset: 0; animation: spin 12s linear infinite; }
+        .nexus-scope .orbit-ring.rev { animation-direction: reverse; animation-duration: 11s; opacity: .55; }
+        
+        .nexus-scope .glyph { 
+            position: absolute; width: 20px; height: 20px; 
+            border: none; 
+        }
+        
+        .nexus-scope .g1 { top: 16px; left: 50%; transform: translateX(-50%); }
+        .nexus-scope .g2 { right: 16px; top: 50%; transform: translateY(-50%); }
+        .nexus-scope .g3 { bottom: 16px; left: 50%; transform: translateX(-50%); }
+        .nexus-scope .g4 { left: 16px; top: 50%; transform: translateY(-50%); }
+        
+        .nexus-scope .core { 
+            position: relative; width: 130px; height: 130px; border-radius: 50%; 
+            background-image: url('https://i.postimg.cc/fLd2JFtC/1780074024820.jpg'); 
+            background-size: cover; background-position: center; 
+            border: 4px solid #fff; 
+            box-shadow: 0 0 0px 2px var(--cyan-soft), 0 0 8px 4px rgba(209,209,209,0.725), inset 0 0 8px ; 
+            animation: pulse 2.2s ease-in-out infinite; 
+        }
+        
+        .nexus-scope .brand { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 9px; color: var(--ink); text-shadow: 0 0 14px var(--cyan-soft); }
+        .nexus-scope .brand span { color: var(--cyan); }
+          .nexus-scope #app {
+              opacity: 0;
+              transition: opacity 0.5s ease;
+          }
+          .nexus-scope #app.visible {
+              opacity: 1;
+          }
+
+        .nexus-scope #app { height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(57, 224, 255, 0.08), transparent 60%), var(--bg-void); padding: 24px; }
+
+        .nexus-scope .content-row {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center; 
+            gap: 0px;
+            transition: gap 0.9s ease;
+        }
+        .nexus-scope .content-row.shifted {
+            gap: 24px;
+        }
+
+        .nexus-scope .logo-wrapper27 {
+            width: 160px;
+            height: 160px;
+            align-content:left;align-items:left;
+            flex-shrink: 0;
+            transition: width 0.9s ease, height 0.9s ease;
+            border: 2px solid rgb(0,158,222); border-radius: 50%; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3); 
+        }
+        .nexus-scope .logo-wrapper27.shrink {
+            width: 130px;
+            height: 130px;
+        }
+        .nexus-scope .logo-wrapper27 svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        .nexus-scope .typed-wrap {
+            text-align: left;
+            width: 0;
+            overflow: hidden;
+            opacity: 0;
+            flex-shrink: 0;
+            white-space: normal;
+            transition: width 0.9s ease, opacity 0.7s ease;
+        }
+        .nexus-scope .typed-wrap.show {
+            width: 150px;
+            opacity: 1;
+        }
+        
+        .nexus-scope .typed-text {
+            font-family: 'normal', sans-serif;
+            font-size: 12px;
+            font-weight: 400;
+            color: #000;
+            border:2px solid rgb(0,158,222);
+            padding: 8px;
+            background: #fff;
+            border-radius:10px 10px 10px 0px;
+            line-height: 1.5;
+        }
+        .nexus-scope .typed-text {
+            max-height: 110px;
+            overflow-y: auto;
+        }
+
+        .nexus-scope .typed-cursor {
+            display: inline-block;
+            width: 2px;
+            height: 1em;
+            background: var(--cyan-soft);
+            margin-left: 2px;
+            vertical-align: -0.15em;
+            animation: blink 0.85s steps(1) infinite;
+        }
+
+        /* Keyframes */
+        @keyframes spin { to { transform: rotate(360deg); } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
+    </style>
+
+    <div id="boot">
+        <div class="boot-inner">
+            <div class="orbit-wrap">
+                <div class="orbit-ring">
+                    <svg class="glyph g1" viewBox="0 0 24 24" fill="none"><path d="M12 2 L21 20 L3 20 Z" stroke="var(--cyan)" stroke-width="2" stroke-linejoin="round"/></svg>
+                    <svg class="glyph g2" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="var(--violet)" stroke-width="2"/></svg>
+                    <svg class="glyph g3" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" stroke="var(--cyan)" stroke-width="2"/></svg>
+                    <svg class="glyph g4" viewBox="0 0 24 24" fill="none"><path d="M6 6 L18 18 M18 6 L6 18" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/></svg>
+                </div>
+                <div class="orbit-ring rev">
+                    <svg class="glyph g1" viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="14" height="14" stroke="rgba(220,232,245,0.4)" stroke-width="1.5"/></svg>
+                    <svg class="glyph g3" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="rgba(220,232,245,0.4)" stroke-width="1.5"/></svg>
+                </div>
+                <div class="core"></div>
+            </div>
+
+        </div>
+    </div>
     
-    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
-    </filter>
-  </defs>
+    <div id="app" style="width:100%;height:220px; ">
+        <div class="content-row" id="contentRow">
+            <div class="logo-wrapper27" id="logoWrap">
+                <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
+                  <defs>
+                    <clipPath id="circle-clip277">
+                      <circle cx="130" cy="130" r="120"/>
+                    </clipPath>
 
-  <image 
-    href="https://i.postimg.cc/fLd2JFtC/1780074024820.jpg"
-    x="0"
-    y="0"
-    width="260"
-    height="260"
-    preserveAspectRatio="xMidYMid slice"
-    clip-path="url(#circle-clip277)"
-  />
+                    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+                      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#000000" flood-opacity="0.6"/>
+                    </filter>
+                  </defs>
 
-  <g transform="translate(130 190) scale(0.32)" filter="url(#shadow)">
-    <path d="M0 -58 C18 -45 38 -37 58 -35 L58 8 C58 46 32 76 0 96 C-32 76 -58 46 -58 8 L-58 -35 C-38 -37 -18 -45 0 -58 Z"
-      fill="none"
-      stroke="#ffffff"
-      stroke-width="10"
-      stroke-linecap="round"
-      stroke-linejoin="round"/>
+                  <image 
+                    href="https://i.postimg.cc/fLd2JFtC/1780074024820.jpg"
+                    x="0"
+                    y="0"
+                    width="260"
+                    height="260"
+                    preserveAspectRatio="xMidYMid slice"
+                    clip-path="url(#circle-clip277)"
+                  />
 
-    <path d="M0 -40 C12 -30 25 -24 40 -22 L40 6 C40 30 22 52 0 66 C-22 52 -40 30 -40 6 L-40 -22 C-25 -24 -12 -30 0 -40 Z"
-      fill="#ffffff"/>
-  </g>
-</svg>
+                  <g transform="translate(130 190) scale(0.32)" filter="url(#shadow)">
+                    <path d="M0 -58 C18 -45 38 -37 58 -35 L58 8 C58 46 32 76 0 96 C-32 76 -58 46 -58 8 L-58 -35 C-38 -37 -18 -45 0 -58 Z"
+                      fill="none"
+                      stroke="#ffffff"
+                      stroke-width="10"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"/>
+
+                    <path d="M0 -40 C12 -30 25 -24 40 -22 L40 6 C40 30 22 52 0 66 C-22 52 -40 30 -40 6 L-40 -22 C-25 -24 -12 -30 0 -40 Z"
+                      fill="#ffffff"/>
+                  </g>
+                </svg>
+            </div>
+
+            <div class="typed-wrap" id="typedWrap">
+                <div class="typed-text" id="typedText"><span class="typed-cursor" id="typedCursor"></span></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+    (function(){
+        const container = document.querySelector('.nexus-scope');
+        const boot = container.querySelector('#boot');
+        const app = container.querySelector('#app');
+        const contentRow = container.querySelector('#contentRow');
+        const logoWrap = container.querySelector('#logoWrap');
+        const typedWrap = container.querySelector('#typedWrap');
+        const typedText = container.querySelector('#typedText');
+        const typedCursor = container.querySelector('#typedCursor');
+
+        const fullMessage = " Download file ext-zip terlebih dahulu. next buka browser Extensions Kiwi / Lemur. Pilih menu ≡ aktifkan mode developer & desktop. next klik extensions, Ekstrak file nama [tools-data-tm-main] Atau simak (TUTORIAL) Check fitur klik di tombol bawah.";
+
+        const typeText = () => {
+            let i = 0;
+            const speed = 45; // ms per karakter
+            const interval = setInterval(() => {
+                if (i < fullMessage.length) {
+                    typedCursor.insertAdjacentText('beforebegin', fullMessage.charAt(i));
+                    typedText.scrollTop = typedText.scrollHeight;
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        };
+
+        const shiftAndType = () => {
+            contentRow.classList.add('shifted');
+            logoWrap.classList.add('shrink');
+            typedWrap.classList.add('show');
+            setTimeout(() => {
+                typeText();
+            }, 500); // tunggu animasi geser/lebar hampir selesai baru mulai ngetik
+        };
+
+        const hideBoot = () => {
+            boot.classList.add('hide');
+
+            const delayTeks = 500;
+
+            setTimeout(() => {
+                app.classList.add('visible');
+
+                setTimeout(shiftAndType, 500); // gambar tampil di tengah dulu 3 detik, baru geser
+            }, delayTeks);
+
+            setTimeout(() => boot.remove(), 500);
+        };
+        
+        setTimeout(hideBoot, 2000); 
+
+        boot.addEventListener('click', hideBoot);
+    })();
+</script>
+</div>
 
     </div>
     
-       <div class="stats"><div style="display: flex; align-items: center; font-size: 15px; padding-top: 5px; font-weight: bold; margin-top: -10px;">
+       <div class="stats"><div style="display: flex; align-items: center; font-size: 15px; padding-top: 5px; font-weight: bold; margin-top: 0px;">
       <span style="color: #ffcb39;">★ ★ ★ ★<a style="color: #d5d3d0;"> ★ </a></span>
       <div style="width: 200px; height: 6px; background-color: #6099ff; margin-left: 5px; border-radius: 50px;">
         
@@ -647,28 +885,33 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
   <!-- Flex-direction column membuat elemen tersusun ke bawah -->
   <div class="tommydev" style="display: flex; flex-direction: column; gap: 10px;">
     
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <i class="fas fa-tools" style="color:#1877F2; font-size:15px;"></i>
+      <span>Tools |&nbsp;</span>
+    
     <!-- Bagian atas: Icon dan Text -->
-    <div style="display: flex; align-items: center; gap: 10px;">
-      <div class="shield-icon" style="width: 14.5px; height: 14.5px; fill: #1877F2;">
+    <div style="display: flex; align-items: center; gap: 5px;">
+      <div class="shield-icon" style="width: 14.5px; height: 17px; fill: #1877F2;">
         <svg viewBox="0 0 21 29"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.47 4.14-3.13 7.85-7 9.01v-9.01H5V6.3l7-3.11v8.8z"></path></svg>
       </div>
-      <span>Avatar Guard</span>
+      <span>Avatar Guard |&nbsp;</span>
 
-    <div style="display: flex; align-items: center; gap: 10px;">
+    <div style="display: flex; align-items: center; gap: 5px;">
       <i class="fab fa-facebook" style="color:#1877F2; font-size:15px;"></i>
-      <p style="margin: 0;">Change name</p>
+      <p style="margin: 0;">Change name </p>
+    </div>
+  </div>    
+    </div>
+        <img src="https://i.postimg.cc/0yPGHZPY/Beauty-Plus-IMAGE-ENHANCER-1783640321819.jpg" style="width: 100%; border: none;  border-radius: 8px; pointer-events: none; margin-top: 10px; margin-bottom: 5px;
+        box-shadow: 2px 2px 10px rgba(82,82,82,0.3); "></img>
     </div>
 
-  </div>
-</div>
-    <img src="https://i.postimg.cc/0yPGHZPY/Beauty-Plus-IMAGE-ENHANCER-1783640321819.jpg" style="width: 100%; border: none;  border-radius: 8px; pointer-events: none; margin-top: -10px; margin-bottom: 5px;
-    box-shadow: 2px 2px 10px rgba(82,82,82,0.3); "></img>
-    </div>
-        <span style="font-size:13px; font-weight:400; display: block;">
-          <b>Cara Pasang:</b><br>
-          Download & Ekstrak file ZIP, buka browser Kiwi/Lemur.<br> Pilih menu extensions aktifkan mode developer.<br>Selanjutnya klik load unpacked dan pilih folder hasil ekstrak Atau simak (tutorial) pilih fitur klik tombol bawah.
+        <span style="font-size:12px; ">
+          <h3>Cara Pasang:</h3>
+          Download file ext-zip terlebih dahulu. next buka browser Extensions Kiwi / Lemur. Pilih menu ≡ aktifkan mode developer & desktop. next klik extensions, Ekstrak file nama [tools-data-tm-main]  <br>Atau simak (TUTORIAL) Check fitur klik di tombol bawah.
         </span>
       </div>
+      <br>
         <b class="subtitle27">Tutorial & tools lainnya</b>
       <div class="content-container15">
         <div id="defaultView15" style="display: block;"></div>
@@ -690,32 +933,32 @@ background-color: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); color: #19b
           <a href="javascript:void(0);" class="menu-item15 item-115" onclick="toggleIframe15('https://www.youtube.com/embed/Aj-tyu3qAVk', 'avatar')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fa-solid fa-shield"></i></div>
-            <div class="label-box15">Tutorial</div>
+            <div class="label-box15">TUTORIAL</div>
           </a>
           <a href="javascript:void(0);" class="menu-item15 item-215" onclick="toggleIframe15('https://tommydev27.github.io/tmavatar/', 'cookie')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fas fa-user-shield"></i></div>
-            <div class="label-box15">Ext ZIP</div>
+            <div class="label-box15">EXT-ZIP</div>
           </a>
           <a href="javascript:void(0);" class="menu-item15 item-315" onclick="toggleIframe15('https://tommydev27.github.io/cookie-token/', 'clone')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fas fa-cookie-bite"></i></div>
-            <div class="label-box15">Token</div>
+            <div class="label-box15">TOKEN</div>
           </a>
           <a href="javascript:void(0);" class="menu-item15 item-415" onclick="toggleIframe15('https://tommydev27.github.io/Storyes-27/', 'stories')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fas fa-book"></i></div>
-            <div class="label-box15">Stories</div>
+            <div class="label-box15">STORIES</div>
           </a>
           <a href="javascript:void(0);" class="menu-item15 item-515" onclick="toggleIframe15('https://tommydev27.github.io/music-background/')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fas fa-music"></i></div>
-            <div class="label-box15">Music</div>
+            <div class="label-box15">MUSIC</div>
           </a>
           <a href="javascript:void(0);" class="menu-item15 item-615" onclick="toggleIframe15('https://tommydev27.github.io/download-tiktok-background/')">
             <div class="connector-line15"></div>
             <div class="icon-box15"><i class="fab fa-tiktok"></i></div>
-            <div class="label-box15">Vidio</div>
+            <div class="label-box15">VIDIO</div>
           </a>
         </div>
       </div>
