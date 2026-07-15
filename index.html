@@ -39,15 +39,15 @@
 }
 
 body {
-  background: rgb(242, 242, 242);
+  background: #fff;
   -webkit-user-select: none;
   font-family: sans-serif;
-  color: #1d5b5c;
+  color: #333;
 }
 
 /* Container & Grid Styles */
 .container {
-  padding: 15px;
+  padding: 10px;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -178,7 +178,7 @@ body.dark-mode .icon-circle {
 }
 
 .icon-inner { width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; }
-.icon-inner i { color: #ffffff; font-size: 24px; }
+.icon-inner i { color: #fff; font-size: 24px; }
 
 .bg-orange { background: linear-gradient(to bottom, #388796, #14b3d2); }
 .inner-orange { background: #388796; }
@@ -209,18 +209,53 @@ body.dark-mode .icon-circle {
   border-bottom-right-radius: 12px;
 }
 
-.menu-item:nth-child(1) .icon { color: #f59e0b; } .menu-item:nth-child(1)::after { content: "1"; background: #f59e0b; }
-.menu-item:nth-child(2) .icon { color: #f97316; } .menu-item:nth-child(2)::after { content: "2"; background: #f97316; }
-.menu-item:nth-child(3) .icon { color: #845ef7; } .menu-item:nth-child(3)::after { content: "3"; background: #845ef7; }
-.menu-item:nth-child(4) .icon { color: #10b981; } .menu-item:nth-child(4)::after { content: "4"; background: #10b981; }
-.menu-item:nth-child(5) .icon { color: #06b6d4; } .menu-item:nth-child(5)::after { content: "5"; background: #06b6d4; }
-.menu-item:nth-child(6) .icon { color: #3b82f6; } .menu-item:nth-child(6)::after { content: "6"; background: #3b82f6; }
-.menu-item:nth-child(7) .icon { color: #64748b; } .menu-item:nth-child(7)::after { content: "7"; background: #64748b; }
-.menu-item:nth-child(8) .icon { color: #7c3aed; } .menu-item:nth-child(8)::after { content: "8"; background: #7c3aed; }
-.menu-item:nth-child(9) .icon { color: #ec4899; } .menu-item:nth-child(9)::after { content: "9"; background: #ec4899; }
-.menu-item:nth-child(10) .icon { color: #ef4444; } .menu-item:nth-child(10)::after { content: "10"; background: #ef4444; }
-.menu-item:nth-child(11) .icon { color: #0891b2; } .menu-item:nth-child(11)::after { content: "11"; background: #0891b2; }
-.menu-item:nth-child(12) .icon { color: #16a34a; } .menu-item:nth-child(12)::after { content: "12"; background: #16a34a; }
+.menu-item:nth-child(1) .icon { color: #4b5563; } 
+.menu-item:nth-child(1)::after { content: "1"; background: #4b5563; }
+
+.menu-item:nth-child(2) .icon { color: #16a34a; } 
+.menu-item:nth-child(2)::after { content: "2"; background: #16a34a; }
+
+.menu-item:nth-child(3) .icon { color: #0891b2; } 
+.menu-item:nth-child(3)::after { content: "3"; background: #0891b2; }
+
+.menu-item:nth-child(4) .icon { color: #ef4444; } 
+.menu-item:nth-child(4)::after { content: "4"; background: #ef4444; }
+
+.menu-item:nth-child(5) .icon { color: #ec4899; } 
+.menu-item:nth-child(5)::after { content: "5"; background: #ec4899; }
+
+.menu-item:nth-child(6) .icon { color: #06b6d4; } 
+.menu-item:nth-child(6)::after { content: "6"; background: #06b6d4; }
+
+.menu-item:nth-child(7) .icon { color: #7c3aed; } 
+.menu-item:nth-child(7)::after { content: "7"; background: #7c3aed; }
+
+.menu-item:nth-child(8) .icon { color: #64748b; } 
+.menu-item:nth-child(8)::after { content: "8"; background: #64748b; }
+
+.menu-item:nth-child(9) .icon { color: #10b981; } 
+.menu-item:nth-child(9)::after { content: "9"; background: #10b981; }
+
+.menu-item:nth-child(10) .icon { color: #3b82f6; } 
+.menu-item:nth-child(10)::after { content: "10"; background: #3b82f6; }
+
+.menu-item:nth-child(11) .icon { color: #f97316; } 
+.menu-item:nth-child(11)::after { content: "11"; background: #f97316; }
+
+.menu-item:nth-child(12) .icon { color: #f59e0b; } 
+.menu-item:nth-child(12)::after { content: "12"; background: #f59e0b; }
+
+.menu-item:nth-child(13) .icon { color: #7eaae8; } 
+.menu-item:nth-child(13)::after { content: "13"; background: #7eaae8; }
+
+.menu-item:nth-child(14) .icon { color: #5ecce2; } 
+.menu-item:nth-child(14)::after { content: "14"; background: #5ecce2; }
+
+.menu-item:nth-child(15) .icon { color: #c47ceb; } 
+.menu-item:nth-child(15)::after { content: "15"; background: #c47ceb; }
+
+.menu-item:nth-child(16) .icon { color: #df739e; } 
+.menu-item:nth-child(16)::after { content: "16"; background: #df739e; }
 
 .content-container15 { width: 100%; }
 .wrapper15 { position: relative; width: 100%; max-width: 330px; height: 240px; display: flex; margin: 0 auto; justify-content: center; align-items: center; align-content: center; }
@@ -230,9 +265,9 @@ body.dark-mode .icon-circle {
   width: 170px;
   height: 170px;
   border-radius: 50%;
-  border: 12px solid transparent;
+  border: 1px solid transparent;
   background: linear-gradient(#f5f7fa, #f5f7fa) padding-box,
-              conic-gradient(#0e6383 0deg 60deg, #ffb300 60deg 150deg, #fb8c00 150deg 210deg, #f43f5e 210deg 270deg, #00bfa5 270deg 330deg, #00acc1 330deg 360deg) border-box;
+              conic-gradient(#0e6383) border-box;
   z-index: 0;
 }
 
@@ -252,9 +287,9 @@ body.dark-mode .wrapper15::before {
 .menu-item15 {
     font-family:sans-serif;
     position: absolute; overflow: 
-    visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: #000; 
-  border-radius: 20px; 
-  box-shadow: inset 6px 6px 12px #dadada, inset -6px -6px 12px #6d757f; }
+    visible; display: flex; align-items: center; width: 100%; max-width: 107px; height: 34px; text-decoration: none; color: #333; 
+  border-radius: 50px; 
+ background:#e7e7e7; background: #e7e7e7; box-shadow: 0px 3px 3px rgba(156,156,156,0.471); }
 
 .icon-box15 { width: 28px; height: 28px; background: white; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 12px; margin: 3px; flex-shrink: 0; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); position: relative; z-index: 5; }
 .label-box15 { font-weight: 900; font-size: 9px; letter-spacing: 0.7px;   transform: scaleY(1.5); border-radius:5px; padding:2px 5px; text-align: center; text-transform: capitalize; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; width: 55%; }
@@ -282,7 +317,8 @@ body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, bo
 .item-615 .icon-box15 { color: #f43f5e; } .item-615 .connector-line15 { background: #f43f5e; width: 30px; left: -25px; top: -5px; transform: rotate(50deg); }
 
 .bold { font-family: Orbitron, monospace; letter-spacing: 0px; text-transform: uppercase; font-size: 18px; font-weight: 900; }
-.tommydev { font-size: 15px; font-weight: 700; display: block; margin:18px 0px;}
+.tommydev { font-size: 20px; font-weight: 700; display: block; margin-top:20px;}
+
 .status-bar2 { display: flex; padding: 1vw 0; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; position: relative; z-index: 9999; }
 
 .status-dot2 {
@@ -291,9 +327,9 @@ body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, bo
   height: 8px;
   margin-left: 5px;
   border-radius: 50%;
-  background: rgb(0, 201, 27);
+  background: rgb(0,124,17);
   box-shadow: 0 0 3px #00ff88;
-  animation: pulse-dot 1.5s ease-in-out infinite;
+  animation: pulse-dot 5s ease-in-out infinite;
   vertical-align: middle;
 }
 
@@ -305,6 +341,7 @@ body.dark-mode .item-115, body.dark-mode .item-215, body.dark-mode .item-315, bo
 .status-text2 { font-size: 10px; letter-spacing: 2vw; text-transform: uppercase; font-weight: bold; }
 .status-id2 { font-size: 10px; letter-spacing: .1em; }
 .status-bar2 { display: flex; padding: 1vw 0; align-items: center; justify-content: space-between; width: 100%; box-sizing: border-box; position: relative; z-index: 9999; }
+
 
 /* Container & Layout */
 .container27 { align-items: center; border-radius: 12px; font-family: sans-serif; gap: 15px; margin-bottom: 3vw; margin-top:3vw;}
@@ -339,8 +376,8 @@ body.dark-mode .kontainer-scroll27 { background: #111; }
 
 .card { padding: 1vw 0vw; }
 .card1 { border-radius: 20px; padding: 20px; display: flex; flex-direction: column; align-items: center; justify-content: space-between; background: #fff; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); width: 1.7%; flex-shrink: 0; }
-.icon-box { height: 20px; display: flex; align-items: center; justify-content: center; text-shadow: 0 0 3vw rgba(255, 0, 102, 0.5); font-size: 35px; margin-bottom: 25px; }
-.unicode { color: #d4e157; font-size: 10px; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; text-align: center; }
+.icon-box { height: 20px; display: flex; align-items: center; justify-content: center;  font-size: 35px; margin-bottom: 25px; color:#666;}
+.unicode { color: #333; font-size: 10px; margin-bottom: 10px; font-weight: bold; text-transform: uppercase; text-align: center; }
 
 .btn-salin { background-color: #fff; box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3); color: #19b6ff; border: none; border-radius: 3vw; padding: 8px 0; width: 100%; font-size: 12px; font-weight: bold; cursor: pointer; display: block; -webkit-tap-highlight-color: transparent; transition: transform 0.1s ease, opacity 0.1s ease; }
 body.dark-mode .btn-salin { background: #333; }
@@ -458,7 +495,7 @@ body.dark-mode #sideMenu a{
 
 .bold1 {
   font-weight: bold;
-  font-family: normal;
+  letter-spacing: 1px; white-space: nowrap;font-family: 'Orbitron', sans-serif
 }
 
 .profile-description {
@@ -478,18 +515,28 @@ body.dark-mode #sideMenu a{
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 4px 0;
+  padding: 6px 0;
   margin-top: 8px;
   cursor: pointer;
   width: 100%;
   border: none;
   font-weight: bold;
-background: #fff; box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3); 
-color: #333;
+  background: #e7e7e7; 
+  box-shadow: 0px 3px 3px rgba(156,156,156,0.471); 
   border-radius: 20px;
-  transition: background-color 0.3s ease;
   text-align: center;
   white-space: nowrap;
+
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+
+  transition: transform 0.1s ease, background-color 0.3s ease, box-shadow 0.1s ease;
+}
+
+.nav-button:active {
+  transform: scale(0.90);
+  background: rgba(150,228,255,0.793);
+  box-shadow: 0px 1px 2px rgba(156,156,156,0.471);
 }
 
 .nav-container {
@@ -498,20 +545,15 @@ color: #333;
   align-items: stretch;
 }
 
-.nav-button i {
-  font-size: 14px;
-  color: #00a0cc;
-  transition: background-color 0.3s ease;
-}
-
 .nav-button span {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   padding: 6px 5px;
   cursor: pointer;
   background: none;
   border-radius: 50px;
   border: none;
+  
 }
 
 </style>
@@ -528,7 +570,7 @@ color: #333;
       alt="Verified Badge"
       width="20"
       height="20"
-      style="position:relative; top:3px;">
+      style="position:relative; top:3px;color">
   </span>
   <div style="display:flex;align-items:center;gap:30px;">
     <button class="theme-btn" id="toggleBtn">
@@ -583,8 +625,7 @@ color: #333;
       document.body.classList.toggle('dark-mode');
     });
   </script>
-
-  <div class="status-bar2">
+    <div class="status-bar2">
     <div style="display: flex; align-items: center;">
       <span class="status-text2">SERVER ONLINE</span>
       <span class="status-dot2"></span>
@@ -592,12 +633,7 @@ color: #333;
     <span class="status-id2">MULTI TOOLS </span>
   </div>
 
-
-    <div class="container27">
-
-
 <!-- BUNGKUS DENGAN CLASS INI -->
-<div class="nexus-scope">
     <style>
         /* Variabel Warna */
         .nexus-scope {
@@ -614,7 +650,7 @@ color: #333;
         .nexus-scope, .nexus-scope * { box-sizing: border-box; margin: 0; padding: 0; }
         
         .nexus-scope { 
-            height: 200px; 
+            height: 125px; 
             color: var(--ink); 
             font-family: 'Rajdhani', sans-serif; 
             overflow: hidden; 
@@ -622,11 +658,11 @@ color: #333;
         }
 
         /* BOOT / LOADER SCREEN */
-        .nexus-scope #boot {
-            position: absolute; inset: 0; z-index: 100;
-            display: flex; flex-direction: column; align-items: center; justify-content: center;
-            transition: opacity .9s ease, filter .9s ease;
-        }
+.nexus-scope #boot {
+    position: absolute; inset: 0; z-index: 0;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    transition: opacity .9s ease, filter .9s ease;
+}
         
         .nexus-scope #boot.hide { opacity: 0; filter: blur(6px); pointer-events: none; }
         
@@ -638,7 +674,7 @@ color: #333;
 
         /* ORBIT LOGO */
         .nexus-scope .boot-inner { position: relative; display: flex; flex-direction: column; align-items: center; gap: 34px; margin-top: 0px; }
-        .nexus-scope .orbit-wrap { position: relative; width: 220px; height: 220px; display: flex; align-items: center; justify-content: center; }
+        .nexus-scope .orbit-wrap { position: relative; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; }
         .nexus-scope .orbit-ring { position: absolute; inset: 0; animation: spin 12s linear infinite; }
         .nexus-scope .orbit-ring.rev { animation-direction: reverse; animation-duration: 11s; opacity: .55; }
         
@@ -652,26 +688,41 @@ color: #333;
         .nexus-scope .g3 { bottom: 16px; left: 50%; transform: translateX(-50%); }
         .nexus-scope .g4 { left: 16px; top: 50%; transform: translateY(-50%); }
         
-        .nexus-scope .core { 
-            position: relative; width: 130px; height: 130px; border-radius: 50%; 
-            background-image: url('https://i.postimg.cc/fLd2JFtC/1780074024820.jpg'); 
-            background-size: cover; background-position: center; 
-            border: 4px solid #fff; 
-            box-shadow: 0 0 0px 0px var(--cyan-soft), 0 0 0px 4px rgba(209,209,209,0.725), inset 0 0 8px ; 
-            animation: pulse 2.2s ease-in-out infinite; 
-        }
-        
-        .nexus-scope .brand { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 9px; color: var(--ink); text-shadow: 0 0 14px var(--cyan-soft); }
-        .nexus-scope .brand span { color: var(--cyan); }
-          .nexus-scope #app {
-              opacity: 0;
-              transition: opacity 0.5s ease;
-          }
-          .nexus-scope #app.visible {
-              opacity: 1;
-          }
 
-        .nexus-scope #app { height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 18px; text-align: center; background: radial-gradient(circle at 50% 0%, rgba(57, 224, 255, 0.08), transparent 60%), var(--bg-void); padding: 24px; }
+
+/* Penyesuaian teks agar rapi di dalam area 130px */
+.nexus-scope .core h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    font-weight: 900;
+    color: #1877f2;
+    letter-spacing: 8px;
+    margin: 0 0 4px 0;
+}
+
+.nexus-scope .core h4 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 12px;
+    color: #333; 
+    text-align: center;
+    letter-spacing: 8px;
+    margin: 0;
+    white-space: nowrap;
+}
+
+/* Bagian bawah ini tetap mengikuti kode aslimu */
+.nexus-scope .brand { font-family: 'Orbitron', sans-serif; font-weight: 700; font-size: 15px; letter-spacing: 9px; color: var(--ink); text-shadow: 0 0 14px var(--cyan-soft); }
+.nexus-scope .brand span { color: var(--cyan); }
+
+.nexus-scope #app {
+    opacity: 0;
+    transition: opacity 0.9s ease;
+}
+.nexus-scope #app.visible {
+    opacity: 1;
+}
+
+
 
         .nexus-scope .content-row {
             width: 100%;
@@ -683,20 +734,20 @@ color: #333;
             transition: gap 0.9s ease;
         }
         .nexus-scope .content-row.shifted {
-            gap: 24px;
+            gap: 8px;
         }
 
         .nexus-scope .logo-wrapper27 {
-            width: 160px;
-            height: 160px;
+            width: 115px;
+            height: 115px;
             align-content:left;align-items:left;
             flex-shrink: 0;
             transition: width 0.9s ease, height 0.9s ease;
-            border: 2px solid rgb(0,158,222); border-radius: 50%; box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.3); 
+            border:3px solid #d1d1d1; border-radius: 50%; 
         }
         .nexus-scope .logo-wrapper27.shrink {
-            width: 130px;
-            height: 130px;
+            width: 100px;
+            height: 100px;
         }
         .nexus-scope .logo-wrapper27 svg {
             width: 100%;
@@ -714,23 +765,17 @@ color: #333;
             transition: width 0.9s ease, opacity 0.7s ease;
         }
         .nexus-scope .typed-wrap.show {
-            width: 170px;
+            width: 100%;
+            max-width: 225px;
             opacity: 1;
         }
         
         .nexus-scope .typed-text {
             font-family: 'normal', sans-serif;
-            font-size: 10px;
-            font-weight: 400;
-            color: #000;
-            border:1px solid rgb(0,158,222);
-            padding: 8px;
-            background: #fff;
-            border-radius:10px 10px 10px 0px;
-            line-height: 1.5;
+            font-size: 14px;
+            line-height: 1.2;
         }
         .nexus-scope .typed-text {
-            max-height: 300px;
             overflow-y: auto;
         }
 
@@ -750,8 +795,19 @@ color: #333;
         @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
         @keyframes fadeUp { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
         @keyframes blink { 0%, 49% { opacity: 1; } 50%, 100% { opacity: 0; } }
-    </style>
+        
+        .logo-wrapper27 {
+    position: relative;
+    display: inline-block;
+}
 
+@keyframes slideLoop {
+    0% { transform: translateX(400px); }
+    100% { transform: translateX( 3%); }
+}
+    </style>
+<div class="container27">
+<div class="nexus-scope">
     <div id="boot">
         <div class="boot-inner">
             <div class="orbit-wrap">
@@ -765,13 +821,21 @@ color: #333;
                     <svg class="glyph g1" viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="14" height="14" stroke="rgba(220,232,245,0.4)" stroke-width="1.5"/></svg>
                     <svg class="glyph g3" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="rgba(220,232,245,0.4)" stroke-width="1.5"/></svg>
                 </div>
-                <div class="core"></div>
+                
+                <div class="core">
+<div id="coreWelcome" style="transition: transform 0.8s ease, opacity 0.8s ease;">
+        <h2>WELCOME</h2>
+        <h4>TOMMY WEBSITE TOOLS</h4>
+    </div>
             </div>
-
+<div id="coreName" style="position: absolute; top: 45%; left: 0; width: 100%; margin-top: -25px; transform: translateX(100%); opacity: 0;">
+    <h2 style="font-family: 'Orbitron', sans-serif; font-size: 30px; font-weight: 900; color: #333; margin: 0 0 4px 0; letter-spacing: 1px; white-space: nowrap;">TOMMY2788</h2>
+   <h4 style="font-family: 'Rajdhani', sans-serif; font-size: 11px; color: #888; letter-spacing: 7px; text-align: center; margin: 0; white-space: nowrap;font-family: 'Orbitron', sans-serif;">WEB DEVELOPMENT</h4>
+</div>
+          </div>
         </div>
     </div>
-    
-    <div id="app" style="width:100%;height:220px; ">
+    <div id="app" style="width:100%; ">
         <div class="content-row" id="contentRow">
             <div class="logo-wrapper27" id="logoWrap">
                 <svg viewBox="0 0 260 260" xmlns="http://www.w3.org/2000/svg">
@@ -826,93 +890,212 @@ color: #333;
         const typedText = container.querySelector('#typedText');
         const typedCursor = container.querySelector('#typedCursor');
 
-        const fullMessage = " Download file ext-zip terlebih dahulu. selanjutnya buka browser Extensions Kiwi / Lemur. Pilih menu ≡ aktifkan mode developer & desktop. lalu klik bagian extensions, Ekstrak file yang sudah di download bernama 𝘁𝗼𝗼𝗹𝘀-𝗱𝗮𝘁𝗮-𝘁𝗺-𝗺𝗮𝗶𝗻 Atau simak 𝗧𝗨𝗧𝗢𝗥𝗜𝗔𝗟 Check fitur klik di tombol bawah.";
+if (!document.querySelector("link[href*='Orbitron']")) {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+}
 
-        const typeText = () => {
-            let i = 0;
-            const speed = 45; // ms per karakter
-            const interval = setInterval(() => {
-                if (i < fullMessage.length) {
-                    typedCursor.insertAdjacentText('beforebegin', fullMessage.charAt(i));
-                    typedText.scrollTop = typedText.scrollHeight;
-                    i++;
-                } else {
-                    clearInterval(interval);
+if (!document.querySelector("link[href*='Orbitron']")) {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+}
+
+if (!document.querySelector("link[href*='Orbitron']")) {
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
+}
+
+const welcomeHeader = `
+    <div id="fixed-header-content" style="position: fixed; top: 95px; right: 10px; z-index: 99999; background: #1877f2; color: #fff; padding: 6px 20px; font-weight: bold; font-size: 12px; display: flex; justify-content: space-between; align-items: center; border-radius: 0 50px 0 50px; width: 250px; box-sizing: border-box;">
+        <span>Sistem Panduan</span>
+        <span id="header-close" style="cursor: pointer; font-size: 18px; margin-left: 10px;">&times;</span>
+    </div>
+`;
+
+const part1 = "Download file ext-zip terlebih dahulu. selanjutnya buka browser Extensions Kiwi / Lemur.Pilih menu ⫶ aktifkan Mode developer & desktop. lalu klik bagian extensions, Ekstrak file yang sudah di download bernama (tools-data-tm-main) Atau simak TUTORIAL Check fitur klik di tombol bawah.";
+const part2 = "Bagian tools lainya cukup gunakan langsung dari antar muka tampa login Web hanya alat bantu aman tampa menyimpan login data ";
+
+const chatToggleBtn = document.createElement('button');
+chatToggleBtn.innerHTML = '+';
+chatToggleBtn.style.cssText = "position: fixed; top: 400px; right: 10px; font-weight:bold;width: 50px; height: 50px; border-radius: 50%; background: #71e6ff;  -webkit-tap-highlight-color: transparent; color: #7b7b7b; border: none; font-size: 20px; z-index: 2147483647; cursor: pointer; opacity: 0.5; display: none; align-items: center; justify-content: center; box-shadow: 0 1px 4px rgba(0,0,0,0.498); transition: opacity 0.3s ease;";
+chatToggleBtn.onmouseover = () => chatToggleBtn.style.opacity = '1';
+chatToggleBtn.onmouseout = () => chatToggleBtn.style.opacity = '0.5';
+document.body.appendChild(chatToggleBtn);
+
+chatToggleBtn.onclick = () => {
+    chatToggleBtn.style.display = 'none';
+    typedText.style.display = 'inline-block';
+    const header = document.getElementById('header-wrapper');
+    if(header) header.style.display = 'block';
+};
+
+window.addEventListener('scroll', () => {
+    if (typedText && typedText.style.display !== 'none' && typedText.style.display !== '') {
+        typedText.style.display = 'none';
+        const header = document.getElementById('header-wrapper');
+        if(header) header.style.display = 'none';
+        chatToggleBtn.style.display = 'flex';
+    }
+});
+
+const typeText = () => {
+    const speed = 20;
+    typedText.innerHTML = '';
+    typedText.style.cssText = "position: fixed; top: 130px; right: 10px; z-index: 99998; background: #fff; padding: 0; border-radius: 20px 0 20px 20px; border: 1px solid #ccc; width: 100%; max-width: 250px; max-height: 282px; overflow-y: auto; color: #333; box-shadow: 0 4px 10px rgba(0,0,0,0.2);";
+    const headerWrapper = document.createElement('div');
+    headerWrapper.id = 'header-wrapper';
+    headerWrapper.innerHTML = welcomeHeader;
+    document.body.appendChild(headerWrapper);
+const hideWidget = () => {
+    typedText.style.display = 'none';
+    headerWrapper.style.display = 'none';
+    chatToggleBtn.style.display = 'flex';
+    chatToggleBtn.style.opacity = '0.5';
+};
+    document.getElementById('header-close').onclick = () => {
+        clearTimeout(autoHideTimer);
+        hideWidget();
+    };
+    const messageBox = document.createElement('div');
+    messageBox.style.cssText = "padding: 15px; position: relative; padding-bottom: 40px;";
+    typedText.appendChild(messageBox);
+    const textContainer = document.createElement('div');
+    messageBox.appendChild(textContainer);
+    const nextBtn = document.createElement('button');
+    nextBtn.innerHTML = '➤';
+    nextBtn.style.cssText = "position: absolute; bottom: 10px; right: 15px; background: #1877f2; color: #fff; border: none; border-radius: 50%; width: 30px; height: 30px; cursor: pointer; display: none; font-size: 16px; align-items: center; justify-content: center;";
+    messageBox.appendChild(nextBtn);
+    let autoHideTimer = null;
+    const runTyping = (text, target, callback) => {
+        let i = 0;
+        const cursor = document.createElement('span');
+        cursor.innerHTML = '|';
+        target.appendChild(cursor);
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                cursor.insertAdjacentText('beforebegin', text.charAt(i));
+                typedText.scrollTop = typedText.scrollHeight;
+                i++;
+            } else {
+                clearInterval(interval);
+                cursor.remove();
+                if (callback) callback();
+            }
+        }, speed);
+    };
+    typedText.style.display = 'inline-block';
+runTyping(part1, textContainer, () => {
+    nextBtn.style.display = 'flex';
+    autoHideTimer = setTimeout(() => {
+        hideWidget();
+        setTimeout(() => {
+            const coreWelcome = container.querySelector('#coreWelcome');
+            const coreName = container.querySelector('#coreName');
+            if (coreWelcome) {
+                coreWelcome.style.transform = 'translateX(-100%)';
+                coreWelcome.style.opacity = '0';
+            }
+            if (coreName) {
+                coreName.style.opacity = '1';
+                coreName.style.animation = 'slideLoop 6s linear 1 forwards';
+            }
+        }, 500);
+    }, 5000);
+});
+
+nextBtn.onclick = () => {
+    clearTimeout(autoHideTimer);
+    nextBtn.style.display = 'none';
+    const newPara = document.createElement('p');
+    newPara.style.margin = "10px 0 0 0";
+    textContainer.appendChild(newPara);
+    runTyping(part2, newPara, () => {
+        setTimeout(() => {
+            if (typedText.style.display !== 'none') {
+                hideWidget();
+            }
+            setTimeout(() => {
+                const coreWelcome = container.querySelector('#coreWelcome');
+                const coreName = container.querySelector('#coreName');
+                if (coreWelcome) {
+                    coreWelcome.style.transform = 'translateX(-100%)';
+                    coreWelcome.style.opacity = '0';
                 }
-            }, speed);
-        };
+                if (coreName) {
+                    coreName.style.opacity = '1';
+                    coreName.style.animation = 'slideLoop 6s linear 1 forwards';
+                }
+            }, 500);
+        }, 5000);
+    });
+};
+};
 
-        const shiftAndType = () => {
-            contentRow.classList.add('shifted');
-            logoWrap.classList.add('shrink');
-            typedWrap.classList.add('show');
-            setTimeout(() => {
-                typeText();
-            }, 500); // tunggu animasi geser/lebar hampir selesai baru mulai ngetik
-        };
+const shiftAndType = () => {
+    boot.classList.add('hide');
+    contentRow.classList.add('shifted');
+    logoWrap.classList.add('shrink');
+    typedWrap.classList.add('show');
+    setTimeout(() => {
+        typeText();
+    }, 500);
+};
 
-        const hideBoot = () => {
-            boot.classList.add('hide');
+const hideBoot = () => {
+    boot.classList.add('hide');
+    const delayTeks = 500;
+    setTimeout(() => {
+        app.classList.add('visible');
+        boot.style.opacity = '0.3';
+        boot.style.filter = 'none';
+        boot.style.zIndex = '0';
+        boot.style.pointerEvents = 'none';
+        setTimeout(shiftAndType, 500);
+    }, delayTeks);
+    // boot.remove() DIHAPUS supaya orbit + coreName tetap bisa tampil
+};
 
-            const delayTeks = 500;
-
-            setTimeout(() => {
-                app.classList.add('visible');
-
-                setTimeout(shiftAndType, 500); // gambar tampil di tengah dulu 3 detik, baru geser
-            }, delayTeks);
-
-            setTimeout(() => boot.remove(), 500);
-        };
-        
-        setTimeout(hideBoot, 2000); 
-
-        boot.addEventListener('click', hideBoot);
-    })();
+setTimeout(hideBoot, 2000);
+boot.addEventListener('click', hideBoot);
+})();
 </script>
 </div>
 
-    </div>
-    
-       <div class="stats"><div style="display: flex; align-items: center; font-size: 15px; padding-top: 5px; font-weight: bold; margin-top: 0px;">
-      <span style="color: #ffcb39;">★ ★ ★ ★<a style="color: #d5d3d0;"> ★ </a></span>
-      <div style="width: 200px; height: 6px; background-color: #6099ff; margin-left: 5px; border-radius: 50px;">
-        
-      </div>
-     </div>
-          <span id="followers-count" class="bold1">95% </span> <span class="gray">Merekomendasikan</span><p class="profile-description">Tommy  Official | Website APP V0.1.0
-    </div>
 
 <div class="text-container27">
   <!-- Flex-direction column membuat elemen tersusun ke bawah -->
-  <div class="tommydev" style="display: flex; flex-direction: column; gap: 10px;">
-    
-    <div style="display: flex; align-items: center; gap: 5px;">
-      <i class="fas fa-tools" style="color:#1877F2; font-size:15px;"></i>
-      <span>Tools |&nbsp;</span>
-    
+  <div class="tommydev" style="display: flex; flex-direction: column; gap: 10px; font-size:16px;">
     <!-- Bagian atas: Icon dan Text -->
     <div style="display: flex; align-items: center; gap: 5px;">
       <div class="shield-icon" style="width: 14.5px; height: 17px; fill: #1877F2;">
         <svg viewBox="0 0 21 29"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.47 4.14-3.13 7.85-7 9.01v-9.01H5V6.3l7-3.11v8.8z"></path></svg>
       </div>
-      <span>Avatar Guard |&nbsp;</span>
+      <span>Avatar Guard &nbsp;</span>
 
     <div style="display: flex; align-items: center; gap: 5px;">
-      <i class="fab fa-facebook" style="color:#1877F2; font-size:15px;"></i>
-      <p style="margin: 0;">Change name </p>
+      <i class="fab fa-facebook" style="color:#1877F2; font-size:16px;"></i>
+      <span>Change name </span>
     </div>
   </div>    
     </div>
         <img src="https://i.postimg.cc/0yPGHZPY/Beauty-Plus-IMAGE-ENHANCER-1783640321819.jpg" style="width: 100%; border: none;  border-radius: 8px; pointer-events: none; margin-top: 10px; margin-bottom: 5px;
-        box-shadow: 2px 2px 10px rgba(82,82,82,0.3); "></img>
+        box-shadow: 0px 2px 10px rgba(82,82,82,0.3); "></img>
     </div>
-
-        <b class="subtitle27"><b>Tutorial & tools lainnya</b> <i class="fa fa-gear" style="color:#007de9"></i>
-        <span style="font-size:12px; font-weight:400;">
-          <p>Fitur tambahan download vidio tampa watermark, stories untuk buat stori gambar teks & music audio equalizer.</p>
-        </span>
+<button type="button" class="nav-button" onclick="window.location.href='https://tommydev27.github.io/change-name-avatar-guard/'">
+    <span>Download ZIP</span>
+</button>
+</button>
+    <tm class="tommydev">
+      <i class="fas fa-tools"></i><b>&nbspTools</b>
       </div>
+          <p>Fitur tambahan download vidio tampa watermark, stories untuk buat stori gambar teks & music audio equalizer.
+          </p>
 
       <div class="content-container15">
         <div id="defaultView15" style="display: block;"></div>
@@ -963,191 +1146,146 @@ color: #333;
           </a>
         </div>
       </div>
-   <span class="subtie27"><tm>Generator teks</tm> <i class="fas fa-braille" style="color:#007de9"></i>
-   <span>
-     <br>
-     </br>
 
-<style>
-.row277{
-    position:relative;
-    height:88px;
-}
+        <tm class="tommydev"><i class="far fa-address-card"></i><b> ID card editor </b></tm><p>Generator pembuat id tanda pengenal identitas banding</p><br>
+                  
+            <div class="card-container">
+              <div id="wrapper-frame" style="display:none; height:395px; border-radius:2vw; max-width:345px; width:100%; margin:auto;">
+                <iframe id="konten-frame" src=""></iframe>
+              </div>
 
-/* GARIS */
-.path277{
-    position:absolute;
-    width:50%;
-    height:90px;
-    border:2px solid #0aaed1;
-}
+              <div class="menu-container">
+                <div class="menu-item3" onclick="handleKlik('Dasbor profesional')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-orange">
+                      <i class="fas fa-id-card" aria-label="ID Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-orange">
+                    <span class="card-title">ID CARD</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">Kartu identitas buat klik di sini</span>
+                  </div>
+                </div>
+                <div class="menu-item3" onclick="handleKlik('Pesan')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-yellow">
+                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-yellow">
+                    <span class="card-title">SIM</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">kartu sim Buat klik di sini</span>
+                  </div>
+                </div>
+                <div class="menu-item3" onclick="handleKlik('Pesan2')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-green">
+                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-green">
+                    <span class="card-title">ID CARD PW HINDI</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">kartu identitas hindi buat klik di sini</span>
+                  </div>
+                </div>
+                
+                <div class="menu-item3" onclick="handleKlik('Pesan211')">
+                  <div class="icon-circle">
+                    <div class="icon-inner inner-green2">
+                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
+                    </div>
+                  </div>
+                  <div class="card-header bg-green2">
+                    <span class="card-title">PASPRT</span>
+                  </div>
+                  <div class="card-body">
+                    <span class="card-desc">kartu identitas pasp buat klik di sini</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+<!-- Pindahan dari row277 (Variabel Teks) -->
+<tm class="tommydev"><i class="fab fa-google-plus"></i> <b>Generator Teks</b></tm>
+<p>Bagian alat generator pencarian unicode text icon dan logo lainnya</p></br>
+   <div class="kontainer-scroll27">
+        <div class="grid27" id="mainGrid"></div>
+      </div>
+      <br>
+<div class="menu-grid" id="menuGrid">
+  <!-- Item Menu Bawaan -->
+  <div class="menu-item" onclick="handleLinkBaru('Grup')">
+    <i class="fas fa-keyboard icon"></i><span class="label">Multi keyboard</span>
+  </div>
+    
+  <div class="menu-item" onclick="handleLinkBaru('Reels')">
+    <i class="fab fa-atlassian icon"></i><span class="label">Generator Text</span>
+  </div>
 
-.left277 .path277{
-    left:0;
-    border-right:none;
-    border-radius:70px 0 0 70px;
-}
+  <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
+    <i class="fab fa-facebook icon"></i>
+    <span class="label">Font Name Fb</span>
+  </div>
 
-.right277 .path277{
-    right:0;
-    border-left:none;
-    border-radius:0 70px 70px 0;
-}
+  <div class="menu-item" onclick="handleLinkBaru('Halaman')">
+    <i class="fab fa-fonticons-fi icon"></i>
+    <span class="label">Seni Font teks</span>
+  </div>
 
-/* BULAT */
+  <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
+    <i class="fas fa-barcode icon"></i>
+    <span class="label">Glitch Text</span>
+  </div>
 
-.circle277{
-    -webkit-tap-highlight-color: transparent;
-    outline:none;
-    user-select:none;
+  <div class="menu-item" onclick="handleLinkBaru('Acara')">
+    <i class="fa-solid fa-book-open icon"></i>
+    <span class="label">Blok 2 Catatan</span>
+  </div>
+        
+  <div class="menu-item" onclick="handleLinkBaru('Teman333')">
+    <i class="fa-solid fa-book-open icon"></i>
+    <span class="label">Unicode Charakter</span>
+  </div>
 
-    position:absolute;
-    width:70px;
-    height:70px;
-    background:white;
-    border-radius:50%;
-    box-shadow:0 5px 10px rgba(0,0,0,0.2);
-    top:10px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:30px;
-    z-index:5;
-    cursor:pointer;
-    transition:0.5s;
-}
+  <div class="menu-item" onclick="handleLinkBaru('Teman3')">
+    <i class="fa-solid fa-book-open icon"></i>
+    <span class="label">Code Runner</span>
+  </div>
 
-.circle277:active{
-    animation:pulse277 1s;
-}
+  <div class="menu-item" onclick="handleLinkBaru('Teman2')">
+    <i class="fa-solid fa-book-open icon"></i>
+    <span class="label">Penghitung karakter</span>
+  </div>
 
-@keyframes pulse277{
+  <div class="menu-item" onclick="handleLinkBaru('Teman1')">
+    <i class="fa-solid fa-book-open icon"></i>
+    <span class="label">Code Symbols</span>
+  </div>
 
-    0%{
-        transform:scale(1);
-    }
+  <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
+    <i class="fas fa-image icon"></i>
+    <span class="label">Image Art</span>
+  </div>
 
-    50%{
-        transform:scale(0.80);
-    }
-
-    100%{
-        transform:scale(1);
-    }
-
-}
-
-.left277 .circle277{
-    left:10px;
-}
-
-.right277 .circle277{
-    right:10px;
-}
-
-/* TEXT */
-.text277{
-    position:absolute;
-    width:150px;
-    top:15px;
-}
-
-.left277 .text277{
-    right:50px;
-    text-align:left;
-}
-
-.right277 .text277{
-    left:50px;
-    text-align:left;
-}
-
-h1277{
-    font-size:15px;
-    font-weight:900;
-}
-
-p277{
-    color:#777;
-    line-height:1.5;
-    font-size:12px;
-    font-weight: 400;
-    display: flex;
-    margin-top: 10px;
-}
-
-</style>
-
-    <div class="container277">
-    <!-- OPTION A -->
-    <div class="row277 left277">
-        <div class="path277"></div>
-        <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/glitch-text/')"><i class="fas fa-bolt" style="color:#c687e7;"></i></div>
-
-        <div class="text277">
-            <h1277>GLICTCH TEXT</h1277>
-            <p277>Glitch teks pembuatan teks bergaris bujur bertingkat.</p277>
-        </div>
-    </div>
-
-    <!-- OPTION B -->
-    <div class="row277 right277">
-        <div class="path277"></div>
-
-        <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/Font-Unikers-fB2/')"><i class="fas fa-font" style="color:#52ddf1;"></i></div>
-
-        <div class="text277">
-            <h1277>RANGKAIAN TEKS</h1277>
-            <p277>Klik icon untuk menuju Halaman Copy paste</p277>
-        </div>
-    </div>
-
-    <!-- OPTION C -->
-    <div class="row277 left277">
-        <div class="path277"></div>
-
-        <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/tm-textGz/')"><i class="fas fa-file-signature" style="color:#73a2e5;"></i></div>
-
-        <div class="text277">
-            <h1277>GENERATOR TEKS <h1277></h3>
-            <p277>Klik icon untuk menuju Halaman</p277>
-        </div>
-    </div>
-
-    <!-- OPTION D -->
-    <div class="row277 right277">
-        <div class="path277"></div>
-
-        <div class="circle277" onclick="goToLink277('https://tommydev27.github.io/generatorascii/')"><i class="fas fa-stream" style="color:#d9588e;"></i></div>
-
-        <div class="text277">
-            <h1277>VARIABEL TEKS</h1277>
-            <p277>Klik icon untuk menuju Halaman.</p277>
-        </div>
-    </div>
-
+  <div class="menu-item" onclick="handleLinkBaru('Ulang Birthday')">
+    <i class="fas fa-chalkboard-teacher icon"></i>
+    <span class="label">Generator IMG</span>
+  </div>
 </div>
 
-<script>
 
+<script>
 function goToLink277(url){
     window.location.href = url;
 }
-
 </script>
-      <tm class="tommydev">Tools list - Icon Logo <p style="font-weight:400; font-size:12px;">Unicode text icon dan logo</p></tm>
-      <div class="kontainer-scroll27">
-        <div class="grid27" id="mainGrid"></div>
-      </div>
-    <div class="logo-container13">
-  <div class="kontainer-scroll13">
-    <div class="unique-controls">
-    <h2 style="font-size: 17px; margin-top: 25px; padding: 0px; ">Ciptakan Gambar</h2><p style="font-size: 12px;margin-bottom:15px; font-weight:400;">Kreativitas gambar dengan prompt pastikan jelas lebih terbaca</p><img src="https://iili.io/3JxkJDv.png?nocache=123" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none;"><div class="nav-buttons"><div class="tab-container">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<button type="button" class="nav-button" onclick="toggleTab(this, 'https://tommydev27.github.io/Img-creator/')">
-    <span>Image Creator <i class="fab fa-modx"></i></span>
-</button>
 
 <script>
     function toggleTab(element, url) {
@@ -1271,13 +1409,21 @@ body.dark-mode .menu-item15 { color:#30ebff;}
     border-radius:0 0 50px 0;
   }
 </style>
+    <div class="unique-controls">
+    <h2 style="font-size: 20px; margin-top: 25px; padding: 0px; "><i class="fas fa-images"></i> Ciptakan Gambar</h2><p style="font-size:15px;margin-bottom:15px; font-weight:400;">Kreativitas gambar dengan prompt pastikan jelas lebih terbaca</p><img src="https://iili.io/3JxkJDv.png?nocache=123" style="width: 100%; height: auto;  border-radius: 8px; pointer-events: none;"><div class="nav-buttons"><div class="tab-container">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<button type="button" class="nav-button" onclick="toggleTab(this, 'https://tommydev27.github.io/Img-creator/')">
+    <span>Image Creator <i class="fab fa-modx"></i></span>
+</button>
+
 
 <div class="logo-container13">
   <div class="kontainer-scroll13">
     <div class="grid13" id="mainGrid">
-      <tm class="tommydev">Generator Teks
-        <p style="font-weight:400; font-size:12px;">Bagian alat generator pencarian unicode text icon dan logo lainnya</p>
-      </tm>
+      <tm class="tommydev"><i class="fas fa-code"></i> <b>Project UI</b></tm>
+        <p>Penulisan & Kode Ui </p>
+      <br>
       <div class="menu-grid13" id="menuGrid13">
         
         <div class="menu-item13" onclick="handleLinkBaru('Teman')">
@@ -1308,124 +1454,6 @@ body.dark-mode .menu-item15 { color:#30ebff;}
     </div>
   </div>
 </div>
-            <tm class="tommydev">ID card editor <i style='color:#007de9;' class="far fa-address-card"></i> <p style="font-weight:400; font-size:12px;">Generator pembuat id tanda pengenal identitas banding</p></tm>
-            <div class="card-container">
-              <div id="wrapper-frame" style="display:none; height:395px; border-radius:2vw; max-width:345px; width:100%; margin:auto;">
-                <iframe id="konten-frame" src=""></iframe>
-              </div>
-
-              <div class="menu-container">
-                <div class="menu-item3" onclick="handleKlik('Dasbor profesional')">
-                  <div class="icon-circle">
-                    <div class="icon-inner inner-orange">
-                      <i class="fas fa-id-card" aria-label="ID Card"></i>
-                    </div>
-                  </div>
-                  <div class="card-header bg-orange">
-                    <span class="card-title">ID CARD</span>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-desc">Kartu identitas buat klik di sini</span>
-                  </div>
-                </div>
-                <div class="menu-item3" onclick="handleKlik('Pesan')">
-                  <div class="icon-circle">
-                    <div class="icon-inner inner-yellow">
-                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
-                    </div>
-                  </div>
-                  <div class="card-header bg-yellow">
-                    <span class="card-title">SIM</span>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-desc">kartu sim Buat klik di sini</span>
-                  </div>
-                </div>
-                <div class="menu-item3" onclick="handleKlik('Pesan2')">
-                  <div class="icon-circle">
-                    <div class="icon-inner inner-green">
-                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
-                    </div>
-                  </div>
-                  <div class="card-header bg-green">
-                    <span class="card-title">ID CARD PW HINDI</span>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-desc">kartu identitas hindi buat klik di sini</span>
-                  </div>
-                </div>
-                
-                <div class="menu-item3" onclick="handleKlik('Pesan211')">
-                  <div class="icon-circle">
-                    <div class="icon-inner inner-green2">
-                      <i class="fas fa-id-card" aria-label="Sim Card"></i>
-                    </div>
-                  </div>
-                  <div class="card-header bg-green2">
-                    <span class="card-title">PASPRT</span>
-                  </div>
-                  <div class="card-body">
-                    <span class="card-desc">kartu identitas pasp buat klik di sini</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <tm class="tommydev">Tools list <i class='fas fa-cogs' style='color:#007fff'></i>
-            <p style="font-weight:400; font-size:12px;">Generator teks unicode charakter dan rangkaian font unik lainnya </p></tm>
-            <div class="menu-grid" id="menuGrid">
-        <div class="menu-item" onclick="handleLinkBaru('Grup')">
-          <i class="fas fa-keyboard icon"></i><span class="label">Multi keyboard</span></div>
-          
-        <div class="menu-item" onclick="handleLinkBaru('Reels')">
-          <i class="fab fa-atlassian icon"></i><span class="label">Generator Text</span></div>
-
-              <div class="menu-item" onclick="handleLinkBaru('Marketplace')">
-                <i class="fab fa-facebook icon"></i>
-                <span class="label">Font Name Fb</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Halaman')">
-                <i class="fab fa-fonticons-fi icon"></i>
-                <span class="label">Seni Font teks</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Tersimpan')">
-                <i class="fas fa-barcode icon"></i>
-                <span class="label">Glitch Text</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Acara')">
-                <i class="fa-solid fa-book-open icon"></i>
-                <span class="label">Blok 2 Catatan</span>
-              </div>
-              
-              <div class="menu-item" onclick="handleLinkBaru('Teman333')">
-                <i class="fa-solid fa-book-open icon"></i>
-                <span class="label">Unicode Charakter</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman3')">
-                <i class="fa-solid fa-book-open icon"></i>
-                <span class="label">Code Runner</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman2')">
-                <i class="fa-solid fa-book-open icon"></i>
-                <span class="label">Penghitung karakter</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Teman1')">
-                <i class="fa-solid fa-book-open icon"></i>
-                <span class="label">Code Symbols</span>
-              </div>
-              
-              
-              
-              <div class="menu-item" onclick="handleLinkBaru('Kenangan')">
-                <i class="fas fa-image icon"></i>
-                <span class="label">Image Art</span>
-              </div>
-              <div class="menu-item" onclick="handleLinkBaru('Ulang Birthday')">
-                <i class="fas fa-chalkboard-teacher icon"></i>
-                <span class="label">Generator IMG</span>
-              </div>
-            </div>
-
             <footer style="text-align:left; font-size:12px; padding:5vw 0; margin-top:5vw;">
               <p><strong>Privacy Policy:</strong> No data collection. Tools run locally.</p>
               <p><strong>Security:</strong> Scanned & Malware Free. Purely for account protection.</p>
@@ -1437,6 +1465,8 @@ body.dark-mode .menu-item15 { color:#30ebff;}
     </div>
   </div>
 </div>
+      
+
 <script>
 var currentActiveUrl15 = '';
 
@@ -1541,6 +1571,8 @@ function handleKlik(namaMenu) {
 }
 
 function handleLinkBaru(namaMenu) {
+    localStorage.setItem('scrollPosisi', window.scrollY);
+    
     const daftarLink = {
         "avatar": "https://tommydev27.github.io/tools-data-tm/",
         "cookietoken": "https://tommydev27.github.io/cookie-token/",
@@ -1549,11 +1581,9 @@ function handleLinkBaru(namaMenu) {
         "Teman1": "https://tommydev27.github.io/unicode-char1/",
         "Teman2": "https://tommydev27.github.io/penghitung-karakter/",
         "Teman333": "https://tommydev27.github.io/unicode-explorerTM/",
-        
         "Teman01": "https://tommydev27.github.io/my-profile/",
         "Teman02": "https://tommydev27.github.io/Project/",
         "Teman03": "https://tommydev27.github.io/code.project/",
-        
         "Teman3": "https://tommydev27.github.io/code-runner/",
         "Reels": "https://tommydev27.github.io/generatorascii/",
         "Marketplace": "https://tommydev27.github.io/Font-Unikers-fB2/",
@@ -1573,6 +1603,11 @@ function handleLinkBaru(namaMenu) {
     } else {
         alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
     }
+}
+
+function goToLink277(url) {
+    localStorage.setItem('scrollPosisi', window.scrollY);
+    window.location.href = url;
 }
 
 const icons = ['𔓙', '𓃭', '𔑪', '𓄁', '𓄇', '𔑫', '𓊿', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔒒', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
@@ -1597,20 +1632,30 @@ function copyText(text, btn) {
     btn.innerText = 'OK';
     setTimeout(() => { btn.innerText = originalText; }, 800);
 }
-</script>
-<script>
+
 const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 const overlay = document.getElementById("overlay");
 
 menuBtn.addEventListener("click", () => {
-  sideMenu.classList.add("active");
-  overlay.classList.add("active");
+    sideMenu.classList.add("active");
+    overlay.classList.add("active");
 });
 
 overlay.addEventListener("click", () => {
-  sideMenu.classList.remove("active");
-  overlay.classList.remove("active");
+    sideMenu.classList.remove("active");
+    overlay.classList.remove("active");
+});
+
+window.addEventListener('DOMContentLoaded', () => {
+    const posisiTersimpan = localStorage.getItem('scrollPosisi');
+    if (posisiTersimpan) {
+        window.scrollTo({
+            top: parseInt(posisiTersimpan),
+            behavior: 'auto' // <-- Ubah bagian ini
+        });
+        localStorage.removeItem('scrollPosisi');
+    }
 });
 </script>
 </body>
