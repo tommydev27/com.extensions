@@ -1286,14 +1286,6 @@ function goToLink277(url){
 }
 </script>
 
-
-<script>
-    function toggleTab(element, url) {
-        console.log("Tombol diklik, mengarahkan ke: " + url);
-        window.location.href = url; // Atau gunakan window.open(url, '_blank');
-    }
-</script>
-
 <style>
   /* Container Utama */
 #menuGrid13 {
@@ -1468,45 +1460,68 @@ body.dark-mode .menu-item15 { color:#30ebff;}
       
 
 <script>
+// Matikan restorasi otomatis bawaan browser agar tidak bentrok
+if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+}
+
 var currentActiveUrl15 = '';
+
+function simpanScroll() {
+    try { sessionStorage.setItem('scrollPosisi', String(window.scrollY)); } catch(e) {}
+}
+function pulihkanScroll() {
+    var p = sessionStorage.getItem('scrollPosisi');
+    if (p !== null) {
+        window.scrollTo(0, parseInt(p, 10) || 0);
+    }
+}
+
+// Simpan setiap kali halaman disembunyikan / ditinggalkan
+window.addEventListener('pagehide', simpanScroll);
+window.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'hidden') simpanScroll();
+});
+window.addEventListener('beforeunload', simpanScroll);
+
+// Pulihkan saat awal load DAN saat balik dari bfcache (mobile Chrome/Safari)
+window.addEventListener('DOMContentLoaded', pulihkanScroll);
+window.addEventListener('pageshow', function (e) {
+    // e.persisted === true berarti dipulihkan dari bfcache
+    pulihkanScroll();
+});
 
 function toggleIframe15(url, tipeMenu) {
     var defaultView = document.getElementById('defaultView15');
-    var iframeView = document.getElementById('iframeView15');
+    var iframeView  = document.getElementById('iframeView15');
     var frameWindow = window.frames['target-frame15'];
-    
+
     if (iframeView.style.display === 'block' && currentActiveUrl15 === url) {
         iframeView.classList.remove('buka');
         iframeView.classList.add('tutup');
-        
-        setTimeout(function() {
+        setTimeout(function () {
             frameWindow.location.replace('about:blank');
             currentActiveUrl15 = '';
             iframeView.style.display = 'none';
             if (defaultView) defaultView.style.display = 'block';
             iframeView.classList.remove('iframe-stories');
         }, 400);
-        
     } else {
         if (defaultView) defaultView.style.display = 'none';
-        
-        if (tipeMenu === 'stories') {
-            iframeView.classList.add('iframe-stories');
-        } else {
-            iframeView.classList.remove('iframe-stories');
-        }
-        
+        if (tipeMenu === 'stories') iframeView.classList.add('iframe-stories');
+        else iframeView.classList.remove('iframe-stories');
+
         iframeView.classList.remove('tutup');
         iframeView.classList.add('buka');
         iframeView.style.display = 'block';
-        
-        iframeView.onanimationend = function(e) {
+
+        iframeView.onanimationend = function (e) {
             if (e.animationName === 'slideDown' || e.animationName === 'slideDownStories') {
                 iframeView.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                iframeView.onanimationend = null; 
+                iframeView.onanimationend = null;
             }
         };
-        
+
         if (currentActiveUrl15 !== url) {
             frameWindow.location.replace(url);
             currentActiveUrl15 = url;
@@ -1514,65 +1529,47 @@ function toggleIframe15(url, tipeMenu) {
     }
 }
 
-window.addEventListener('pagehide', function() {
-    var defaultView = document.getElementById('defaultView15');
-    var iframeView = document.getElementById('iframeView15');
-    var frameWindow = window.frames['target-frame15'];
-    
-    if (frameWindow) frameWindow.location.replace('about:blank');
-    currentActiveUrl15 = '';
-    if (iframeView) {
-        iframeView.style.display = 'none';
-        iframeView.classList.remove('buka', 'tutup', 'iframe-stories');
-    }
-    if (defaultView) defaultView.style.display = 'block';
-});
-
 function handleKlik(namaMenu) {
     const daftarLink = {
         "Dasbor profesional": "https://tommydev27.github.io/FakeID/",
-        "Pesan": "https://tommydev27.github.io/Sim-card-pw/",
-        "Pesan2": "https://tommydev27.github.io/id-card-pw-hindi/",
+        "Pesan":    "https://tommydev27.github.io/Sim-card-pw/",
+        "Pesan2":   "https://tommydev27.github.io/id-card-pw-hindi/",
         "Pesan211": "https://tommydev27.github.io/Pasport/"
     };
-        
     const urlTujuan = daftarLink[namaMenu];
-    if (urlTujuan) {
-        const wrapper = document.getElementById('wrapper-frame');
-        let iframe = document.getElementById('konten-frame');
-        var isOpen = wrapper.classList.contains('buka');
-        
-        if (isOpen && iframe && iframe.getAttribute('data-url') === urlTujuan) {
-            wrapper.classList.remove('buka');
-            wrapper.classList.add('tutup');
-            setTimeout(function() {
-                wrapper.style.display = 'none';
-                if (iframe) iframe.remove();
-            }, 400);
-        } else {
-            if (iframe) iframe.remove(); 
-            iframe = document.createElement('iframe');
-            iframe.id = 'konten-frame';
-            iframe.setAttribute('data-url', urlTujuan);
-            iframe.src = urlTujuan;
-            wrapper.appendChild(iframe);
-            wrapper.style.display = 'block';
-            setTimeout(function() {
-                wrapper.classList.remove('tutup');
-                wrapper.classList.add('buka');
-            }, 10);
-            setTimeout(function() {
-                wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }, 410);
-        }
+    if (!urlTujuan) { alert("Maaf, link untuk " + namaMenu + " belum tersedia."); return; }
+
+    const wrapper = document.getElementById('wrapper-frame');
+    let iframe = document.getElementById('konten-frame');
+    var isOpen = wrapper.classList.contains('buka');
+
+    if (isOpen && iframe && iframe.getAttribute('data-url') === urlTujuan) {
+        wrapper.classList.remove('buka');
+        wrapper.classList.add('tutup');
+        setTimeout(function () {
+            wrapper.style.display = 'none';
+            if (iframe) iframe.remove();
+        }, 400);
     } else {
-        alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
+        if (iframe) iframe.remove();
+        iframe = document.createElement('iframe');
+        iframe.id = 'konten-frame';
+        iframe.setAttribute('data-url', urlTujuan);
+        iframe.src = urlTujuan;
+        wrapper.appendChild(iframe);
+        wrapper.style.display = 'block';
+        setTimeout(function () {
+            wrapper.classList.remove('tutup');
+            wrapper.classList.add('buka');
+        }, 10);
+        setTimeout(function () {
+            wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 410);
     }
 }
 
 function handleLinkBaru(namaMenu) {
-    localStorage.setItem('scrollPosisi', window.scrollY);
-    
+    simpanScroll();
     const daftarLink = {
         "avatar": "https://tommydev27.github.io/tools-data-tm/",
         "cookietoken": "https://tommydev27.github.io/cookie-token/",
@@ -1596,23 +1593,18 @@ function handleLinkBaru(namaMenu) {
         "Beranda": "https://www.facebook.com/",
         "Instagram Lite": "https://www.instagram.com/"
     };
-
     const urlTujuan = daftarLink[namaMenu];
-    if (urlTujuan) {
-        window.open(urlTujuan, '_blank');
-    } else {
-        alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
-    }
+    if (urlTujuan) window.open(urlTujuan, '_blank');
+    else alert("Maaf, link untuk " + namaMenu + " belum tersedia.");
 }
 
 function goToLink277(url) {
-    localStorage.setItem('scrollPosisi', window.scrollY);
+    simpanScroll();
     window.location.href = url;
 }
 
-const icons = ['𔓙', '𓃭', '𔑪', '𓄁', '𓄇', '𔑫', '𓊿', '𔘳', '𔒰', '𔒝', '𔐟', '𓊝', '𔒙', '𔒒', '𔙃', '𐂡', '𓇽', '𓃽', '𓃰', '𓃯', '𓃵', '𓆉', '𓅻', '𓅢', '𓅭', '𓆦', '𓆣', '𓅓', '𓅀', '𐂢', '𓀌', '𔒄', '𔑸', '𔑺', '𔑼', '𔒌','𔕈', '𔔡', '𔑮', '𔑬', '𔑯', '𔑹', '𔒃', '𔒀', '𔑼', '𔒆', '𔒇', '𔒜', '𔓕', '𔓭', '𔕙', '𔗜', '𔗛', '𔗢', '𔗺', '𔘒', '𔘿', '𔙀' ];
+const icons = ['𔓙','𓃭','𔑪','𓄁','𓄇','𔑫','𓊿','𔘳','𔒰','𔒝','𔐟','𓊝','𔒙','𔒒','𔙃','𐂡','𓇽','𓃽','𓃰','𓃯','𓃵','𓆉','𓅻','𓅢','𓅭','𓆦','𓆣','𓅓','𓅀','𐂢','𓀌','𔒄','𔑸','𔑺','𔑼','𔒌','𔕈','𔔡','𔑮','𔑬','𔑯','𔑹','𔒃','𔒀','𔑼','𔒆','𔒇','𔒜','𔓕','𔓭','𔕙','𔗜','𔗛','𔗢','𔗺','𔘒','𔘿','𔙀'];
 const grid = document.getElementById('mainGrid');
-
 icons.forEach(symbol => {
     const codePoint = symbol.codePointAt(0).toString(16).toUpperCase();
     const autoUnicode = `U+${codePoint.padStart(4, '0')}`;
@@ -1633,30 +1625,18 @@ function copyText(text, btn) {
     setTimeout(() => { btn.innerText = originalText; }, 800);
 }
 
-const menuBtn = document.getElementById("menuBtn");
+const menuBtn  = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
-const overlay = document.getElementById("overlay");
-
+const overlay  = document.getElementById("overlay");
 menuBtn.addEventListener("click", () => {
     sideMenu.classList.add("active");
     overlay.classList.add("active");
 });
-
 overlay.addEventListener("click", () => {
     sideMenu.classList.remove("active");
     overlay.classList.remove("active");
 });
-
-window.addEventListener('DOMContentLoaded', () => {
-    const posisiTersimpan = localStorage.getItem('scrollPosisi');
-    if (posisiTersimpan) {
-        window.scrollTo({
-            top: parseInt(posisiTersimpan),
-            behavior: 'auto' // <-- Ubah bagian ini
-        });
-        localStorage.removeItem('scrollPosisi');
-    }
-});
 </script>
+
 </body>
 </html>
